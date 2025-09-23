@@ -2,7 +2,7 @@
 title:          "VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations for Synthetic Videos"
 date:           2025-05-02 00:01:00 +0800
 selected:       true
-pub:            "Neurips 2025"
+pub:            "Neurips"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
