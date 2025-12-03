@@ -1,30 +1,27 @@
 ---
-title:          "Semantically-Aware Rewards for Open-Ended R1 Training in Free-Form Generation"
-date:           2025-06-18 00:01:00 +0800
+title:          "A Survey of State of the Art Large Vision Language Models: Benchmark Evaluations and Challenges"
+date:           2025-05-07 00:01:00 +0800
 selected:       true
-pub:            "Preprint"
+pub:            "CVPR Workshop (Oral)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
+# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2025"
-
+# semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  Evaluating open-ended long-form generation is challenging because it is hard to define what clearly separates good from bad outputs. Existing methods often miss key aspects like coherence, style, or relevance, or are biased by pretraining data, making open-ended long-form evaluation an underexplored problem. To address this gap, we propose PrefBERT, a scoring model for evaluating open-ended long-form generation in GRPO and guiding its training with distinct rewards for good and bad outputs. Trained on two response evaluation datasets with diverse long-form styles and Likert-rated quality, PrefBERT effectively supports GRPO by offering better semantic reward feedback than traditional metrics ROUGE-L and BERTScore do. Through comprehensive evaluations, including LLM-as-a-judge, human ratings, and qualitative analysis, we show that PrefBERT, trained on multi-sentence and paragraph-length responses, remains reliable across varied long passages and aligns well with the verifiable rewards GRPO needs. Human evaluations confirm that using PrefBERT as the reward signal to train policy models yields responses better aligned with human preferences than those trained with traditional metrics.
+  Multimodal Vision Language Models (VLMs) have emerged as a transformative topic at the intersection of computer vision and natural language processing, enabling machines to perceive and reason about the world through both visual and textual modalities. For example, models such as CLIP, Claude, and GPT-4V demonstrate strong reasoning and understanding abilities on visual and textual data and beat classical single modality vision models on zero-shot classification. With their rapid advancements in research and growing popularity in various applications, we provide a comprehensive survey of VLMs.Specifically, we provide a systematic overview of VLMs in the following aspects: [1] model information of the major VLMs developed up to 2025; [2] the transition of VLM architectures and the newest VLM alignment methods; [3] summary and categorization of the popular benchmarks and evaluation metrics of VLMs; [4] the challenges and issues faced by current VLMs such as hallucination, alignment, fairness, and safety.
 
-cover:          /assets/images/covers/freeFormR1.png
-
+cover:          /assets/images/covers/vlm_survey.png
 authors:
-  - Zongxia Li
-  - Yapei Chang
-  - Yuhang Zhou
-  - Xiyang Wu
-  - Zichao Liang
-  - Yoo Yeon Sung
-  - Jordan Lee Boyd-Graber
+  - Zongxia Li*
+  - Xiyang Wu*
+  - Hongyang Du
+  - Fuxiao Liu
+  - Huy Nghiem
+  - Guangyao Shi
+
 
 links:
-  Paper: https://arxiv.org/abs/2506.15068
-  Code: https://github.com/zli12321/free-form-grpo
-  
-  
+  Code: https://github.com/zli12321/Vision-Language-Models-Overview
+  Paper: https://openaccess.thecvf.com/content/CVPR2025W/TMM-OpenWorld/html/Li_A_Survey_of_State_of_the_Art_Large_Vision_Language_CVPRW_2025_paper.html
 ---

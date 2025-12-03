@@ -1,31 +1,26 @@
 ---
-title:          "Large Language Models Struggle to Describe the Haystack without Human Help: A Social Science-Inspired Evaluation of Large Research Language Models"
-date:           2025-07-26 00:01:00 +0800
+title:          "VisPlay: Self-Evolving Vision-Language Models from Images"
+date:           2025-11-19 17:01:00 +0800
 selected:       true
-pub:            "ACL"
+pub:            "Preprint"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
+# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2025"
-
+# semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  A common use of NLP is to facilitate the understanding of large document collections, with models based on Large Language Models (LLMs) replacing probabilistic topic models. Yet the effectiveness of LLM-based approaches in real-world applications remains under explored. This study measures the knowledge users acquire with topic models—including traditional, unsupervised and supervised LLM- based approaches—on two datasets. While LLM-based methods generate more human- readable topics and show higher average win probabilities than traditional models for data exploration, they produce overly generic topics for domain-specific datasets that do not easily allow users to learn much about the documents. Adding human supervision to LLM-based topic models improves data exploration by addressing hallucination and genericity but requires more human efforts. In contrast, traditional models like Latent Dirichlet Allocation (LDA) remain effective for exploration but are less user-friendly. This paper provides best practices—there is no one right model, the choice of models is situation-specific—and suggests potential improvements for scalable LLM- based topic models.
+  Reinforcement learning (RL) provides a principled framework for improving Vision-Language Models (VLMs) on complex reasoning tasks. However, existing RL approaches often rely on human-annotated labels or task-specific heuristics to define verifiable rewards, both of which are costly and difficult to scale. We introduce VisPlay, a self-evolving RL framework that enables VLMs to autonomously improve their reasoning abilities using large amounts of unlabeled image data. Starting from a single base VLM, VisPlay assigns the model into two interacting roles: an Image-Conditioned Questioner that formulates challenging yet answerable visual questions, and a Multimodal Reasoner that generates silver responses. These roles are jointly trained with Group Relative Policy Optimization (GRPO), which incorporates diversity and difficulty rewards to balance the complexity of generated questions with the quality of the silver answers. VisPlay scales efficiently across two model families. When trained on Qwen2.5-VL and MiMo-VL, VisPlay achieves consistent improvements in visual reasoning, compositional generalization, and hallucination reduction across eight benchmarks, including MM-Vet and MMMU, demonstrating a scalable path toward self-evolving multimodal intelligence.
 
-With their rapid advancements in research and growing popularity in various applications, we provide a comprehensive survey of VLMs. Specifically, we provide a systematic overview of VLMs in the following aspects:
-cover:          /assets/images/covers/bass.png
-
+cover:          /assets/images/covers/visplay.png
 authors:
-  - Zongxia Li
-  - Lorena Calvo-Bartolomé
-  - Alexander Hoyle
-  - Paiheng Xu
-  - Daniel Stephens
-  - Alden Dima
-  - Juan Francisco Fung
-  - Jordan Lee Boyd-Graber
+  - Yicheng He*
+  - Chengsong Huang*
+  - Zongxia Li*
+  - Jiaxin Huang
+  - Yonghui Yang
+
+
 links:
-  Paper: https://arxiv.org/abs/2502.14748
-  Huggingface: https://huggingface.co/datasets/zli12321/Bills
-  
-  
+  Website: https://bruno686.github.io/VisPlay/
+  Paper: https://arxiv.org/pdf/2511.15661
 ---

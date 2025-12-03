@@ -1,32 +1,31 @@
 ---
-title:          "VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations for Synthetic Videos"
-date:           2025-05-02 00:01:00 +0800
+title:          "First Frame Is the Place to Go for Video Content Customization"
+date:           2025-11-20 20:01:00 +0800
 selected:       true
-pub:            "Neurips"
+pub:            "Preprint"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Oral</span>'
+# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2025"
-
+# semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  Synthetic video generation with foundation models has gained attention for its realism and wide applications. While these models produce high-quality frames, they often fail to respect common sense and physical laws, resulting in abnormal content. Existing metrics like VideoScore emphasize general quality but ignore such violations and lack interpretability. A more insightful approach is using multi-modal large language models (MLLMs) as interpretable evaluators, as seen in FactScore. Yet, MLLMs' ability to detect abnormalities in synthetic videos remains underexplored. To address this, we introduce VideoHallu, a benchmark featuring synthetic videos from models like Veo2, Sora, and Kling, paired with expert-designed QA tasks solvable via human-level reasoning across various categories. We assess several SoTA MLLMs, including GPT-4o, Gemini-2.5-Pro, Qwen-2.5-VL, and newer models like Video-R1 and VideoChat-R1. Despite strong real-world performance on MVBench and MovieChat, these models still hallucinate on basic commonsense and physics tasks in synthetic settings, underscoring the challenge of hallucination. We further fine-tune SoTA MLLMs using Group Relative Policy Optimization (GRPO) on real and synthetic commonsense/physics data. Results show notable accuracy gains, especially with counterexample integration, advancing MLLMs' reasoning capabilities.
+  What role does the first frame play in video generation models? Traditionally, it's viewed as the spatial-temporal starting point of a video, merely a seed for subsequent animation. In this work, we reveal a fundamentally different perspective: video models implicitly treat the first frame as a conceptual memory buffer that stores visual entities for later reuse during generation. Leveraging this insight, we show that it's possible to achieve robust and generalized video content customization in diverse scenarios, using only 20-50 training examples without architectural changes or large-scale finetuning. This unveils a powerful, overlooked capability of video generation models for reference-based video customization.
 
-With their rapid advancements in research and growing popularity in various applications, we provide a comprehensive survey of VLMs. Specifically, we provide a systematic overview of VLMs in the following aspects:
-cover:          /assets/images/covers/videohallu.png
+cover:          /assets/images/covers/ffgo.png
 authors:
+  - Jingxi Chen*
   - Zongxia Li*
-  - Xiyang Wu*
-  - Yubin Qin
-  - Hongyang Du
+  - Zhichao Liu*
   - Guangyao Shi
-  - Dinesh Manocha
-  - Tianyi Zhou
-  - Jordan Lee Boyd-Graber
+  - Xiyang Wu
+  - Fuxiao Liu
+  - Cornelia Fermüller
+  - Brandon Y. Feng
+  - Yiannis Aloimonos
+
+
 links:
-  Paper: https://arxiv.org/abs/2505.01481
-  Webpage: https://wuxiyang1996.github.io/videohallu_page/
-  Github:  https://github.com/zli12321/VideoHallu
-  Huggingface: https://huggingface.co/datasets/IntelligenceLab/VideoHallu
-  
-  
+  Website: https://firstframego.github.io/
+  Unofficial Youtube Showcase: https://www.youtube.com/watch?v=Dks3q5w7sdw
+  Paper: https://arxiv.org/pdf/2511.15700
 ---
