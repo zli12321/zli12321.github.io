@@ -15,7 +15,7 @@ cover:          /assets/images/covers/ffgo.png
 authors:
   - Jingxi Chen*
   - Zongxia Li*
-  - Zhichao Liu*
+  - Zhichao Liu
   - Guangyao Shi
   - Xiyang Wu
   - Fuxiao Liu
