@@ -2,7 +2,7 @@
 title:          "Self-Rewarding Vision-Language Model via Reasoning Decomposition"
 date:           2025-08-27 00:01:00 +0800
 selected:       true
-pub:            "Preprint"
+pub:            "ICLR 2026"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'

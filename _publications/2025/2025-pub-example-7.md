@@ -2,7 +2,7 @@
 title:          "R-Zero: Self-Evolving Reasoning LLM from Zero Data"
 date:           2025-08-07 00:01:00 +0800
 selected:       true
-pub:            "Preprint"
+pub:            "ICLR 2026"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
