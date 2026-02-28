@@ -2,7 +2,7 @@
 title:          "VisPlay: Self-Evolving Vision-Language Models from Images"
 date:           2026-02-20 17:01:00 +0800
 selected:       true
-pub:            "Computer Vision and Pattern Recognition"
+pub:            "CVPR"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'

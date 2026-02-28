@@ -2,7 +2,7 @@
 title:          "First Frame Is the Place to Go for Video Content Customization"
 date:           2026-02-20 20:01:00 +0800
 selected:       true
-pub:            "Computer Vision and Pattern Recognition"
+pub:            "CVPR"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
