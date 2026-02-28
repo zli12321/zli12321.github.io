@@ -6,7 +6,7 @@ pub:            "ICLR 2026"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
-pub_date:       "2025"
+pub_date:       "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
   Vision-SR1 trains VLMs to “look first, then reason” by splitting reasoning into (1) a self-generated visual perception of the image and (2) language reasoning that answers the question. Using the model’s ability to answer from its own perception as a self-reward lets it improve visual grounding without human labels or external rewards, improving visual reasoning abilities.
