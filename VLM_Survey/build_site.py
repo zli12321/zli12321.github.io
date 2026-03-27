@@ -546,11 +546,19 @@ window.addEventListener('scroll', () => {
 if __name__ == '__main__':
     import os, sys
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    readme_path = os.path.join(script_dir, '..', '..', 'Vision-Language-Models-Overview', 'README.md')
-    if not os.path.exists(readme_path):
-        readme_path = os.path.join(script_dir, 'README.md')
-    if not os.path.exists(readme_path):
-        print(f'README.md not found. Provide path as argument: python3 build_site.py <path>')
+    search_paths = [
+        os.path.join(script_dir, '..', 'Vision-Language-Models-Overview', 'README.md'),
+        os.path.join(script_dir, '..', '..', 'Vision-Language-Models-Overview', 'README.md'),
+        os.path.join(script_dir, 'README.md'),
+    ]
+    readme_path = None
+    for p in search_paths:
+        if os.path.exists(p):
+            readme_path = p
+            break
+    if not readme_path:
+        print('README.md not found in any expected location.')
+        print('Searched:', [os.path.abspath(p) for p in search_paths])
         sys.exit(1)
     print(f'Reading {os.path.abspath(readme_path)}')
     sections = parse_readme(readme_path)

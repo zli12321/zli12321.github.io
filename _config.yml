@@ -27,6 +27,7 @@ exclude:
   - node_modules
   - vendor/
   - VLM_Survey/build_site.py
+  - Vision-Language-Models-Overview/
 
 # timezone: Asia/Shanghai
 

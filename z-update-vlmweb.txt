@@ -1,0 +1,7 @@
+# Step 1: Pull latest changes
+cd /Users/zongxiali/Downloads/My_Publication/auto_research/zli12321.github.io/Vision-Language-Models-Overview
+git pull
+
+# Step 2: Rebuild the website
+cd ../VLM_Survey
+python3 build_site.py
