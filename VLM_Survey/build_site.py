@@ -389,6 +389,7 @@ tbody tr.hidden{display:none}
 /* ─── FOOTER ─── */
 .footer{text-align:center;padding:2.5rem 2rem;color:var(--text3);font-size:.8rem;border-top:1px solid var(--border)}
 .footer a{color:var(--text2)}
+.visitor-count{margin-top:.5rem;font-size:.75rem;color:var(--text3);opacity:.7}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:960px){
@@ -459,6 +460,7 @@ tbody tr.hidden{display:none}
 <!-- FOOTER -->
 <div class="footer">
   <p>Built from the <a href="https://arxiv.org/abs/2501.02189" target="_blank">VLM Survey</a> &mdash; Li et al., CVPR 2025 Workshop &mdash; Last updated March 2026</p>
+  <p class="visitor-count" id="visitorCount"></p>
 </div>
 
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
@@ -538,7 +540,21 @@ window.addEventListener('scroll', () => {
     else l.style.borderLeftColor = 'transparent';
   });
 }, {passive: true});
+
+/* GoatCounter: display visitor count */
+(function(){
+  const GC_CODE = 'zli12321-vlm';
+  const el = document.getElementById('visitorCount');
+  fetch('https://' + GC_CODE + '.goatcounter.com/counter/TOTAL.json')
+    .then(r => r.json())
+    .then(d => { if(el && d.count) el.textContent = '👀 ' + Number(d.count).toLocaleString() + ' visits'; })
+    .catch(() => {});
+})();
 </script>
+
+<!-- GoatCounter analytics -->
+<script data-goatcounter="https://zli12321-vlm.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>'''
 
