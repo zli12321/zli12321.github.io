@@ -24,32 +24,36 @@ twitter: zli12321  # Do not include the '@' symbol
 short_bio_text_justify: false
 short_bio: >-
   <p>
-   I am a fourth-year Ph.D. candidate at the Department of Computer Science at University of Maryland, College Park, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" target="_blank">CLIP Lab</a>. I am fortunate to be advised by <a href="http://users.umiacs.umd.edu/~ying/" target="_blank">Jordan Boyd-Graber</a>. My current research lies in Human-Centered AI, Multimodal Models, Post-Training and Evaluation.
+   I am a fourth-year Ph.D. candidate at the Department of Computer Science at University of Maryland, College Park, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" target="_blank">CLIP Lab</a>. I am fortunate to be advised by <a href="http://users.umiacs.umd.edu/~ying/" target="_blank">Jordan Boyd-Graber</a>. My current research lies in Model Post-Training, Self-Evolving Agents, and Human-AI Collaboration.
   </p>
 
   <h2 id="areas-of-interest">Current Research Focus</h2>
   <p>
-    My research aims to develop AI systems and better evaluations that align
-    closely with human needs. In the text-only domain, I aim to develop
-    interactive systems that help humans explore and understand abstract
-    concepts given large amounts of data and improve the robustness of current
-    automatic evaluation metrics. In the multimodal domain, I aim to evaluate and post-train multimodal models—including visual grounding, hallucination mitigation,
-    video generation and reasoning.
+    My research develops methods that make vision-language models more capable
+    through post-training, more autonomous through self-evolution, and more
+    useful through tighter collaboration with humans.
   </p>
 
   <ol>
     <li>
-      <p><strong>Multimodality</strong>: Evaluating and improving multimodal
-      models, including question answering, hallucination, video generation,
-      and reasoning.</p>
+      <p><strong>Model Post-Training</strong>: Reinforcement learning and
+      reward design for vision-language models—including self-rewarding via
+      reasoning decomposition, semantically-aware open-ended rewards, and
+      hallucination-targeted alignment for both image and video
+      understanding.</p>
     </li>
     <li>
-      <p><strong>Evaluation</strong>: Improving trustworthiness and robustness
-      of current evaluation metrics.</p>
+      <p><strong>Self-Evolving Agents</strong>: Autonomous agents that
+      bootstrap their own capabilities from minimal or zero human-curated
+      data—spanning self-evolving multimodal reasoning, co-evolving
+      decision-and-skill agents for long-horizon tasks, and
+      exploration-guided visual reasoning.</p>
     </li>
     <li>
-      <p><strong>Human-Centered AI</strong>: Creating interactive systems and
-      evaluation frameworks to assess AI reliability.</p>
+      <p><strong>Human-AI Collaboration</strong>: How humans and AI systems
+      collaborate to optimize real-world workflows—from LLM-assisted
+      annotation and interactive topic exploration to robust automatic
+      evaluation metrics that faithfully reflect human judgment.</p>
     </li>
   </ol>
   <hr>
