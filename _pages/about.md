@@ -46,12 +46,10 @@ News
 Selected Publications
 ======
 <div class="pub-preview" markdown="0">
-{% assign all_pubs = site.publications | sort: "date" | reverse %}
-{% assign tier1 = all_pubs | where: "author_rank", 1 %}
-{% assign tier2 = all_pubs | where: "author_rank", 2 %}
-{% assign tier3 = all_pubs | where_exp: "p", "p.author_rank == nil" %}
-{% assign sel_pubs = tier1 | concat: tier2 | concat: tier3 %}
-{% for post in sel_pubs limit:5 %}
+{% assign sel_links = "/publication/2026-05-01-comfyclaw,/publication/2026-04-24-vision-sr1,/publication/2026-03-10-mm-zero,/publication/2025-12-01-videohallu,/publication/2026-06-01-ffgo,/publication/2026-04-07-graph-of-skills,/publication/2026-04-29-cosplay" | split: "," %}
+{% for link in sel_links %}
+{% assign post = site.publications | where: "permalink", link | first %}
+{% if post %}
 <div class="pub-item">
   {% if post.header.teaser %}<img class="pub-thumb" src="{{ post.header.teaser | prepend: '/images/' | relative_url }}" alt="">{% endif %}
   <div class="pub-text">
@@ -65,6 +63,7 @@ Selected Publications
     </div>
   </div>
 </div>
+{% endif %}
 {% endfor %}
 </div>
 
