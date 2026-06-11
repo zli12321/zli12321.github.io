@@ -43,6 +43,24 @@ News
 </table>
 </div>
 
+Selected Publications
+======
+<div class="pub-preview" markdown="0">
+{% assign sel_pubs = site.publications | sort: "date" | reverse %}
+{% for post in sel_pubs limit:5 %}
+<div class="pub-item">
+  {% if post.header.teaser %}<img class="pub-thumb" src="{{ post.header.teaser | prepend: '/images/' | relative_url }}" alt="">{% endif %}
+  <div class="pub-text">
+    <a class="pub-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="pub-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+[See all publications &raquo;]({{ '/publications/' | relative_url }})
+{: .pub-see-all}
+
 Popular Community Projects
 ======
 <style>

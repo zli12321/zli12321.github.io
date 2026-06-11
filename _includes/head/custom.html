@@ -14,4 +14,29 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
+<!-- Publication list teaser thumbnails -->
+<style>
+  .archive__item-teaser--list {
+    float: left;
+    width: 180px;
+    margin: 0.25em 1.25em 0.5em 0;
+    border: 1px solid var(--global-border-color, #e1e4e8);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .archive__item-teaser--list img { width: 100%; height: auto; display: block; }
+  .archive__item { overflow: hidden; }
+  @media (max-width: 600px) {
+    .archive__item-teaser--list { float: none; width: 100%; max-width: 320px; margin-bottom: 0.75em; }
+  }
+
+  /* Homepage selected-publications preview */
+  .pub-preview { margin-top: 0.5rem; }
+  .pub-preview .pub-item { display: flex; gap: 1rem; align-items: flex-start; padding: 0.7rem 0; border-bottom: 1px solid #f0f0f0; }
+  .pub-preview .pub-item:last-child { border-bottom: none; }
+  .pub-preview .pub-thumb { width: 130px; min-width: 130px; height: auto; border: 1px solid #e1e4e8; border-radius: 4px; }
+  .pub-preview .pub-title { font-weight: 700; text-decoration: none; display: block; line-height: 1.3; }
+  .pub-preview .pub-venue { color: #6a737d; font-size: 0.9rem; margin-top: 0.2rem; }
+</style>
+
 <!-- end custom head snippets -->
