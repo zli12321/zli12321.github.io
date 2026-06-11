@@ -19,18 +19,29 @@ Research Focus
 
 News
 ======
-- **May 1, 2026** — <a href='https://github.com/Moms-Organic-Agent-Lab/comfyclaw' target='_blank'>ComfyClaw</a> is released! An agentic harness for skill-evolving image generation workflows.
-- **Apr 29, 2026** — <a href='https://arxiv.org/abs/2604.20987' target='_blank'>COS-PLAY</a> is released! Co-evolving LLM decision and skill bank agents for long-horizon tasks.
-- **Apr 7, 2026** — <a href='https://arxiv.org/abs/2604.05333' target='_blank'>Graph-of-Skills</a> is released! Dependency-aware structural retrieval for massive agent skills.
-- **Mar 10, 2026** — <a href='https://arxiv.org/abs/2603.09206' target='_blank'>MM-Zero</a> is released! Self-evolving VLMs from zero data using multi-role RL training.
-- **Feb 20, 2026** — <a href='https://firstframego.github.io/' target='_blank'>FFGO</a>, <a href='https://arxiv.org/abs/2511.15661' target='_blank'>VisPlay</a>, and <a href='https://arxiv.org/abs/2511.18373' target='_blank'>MASS</a> are accepted to CVPR 2026.
-- **Feb 8, 2026** — R-Zero and Vision-SR1 are accepted to ICLR 2026.
-- **Nov 20, 2025** — <a href='https://firstframego.github.io/' target='_blank'>FFGO</a> is released! Customize your video with our FFGO LoRA adapters.
-- **Nov 19, 2025** — <a href='https://arxiv.org/abs/2511.15661' target='_blank'>VisPlay</a> is released! Learn how to evolve VLMs with just images.
-- **Sep 20, 2025** — VideoHallu is accepted to NeurIPS 2025.
-- **Aug 22, 2025** — I finished my internship at Tencent AI Lab, Bellevue, mentored by <a href='https://wyu97.github.io' target='_blank'>Wenhao Yu</a>, working on self-evolving VLMs and LLMs.
-- **Jul 22, 2025** — I received a research compute grant from Lambda Labs.
-- **Aug 22, 2024** — I finished my internship at Adobe Document Intelligence Lab, focusing on improving LLM automatic evaluations for downstream training.
+<style>
+  .news-scroll { max-height: 340px; overflow-y: auto; margin-top: 0.5rem; padding: 0 1rem; border: 1px solid #e1e4e8; border-radius: 8px; }
+  .news-table { width: 100%; border-collapse: collapse; margin: 0; font-size: 0.95rem; }
+  .news-table td { padding: 0.6rem 0.5rem; vertical-align: top; border: none; line-height: 1.45; }
+  .news-table tr + tr td { border-top: 1px solid #f0f0f0; }
+  .news-date { white-space: nowrap; font-weight: 700; color: #333; width: 1%; padding-right: 1rem !important; }
+</style>
+<div class="news-scroll" markdown="0">
+<table class="news-table">
+<tr><td class="news-date">May 1, 2026</td><td><a href="https://github.com/Moms-Organic-Agent-Lab/comfyclaw" target="_blank">ComfyClaw</a> is released! An agentic harness for skill-evolving image generation workflows.</td></tr>
+<tr><td class="news-date">Apr 29, 2026</td><td><a href="https://arxiv.org/abs/2604.20987" target="_blank">COS-PLAY</a> is released! Co-evolving LLM decision and skill bank agents for long-horizon tasks.</td></tr>
+<tr><td class="news-date">Apr 7, 2026</td><td><a href="https://arxiv.org/abs/2604.05333" target="_blank">Graph-of-Skills</a> is released! Dependency-aware structural retrieval for massive agent skills.</td></tr>
+<tr><td class="news-date">Mar 10, 2026</td><td><a href="https://arxiv.org/abs/2603.09206" target="_blank">MM-Zero</a> is released! Self-evolving VLMs from zero data using multi-role RL training.</td></tr>
+<tr><td class="news-date">Feb 20, 2026</td><td><a href="https://firstframego.github.io/" target="_blank">FFGO</a>, <a href="https://arxiv.org/abs/2511.15661" target="_blank">VisPlay</a>, and <a href="https://arxiv.org/abs/2511.18373" target="_blank">MASS</a> are accepted to CVPR 2026.</td></tr>
+<tr><td class="news-date">Feb 8, 2026</td><td>R-Zero and Vision-SR1 are accepted to ICLR 2026.</td></tr>
+<tr><td class="news-date">Nov 20, 2025</td><td><a href="https://firstframego.github.io/" target="_blank">FFGO</a> is released! Customize your video with our FFGO LoRA adapters.</td></tr>
+<tr><td class="news-date">Nov 19, 2025</td><td><a href="https://arxiv.org/abs/2511.15661" target="_blank">VisPlay</a> is released! Learn how to evolve VLMs with just images.</td></tr>
+<tr><td class="news-date">Sep 20, 2025</td><td>VideoHallu is accepted to NeurIPS 2025.</td></tr>
+<tr><td class="news-date">Aug 22, 2025</td><td>I finished my internship at Tencent AI Lab, Bellevue, mentored by <a href="https://wyu97.github.io" target="_blank">Wenhao Yu</a>, working on self-evolving VLMs and LLMs.</td></tr>
+<tr><td class="news-date">Jul 22, 2025</td><td>I received a research compute grant from Lambda Labs.</td></tr>
+<tr><td class="news-date">Aug 22, 2024</td><td>I finished my internship at Adobe Document Intelligence Lab, focusing on improving LLM automatic evaluations for downstream training.</td></tr>
+</table>
+</div>
 
 Popular Community Projects
 ======
