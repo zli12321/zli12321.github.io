@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a fourth-year PhD candidate in Computer Science at the University of Maryland, College Park, in the [CLIP Lab](https://wiki.umiacs.umd.edu/clip/index.php/Main_Page), advised by [Jordan Boyd-Graber](http://users.umiacs.umd.edu/~ying/) and co-advised by [Lichao Sun](https://lichao-sun.github.io). My research develops methods that make vision-language models more capable through post-training, more autonomous through self-evolution, and more useful through tighter collaboration with humans.
+I am a fourth-year PhD candidate in Computer Science at the University of Maryland, College Park, in the [CLIP Lab](https://wiki.umiacs.umd.edu/clip/index.php/Main_Page), advised by [Jordan Boyd-Graber](http://users.umiacs.umd.edu/~ying/) and co-advised by [Lichao Sun](https://lichao-sun.github.io). My research develops methods that make vision-language models and agents more capable through post-training, more autonomous through self-evolution, and more useful through tighter collaboration with humans.
 
 Research Focus
 ======
