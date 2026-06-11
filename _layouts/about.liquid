@@ -9,40 +9,30 @@ layout: default
     </div>
   {% endif %}
 
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+  <header class="post-header post-header-compact">
+    {% if page.profile and page.profile.image %}
+      {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+      <div class="profile-avatar">
+        {%
+          include figure.liquid loading="eager" path=profile_image_path class="img-fluid rounded-circle" alt=page.profile.image
+          cache_bust=true
+        %}
+      </div>
+    {% endif %}
+    <div class="header-text">
+      <h1 class="post-title">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+          {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="desc">{{ page.subtitle }}</p>
+    </div>
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
@@ -107,5 +97,37 @@ layout: default
     font-size: 0.95rem;
     margin-top: 0.4rem;
     color: var(--global-text-color);
+  }
+  .post-header-compact {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  .post-header-compact .profile-avatar {
+    flex: 0 0 auto;
+  }
+  .post-header-compact .profile-avatar figure,
+  .post-header-compact .profile-avatar picture {
+    margin: 0;
+    display: block;
+  }
+  .post-header-compact .profile-avatar img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .post-header-compact .header-text {
+    min-width: 0;
+  }
+  .post-header-compact .post-title {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.15;
+  }
+  .post-header-compact .desc {
+    margin-bottom: 0;
+    font-size: 0.95rem;
   }
 </style>
