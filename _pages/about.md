@@ -14,13 +14,18 @@ profile:
   image_circular: false
 
 selected_papers: true
-social: true
+social: false
 
 announcements:
   enabled: true
   scrollable: true
   limit: 8
 ---
+
+<div class="social">
+  <div class="contact-icons">{% social_links %}</div>
+  <div class="contact-note">{{ site.contact_note }}</div>
+</div>
 
 I am a fourth-year PhD candidate in Computer Science at the University of Maryland, College Park. My research develops methods that make vision-language models more capable through post-training, more autonomous through self-evolution, and more useful through tighter collaboration with humans.
 

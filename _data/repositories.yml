@@ -5,7 +5,8 @@ repo_description_lines_max: 2
 
 github_repos:
   - zli12321/Vision-Language-Models-Overview
-  - OpenLAIR/dr-claw
-  - Moms-Organic-Agent-Lab/comfyclaw
-  - zli12321/MM-Zero
   - zli12321/Vision-SR1
+  - zli12321/FFGO-Video-Customization
+  - Chengsong-Huang/R-Zero
+  - OpenLAIR/dr-claw
+  - davidliuk/graph-of-skills
