@@ -24,7 +24,7 @@ twitter: zli12321  # Do not include the '@' symbol
 short_bio_text_justify: false
 short_bio: >-
   <p>
-   I am a fourth-year Ph.D. candidate at the Department of Computer Science at University of Maryland, College Park, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" target="_blank">CLIP Lab</a>. I am fortunate to be advised by <a href="http://users.umiacs.umd.edu/~ying/" target="_blank">Jordan Boyd-Graber</a>. My current research lies in Model Post-Training, Self-Evolving Agents, and Human-AI Collaboration.
+   I am a fourth-year Ph.D. candidate at the Department of Computer Science at University of Maryland, College Park, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" target="_blank">CLIP Lab</a>. I am fortunate to be advised by <a href="http://users.umiacs.umd.edu/~ying/" target="_blank">Jordan Boyd-Graber</a> and co-advised by <a href="https://lichao-sun.github.io" target="_blank">Lichao Sun</a>. My current research lies in Model Post-Training, Self-Evolving Agents, and Human-AI Collaboration.
   </p>
 
   <h2 id="areas-of-interest">Current Research Focus</h2>

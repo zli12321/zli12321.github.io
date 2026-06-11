@@ -5,7 +5,9 @@ pages:
   url: /
 - name: Publications
   url: /publications
-- name: VLM Survey
-  url: /VLM_Survey
-- name: Showcase
-  url: /showcase
+- name: News
+  url: /#news
+- name: Open Source
+  url: /#open-source
+- name: CV
+  url: /assets/cv/cv.pdf
