@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Zongxia Li"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Candidate, CLIP Lab, University of Maryland. Self-evolving AI, vision-language models, and human-AI collaboration."
+  bio              : 'PhD Candidate, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page">CLIP Lab</a>'
   location         : "College Park, MD"
   employer         : "University of Maryland"
   uri              : # URL
