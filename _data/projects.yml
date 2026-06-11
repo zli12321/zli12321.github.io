@@ -5,15 +5,3 @@
 - name: "Large Vision-Language Models: A Survey & Benchmark Collection"
   github: zli12321/Vision-Language-Models-Overview
   description: "A comprehensive, continuously updated collection of VLM benchmarks, RL alignment methods, and applications."
-
-- name: "Vision-SR1"
-  github: zli12321/Vision-SR1
-  description: "Reinforcement learning of vision-language models with a self visual perception reward."
-
-- name: "MM-Zero"
-  github: zli12321/MM-Zero
-  description: "Self-evolving vision-language models trained from zero human-curated data."
-
-- name: "ComfyClaw"
-  github: Moms-Organic-Agent-Lab/comfyclaw
-  description: "An agentic harness for skill-evolving image-generation workflows."

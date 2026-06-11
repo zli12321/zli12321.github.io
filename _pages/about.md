@@ -32,6 +32,6 @@ I am a fourth-year PhD candidate in Computer Science at the University of Maryla
 
 3. **Human-AI Collaboration** — How humans and AI systems collaborate to optimize real-world workflows, from LLM-assisted annotation and interactive topic exploration to robust automatic evaluation metrics that faithfully reflect human judgment.
 
-## open source
+## popular community projects
 
 {% include open_source.liquid %}
