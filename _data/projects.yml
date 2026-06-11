@@ -1,7 +1,0 @@
-- name: "Dr. Claw: Your AI Research Assistant"
-  github: OpenLAIR/dr-claw
-  description: "A super AI lab with massive AI doctors as assistants — the best IDE for research powered by AI."
-
-- name: "Large Vision-Language Models: A Survey & Benchmark Collection"
-  github: zli12321/Vision-Language-Models-Overview
-  description: "A comprehensive, continuously updated collection of VLM benchmarks, RL alignment methods, and applications."

@@ -4,7 +4,7 @@ document.querySelectorAll("[data-github-repo]").forEach((el) => {
   const cached = localStorage.getItem(cacheKey);
 
   const render = (stars) => {
-    el.innerHTML = `<i class="fa-solid fa-star"></i> ${parseInt(stars).toLocaleString()}`;
+    el.innerHTML = `<i class="fa fa-star"></i> ${parseInt(stars).toLocaleString()}`;
   };
 
   if (cached) {
