@@ -1,7 +1,0 @@
-- name: "Large Vision-Language Models: A Survey & Benchmark Collection"
-  github: zli12321/Vision-Language-Models-Overview
-  description: "A comprehensive, continuously updated collection of VLM benchmarks, RL alignment methods, and applications. Companion resource to our CVPR 2025 Workshop survey."
-
-- name: "Dr. Claw: Your AI Research Assistant"
-  github: OpenLAIR/dr-claw
-  description: "An intelligent AI research assistant for exploring, retrieving, and synthesizing scientific literature."

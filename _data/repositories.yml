@@ -1,0 +1,11 @@
+github_users:
+  - zli12321
+
+repo_description_lines_max: 2
+
+github_repos:
+  - zli12321/Vision-Language-Models-Overview
+  - OpenLAIR/dr-claw
+  - Moms-Organic-Agent-Lab/comfyclaw
+  - zli12321/MM-Zero
+  - zli12321/Vision-SR1
