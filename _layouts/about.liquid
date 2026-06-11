@@ -2,13 +2,6 @@
 layout: default
 ---
 <div class="post">
-  {% if page.social %}
-    <div class="social social-top">
-      <div class="contact-icons">{% social_links %}</div>
-      <div class="contact-email">email: zli12321 [at] umd.edu</div>
-    </div>
-  {% endif %}
-
   <header class="post-header post-header-compact">
     {% if page.profile and page.profile.image %}
       {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
@@ -31,6 +24,13 @@ layout: default
       <p class="desc">{{ page.subtitle }}</p>
     </div>
   </header>
+
+  {% if page.social %}
+    <div class="social social-top">
+      <div class="contact-icons">{% social_links %}</div>
+      <div class="contact-email">email: zli12321 [at] umd.edu</div>
+    </div>
+  {% endif %}
 
   <article>
     <div class="clearfix">{{ content }}</div>
