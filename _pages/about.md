@@ -52,7 +52,13 @@ Selected Publications
   {% if post.header.teaser %}<img class="pub-thumb" src="{{ post.header.teaser | prepend: '/images/' | relative_url }}" alt="">{% endif %}
   <div class="pub-text">
     <a class="pub-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="pub-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</div>
+    {% if post.authors %}<div class="pub-authors">{{ post.authors | replace: 'Zongxia Li', '<strong>Zongxia Li</strong>' }}</div>{% endif %}
+    <div class="pub-venue">{{ post.venue }}</div>
+    <div class="pub-links">
+      {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">[paper]</a>{% endif %}
+      {% if post.projecturl %}<a href="{{ post.projecturl }}" target="_blank">[webpage]</a>{% endif %}
+      {% if post.codeurl %}<a href="{{ post.codeurl }}" target="_blank">[code]</a>{% endif %}
+    </div>
   </div>
 </div>
 {% endfor %}

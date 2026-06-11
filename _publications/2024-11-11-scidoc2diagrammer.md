@@ -3,6 +3,7 @@ title: "SciDoc2Diagrammer-MAF: Towards Generation of Scientific Diagrams from Do
 collection: publications
 category: conferences
 permalink: /publication/2024-11-11-scidoc2diagrammer
+authors: 'Ishani Mondal, Zongxia Li, et al.'
 excerpt: 'Generates scientific diagrams from documents using multi-aspect feedback refinement.'
 date: 2024-11-11
 venue: 'EMNLP Findings 2024'
