@@ -3,7 +3,7 @@ title: "A Survey of State of the Art Large Vision Language Models: Benchmark Eva
 collection: publications
 category: conferences
 permalink: /publication/2025-06-11-vlm-survey
-first_author: true
+author_rank: 1
 authors: 'Zongxia Li*, Xiyang Wu*, Hongyang Du, Fuxiao Liu, Huy Nghiem, Guangyao Shi'
 codeurl: 'https://github.com/zli12321/Vision-Language-Models-Overview'
 excerpt: 'A comprehensive survey of VLMs covering model architectures, alignment methods, benchmarks, and challenges including hallucination, fairness, and safety.'

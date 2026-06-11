@@ -3,7 +3,7 @@ title: "An Agentic Harness for Skill-Evolving Image Generation Workflows"
 collection: publications
 category: preprints
 permalink: /publication/2026-05-01-comfyclaw
-first_author: true
+author_rank: 1
 authors: 'Zongxia Li*, Dawei Liu*, Jingxi Chen, Xiyang Wu, Lichao Sun, et al.'
 codeurl: 'https://github.com/Moms-Organic-Agent-Lab/comfyclaw'
 excerpt: 'An agentic harness that autonomously develops and refines image generation skills, enabling continuous improvement without manual intervention.'

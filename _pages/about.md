@@ -47,9 +47,10 @@ Selected Publications
 ======
 <div class="pub-preview" markdown="0">
 {% assign all_pubs = site.publications | sort: "date" | reverse %}
-{% assign mine_pubs = all_pubs | where: "first_author", true %}
-{% assign other_pubs = all_pubs | where_exp: "p", "p.first_author != true" %}
-{% assign sel_pubs = mine_pubs | concat: other_pubs %}
+{% assign tier1 = all_pubs | where: "author_rank", 1 %}
+{% assign tier2 = all_pubs | where: "author_rank", 2 %}
+{% assign tier3 = all_pubs | where_exp: "p", "p.author_rank == nil" %}
+{% assign sel_pubs = tier1 | concat: tier2 | concat: tier3 %}
 {% for post in sel_pubs limit:5 %}
 <div class="pub-item">
   {% if post.header.teaser %}<img class="pub-thumb" src="{{ post.header.teaser | prepend: '/images/' | relative_url }}" alt="">{% endif %}

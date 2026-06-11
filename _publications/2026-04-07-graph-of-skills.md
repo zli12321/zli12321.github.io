@@ -3,7 +3,7 @@ title: "Graph-of-Skills: Dependency-Aware Structural Retrieval for Massive Agent
 collection: publications
 category: preprints
 permalink: /publication/2026-04-07-graph-of-skills
-first_author: true
+author_rank: 2
 authors: 'Dawei Liu*, Zongxia Li*, Hongyang Du, Xiyang Wu, Lichao Sun'
 codeurl: 'https://github.com/davidliuk/graph-of-skills'
 excerpt: 'An inference-time structural retrieval layer that constructs an executable skill graph offline and retrieves dependency-aware skill bundles at inference time.'
