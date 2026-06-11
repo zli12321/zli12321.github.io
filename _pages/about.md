@@ -31,3 +31,7 @@ I am a fourth-year PhD candidate in Computer Science at the University of Maryla
 2. **Self-Evolving Agents** — Autonomous agents that bootstrap their own capabilities from minimal or zero human-curated data, spanning self-evolving multimodal reasoning, co-evolving decision-and-skill agents for long-horizon tasks, and exploration-guided visual reasoning.
 
 3. **Human-AI Collaboration** — How humans and AI systems collaborate to optimize real-world workflows, from LLM-assisted annotation and interactive topic exploration to robust automatic evaluation metrics that faithfully reflect human judgment.
+
+## open source
+
+{% include open_source.liquid %}
