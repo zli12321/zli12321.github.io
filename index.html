@@ -20,10 +20,14 @@ navbar_title: Home
     {% endif %}
 {% endif %}
 
+{% if site.data.display.homepage.show_open_source %}
+    {% include widgets/open_source_card.html %}
+{% endif %}
+
 {% if site.data.display.homepage.show_selected_publications %}
     {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
+    {%
+        include widgets/publication_card.html
         publications=pubs
         title='<i class="fas fa-star"></i> Selected Publications'
     %}
