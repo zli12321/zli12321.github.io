@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showcase — Super Mario, played by frontier models · Long-Horizon Terminal-Bench</title>
+  <meta name="description" content="Verifier-rendered replays of 17 frontier models playing Super Mario under the Long-Horizon Terminal-Bench super-mario task — one 90-minute attempt each, graded by a hidden replay verifier." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=17" />
+
+  <style>
+    /* ---- Showcase grid (scoped) ---- */
+    .sc-intro { max-width: var(--col); }
+    .sc-toolbar {
+      display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+      margin: 1.6rem 0 1.4rem;
+    }
+    .sc-toolbar__label {
+      font-family: var(--font-sans); font-size: .8rem; color: var(--muted);
+      letter-spacing: .02em;
+    }
+    .sc-select {
+      font-family: var(--font-sans); font-size: .82rem; color: var(--ink);
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-sm); padding: .34rem .6rem; cursor: pointer;
+    }
+    .sc-count { font-family: var(--font-sans); font-size: .8rem; color: var(--faint); margin-left: auto; }
+
+    .sc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+    .sc-card {
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--surface); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .sc-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .sc-card__video {
+      display: block; width: 100%; aspect-ratio: 16 / 9;
+      background: #0d0d0c; object-fit: contain;
+    }
+    .sc-card__body {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .7rem .85rem .8rem;
+      border-top: 1px solid var(--line-soft);
+    }
+    .sc-card__logo {
+      width: 26px; height: 26px; flex: none; border-radius: 6px;
+      background: #fff; padding: 3px; border: 1px solid var(--line-soft);
+      object-fit: contain;
+    }
+    .sc-card__meta { min-width: 0; }
+    .sc-card__name {
+      font-family: var(--font-sans); font-weight: 600; font-size: .92rem;
+      color: var(--ink); line-height: 1.2; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .sc-card__vendor { font-family: var(--font-sans); font-size: .74rem; color: var(--faint); }
+    .sc-card__reward {
+      margin-left: auto; flex: none; text-align: right;
+      font-family: var(--font-mono); font-size: .82rem; color: var(--sienna-ink);
+      background: var(--sienna-wash); border-radius: 999px;
+      padding: .16rem .55rem; white-space: nowrap;
+    }
+    .sc-card__reward small {
+      display: block; font-family: var(--font-sans); font-size: .58rem;
+      color: var(--muted); letter-spacing: .06em; text-transform: uppercase;
+    }
+    .sc-note {
+      font-family: var(--font-sans); font-size: .86rem; color: var(--muted);
+      border-left: 2px solid var(--line); padding-left: .9rem; margin: 1.8rem 0 0;
+      max-width: var(--col);
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ============================================================= -->
+  <!-- Top navigation                                                -->
+  <!-- ============================================================= -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="index.html#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="3" y="5" width="26" height="22" rx="4" class="bm-frame"/>
+            <path d="M9 13 l4 4 -4 4" class="bm-prompt"/>
+            <line x1="16" y1="21" x2="23" y2="21" class="bm-cursor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="index.html#benchmark" class="topbar__link">Benchmark</a>
+        <a href="index.html#results" class="topbar__link">Results</a>
+        <a href="paper.pdf" class="topbar__link" target="_blank" rel="noopener">Paper</a>
+        <a href="showcase.html" class="topbar__link" aria-current="page">Showcase</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta">Leaderboard</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout layout--solo">
+    <main class="article">
+      <section class="section" id="showcase">
+        <p class="section__num">Showcase</p>
+        <h2 class="section__title">Super Mario, played by frontier models</h2>
+
+        <div class="sc-intro">
+          <p>
+            One of the 46 Long-Horizon Terminal-Bench tasks, <code>super-mario</code>, asks the agent to
+            actually <b>play the game</b> — issuing moves turn by turn through the terminal for the full
+            90-minute budget. When the run ends, the hidden verifier <b>replays the agent's own move log</b>
+            in a deterministically-seeded engine and renders the result to video. Nothing here is
+            hand-authored: every clip below is a model's <i>real</i> playthrough, exactly as the grader saw it.
+          </p>
+          <p>
+            The number on each card is that run's <b>super-mario reward</b> — a continuous score that grows
+            with in-game progress (distance, coins, and stage completion), so it can climb above the
+            0–1 band used for the normalized suite average elsewhere on the site.
+          </p>
+        </div>
+
+        <div class="sc-toolbar">
+          <span class="sc-toolbar__label">Sort</span>
+          <select id="sc-sort" class="sc-select" aria-label="Sort clips">
+            <option value="reward">By reward (high → low)</option>
+            <option value="name">By model name (A → Z)</option>
+          </select>
+          <span class="sc-count" id="sc-count"></span>
+        </div>
+
+        <div class="sc-grid" id="sc-grid"></div>
+
+        <p class="sc-note">
+          17 models shown, each from a single 90-minute attempt under the shared Terminus-2 harness.
+          Clips are re-encoded for the web (360p, muted); the raw <code>agent_play.mp4</code> renders live
+          in each run's verifier output. GLM 5.1 and Grok 4.5 are omitted (no rendered replay available yet).
+        </p>
+
+        <p class="closing" style="margin-top:2rem">
+          Curious how the rest of the suite is built and graded? <a href="index.html">Read the report →</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      // Data generated from harness/jobs (July 2026). reward = super-mario verifier reward.
+      const CLIPS = [
+        { slug: "qwen3-6-plus",    name: "Qwen3.6 Plus",        vendor: "Alibaba",   provider: "qwen",     reward: 1.2125 },
+        { slug: "deepseek-v4-pro", name: "DeepSeek V4 Pro",     vendor: "DeepSeek",  provider: "deepseek", reward: 0.7722 },
+        { slug: "gpt-5-5",         name: "GPT-5.5",             vendor: "OpenAI",    provider: "openai",   reward: 0.4997 },
+        { slug: "minimax-m3",      name: "MiniMax M3",          vendor: "MiniMax",   provider: "minimax",  reward: 0.48 },
+        { slug: "glm-5-2",         name: "GLM 5.2",             vendor: "Zhipu",     provider: "zhipu",    reward: 0.426567 },
+        { slug: "gemini-3-1-pro",  name: "Gemini 3.1 Pro",      vendor: "Google",    provider: "gemini",   reward: 0.383533 },
+        { slug: "sonnet-4-6",      name: "Claude Sonnet 4.6",   vendor: "Anthropic", provider: "claude",   reward: 0.3103 },
+        { slug: "qwen3-7-max",     name: "Qwen3.7 Max",         vendor: "Alibaba",   provider: "qwen",     reward: 0.2578 },
+        { slug: "opus-4-8",        name: "Claude Opus 4.8",     vendor: "Anthropic", provider: "claude",   reward: 0.246867 },
+        { slug: "doubao",          name: "Doubao Seed 2.1 Pro", vendor: "ByteDance", provider: "doubao",   reward: 0.231033 },
+        { slug: "fable-5",         name: "Claude Fable 5",      vendor: "Anthropic", provider: "claude",   reward: 0.196233 },
+        { slug: "gpt-5-3-codex",   name: "GPT-5.3 Codex",       vendor: "OpenAI",    provider: "openai",   reward: 0.088233 },
+        { slug: "gpt-5-4",         name: "GPT-5.4",             vendor: "OpenAI",    provider: "openai",   reward: 0.066867 },
+        { slug: "grok-4-20",       name: "Grok 4.20",           vendor: "xAI",       provider: "grok",     reward: 0.028633 },
+        { slug: "hunyuan-3",       name: "Hunyuan 3",           vendor: "Tencent",   provider: "hunyuan",  reward: 0.028433 },
+        { slug: "kimi-k2-6",       name: "Kimi K2.6",           vendor: "Moonshot",  provider: "kimi",     reward: 0.0172 },
+        { slug: "kimi-k2-7-code",  name: "Kimi K2.7 Code",      vendor: "Moonshot",  provider: "kimi",     reward: 0.010933 }
+      ];
+
+      const logoFile = (p) => "assets/logos/" + (p === "openai" ? "openai.svg" : p + "-color.svg");
+      const grid = document.getElementById("sc-grid");
+      const countEl = document.getElementById("sc-count");
+      const sortEl = document.getElementById("sc-sort");
+
+      function render(mode) {
+        const rows = CLIPS.slice();
+        if (mode === "name") rows.sort((a, b) => a.name.localeCompare(b.name));
+        else rows.sort((a, b) => b.reward - a.reward);
+
+        grid.innerHTML = rows.map((c) => `
+          <figure class="sc-card">
+            <video class="sc-card__video" controls preload="none" playsinline
+                   poster="showcase/posters/${c.slug}.jpg">
+              <source src="showcase/videos/${c.slug}.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="sc-card__body">
+              <img class="sc-card__logo" src="${logoFile(c.provider)}" alt="${c.vendor} logo"
+                   loading="lazy" onerror="this.style.display='none'" />
+              <span class="sc-card__meta">
+                <span class="sc-card__name">${c.name}</span>
+                <span class="sc-card__vendor">${c.vendor}</span>
+              </span>
+              <span class="sc-card__reward">${c.reward.toFixed(2)}<small>reward</small></span>
+            </figcaption>
+          </figure>`).join("");
+
+        countEl.textContent = rows.length + " models";
+      }
+
+      sortEl.addEventListener("change", () => render(sortEl.value));
+      render("reward");
+    })();
+  </script>
+
+  <script src="script.js?v=17"></script>
+</body>
+</html>
