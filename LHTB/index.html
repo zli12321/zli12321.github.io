@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long-Horizon Terminal-Bench — Where Agents Run Out of Steam</title>
+  <meta name="description" content="A 46-task benchmark that drops agents into a terminal for hundreds of steps and grades them with hidden, fake-proof verifiers. A report card for 17 frontier models." />
+
+  <!-- Fonts: Source Serif 4 (display + body), Inter (UI, captions, figures), IBM Plex Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=17" />
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ============================================================= -->
+  <!-- Top navigation                                                -->
+  <!-- ============================================================= -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="3" y="5" width="26" height="22" rx="4" class="bm-frame"/>
+            <path d="M9 13 l4 4 -4 4" class="bm-prompt"/>
+            <line x1="16" y1="21" x2="23" y2="21" class="bm-cursor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="#benchmark" class="topbar__link">Benchmark</a>
+        <a href="#results" class="topbar__link">Results</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta">Leaderboard</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout">
+
+    <!-- ---------- Table of Contents (sticky sidebar) ---------- -->
+    <aside class="toc" id="toc" aria-label="Table of contents">
+      <p class="toc__title">Contents</p>
+      <nav class="toc__nav">
+        <a href="#motivation" class="toc__item">Agents break at the horizon</a>
+        <a href="#benchmark" class="toc__item">The benchmark</a>
+        <a href="#anatomy" class="toc__item">Anatomy of a task</a>
+        <a href="#setup" class="toc__item">How we evaluate</a>
+        <a href="#results" class="toc__item">Results</a>
+        <a href="#insights" class="toc__item">What we learned</a>
+        <a href="#takeaways" class="toc__item">Takeaways</a>
+      </nav>
+    </aside>
+
+    <!-- ---------- Main article ---------- -->
+    <main class="article">
+
+      <!-- ========================================================= -->
+      <!-- HERO                                                      -->
+      <!-- ========================================================= -->
+      <section class="hero" id="hero">
+        <p class="hero__kicker">Benchmark report &nbsp;·&nbsp; Tencent HY LLM Frontier &nbsp;·&nbsp; July 2026</p>
+
+        <h1 class="hero__title">Long-Horizon Terminal-Bench</h1>
+        <p class="hero__dek">Measuring the progress agents can sustain, not just what they can finish.</p>
+
+        <p class="hero__subtitle">
+          Most agent benchmarks end in minutes. Real terminal work may not. Long-Horizon
+          Terminal-Bench drops an agent into a Docker container with a goal that takes
+          <b>hundreds of dependent actions</b> — build a system from scratch, migrate a real framework
+          across breaking changes, play a game move by move — then grades it with a
+          <span class="u-h">hidden, fake-proof verifier</span> that pays
+          <span class="u-b">continuous partial credit</span>. We ran <b>18 frontier models</b> through
+          the same harness. None passes even a third of the tasks.
+        </p>
+
+        <div class="hero__byline">
+          <p class="authors">Long-Horizon Terminal-Bench (LHTB)</p>
+          <p class="affils">46 tasks &nbsp;·&nbsp; 9 categories &nbsp;·&nbsp; 17 models &nbsp;·&nbsp; one identical harness</p>
+        </div>
+
+        <figure class="hero__figure">
+          <div id="hero-illustration" class="illustration illustration--hero"></div>
+          <figcaption>
+            <b>The loop that has to hold for ninety minutes.</b> The agent types commands into a live
+            containerized environment and reads text observations back — hundreds of times. Only when
+            it stops does a <span class="u-h">hidden verifier</span> replay the evidence and pay a
+            <span class="u-b">graded reward</span>. Progress can't be faked; only real work counts.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TL;DR                                                     -->
+      <!-- ========================================================= -->
+      <section class="tldr" aria-label="Summary">
+        <h2 class="tldr__kicker">In one minute</h2>
+        <ol class="tldr__list">
+          <li>
+            Long-Horizon Terminal-Bench (LHTB) is a suite of <b>46 hard, reproducible terminal
+            tasks</b> across 9 categories, designed to resist memorization, shortcutting, and reward
+            hacking. Every task pays <b>continuous partial credit</b> instead of binary pass/fail.
+          </li>
+          <li>
+            We evaluated <b>17 frontier models</b> under one identical harness (Terminus-2), one
+            container per task, a 90-minute budget, and hidden verifiers.
+          </li>
+          <li>
+            The frontier tops out below half credit: the best model (<b>Claude Opus 4.8</b>) averages
+            <b>0.49</b>, and the best solve count is <b>12 of 46</b> (Claude Fable 5).
+            <b>29 of 46 tasks have never been passed by any model.</b>
+          </li>
+          <li>
+            Price is not performance: <b>MiniMax M3</b> scores 0.39 at <b>~$6 per task</b> — ahead of
+            GPT-5.4 at $28 and other pricier models. The signal lives in the partial credit, where
+            binary metrics see almost no difference.
+          </li>
+        </ol>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- LONG-HORIZON SCALE                                        -->
+      <!-- ========================================================= -->
+      <section class="horizon" id="horizon" aria-label="How long is long-horizon">
+        <h2 class="tldr__kicker">How long is “long-horizon”?</h2>
+        <p class="horizon__lead">
+          Running all 46 tasks once takes each model <b>53–71 hours</b> of wall-clock time. A single
+          task averages <b>69–93 minutes</b> and <b>~120–320 agent steps</b> — the loop the model has
+          to hold together, without losing the thread, before a hidden verifier ever sees the result.
+        </p>
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title">The scale of one run, per model</h4>
+                <p class="chart-panel__sub">Averaged over the 46-task suite · one 90-minute attempt each</p>
+              </div>
+            </div>
+            <div class="chart" id="chart-horizon"></div>
+          </div>
+          <figcaption>
+            Even the most economical agents spend well over two full days of compute-time to work
+            through the suite once, and hundreds of dependent steps on a single task.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 01 · MOTIVATION                                           -->
+      <!-- ========================================================= -->
+      <section class="section" id="motivation">
+        <p class="section__num">Part 01</p>
+        <h2 class="section__title">Agents break at the horizon, not at the task</h2>
+
+        <p>
+          Ask a frontier model to fix a failing test and it usually can. Ask it to spend an afternoon
+          bringing a scientific codebase back to numerical parity — running simulations, reading
+          regressions, adjusting, re-running — and something different happens. The model does not lack
+          the knowledge. It loses the thread: state drifts, earlier decisions are forgotten,
+          exploration turns into looping, and the budget burns down with the goal half-reached.
+        </p>
+
+        <p>
+          Existing terminal benchmarks rarely see this failure mode because their tasks can be
+          <i>short</i>. A task that ends after a dozen actions measures whether an agent can
+          <span class="u-b">start</span> work. It says nothing about whether the agent can
+          <span class="u-b">sustain</span> it — carry state across hundreds of steps, recover from
+          dead ends, and know when it is actually done.
+        </p>
+
+        <aside class="note">
+          <p class="note__label">Why partial credit matters</p>
+          <p>
+            On hard, long tasks, binary pass/fail collapses almost every model to zero — a benchmark
+            that scores everyone 0 ranks no one. A graded reward keeps the signal: an agent that
+            rebuilds 70% of a pipeline is measurably better than one that rebuilds 20%, even if
+            neither passes. Grading partial progress is what lets a hard benchmark still separate
+            frontier models.
+          </p>
+        </aside>
+
+        <p>
+          LHTB was built to measure exactly this regime. Three design axes run through every task:
+          <b>(1) long horizon</b> — solutions need hundreds of dependent actions and sustained state;
+          <b>(2) resistance</b> — hidden verifiers, deterministic seeds, and replay-based grading
+          make memorization, shortcutting, and reward hacking unprofitable; and
+          <b>(3) graded reward</b> — a continuous score for partial progress, so the benchmark ranks
+          models even where nobody passes.
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 02 · THE BENCHMARK                                        -->
+      <!-- ========================================================= -->
+      <section class="section" id="benchmark">
+        <p class="section__num">Part 02</p>
+        <h2 class="section__title">The benchmark: 46 tasks, 9 categories</h2>
+
+        <p>
+          Every task follows the same contract: a Docker container, an instruction file, a live
+          environment, and a hidden test suite that grades the outcome. The 46 tasks span nine
+          categories — software &amp; reverse engineering, scientific computing, earth/climate &amp;
+          energy, multimodal &amp; imaging, research reproduction, systems &amp; security,
+          professional (APEX) workflows, and two that demand sustained interaction rather than a
+          single artifact: <b>interactive games</b> played turn by turn, and <b>logic &amp; constraint
+          puzzles</b> solved by search and reasoning.
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <p class="spec__label">Scale</p>
+            <p class="spec__value">46 tasks · 9 categories</p>
+            <p class="spec__note">From framework migrations and chip-design signoff to seismic-regression audits and playing 2048.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Grading</p>
+            <p class="spec__value">Hidden, fake-proof verifiers</p>
+            <p class="spec__note">Deterministic replay, seeded environments, held-out answer keys. Claimed progress does not count — replayed progress does.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Reward</p>
+            <p class="spec__value">Continuous, 0 → 1</p>
+            <p class="spec__note">Banded or proportional partial credit per task; a task counts as <i>solved</i> at reward ≥ 0.95.</p>
+          </div>
+        </div>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <h4 class="chart-panel__title">What the 46 tasks cover</h4>
+            <p class="chart-panel__sub">Tasks per category</p>
+            <div class="chart" id="chart-domains"></div>
+          </div>
+          <figcaption>
+            <b>Deliberately wide.</b> Software &amp; reverse engineering leads with seven tasks;
+            scientific computing, earth/climate, and multimodal analysis each contribute six of
+            rebuilding and evidence extraction; and interactive games and logic puzzles keep sustained,
+            turn-by-turn play in the mix. Even the largest category is only 7 of 46, so no single skill
+            dominates the mean.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 03 · ANATOMY                                              -->
+      <!-- ========================================================= -->
+      <section class="section" id="anatomy">
+        <p class="section__num">Part 03</p>
+        <h2 class="section__title">Anatomy of a task</h2>
+
+        <p>
+          The clearest way to see the design is through one concrete task. In
+          <code>unison-paper-reproduction</code>, the agent reproduces an experiment from the
+          <a href="https://dl.acm.org/doi/10.1145/3627703.3629574" target="_blank" rel="noopener">UNISON
+          paper</a> <b>without being given the
+          original implementation</b>. 
+        </p>
+
+        <figure class="figure">
+          <div class="unit-card">
+            <div class="unit-card__head">
+              <span class="unit-card__badge">Task · Research reproduction</span>
+              <h4>Reproducing the UNISON fat-tree experiment</h4>
+              <p>From the paper alone, build a parallel simulation pipeline, run the fat-tree MTP experiment (k=4, 4 threads, seed 7), and match the reference metrics — 232 flows, 6,254,916 events, 14.46&nbsp;Gbps — within tolerance.</p>
+            </div>
+            <dl class="unit-card__fields">
+              <div class="unit-field">
+                <dt>Environment</dt>
+                <dd>A skeleton project in <code>/app</code>; the agent must implement topology generation, LP partitioning, deterministic execution, and scheduling.</dd>
+              </div>
+              <div class="unit-field">
+                <dt>Deliverables</dt>
+                <dd>A <code>run-fat-tree</code> CLI plus <code>unison_report.json</code> and <code>summary.csv</code> with LP counts, scheduler stats, and a deterministic checksum.</dd>
+              </div>
+              <div class="unit-field">
+                <dt>Verifier</dt>
+                <dd>Six hidden checks cover metric fidelity, <b>non-trivial</b> LP partitioning and scheduling, same-seed determinism, and plausible shifts under <b>hidden seeds</b>.</dd>
+              </div>
+              <div class="unit-field">
+                <dt>Reward</dt>
+                <dd>Fraction of checks passed; a deterministic pipeline that misses the target numbers still earns partial credit.</dd>
+              </div>
+            </dl>
+            <div class="unit-card__evidence">
+              <span class="unit-card__evlabel">Layout</span>
+              <span class="evchip"><code>instruction.md</code></span>
+              <span class="evchip"><code>environment/</code> · skeleton app</span>
+              <span class="evchip"><code>tests/</code> · hidden verifier</span>
+              <span class="evchip"><code>task.toml</code></span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Hard to fake, hard to finish.</b> Hard-coding fails because the verifier reruns the
+            pipeline under hidden seeds and configs, so only a real implementation survives. In
+            continue-until-timeout mode, failed verification <b>restarts the session</b>, and the
+            agent keeps iterating until every check passes or the 90-minute budget expires.
+          </figcaption>
+        </figure>
+
+        <p>
+          The rest of the suite applies the same philosophy to other kinds of real work: a framework
+          migration carries a production-style app across a breaking API change under 18 hidden
+          compatibility gates; regression audits hand the agent a scientific model whose outputs have
+          silently drifted and grade recovered numerical parity; the APEX workflows grade
+          professional document deliverables against held-out rubrics; and the interactive games
+          replay the agent's own move log in a deterministically-seeded engine, so only progress that
+          actually happened counts. In every case the reward is earned through the terminal, not
+          asserted in a final message.
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 04 · SETUP                                                -->
+      <!-- ========================================================= -->
+      <section class="section" id="setup">
+        <p class="section__num">Part 04</p>
+        <h2 class="section__title">How we evaluate: one harness, no favorites</h2>
+
+        <p>
+          Comparisons are only meaningful if the scaffolding is identical. Every model runs through
+          the <b>same Terminus-2 harness</b> — same prompts, same parser, same summarization policy —
+          differing only in the API endpoint behind it. No model-specific tools, no bespoke agents,
+          no retries of bad runs.
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <p class="spec__label">Harness</p>
+            <p class="spec__value">Terminus-2, identical for all</p>
+            <p class="spec__note">JSON action parser, proactive context summarization, full terminal-session recording.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Budget</p>
+            <p class="spec__value">90 min per task</p>
+            <p class="spec__note">One attempt. A timeout keeps its partial credit — whatever the verifier can replay at the deadline.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">Metrics</p>
+            <p class="spec__value">Mean reward · solved @ ≥0.95</p>
+            <p class="spec__note">Errors score 0. Mean reward over all 46 tasks is the headline number; solve count is the sparser, harsher view.</p>
+          </div>
+        </div>
+
+        <!-- <details class="aside">
+          <summary>Methodology notes (the honest fine print)</summary>
+          <p>
+            <b>Duplicate runs:</b> hy3 was run more than once; we report its strongest run (0.288).
+            <b>GPT-5.3 Codex</b> carries two infrastructure-failed tasks (Docker build errors, unrelated
+            to the model) scored as 0 — its true mean is slightly understated.
+            <b>GLM 5.1</b> failed three tasks by exceeding its context window; these are genuine model
+            limitations and score 0. <b>Kimi K2.7 Code</b> required reruns after an API-budget outage;
+            all 46 tasks ultimately completed. Costs are computed from per-token prices at each
+            provider's list rates.
+          </p>
+        </details> -->
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 05 · RESULTS                                              -->
+      <!-- ========================================================= -->
+      <section class="section" id="results">
+        <p class="section__num">Part 05</p>
+        <h2 class="section__title">Results</h2>
+
+        <!-- ---------- Result 1 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag">Result 1</span> <span>The frontier tops out below half credit</span></h3>
+        <p>
+          Averaged over all 46 tasks, the best model earns less than half the available reward. Two
+          Anthropic models lead, GPT-5.5 follows, and a tight pack of strong open-weight and Chinese
+          frontier models lands between 0.25 and 0.39. The spread from first to last is nearly 2.5× —
+          this benchmark is far from saturated.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <h4 class="chart-panel__title">Leaderboard — mean reward over 46 tasks</h4>
+            <p class="chart-panel__sub">Errors count as 0 · solved = reward ≥ 0.95 · one identical harness</p>
+            <div class="lb" id="leaderboard"></div>
+          </div>
+          <figcaption>
+            <b>Nobody passes a third of the benchmark.</b> Claude Opus 4.8 leads on mean reward
+            (0.492); Claude Fable 5 solves the most tasks outright (12/46, 26%). The best
+            non-Anthropic model, GPT-5.5, reaches 0.445 — and after it the field compresses hard:
+            a dense pack of models sits within 0.07 of each other.
+          </figcaption>
+        </figure>
+
+        <!-- ---------- Result 2 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag">Result 2</span> <span>The signal lives in the partial credit</span></h3>
+        <p>
+          Look at all 782 model-task runs at once and the case for graded rewards makes itself.
+          Only <b>7%</b> of runs cross the solve threshold — under binary scoring, 93% of the
+          benchmark would be indistinguishable zeros. The continuous reward spreads that mass out:
+          more than half of all runs land in the low-partial band (0–0.25), where models differ by
+          how far they get before losing the thread.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-duo">
+              <div class="chart-panel">
+                <h4 class="chart-panel__title">Where 782 runs land</h4>
+                <p class="chart-panel__sub">% of all model × task runs, by reward band</p>
+                <div class="chart" id="chart-dist"></div>
+              </div>
+              <div class="chart-panel">
+                <h4 class="chart-panel__title">The unsolved frontier</h4>
+                <p class="chart-panel__sub">Of 46 tasks, how many has <i>any</i> model solved?</p>
+                <div class="chart" id="chart-frontier"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <b>29 of 46 tasks have never been solved by any model.</b> And on 9.2% of runs the agent
+            earned exactly nothing. A benchmark scored pass/fail would compress this landscape to
+            near-zero everywhere; partial credit is what keeps the ranking informative.
+          </figcaption>
+        </figure>
+
+        <p>
+          The hardest tasks share a shape: they demand <b>sustained quantitative feedback loops</b> —
+          run, measure, adjust, re-run — or evidence extraction from non-text modalities. The easiest
+          share the opposite shape: a crisp objective with a visible signal the agent can hill-climb.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card loc-card">
+            <div class="loc-table-wrap">
+              <table class="loc-table" id="hard-table">
+                <thead>
+                  <tr>
+                    <th>Hardest tasks</th><th>Domain</th>
+                    <th class="grp">Mean (17 models)</th><th class="grp">Best single run</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption>
+            <b>The open frontier.</b> On <code>robotics-slam-benchmark-repair</code> the <i>best</i>
+            model earned 0.03 — seventeen frontier models, effectively shut out. At the other end,
+            <code>spot-scheduler-traces</code> (mean 0.96) and <code>nbody-accel-iterative</code>
+            (0.93) show the field can execute long tasks when the feedback signal is legible.
+          </figcaption>
+        </figure>
+
+        <!-- ---------- Result 3 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag">Result 3</span> <span>Price is not performance</span></h3>
+        <p>
+          The cost axis tells its own story. Per-task spend ranges nearly <b>30×</b> — from $2.5
+          (hy3) to $73 (Claude Fable 5) — while mean reward spans only 2.5×. The Anthropic
+          models buy their lead with the largest budgets ($38–73 per task); meanwhile a cluster of
+          models around <b>$4–12 per task</b> delivers 60–80% of the leader's score at roughly a
+          sixth of the cost.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title" id="chart-cost-title">Mean reward vs. cost per task</h4>
+                <p class="chart-panel__sub">Cost on a log scale · up-and-left is better</p>
+              </div>
+              <div class="seg" id="cost-yaxis" role="tablist" aria-label="Y-axis metric">
+                <button class="seg__btn is-active" data-y="reward" role="tab">Mean reward</button>
+                <button class="seg__btn" data-y="pass" role="tab">Pass@1</button>
+              </div>
+            </div>
+            <div class="chart" id="chart-cost"></div>
+          </div>
+          <figcaption>
+            <b>Two efficient frontiers.</b> If you must have the best score, you pay Anthropic prices
+            ($38–73 per task). If you optimize reward per dollar, MiniMax M3 (0.385 at $6.13) and
+            Qwen3.6 Plus (0.313 at $4.47) dominate — MiniMax reaches 78% of Opus's score for about
+            one-sixth the cost.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 06 · INSIGHTS                                             -->
+      <!-- ========================================================= -->
+      <section class="section" id="insights">
+        <p class="section__num">Part 06</p>
+        <h2 class="section__title">What we learned</h2>
+
+        <div class="insights">
+          <div class="insight">
+            <span class="insight__n">01</span>
+            <div>
+              <h3>The horizon is the bottleneck, not the knowledge</h3>
+              <p>
+                Average runtimes cluster at 69–93 minutes against a 90-minute budget — most models
+                work until the clock stops them, mid-task. The failures are rarely "didn't know how";
+                they are drift, looping, and lost state deep into the run. More budget helps some
+                tasks, but the models that lead do more <i>per step</i>, not just more steps.
+              </p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="insight__n">02</span>
+            <div>
+              <h3>Graded rewards separate what pass/fail cannot</h3>
+              <p>
+                Kimi K2.6 solves zero tasks yet averages 0.25 — on a binary benchmark it would tie
+                with a model that produced nothing at all. Nearly half of all runs land between 0 and
+                0.25, and that band is where most of today's frontier competition actually happens.
+              </p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="insight__n">03</span>
+            <div>
+              <h3>The efficient frontier is crowded at the bottom</h3>
+              <p>
+                Cost per task varies nearly 30×; capability varies 2.5×. A team that can accept a
+                0.39-mean agent (MiniMax M3, $6) over the 0.49-mean leader (Opus, $39) cuts inference
+                cost about 6× — a trade many production workloads will gladly make.
+              </p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="insight__n">04</span>
+            <div>
+              <h3>Multimodal and control-loop tasks are wide open</h3>
+              <p>
+                All five multimodal tasks sit in the hardest quartile, and quantitative control-loop
+                audits (robotics SLAM, seismic regression, epidemic inverse control) have a best
+                score under 0.17 across every model. Whoever cracks sustained measure-adjust-rerun
+                loops moves the whole leaderboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 07 · TAKEAWAYS                                            -->
+      <!-- ========================================================= -->
+      <section class="section" id="takeaways">
+        <p class="section__num">Part 07</p>
+        <h2 class="section__title">Takeaways</h2>
+
+        <ul class="ticklist ticklist--takeaways">
+          <li>Long-horizon execution is a distinct capability — and today's frontier earns less than half credit on it.</li>
+          <li>Hidden, replay-based verifiers with continuous rewards keep a hard benchmark informative: 29 never-solved tasks still produce a clean ranking.</li>
+          <li>Identical-harness evaluation isolates the model. The 2.5× spread you see is model capability, not scaffolding.</li>
+          <li>Watch the $4–12-per-task tier: it improves fastest, and it is already 60–80% of the way to the leaders at roughly a sixth of the cost.</li>
+        </ul>
+
+        <p class="closing">
+          The benchmark's most important number is not the winner's 0.49 — it is the 29 tasks nobody
+          has solved. That is the map of where agent capability ends today, and where the next
+          generation of models has to go.
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- FOOTER / citation                                         -->
+      <!-- ========================================================= -->
+      <footer class="footer" id="cite">
+        <h3>Cite this work</h3>
+        <div class="bibtex">
+          <button class="bibtex__copy" id="copy-bib" title="Copy BibTeX">Copy</button>
+          <pre id="bibtex-block">@misc{lhtb2026,
+  title  = {Long-Horizon Terminal-Bench: Measuring What Agents
+            Can Sustain},
+  author = {{Tencent Hunyuan LLM --- Agent Evaluation}},
+  year   = {2026},
+  note   = {46 tasks, 9 categories, 17 frontier models,
+            one identical harness}
+}</pre>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js?v=17"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Leaderboard — Long-Horizon Terminal-Bench</title>
+  <meta name="description" content="Community-submitted runs on Long-Horizon Terminal-Bench: 46 hard terminal tasks, one 90-minute budget, hidden replay-based verifiers. Bring your own model or agent and submit." />
+
+  <!-- Fonts: Source Serif 4 (display + body), Inter (UI, captions, figures), IBM Plex Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=17" />
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ============================================================= -->
+  <!-- Top navigation                                                -->
+  <!-- ============================================================= -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="index.html#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="3" y="5" width="26" height="22" rx="4" class="bm-frame"/>
+            <path d="M9 13 l4 4 -4 4" class="bm-prompt"/>
+            <line x1="16" y1="21" x2="23" y2="21" class="bm-cursor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="index.html#benchmark" class="topbar__link">Benchmark</a>
+        <a href="index.html#results" class="topbar__link">Results</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta" aria-current="page">Leaderboard</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout layout--solo">
+    <main class="article">
+      <section class="section" id="leaderboard-community">
+        <p class="section__num">Leaderboard</p>
+        <h2 class="section__title">Community leaderboard</h2>
+
+        <p>
+          Community-submitted runs on the 46-task Long-Horizon Terminal-Bench suite, ranked by
+          <b>mean reward</b>. The seed entries are our Terminus-2 baselines — the same runs analyzed
+          in <a href="index.html#results">the report</a>. LHTB is open: bring your own model or your
+          own agent, run the same 46 tasks under the same 90-minute budget, and submit your run. We
+          <b>replay the submitted trajectories</b> against the hidden verifiers and reproduce the
+          score before it lands on the board — the same anti-cheat that grades our own runs. A
+          <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>verified</span>
+          badge means we reproduced it.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card submit">
+            <div class="submit__head">
+              <h4 class="chart-panel__title">Submit a run</h4>
+              <p class="chart-panel__sub">Two ways in — evaluate a model on the reference harness, or bring a custom agent.</p>
+            </div>
+            <div class="submit__cmds">
+              <div class="cmd">
+                <p class="cmd__label">Evaluate a model &nbsp;·&nbsp; reference harness</p>
+                <div class="cmd__box">
+                  <button class="cmd__copy" title="Copy command">Copy</button>
+                  <pre>harbor run -d long-horizon-terminal-bench \
+  -a terminus-2 -m "your-provider/your-model" -k 1</pre>
+                </div>
+              </div>
+              <div class="cmd">
+                <p class="cmd__label">Bring your own agent</p>
+                <div class="cmd__box">
+                  <button class="cmd__copy" title="Copy command">Copy</button>
+                  <pre>harbor run -d long-horizon-terminal-bench \
+  --agent-import-path "path.to.agent:YourAgent" -k 1</pre>
+                </div>
+              </div>
+            </div>
+            <p class="submit__note">
+              Submissions may not modify the 90-minute per-task budget, the container resources, or
+              the hidden verifiers. One attempt per task (<code>-k 1</code>), errors score 0.
+            </p>
+          </div>
+        </figure>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card loc-card">
+            <div class="lbrd-bar">
+              <span class="lbrd-count" id="lbrd-count"></span>
+              <div class="lbrd-filters">
+                <select class="lbrd-select lbrd-select--thresh" id="filter-threshold" aria-label="Solved threshold" title="Reward threshold counted as solved">
+                  <option value="0.9">Solved &ge; 0.90</option>
+                  <option value="0.95" selected>Solved &ge; 0.95</option>
+                  <option value="1">Solved &ge; 1.00</option>
+                </select>
+                <select class="lbrd-select" id="filter-agent" aria-label="Filter by agent"></select>
+                <select class="lbrd-select" id="filter-model" aria-label="Filter by model"></select>
+                <select class="lbrd-select" id="filter-org" aria-label="Filter by organization"></select>
+                <label class="lbrd-check"><input type="checkbox" id="filter-verified"/> Verified only</label>
+                <button class="lbrd-clear" id="filter-clear">Clear filters</button>
+              </div>
+            </div>
+            <div class="loc-table-wrap">
+              <table class="loc-table lbrd-table" id="community-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th><th>Agent</th><th>Model</th><th>Submitter</th>
+                    <th>Date</th><th class="grp" id="th-solved">Solved</th><th class="grp">Mean reward</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption>
+            <b>Scores are mean reward over the 46-task suite</b> (errors = 0; a task counts as
+            <i>solved</i> at reward ≥ 0.95). The seed entries are our Terminus-2 baselines; the board
+            grows as the community submits. Submission instructions live at
+            <a href="https://github.com/long-horizon-terminal-bench/leaderboard" target="_blank" rel="noopener">github.com/long-horizon-terminal-bench/leaderboard</a>.
+          </figcaption>
+        </figure>
+
+        <p class="closing">
+          Want the full analysis behind these baselines — how the tasks are built, how they're
+          graded, and where today's frontier runs out of steam? <a href="index.html">Read the
+          report →</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js?v=17"></script>
+</body>
+</html>
