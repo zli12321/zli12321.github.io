@@ -144,7 +144,7 @@
             每张卡片上的数字，是该次运行在 [0,&nbsp;1] 区间内的<b>归一化 super-mario 奖励</b>：
             完整通过的关卡数，加上当前关卡内的分数进度，再除以三关的通过上限
             （通关至世界&nbsp;1-3 = 1.0）。我们也标出了每个智能体实际走了多远。
-            值得注意的是，<b>只有四个模型曾通过世界&nbsp;1-1</b>——大多数都死在第一关。
+            值得注意的是，<b>只有五个模型曾通过世界&nbsp;1-1</b>——大多数都死在第一关。
           </p>
         </div>
 
@@ -160,9 +160,9 @@
         <div class="sc-grid" id="sc-grid"></div>
 
         <p class="sc-note">
-          共展示 17 个模型，每个均来自在共享 Terminus-2 评测框架下的一次 90 分钟尝试。
+          共展示 19 个模型，每个均来自在共享 Terminus-2 评测框架下的一次 90 分钟尝试。
           视频为网页重新编码（360p，静音）；原始的 <code>agent_play.mp4</code> 在每次运行的验证器输出中实时渲染。
-          GLM 5.1 和 Grok 4.5 未收录（暂无可用的渲染回放）。
+          GLM 5.1 未收录（暂无可用的渲染回放）。
         </p>
 
         <p class="closing" style="margin-top:2rem">
@@ -179,11 +179,13 @@
         { slug: "glm-5-2",         name: "GLM 5.2",             vendor: "Zhipu",     provider: "zhipu",    reward: 0.427, level: "1-2", pct: 28 },
         { slug: "qwen3-6-plus",    name: "Qwen3.6 Plus",        vendor: "Alibaba",   provider: "qwen",     reward: 0.404, level: "1-2", pct: 21 },
         { slug: "gemini-3-1-pro",  name: "Gemini 3.1 Pro",      vendor: "Google",    provider: "gemini",   reward: 0.384, level: "1-2", pct: 15 },
+        { slug: "sonnet-5",        name: "Claude Sonnet 5",     vendor: "Anthropic", provider: "claude",   reward: 0.361, level: "1-2", pct: 8 },
         { slug: "sonnet-4-6",      name: "Claude Sonnet 4.6",   vendor: "Anthropic", provider: "claude",   reward: 0.310, level: "1-1", pct: 93 },
         { slug: "qwen3-7-max",     name: "Qwen3.7 Max",         vendor: "Alibaba",   provider: "qwen",     reward: 0.258, level: "1-1", pct: 77 },
         { slug: "deepseek-v4-pro", name: "DeepSeek V4 Pro",     vendor: "DeepSeek",  provider: "deepseek", reward: 0.257, level: "1-1", pct: 77 },
         { slug: "opus-4-8",        name: "Claude Opus 4.8",     vendor: "Anthropic", provider: "claude",   reward: 0.247, level: "1-1", pct: 74 },
         { slug: "doubao",          name: "Doubao Seed 2.1 Pro", vendor: "ByteDance", provider: "doubao",   reward: 0.231, level: "1-1", pct: 69 },
+        { slug: "grok-4-5",        name: "Grok 4.5",            vendor: "xAI",       provider: "grok",     reward: 0.216, level: "1-1", pct: 65 },
         { slug: "fable-5",         name: "Claude Fable 5",      vendor: "Anthropic", provider: "claude",   reward: 0.196, level: "1-1", pct: 59 },
         { slug: "minimax-m3",      name: "MiniMax M3",          vendor: "MiniMax",   provider: "minimax",  reward: 0.160, level: "1-1", pct: 48 },
         { slug: "gpt-5-3-codex",   name: "GPT-5.3 Codex",       vendor: "OpenAI",    provider: "openai",   reward: 0.088, level: "1-1", pct: 26 },
