@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=19" />
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -390,7 +390,7 @@
               </div>
               <div class="seg" id="lb-metric" role="tablist" aria-label="Leaderboard metric">
                 <button class="seg__btn is-active" data-lb="reward" role="tab">Partial reward</button>
-                <button class="seg__btn" data-lb="pass" role="tab">Binary pass rate</button>
+                <button class="seg__btn" data-lb="pass" role="tab">Binary pass (R = 1.0)</button>
               </div>
             </div>
             <div class="lb" id="leaderboard"></div>
@@ -398,9 +398,9 @@
           <figcaption>
             <b>Partial credit is what keeps the ranking alive.</b> On mean reward, Claude Opus 4.8 leads
             (0.492) and the field spreads across the chart. Flip to <b>strict binary pass rate</b> — the
-            fraction of the 46 tasks solved outright (reward ≥ 0.95) — and the bars collapse: several
-            models that earn real partial credit, like Kimi K2.6 (0.255 mean), solve <b>zero</b> tasks,
-            and the reward-order ranking no longer matches. The signal lives in the partial reward.
+            fraction of the 46 tasks solved at a <b>perfect reward of R = 1.0</b> — and the bars collapse:
+            ten of the models earn real partial credit yet solve <b>zero</b> tasks outright, and the
+            reward-order ranking no longer matches. The signal lives in the partial reward.
           </figcaption>
         </figure>
 
@@ -437,9 +437,8 @@
         </figure>
 
         <p>
-          The hardest tasks share a shape: they demand <b>sustained quantitative feedback loops</b> —
-          run, measure, adjust, re-run — or evidence extraction from non-text modalities. The easiest
-          share the opposite shape: a crisp objective with a visible signal the agent can hill-climb.
+          The hardest tasks demand <b>sustained quantitative feedback loops</b> —
+          run, measure, adjust, re-run — or evidence extraction from non-text modalities.
         </p>
 
         <figure class="figure figure--wide">
@@ -458,7 +457,7 @@
           </div>
           <figcaption>
             <b>The open frontier.</b> On <code>robotics-slam-benchmark-repair</code> the <i>best</i>
-            model earned 0.03 — seventeen frontier models, effectively shut out. At the other end,
+            model earned 0.03. At the other end,
             <code>spot-scheduler-traces</code> (mean 0.96) and <code>nbody-accel-iterative</code>
             (0.93) show the field can execute long tasks when the feedback signal is legible.
           </figcaption>
@@ -467,9 +466,9 @@
         <!-- ---------- Result 3 ---------- -->
         <h3 class="subhead subhead--result"><span class="subhead__tag">Result 3</span> <span>Price is not performance</span></h3>
         <p>
-          The cost axis tells its own story. Per-task spend ranges nearly <b>30×</b> — from $2.5
-          (hy3) to $73 (Claude Fable 5) — while mean reward spans only 2.5×. The Anthropic
-          models buy their lead with the largest budgets ($38–73 per task); meanwhile a cluster of
+          The cost axis tells its own story. Per-task spend ranges nearly <b>30×</b> (from $2.5
+          (hy3) to $73 (Claude Fable 5)) while mean reward spans only 2.5×. The Anthropic
+          models buy their lead with the largest budgets ($38–73 per task). A cluster of
           models around <b>$4–12 per task</b> delivers 60–80% of the leader's score at roughly a
           sixth of the cost.
         </p>
@@ -491,7 +490,7 @@
           <figcaption>
             <b>Two efficient frontiers.</b> If you must have the best score, you pay Anthropic prices
             ($38–73 per task). If you optimize reward per dollar, MiniMax M3 (0.385 at $6.13) and
-            Qwen3.6 Plus (0.313 at $4.47) dominate — MiniMax reaches 78% of Opus's score for about
+            Qwen3.6 Plus (0.313 at $4.47) dominate. MiniMax reaches 78% of Opus's score for about
             one-sixth the cost.
           </figcaption>
         </figure>
@@ -596,6 +595,6 @@
     </main>
   </div>
 
-  <script src="script.js?v=19"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>

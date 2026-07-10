@@ -54,6 +54,17 @@
     { name: "Grok 4.20",          vendor: "xAI",       logo: "grok-color",     mean: 0.080, solved: 0,  cost: 20.63 }
   ];
 
+  // Tasks solved at the STRICT perfect-reward threshold R = 1.0 (d.solved is at R >= 0.95).
+  // Same main-run selection as the paper leaderboard; ten models solve zero at R = 1.0.
+  const SOLVED_100 = {
+    "Claude Opus 4.8": 5, "Claude Fable 5": 7, "GPT-5.5": 5, "MiniMax M3": 3,
+    "Claude Sonnet 4.6": 2, "Kimi K2.7 Code": 2, "GLM 5.2": 0, "Qwen3.6 Plus": 0,
+    "DeepSeek V4 Pro": 0, "Qwen3.7 Max": 0, "hy3": 0, "Doubao Seed 2.1 Pro": 0,
+    "Gemini 3.1 Pro": 0, "GPT-5.4": 1, "GLM 5.1": 0, "Kimi K2.6": 0,
+    "GPT-5.3 Codex": 1, "Grok 4.20": 0,
+  };
+  const solved100 = (d) => SOLVED_100[d.name] ?? 0;
+
   // task categories (46 tasks, 9 categories) — labels/colors mirror results.html
   const DOMAINS = [
     ["Software & reverse engineering",    7, "#0969da"],
@@ -257,16 +268,18 @@
     reward: {
       val: (d) => d.mean,
       num: (d) => d.mean.toFixed(3),
+      solvedText: (d) => `${d.solved}/46`,
       barHead: "Mean reward",
       numHead: "Mean",
       sub: "Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness",
     },
     pass: {
-      val: (d) => d.solved / 46,
-      num: (d) => (d.solved / 46 * 100).toFixed(1) + "%",
-      barHead: "Binary pass rate",
+      val: (d) => solved100(d) / 46,
+      num: (d) => (solved100(d) / 46 * 100).toFixed(1) + "%",
+      solvedText: (d) => `${solved100(d)}/46`,
+      barHead: "Binary pass rate (R = 1.0)",
       numHead: "Pass",
-      sub: "Strict pass/fail: share of the 46 tasks solved outright (reward ≥ 0.95) · errors = 0",
+      sub: "Strict binary pass/fail at a perfect reward of R = 1.0 · share of the 46 tasks fully solved · errors = 0",
     },
   };
   let lbMode = "reward";
@@ -300,7 +313,7 @@
           <span class="lb__fill" style="width:${pct.toFixed(1)}%; animation-delay:${(i * 0.04).toFixed(2)}s"></span>
         </span>
         <span class="lb__mean">${m.num(d)}</span>
-        <span class="lb__solved">${d.solved}/46</span>
+        <span class="lb__solved">${m.solvedText(d)}</span>
       </div>`;
     });
     el.innerHTML = html;
@@ -316,8 +329,10 @@
       if (!d) return;
       const fill = row.querySelector(".lb__fill");
       const num = row.querySelector(".lb__mean");
+      const sol = row.querySelector(".lb__solved");
       if (fill) fill.style.width = ((m.val(d) / scale) * 100).toFixed(1) + "%";
       if (num) num.textContent = m.num(d);
+      if (sol) sol.textContent = m.solvedText(d);
     });
     const bh = $(".lb-head__bar", el), nh = $(".lb-head__num", el), sub = $("#lb-sub");
     if (bh) bh.textContent = m.barHead;
