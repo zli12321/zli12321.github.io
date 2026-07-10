@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../style.css?v=39" />
+  <link rel="stylesheet" href="../style.css?v=40" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -117,8 +117,8 @@
             每项任务一个容器、90 分钟预算、隐藏验证器。
           </li>
           <li>
-            前沿模型的上限也不到满分的一半：最好的模型（<b>Claude Opus 4.8</b>）平均只得
-            <b>0.49</b>，最高解决数为 <b>46 项中的 12 项</b>（Claude Fable 5）。
+            前沿模型的上限也不到满分的一半：最好的模型（<b>Claude Sonnet 5</b>）平均只得
+            <b>0.50</b>，最高解决数为 <b>46 项中的 12 项</b>（Claude Fable 5）。
             <b>46 项任务中有 29 项从未被任何模型通过。</b>
           </li>
           <li>
@@ -448,7 +448,7 @@ allow_internet = true</script>
 
         <h3 class="subhead subhead--result"><span class="subhead__tag">结果 1</span> <span>前沿模型的上限不到满分的一半</span></h3>
         <p>
-          在全部 46 项任务上取平均，最好的模型拿到的奖励也不到可得分的一半。两个 Anthropic 模型领先，
+          在全部 46 项任务上取平均，最好的模型拿到的奖励也不到可得分的一半。三个 Anthropic 模型领先，
           GPT-5.5 紧随其后，一批强大的开源权重与中国前沿模型则密集地落在 0.25 到 0.39 之间。
           第一名到最后一名的差距接近 2.5 倍——这个基准远未饱和。
         </p>
@@ -473,7 +473,7 @@ allow_internet = true</script>
             <div class="lb" id="leaderboard"></div>
           </div>
           <figcaption>
-            <b>是部分分让排名保持了生命力。</b>按平均奖励，Claude Opus 4.8 领先（0.492），
+            <b>是部分分让排名保持了生命力。</b>按平均奖励，Claude Sonnet 5 领先（0.497），
             全场在图上铺开。切换到<b>严格二元通过率</b>——即以<b>完美奖励 R = 1.0</b>解决的任务占 46 项的比例——
             柱状图便随之塌陷：其中十个模型拿到了真实的部分分，却一项都没有彻底解决，
             而按奖励排出的顺序也不再吻合。信号活在部分奖励里。
@@ -598,6 +598,6 @@ allow_internet = true</script>
     </main>
   </div>
 
-  <script src="../script.js?v=39"></script>
+  <script src="../script.js?v=40"></script>
 </body>
 </html>
