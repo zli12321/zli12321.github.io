@@ -17,6 +17,96 @@
   const $  = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
+  /* ---- language + asset base (Chinese pages live in /LHTB/zh/) ---- */
+  const ZH = (document.documentElement.lang || "en").toLowerCase().indexOf("zh") === 0;
+  const BASE = /\/zh\/?$|\/zh\//.test(location.pathname) ? "../" : "";
+  const t = (en, zh) => (ZH ? zh : en);
+
+  const I18N = {
+    // hero figure
+    agent: t("AGENT", "智能体"),
+    oneLLM: t("one LLM per run", "每次运行一个大模型"),
+    identicalHarness: t("identical harness", "统一评测框架"),
+    budget: t("Terminus-2 · 90 min budget", "Terminus-2 · 90 分钟预算"),
+    commands: t("commands", "命令"),
+    textObs: t("text observations", "文本反馈"),
+    hundredsSteps: t("× hundreds of steps", "× 数百步"),
+    container: t("DOCKER CONTAINER", "DOCKER 容器"),
+    onStop: t("on stop", "停止时"),
+    hiddenVerifier: t("HIDDEN VERIFIER", "隐藏验证器"),
+    replays: t("replays the evidence:", "回放执行证据："),
+    seededEngine: t("seeded engine · moves.log", "固定种子引擎 · moves.log"),
+    hiddenTests: t("hidden tests · answer keys", "隐藏测试 · 标准答案"),
+    claimed: t("claimed progress ≠ progress", "自称进度 ≠ 真实进度"),
+    gradedReward: t("GRADED REWARD", "分级奖励"),
+    // leaderboard
+    model: t("Model", "模型"),
+    solved: t("Solved", "已解决"),
+    meanRewardHead: t("Mean reward", "平均奖励"),
+    meanShort: t("Mean", "平均"),
+    binaryPassHead: t("Binary pass rate (R = 1.0)", "二元通过率 (R = 1.0)"),
+    passShort: t("Pass", "通过"),
+    lbSubReward: t("Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness",
+                   "46 项任务的平均奖励 · 解决 = 奖励 ≥ 0.95 · 同一套评测框架"),
+    lbSubPass: t("Strict binary pass/fail at a perfect reward of R = 1.0 · share of the 46 tasks fully solved · errors = 0",
+                  "在完美奖励 R = 1.0 下的严格二元判定 · 完全解决的任务占 46 项的比例 · 错误 = 0"),
+    // horizon
+    avgSteps: t("Avg steps / task", "平均步数 / 任务"),
+    steps: t("Steps", "步数"),
+    timePerTask: t("Time / task · total", "单任务用时 · 总计"),
+    min: t("min", "分"),
+    hour: t("h", "时"),
+    // frontier donut
+    neverSolved: t("never solved", "从未解决"),
+    solvedByOne: t("solved by ≥1 model — 17 tasks", "至少一个模型解决 — 17 项"),
+    neverAny: t("never solved by any — 29 tasks", "无任何模型解决 — 29 项"),
+    solveThreshold: t("solve threshold: reward ≥ 0.95", "解决阈值：奖励 ≥ 0.95"),
+    // cost scatter
+    costTitleReward: t("Mean reward vs. cost per task", "平均奖励 vs. 单任务成本"),
+    costTitlePass: t("Pass@1 vs. cost per task", "Pass@1 vs. 单任务成本"),
+    ylabelReward: t("mean reward", "平均奖励"),
+    ylabelPass: t("pass@1 at R ≥ 0.95  [%]", "pass@1（R ≥ 0.95）[%]"),
+    xlabel: t("mean cost per task (log scale)", "单任务平均成本（对数刻度）"),
+    average: t("Average", "平均"),
+    legend: t("LEGEND", "图例"),
+    avgAll: t("Average (17 models)", "平均（17 个模型）"),
+    acrossAll: t("across all 17 models", "所有 17 个模型的平均"),
+    costPerTask: t("Cost / task", "单任务成本"),
+    meanCost: t("Mean cost", "平均成本"),
+    medianCost: t("Median cost", "成本中位数"),
+    // community table
+    showing: (a, b) => t(`Showing ${a} of ${b} entries`, `显示 ${b} 条中的 ${a} 条`),
+    noEntries: t("No entries match these filters.", "没有符合筛选条件的条目。"),
+    allAgents: t("All agents", "全部智能体"),
+    allModels: t("All models", "全部模型"),
+    allOrgs: t("All organizations", "全部机构"),
+    verified: t("verified", "已验证"),
+    solvedThresh: (v) => t(`Solved (≥${v})`, `已解决 (≥${v})`),
+    // misc
+    copy: t("Copy", "复制"),
+    copied: t("Copied!", "已复制！"),
+  };
+
+  // Category labels for the domain bar chart + hardest-tasks table (zh).
+  const CAT_ZH = {
+    "Software & reverse engineering": "软件与逆向工程",
+    "Scientific computing & simulation": "科学计算与仿真",
+    "Earth, climate & energy": "地球、气候与能源",
+    "Multimodal & imaging analysis": "多模态与图像分析",
+    "Research reproduction & ML": "研究复现与机器学习",
+    "Systems, performance & security": "系统、性能与安全",
+    "Interactive games": "交互式游戏",
+    "APEX professional workflows": "APEX 专业工作流",
+    "Logic & constraint puzzles": "逻辑与约束谜题",
+    "Mathematical modeling": "数学建模",
+    "Structural engineering": "结构工程",
+    "Robotics": "机器人",
+    "Multimodal": "多模态",
+    "Climate science": "气候科学",
+    "ML experimentation": "机器学习实验",
+  };
+  const catLabel = (s) => (ZH && CAT_ZH[s]) ? CAT_ZH[s] : s;
+
   /* ---- shared tokens for generated SVG ---- */
   const INK   = "var(--ink)";
   const SOFT  = "var(--ink-soft)";
@@ -201,42 +291,42 @@
     return `
 <svg viewBox="0 0 960 330" role="img" aria-label="An agent loops shell commands and observations against a container for hundreds of steps; a hidden verifier then replays the evidence into a graded reward">
   <!-- left: the agent -->
-  ${T(160, 84, "AGENT", { size: 11, w: 650, fill: SIENI, anchor: "middle", ls: ".12em" })}
+  ${T(160, 84, I18N.agent, { size: 11, w: 650, fill: SIENI, anchor: "middle", ls: ".12em" })}
   <rect x="88" y="100" width="144" height="96" rx="10" fill="${SURF}" stroke="${LINE}"/>
   <circle cx="160" cy="134" r="17" fill="none" stroke="${SIEN}" stroke-width="1.8"/>
   <rect x="146" y="156" width="28" height="3.2" rx="1.6" fill="${SIEN}" opacity=".7"/>
-  ${T(160, 182, "one LLM per run", { size: 11.5, fill: MUT, anchor: "middle" })}
-  ${T(160, 226, "identical harness", { size: 12, w: 600, fill: SOFT, anchor: "middle" })}
-  ${T(160, 243, "Terminus-2 · 90 min budget", { size: 11, fill: MUT, anchor: "middle" })}
+  ${T(160, 182, I18N.oneLLM, { size: 11.5, fill: MUT, anchor: "middle" })}
+  ${T(160, 226, I18N.identicalHarness, { size: 12, w: 600, fill: SOFT, anchor: "middle" })}
+  ${T(160, 243, I18N.budget, { size: 11, fill: MUT, anchor: "middle" })}
 
   <!-- loop arrows -->
   ${harrow(238, 372, 128, SIEN)}
-  ${T(305, 118, "commands", { size: 11.5, w: 550, fill: SIENI, anchor: "middle" })}
+  ${T(305, 118, I18N.commands, { size: 11.5, w: 550, fill: SIENI, anchor: "middle" })}
   ${harrow(372, 238, 172, "var(--graphite)")}
-  ${T(305, 195, "text observations", { size: 11.5, w: 550, fill: MUT, anchor: "middle" })}
-  ${T(305, 158, "× hundreds of steps", { size: 11, italic: true, fill: FAINT, anchor: "middle" })}
+  ${T(305, 195, I18N.textObs, { size: 11.5, w: 550, fill: MUT, anchor: "middle" })}
+  ${T(305, 158, I18N.hundredsSteps, { size: 11, italic: true, fill: FAINT, anchor: "middle" })}
 
   <!-- center: container -->
-  ${T(480, 84, "DOCKER CONTAINER", { size: 11, w: 650, fill: BLUEI, anchor: "middle", ls: ".12em" })}
+  ${T(480, 84, I18N.container, { size: 11, w: 650, fill: BLUEI, anchor: "middle", ls: ".12em" })}
   <rect x="378" y="100" width="204" height="196" rx="10" fill="${SURF}" stroke="${LINE}"/>
   <rect x="378" y="100" width="204" height="14" rx="7" fill="${BLUEW}"/>
   ${termLines}
 
   <!-- arrow to verifier -->
   ${harrow(590, 672, 198, BLUE)}
-  ${T(631, 188, "on stop", { size: 11, italic: true, fill: FAINT, anchor: "middle" })}
+  ${T(631, 188, I18N.onStop, { size: 11, italic: true, fill: FAINT, anchor: "middle" })}
 
   <!-- right: verifier -->
-  ${T(790, 84, "HIDDEN VERIFIER", { size: 11, w: 650, fill: BLUEI, anchor: "middle", ls: ".12em" })}
+  ${T(790, 84, I18N.hiddenVerifier, { size: 11, w: 650, fill: BLUEI, anchor: "middle", ls: ".12em" })}
   <rect x="680" y="100" width="220" height="120" rx="10" fill="${SURF}" stroke="${LINE}"/>
-  ${T(700, 130, "replays the evidence:", { size: 12.5, w: 600, fill: INK })}
-  ${T(700, 152, "seeded engine · moves.log", { size: 11.5, mono: true, fill: MUT })}
-  ${T(700, 170, "hidden tests · answer keys", { size: 11.5, mono: true, fill: MUT })}
-  ${T(700, 196, "claimed progress ≠ progress", { size: 11.5, italic: true, fill: FAINT })}
+  ${T(700, 130, I18N.replays, { size: 12.5, w: 600, fill: INK })}
+  ${T(700, 152, I18N.seededEngine, { size: 11.5, mono: true, fill: MUT })}
+  ${T(700, 170, I18N.hiddenTests, { size: 11.5, mono: true, fill: MUT })}
+  ${T(700, 196, I18N.claimed, { size: 11.5, italic: true, fill: FAINT })}
 
   <!-- reward strip -->
   <rect x="680" y="240" width="220" height="56" rx="10" fill="${SURF}" stroke="${LINE}"/>
-  ${T(700, 263, "GRADED REWARD", { size: 10.5, w: 650, fill: SIENI, ls: ".1em" })}
+  ${T(700, 263, I18N.gradedReward, { size: 10.5, w: 650, fill: SIENI, ls: ".1em" })}
   <rect x="700" y="272" width="180" height="8" rx="4" fill="var(--line-soft)"/>
   <rect x="700" y="272" width="118" height="8" rx="4" fill="${SIEN}"/>
   ${T(886, 281, "0.66", { size: 11.5, w: 650, fill: SIENI, anchor: "end" })}
@@ -269,17 +359,17 @@
       val: (d) => d.mean,
       num: (d) => d.mean.toFixed(3),
       solvedText: (d) => `${d.solved}/46`,
-      barHead: "Mean reward",
-      numHead: "Mean",
-      sub: "Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness",
+      barHead: I18N.meanRewardHead,
+      numHead: I18N.meanShort,
+      sub: I18N.lbSubReward,
     },
     pass: {
       val: (d) => solved100(d) / 46,
       num: (d) => (solved100(d) / 46 * 100).toFixed(1) + "%",
       solvedText: (d) => `${solved100(d)}/46`,
-      barHead: "Binary pass rate (R = 1.0)",
-      numHead: "Pass",
-      sub: "Strict binary pass/fail at a perfect reward of R = 1.0 · share of the 46 tasks fully solved · errors = 0",
+      barHead: I18N.binaryPassHead,
+      numHead: I18N.passShort,
+      sub: I18N.lbSubPass,
     },
   };
   let lbMode = "reward";
@@ -290,13 +380,13 @@
     const m = LB_MODES[lbMode];
     let html = `
       <div class="lb-head">
-        <span></span><span>Model</span><span class="lb-head__bar">${m.barHead}</span>
-        <span class="lb-head__num" style="text-align:right">${m.numHead}</span><span style="text-align:right">Solved</span>
+        <span></span><span>${I18N.model}</span><span class="lb-head__bar">${m.barHead}</span>
+        <span class="lb-head__num" style="text-align:right">${m.numHead}</span><span style="text-align:right">${I18N.solved}</span>
       </div>`;
     LB.forEach((d, i) => {
       const pct = (m.val(d) / scale) * 100;
       const logo = d.logo
-        ? `<img class="lb__logo" src="assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
+        ? `<img class="lb__logo" src="${BASE}assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="lb__logo lb__logo--dot"></span>`;
       html += `
       <div class="lb-row${i === 0 ? " top" : ""}">
@@ -398,14 +488,14 @@
     const max = Math.max(...HORIZON.map((d) => d.steps));
     let html = `
       <div class="hz-head">
-        <span></span><span>Model</span><span>Avg steps / task</span>
-        <span style="text-align:right">Steps</span>
-        <span style="text-align:right">Time / task · total</span>
+        <span></span><span>${I18N.model}</span><span>${I18N.avgSteps}</span>
+        <span style="text-align:right">${I18N.steps}</span>
+        <span style="text-align:right">${I18N.timePerTask}</span>
       </div>`;
     HORIZON.forEach((d, i) => {
       const pct = (d.steps / max) * 100;
       const logo = d.logo
-        ? `<img class="hz__logo" src="assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
+        ? `<img class="hz__logo" src="${BASE}assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="hz__logo hz__logo--dot"></span>`;
       html += `
       <div class="hz-row">
@@ -419,7 +509,7 @@
           <span class="hz__fill" style="width:${pct.toFixed(1)}%; animation-delay:${(i * 0.04).toFixed(2)}s"></span>
         </span>
         <span class="hz__steps">${d.steps}</span>
-        <span class="hz__meta">~${d.mins} min&nbsp;·&nbsp;<b>${d.hours} h</b></span>
+        <span class="hz__meta">~${d.mins} ${I18N.min}&nbsp;·&nbsp;<b>${d.hours} ${I18N.hour}</b></span>
       </div>`;
     });
     el.innerHTML = html;
@@ -437,7 +527,7 @@
     DOMAINS.forEach((d, i) => {
       const w = x(d[1]) - x0;
       body += `
-        <text x="${x0 - 12}" y="${y + 13}" text-anchor="end" font-size="12" fill="${MUT}">${d[0]}</text>
+        <text x="${x0 - 12}" y="${y + 13}" text-anchor="end" font-size="12" fill="${MUT}">${catLabel(d[0])}</text>
         <rect class="bar" x="${x0}" y="${y}" width="${w}" height="17" rx="4"
               fill="${d[2] || C_MAIN}" style="animation-delay:${(i * .05).toFixed(2)}s"/>
         <text class="fade-label" x="${x0 + w + 9}" y="${y + 13}" font-size="11.5" font-weight="650" fill="${SOFT}" style="font-variant-numeric:tabular-nums">${d[1]}</text>`;
@@ -503,12 +593,12 @@
         ${seg(a0, a1, "var(--c-good)")}
         ${seg(a1, a0 + 2 * Math.PI, C_WARN)}
         ${T(cx, cy - 2, "29", { size: 30, w: 700, fill: SIENI, anchor: "middle" })}
-        ${T(cx, cy + 20, "never solved", { size: 11.5, fill: MUT, anchor: "middle" })}
+        ${T(cx, cy + 20, I18N.neverSolved, { size: 11.5, fill: MUT, anchor: "middle" })}
         <rect x="268" y="86" width="11" height="11" rx="3.5" fill="var(--c-good)"/>
-        ${T(287, 96, "solved by ≥1 model — 17 tasks", { size: 12.5, fill: SOFT })}
+        ${T(287, 96, I18N.solvedByOne, { size: 12.5, fill: SOFT })}
         <rect x="268" y="116" width="11" height="11" rx="3.5" fill="${C_WARN}"/>
-        ${T(287, 126, "never solved by any — 29 tasks", { size: 12.5, fill: SOFT })}
-        ${T(268, 158, "solve threshold: reward ≥ 0.95", { size: 11, italic: true, fill: FAINT })}
+        ${T(287, 126, I18N.neverAny, { size: 12.5, fill: SOFT })}
+        ${T(268, 158, I18N.solveThreshold, { size: 11, italic: true, fill: FAINT })}
       </svg>`;
   }
   whenVisible($("#chart-frontier"), renderFrontier);
@@ -520,8 +610,8 @@
   // y-axis mode configs. `off` holds hand-tuned label offsets [dx, dy, anchor].
   const COST_MODES = {
     reward: {
-      title: "Mean reward vs. cost per task",
-      ylabel: "mean reward", max: 0.55, ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+      title: I18N.costTitleReward,
+      ylabel: I18N.ylabelReward, max: 0.55, ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
       tickFmt: (v) => v.toFixed(1), val: (d) => d.mean,
       off: {
         // well-separated right side
@@ -538,8 +628,8 @@
       }
     },
     pass: {
-      title: "Pass@1 vs. cost per task",
-      ylabel: "pass@1 at R ≥ 0.95  [%]", max: 28, ticks: [0, 5, 10, 15, 20, 25],
+      title: I18N.costTitlePass,
+      ylabel: I18N.ylabelPass, max: 28, ticks: [0, 5, 10, 15, 20, 25],
       tickFmt: (v) => String(v), val: passOf,
       off: {
         // well-separated right side + top
@@ -605,7 +695,7 @@
       `<polygon class="avg-dot" points="${acx},${acy - ds} ${acx + ds},${acy} ${acx},${acy + ds} ${acx - ds},${acy}"
                 fill="${AVG_C}" stroke="${SURF}" stroke-width="2"/>` +
       `<text class="fade-label" x="${acx}" y="${acy - ds - 6}" font-size="11" font-weight="700"
-             fill="${AVG_C}" text-anchor="middle">Average</text>`;
+             fill="${AVG_C}" text-anchor="middle">${I18N.average}</text>`;
 
     // Explicit bordered legend box in the empty top-left region.
     const lx0 = padL + 16, ly0 = padT + 6, lw = 150, lh = 62;
@@ -613,11 +703,11 @@
       <g font-family="var(--font-sans)">
         <rect x="${lx0}" y="${ly0}" width="${lw}" height="${lh}" rx="8"
               fill="${SURF}" stroke="var(--line)" stroke-width="1"/>
-        ${T(lx0 + 12, ly0 + 17, "LEGEND", { size: 9, w: 650, fill: FAINT, ls: ".1em" })}
+        ${T(lx0 + 12, ly0 + 17, I18N.legend, { size: 9, w: 650, fill: FAINT, ls: ".1em" })}
         <circle cx="${lx0 + 17}" cy="${ly0 + 34}" r="5.5" fill="${C_MAIN}"/>
-        ${T(lx0 + 29, ly0 + 38, "Model", { size: 11.5, fill: SOFT })}
+        ${T(lx0 + 29, ly0 + 38, I18N.model, { size: 11.5, fill: SOFT })}
         <polygon points="${lx0 + 17},${ly0 + 46} ${lx0 + 23},${ly0 + 52} ${lx0 + 17},${ly0 + 58} ${lx0 + 11},${ly0 + 52}" fill="${AVG_C}"/>
-        ${T(lx0 + 29, ly0 + 56, "Average (17 models)", { size: 11.5, fill: SOFT })}
+        ${T(lx0 + 29, ly0 + 56, I18N.avgAll, { size: 11.5, fill: SOFT })}
       </g>`;
 
     el.style.position = "relative";
@@ -625,7 +715,7 @@
       <svg viewBox="0 0 ${W} ${H}" role="img">
         ${grid}
         <line class="axis-line" x1="${padL}" y1="${padT + plotH}" x2="${W - padR}" y2="${padT + plotH}"/>
-        ${T(W / 2, H - 6, "mean cost per task (log scale)", { size: 11.5, fill: MUT, anchor: "middle" })}
+        ${T(W / 2, H - 6, I18N.xlabel, { size: 11.5, fill: MUT, anchor: "middle" })}
         <text x="16" y="${padT + plotH / 2}" font-size="11.5" fill="${MUT}" text-anchor="middle"
               transform="rotate(-90 16 ${padT + plotH / 2})" font-family="var(--font-sans)">${cfg.ylabel}</text>
         ${dots}
@@ -644,13 +734,13 @@
       const pass = passOf(d).toFixed(1);
       tip.innerHTML =
         `<div class="chart-tip__logo-name">` +
-          (d.logo ? `<img src="assets/logos/${d.logo}.svg" alt="" width="18" height="18"/>` : "") +
+          (d.logo ? `<img src="${BASE}assets/logos/${d.logo}.svg" alt="" width="18" height="18"/>` : "") +
           `<b>${d.name}</b></div>` +
         `<div class="chart-tip__vendor">${d.vendor}</div>` +
         `<dl class="chart-tip__stats">` +
-          row("Mean reward", d.mean.toFixed(3), mode === "reward") +
+          row(I18N.meanRewardHead, d.mean.toFixed(3), mode === "reward") +
           row("Pass@1", `${d.solved}/46 (${pass}%)`, mode === "pass") +
-          row("Cost / task", `$${d.cost.toFixed(2)}`, false) +
+          row(I18N.costPerTask, `$${d.cost.toFixed(2)}`, false) +
         `</dl>`;
       tip.classList.add("is-on");
       tip.setAttribute("aria-hidden", "false");
@@ -669,13 +759,13 @@
       const med = [...LB].map((d) => d.cost).sort((a, b) => a - b);
       const median = med[(med.length - 1) >> 1];
       tip.innerHTML =
-        `<div class="chart-tip__logo-name"><b>Average</b></div>` +
-        `<div class="chart-tip__vendor">across all 17 models</div>` +
+        `<div class="chart-tip__logo-name"><b>${I18N.average}</b></div>` +
+        `<div class="chart-tip__vendor">${I18N.acrossAll}</div>` +
         `<dl class="chart-tip__stats">` +
-          row("Mean reward", avgReward.toFixed(3), mode === "reward") +
+          row(I18N.meanRewardHead, avgReward.toFixed(3), mode === "reward") +
           row("Pass@1", `${avgPass.toFixed(1)}%`, mode === "pass") +
-          row("Mean cost", `$${avgCost.toFixed(2)}`, false) +
-          row("Median cost", `$${median.toFixed(2)}`, false) +
+          row(I18N.meanCost, `$${avgCost.toFixed(2)}`, false) +
+          row(I18N.medianCost, `$${median.toFixed(2)}`, false) +
         `</dl>`;
       tip.classList.add("is-on");
       tip.setAttribute("aria-hidden", "false");
@@ -713,7 +803,7 @@
     tbody.innerHTML = HARD.map(([task, dom, mean, best]) => `
       <tr>
         <td class="cell-task">${task}</td>
-        <td class="cell-domain">${dom}</td>
+        <td class="cell-domain">${catLabel(dom)}</td>
         <td>
           <div class="loc-bar">
             <span class="loc-bar__track"></span>
@@ -767,7 +857,7 @@
     const tv = ft ? ft.value : "0.95";
     const ti = THRESH_IDX[tv] ?? 1;
     const thSolved = $("#th-solved");
-    if (thSolved) thSolved.textContent = `Solved (\u2265${Number(tv).toFixed(2)})`;
+    if (thSolved) thSolved.textContent = I18N.solvedThresh(Number(tv).toFixed(2));
     const sorted = COMMUNITY.slice().sort((a, b) => b.mean - a.mean);
     const rankOf = new Map(sorted.map((d, i) => [d, i + 1]));
     const rows = sorted.filter((d) =>
@@ -775,17 +865,17 @@
       (!fm.value || d.name === fm.value) &&
       (!fo.value || d.org === fo.value) &&
       (!fv.checked || d.verified));
-    $("#lbrd-count").textContent = `Showing ${rows.length} of ${COMMUNITY.length} entries`;
+    $("#lbrd-count").textContent = I18N.showing(rows.length, COMMUNITY.length);
     if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="7" class="lbrd-empty">No entries match these filters.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" class="lbrd-empty">${I18N.noEntries}</td></tr>`;
       return;
     }
     tbody.innerHTML = rows.map((d) => {
       const rank = rankOf.get(d);
       const logo = d.logo
-        ? `<img src="assets/logos/${d.logo}.svg" alt="" width="20" height="20" loading="lazy" decoding="async"/>`
+        ? `<img src="${BASE}assets/logos/${d.logo}.svg" alt="" width="20" height="20" loading="lazy" decoding="async"/>`
         : "";
-      const badge = d.verified ? `<span class="verified lbrd-badge">${CHECK}verified</span>` : "";
+      const badge = d.verified ? `<span class="verified lbrd-badge">${CHECK}${I18N.verified}</span>` : "";
       const solved = d.st[ti];
       const pct = Math.round((solved / N_TASKS) * 100);
       return `
@@ -810,9 +900,9 @@
       sel.innerHTML = `<option value="">${label}</option>` +
         values.map((v) => `<option value="${v}">${v}</option>`).join("");
     };
-    fill(fa, "All agents", uniq(COMMUNITY.map((d) => d.agent)));
-    fill(fm, "All models", uniq(COMMUNITY.map((d) => d.name)));
-    fill(fo, "All organizations", uniq(COMMUNITY.map((d) => d.org)).sort());
+    fill(fa, I18N.allAgents, uniq(COMMUNITY.map((d) => d.agent)));
+    fill(fm, I18N.allModels, uniq(COMMUNITY.map((d) => d.name)));
+    fill(fo, I18N.allOrgs, uniq(COMMUNITY.map((d) => d.org)).sort());
     [fa, fm, fo, fv, ft].forEach((c) => c && c.addEventListener("change", renderCommunity));
     $("#filter-clear")?.addEventListener("click", () => {
       fa.value = ""; fm.value = ""; fo.value = ""; fv.checked = false;
@@ -830,8 +920,8 @@
       if (!pre) return;
       try {
         await navigator.clipboard.writeText(pre.textContent || "");
-        btn.textContent = "Copied!";
-        setTimeout(() => (btn.textContent = "Copy"), 1600);
+        btn.textContent = I18N.copied;
+        setTimeout(() => (btn.textContent = I18N.copy), 1600);
       } catch { /* clipboard unavailable */ }
     });
   });
@@ -841,8 +931,8 @@
     const txt = $("#bibtex-block")?.textContent || "";
     try {
       await navigator.clipboard.writeText(txt);
-      e.target.textContent = "Copied!";
-      setTimeout(() => (e.target.textContent = "Copy"), 1600);
+      e.target.textContent = I18N.copied;
+      setTimeout(() => (e.target.textContent = I18N.copy), 1600);
     } catch { /* clipboard unavailable */ }
   });
 })();

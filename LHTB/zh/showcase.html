@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sample Run — Super Mario, played by frontier models · Long-Horizon Terminal-Bench</title>
-  <meta name="description" content="Verifier-rendered replays of 17 frontier models playing Super Mario under the Long-Horizon Terminal-Bench super-mario task — one 90-minute attempt each, graded by a hidden replay verifier." />
+  <title>样例运行 — 前沿模型玩超级马里奥 · Long-Horizon Terminal-Bench</title>
+  <meta name="description" content="17 个前沿模型在 Long-Horizon Terminal-Bench 的 super-mario 任务下游玩超级马里奥的验证器回放视频——每个模型一次 90 分钟尝试，由隐藏回放验证器打分。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=38" />
+  <link rel="stylesheet" href="../style.css?v=38" />
 
   <style>
-    /* ---- Showcase grid (scoped) ---- */
     .sc-intro { max-width: var(--col); }
     .sc-toolbar {
       display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
@@ -30,7 +29,6 @@
     }
     .sc-count { font-family: var(--font-sans); font-size: .8rem; color: var(--faint); margin-left: auto; }
 
-    /* Break out of the narrow reading column so clips are large. */
     .article .sc-toolbar,
     .article .sc-grid { max-width: 1080px; margin-left: auto; margin-right: auto; }
     .sc-grid {
@@ -99,9 +97,6 @@
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
 
-  <!-- ============================================================= -->
-  <!-- Top navigation                                                -->
-  <!-- ============================================================= -->
   <header class="topbar" id="topbar">
     <div class="topbar__inner">
       <a class="topbar__brand" href="index.html#top">
@@ -115,13 +110,13 @@
         <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
       </a>
       <nav class="topbar__nav">
-        <a href="index.html#benchmark" class="topbar__link">Blog</a>
-        <a href="index.html#results" class="topbar__link">Results</a>
-        <a href="paper.pdf" class="topbar__link" target="_blank" rel="noopener">Paper</a>
-        <a href="showcase.html" class="topbar__link" aria-current="page">Sample Run</a>
-        <a href="leaderboard.html" class="topbar__link topbar__link--cta">Leaderboard</a>
-        <a href="zh/showcase.html" class="topbar__link topbar__lang" hreflang="zh" lang="zh" title="切换到中文">中文</a>
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+        <a href="index.html#benchmark" class="topbar__link">博客</a>
+        <a href="index.html#results" class="topbar__link">结果</a>
+        <a href="../paper.pdf" class="topbar__link" target="_blank" rel="noopener">论文</a>
+        <a href="showcase.html" class="topbar__link" aria-current="page">样例运行</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta">排行榜</a>
+        <a href="../showcase.html" class="topbar__link topbar__lang" hreflang="en" lang="en" title="Switch to English">EN</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="切换深色模式" title="切换主题">
           <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
         </button>
@@ -134,31 +129,30 @@
   <div class="layout layout--solo">
     <main class="article">
       <section class="section" id="showcase">
-        <p class="section__num">Sample Run</p>
-        <h2 class="section__title">Super Mario, played by frontier models</h2>
+        <p class="section__num">样例运行</p>
+        <h2 class="section__title">前沿模型玩超级马里奥</h2>
 
         <div class="sc-intro">
           <p>
-            One of the 46 Long-Horizon Terminal-Bench tasks, <code>super-mario</code>, asks the agent to
-            actually <b>play the game</b> — issuing moves turn by turn through the terminal for the full
-            90-minute budget. When the run ends, the hidden verifier <b>replays the agent's own move log</b>
-            in a deterministically-seeded engine and renders the result to video. Nothing here is
-            hand-authored: every clip below is a model's <i>real</i> playthrough, exactly as the grader saw it.
+            在 46 项 Long-Horizon Terminal-Bench 任务中，有一项 <code>super-mario</code> 要求智能体真正去
+            <b>玩这个游戏</b>——在整整 90 分钟预算里，通过终端逐回合地下达操作。运行结束后，
+            隐藏验证器会在一个固定种子的引擎里<b>回放智能体自己的操作日志</b>，并把结果渲染成视频。
+            这里没有任何手工制作的内容：下面每一段视频都是某个模型的<i>真实</i>通关过程，
+            与打分器所见的完全一致。
           </p>
           <p>
-            The number on each card is that run's <b>normalized super-mario reward</b> in [0,&nbsp;1]:
-            full levels cleared plus fractional progress into the current level, divided by the pass
-            ceiling of three levels (clearing through World&nbsp;1-3 = 1.0). We also show how far each
-            agent actually got. Tellingly, <b>only four models ever cleared World&nbsp;1-1</b> — most
-            die on the first stage.
+            每张卡片上的数字，是该次运行在 [0,&nbsp;1] 区间内的<b>归一化 super-mario 奖励</b>：
+            完整通过的关卡数，加上当前关卡内的分数进度，再除以三关的通过上限
+            （通关至世界&nbsp;1-3 = 1.0）。我们也标出了每个智能体实际走了多远。
+            值得注意的是，<b>只有四个模型曾通过世界&nbsp;1-1</b>——大多数都死在第一关。
           </p>
         </div>
 
         <div class="sc-toolbar">
-          <span class="sc-toolbar__label">Sort</span>
-          <select id="sc-sort" class="sc-select" aria-label="Sort clips">
-            <option value="reward">By reward (high → low)</option>
-            <option value="name">By model name (A → Z)</option>
+          <span class="sc-toolbar__label">排序</span>
+          <select id="sc-sort" class="sc-select" aria-label="排序视频">
+            <option value="reward">按奖励（高 → 低）</option>
+            <option value="name">按模型名称（A → Z）</option>
           </select>
           <span class="sc-count" id="sc-count"></span>
         </div>
@@ -166,13 +160,13 @@
         <div class="sc-grid" id="sc-grid"></div>
 
         <p class="sc-note">
-          17 models shown, each from a single 90-minute attempt under the shared Terminus-2 harness.
-          Clips are re-encoded for the web (360p, muted); the raw <code>agent_play.mp4</code> renders live
-          in each run's verifier output. GLM 5.1 and Grok 4.5 are omitted (no rendered replay available yet).
+          共展示 17 个模型，每个均来自在共享 Terminus-2 评测框架下的一次 90 分钟尝试。
+          视频为网页重新编码（360p，静音）；原始的 <code>agent_play.mp4</code> 在每次运行的验证器输出中实时渲染。
+          GLM 5.1 和 Grok 4.5 未收录（暂无可用的渲染回放）。
         </p>
 
         <p class="closing" style="margin-top:2rem">
-          Curious how the rest of the suite is built and graded? <a href="index.html">Read the report →</a>
+          好奇整套任务的其余部分如何构建与打分？<a href="index.html">阅读报告 →</a>
         </p>
       </section>
     </main>
@@ -180,9 +174,6 @@
 
   <script>
     (function () {
-      // Data from harness/jobs (July 2026). reward = normalized super-mario score
-      // = (levels cleared + fraction into current level) / 3, clamped to [0,1].
-      // level/pct = furthest stage reached and progress into it.
       const CLIPS = [
         { slug: "gpt-5-5",         name: "GPT-5.5",             vendor: "OpenAI",    provider: "openai",   reward: 0.500, level: "1-2", pct: 50 },
         { slug: "glm-5-2",         name: "GLM 5.2",             vendor: "Zhipu",     provider: "zhipu",    reward: 0.427, level: "1-2", pct: 28 },
@@ -203,7 +194,7 @@
         { slug: "kimi-k2-7-code",  name: "Kimi K2.7 Code",      vendor: "Moonshot",  provider: "kimi",     reward: 0.011, level: "1-1", pct: 3 }
       ];
 
-      const logoFile = (p) => "assets/logos/" + (p === "openai" ? "openai.svg" : p + "-color.svg");
+      const logoFile = (p) => "../assets/logos/" + (p === "openai" ? "openai.svg" : p + "-color.svg");
       const grid = document.getElementById("sc-grid");
       const countEl = document.getElementById("sc-count");
       const sortEl = document.getElementById("sc-sort");
@@ -216,8 +207,8 @@
         grid.innerHTML = rows.map((c) => `
           <figure class="sc-card">
             <video class="sc-card__video" controls preload="none" playsinline
-                   poster="showcase/posters/${c.slug}.jpg">
-              <source src="showcase/videos/${c.slug}.mp4" type="video/mp4" />
+                   poster="../showcase/posters/${c.slug}.jpg">
+              <source src="../showcase/videos/${c.slug}.mp4" type="video/mp4" />
             </video>
             <figcaption class="sc-card__body">
               <img class="sc-card__logo" src="${logoFile(c.provider)}" alt="${c.vendor} logo"
@@ -226,12 +217,12 @@
                 <span class="sc-card__name">${c.name}</span>
                 <span class="sc-card__vendor">${c.vendor}</span>
               </span>
-              <span class="sc-card__reached" title="Furthest stage reached">World ${c.level}<small>${c.pct}% in</small></span>
-              <span class="sc-card__reward">${c.reward.toFixed(2)}<small>reward</small></span>
+              <span class="sc-card__reached" title="到达的最远关卡">世界 ${c.level}<small>推进 ${c.pct}%</small></span>
+              <span class="sc-card__reward">${c.reward.toFixed(2)}<small>奖励</small></span>
             </figcaption>
           </figure>`).join("");
 
-        countEl.textContent = rows.length + " models";
+        countEl.textContent = rows.length + " 个模型";
       }
 
       sortEl.addEventListener("change", () => render(sortEl.value));
@@ -239,6 +230,6 @@
     })();
   </script>
 
-  <script src="script.js?v=38"></script>
+  <script src="../script.js?v=38"></script>
 </body>
 </html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long-Horizon Terminal-Bench — 智能体在何处耗尽后劲</title>
+  <meta name="description" content="一个包含 46 项任务的基准：把智能体丢进终端里跑上数百步，并用隐藏、防作弊的验证器打分。这是对 17 个前沿模型的成绩单。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css?v=38" />
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="3" y="5" width="26" height="22" rx="4" class="bm-frame"/>
+            <path d="M9 13 l4 4 -4 4" class="bm-prompt"/>
+            <line x1="16" y1="21" x2="23" y2="21" class="bm-cursor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="#benchmark" class="topbar__link">博客</a>
+        <a href="#results" class="topbar__link">结果</a>
+        <a href="../paper.pdf" class="topbar__link" target="_blank" rel="noopener">论文</a>
+        <a href="showcase.html" class="topbar__link">样例运行</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta">排行榜</a>
+        <a href="../index.html" class="topbar__link topbar__lang" hreflang="en" lang="en" title="Switch to English">EN</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="切换深色模式" title="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout">
+
+    <aside class="toc" id="toc" aria-label="目录">
+      <p class="toc__title">目录</p>
+      <nav class="toc__nav">
+        <a href="#motivation" class="toc__item">智能体在长程处崩溃</a>
+        <a href="#benchmark" class="toc__item">基准介绍</a>
+        <a href="#anatomy" class="toc__item">一个任务的剖析</a>
+        <a href="#setup" class="toc__item">如何评测</a>
+        <a href="#results" class="toc__item">结果</a>
+        <a href="#takeaways" class="toc__item">要点</a>
+      </nav>
+    </aside>
+
+    <main class="article">
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <p class="hero__kicker">评测报告 &nbsp;·&nbsp; 腾讯混元大模型前沿 &nbsp;·&nbsp; 2026 年 7 月</p>
+
+        <h1 class="hero__title">Long-Horizon Terminal-Bench</h1>
+        <p class="hero__dek">衡量智能体能持续推进多远，而不只是它能完成什么。</p>
+
+        <p class="hero__subtitle">
+          大多数智能体基准几分钟就结束。真实的终端工作却未必如此。Long-Horizon
+          Terminal-Bench 把智能体丢进一个 Docker 容器，给它一个需要
+          <b>数百个前后依赖动作</b>才能达成的目标——从零构建一个系统、在破坏性变更之间迁移一个真实框架、
+          一步一步地玩一个游戏——然后用一个
+          <span class="u-h">隐藏、防作弊的验证器</span>为它打分，
+          并给予<span class="u-b">连续的部分分</span>。我们让 <b>18 个前沿模型</b>
+          在同一套评测框架下运行。没有一个能通过哪怕三分之一的任务。
+        </p>
+
+        <div class="hero__links" aria-label="资源">
+          <a class="pill" href="../paper.pdf" target="_blank" rel="noopener">
+            <svg class="pill__ic" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 2h8l4 4v16H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 2v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            论文
+          </a>
+          <a class="pill" href="https://github.com/zli12321/LHTB" target="_blank" rel="noopener">
+            <svg class="pill__ic" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 22v-3.6c0-1 .3-1.7.7-2.1C13 15.9 10 15 10 10.5c0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 .1a10.4 10.4 0 0 1 5.4 0c2.1-.4 3-.1 3-.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.5-3 5.4-5.7 5.8.4.4.8 1.2.8 2.4V22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            代码
+          </a>
+        </div>
+
+        <div class="hero__byline">
+          <p class="authors">Long-Horizon Terminal-Bench (LHTB)</p>
+          <p class="affils">46 项任务 &nbsp;·&nbsp; 9 个类别 &nbsp;·&nbsp; 17 个模型 &nbsp;·&nbsp</p>
+        </div>
+
+        <figure class="hero__figure">
+          <div id="hero-illustration" class="illustration illustration--hero"></div>
+          <figcaption>
+            <b>必须稳住九十分钟的那个循环。</b>智能体把命令敲进一个实时容器化环境，再读回文本反馈——
+            如此往复数百次。只有当它停下时，一个<span class="u-h">隐藏验证器</span>才会回放证据，
+            给出一个<span class="u-b">分级奖励</span>。进度无法伪造，只有真实的工作才算数。
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- TL;DR -->
+      <section class="tldr" aria-label="摘要">
+        <h2 class="tldr__kicker">一分钟速览</h2>
+        <ol class="tldr__list">
+          <li>
+            Long-Horizon Terminal-Bench (LHTB) 是一套<b>包含 46 项高难度、可复现终端任务</b>的基准，
+            覆盖 9 个类别，专门设计来抵抗记忆、抄近路和奖励作弊。每个任务都给出<b>连续的部分分</b>，
+            而不是二元的通过/失败。
+          </li>
+          <li>
+            我们在同一套统一评测框架（Terminus-2）下评测了 <b>17 个前沿模型</b>：
+            每项任务一个容器、90 分钟预算、隐藏验证器。
+          </li>
+          <li>
+            前沿模型的上限也不到满分的一半：最好的模型（<b>Claude Opus 4.8</b>）平均只得
+            <b>0.49</b>，最高解决数为 <b>46 项中的 12 项</b>（Claude Fable 5）。
+            <b>46 项任务中有 29 项从未被任何模型通过。</b>
+          </li>
+          <li>
+            价格并不等于性能：<b>MiniMax M3</b> 以<b>约每项任务 6 美元</b>拿下 0.39——
+            领先于每项 28 美元的 GPT-5.4 及其他更贵的模型。信号藏在部分分里，
+            而二元指标几乎看不出差别。
+          </li>
+        </ol>
+      </section>
+
+      <!-- LONG-HORIZON SCALE -->
+      <section class="horizon" id="horizon" aria-label="长程到底有多长">
+        <h2 class="tldr__kicker">“长程”到底有多长？</h2>
+        <p class="horizon__lead">
+          把全部 46 项任务各跑一遍，每个模型需要 <b>53–71 小时</b>的墙钟时间。单个任务平均耗时
+          <b>69–93 分钟</b>、约 <b>120–320 个智能体步骤</b>——这正是模型必须稳住、不能中途断线，
+          直到隐藏验证器最终看到结果的那个循环。
+        </p>
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title">每个模型跑完一轮的规模</h4>
+                <p class="chart-panel__sub">在 46 项任务上平均 · 每项一次 90 分钟尝试</p>
+              </div>
+            </div>
+            <div class="chart" id="chart-horizon"></div>
+          </div>
+          <figcaption>
+            即便是最经济的智能体，跑完整套任务一遍也要花上两天多的计算时间，
+            单个任务上更是数百个前后依赖的步骤。
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 01 · MOTIVATION -->
+      <section class="section" id="motivation">
+        <p class="section__num">第 01 部分</p>
+        <h2 class="section__title">智能体崩溃在长程，而非任务本身</h2>
+
+        <p>
+          让一个前沿模型修复一个失败的测试，它通常能做到。让它花一个下午把一个科学代码库恢复到数值一致——
+          运行仿真、阅读回归、调整、再运行——就会发生不一样的事。模型并不缺乏知识，
+          它是丢了线索：状态漂移、先前的决定被遗忘、探索变成了打转，预算烧光时目标才完成一半。
+        </p>
+
+        <p>
+          现有的终端基准很少见到这种失败模式，因为它们的任务可能很<i>短</i>。
+          一个十几个动作就结束的任务，只衡量智能体能否<span class="u-b">开始</span>工作，
+          却完全说不清它能否<span class="u-b">持续</span>下去——把状态贯穿数百步、
+          从死胡同里恢复、并知道自己究竟何时真正完成。
+        </p>
+
+        <aside class="note">
+          <p class="note__label">为什么部分分很重要</p>
+          <p>
+            在困难、漫长的任务上，二元通过/失败几乎把所有模型都压到零——一个把每个人都打成 0 分的基准，
+            无法给任何人排名。分级奖励保住了信号：一个重建了流水线 70% 的智能体，
+            确实比只重建了 20% 的更好，即使两者都没通过。给部分进度打分，
+            正是让一个困难基准仍能区分前沿模型的关键。
+          </p>
+        </aside>
+
+        <p>
+          LHTB 正是为衡量这一区间而建。三条设计主轴贯穿每一个任务：
+          <b>(1) 长程</b>——解法需要数百个前后依赖的动作和持续的状态；
+          <b>(2) 抗性</b>——隐藏验证器、确定性种子和基于回放的打分，让记忆、抄近路和奖励作弊无利可图；
+          <b>(3) 分级奖励</b>——为部分进度给出连续分数，因此即便无人通过，基准也能给模型排名。
+        </p>
+      </section>
+
+      <!-- 02 · THE BENCHMARK -->
+      <section class="section" id="benchmark">
+        <p class="section__num">第 02 部分</p>
+        <h2 class="section__title">基准：46 项任务，9 个类别</h2>
+
+        <p>
+          每个任务都遵循同样的约定：一个 Docker 容器、一份指令文件、一个实时环境，
+          以及一套对结果打分的隐藏测试。46 项任务横跨九个类别——软件与逆向工程、科学计算、
+          地球/气候与能源、多模态与图像、研究复现、系统与安全、专业（APEX）工作流，
+          以及另外两类需要持续交互而非单一产物的任务：<b>逐回合进行的交互式游戏</b>，
+          以及靠搜索与推理求解的<b>逻辑与约束谜题</b>。
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <p class="spec__label">规模</p>
+            <p class="spec__value">46 项任务 · 9 个类别</p>
+            <p class="spec__note">从框架迁移、芯片设计签核，到地震回归审计和玩 2048。</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">打分</p>
+            <p class="spec__value">隐藏、防作弊的验证器</p>
+            <p class="spec__note">确定性回放、固定种子环境、留存答案。声称的进度不算数——被回放出来的进度才算数。</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">奖励</p>
+            <p class="spec__value">连续，0 → 1</p>
+            <p class="spec__note">每个任务按分段或比例给部分分；奖励 ≥ 0.95 记为<i>解决</i>。</p>
+          </div>
+        </div>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <h4 class="chart-panel__title">这 46 项任务涵盖了什么</h4>
+            <p class="chart-panel__sub">各类别的任务数</p>
+            <div class="chart" id="chart-domains"></div>
+          </div>
+          <figcaption>
+            <b>刻意做得很宽。</b>软件与逆向工程以七项领先；科学计算、地球/气候和多模态分析各贡献六项
+            重建与证据提取任务；交互式游戏和逻辑谜题则把持续的逐回合博弈保留在其中。
+            即便是最大的类别也只有 46 项中的 7 项，因此没有任何单一技能能主导均值。
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 03 · ANATOMY -->
+      <section class="section" id="anatomy">
+        <p class="section__num">第 03 部分</p>
+        <h2 class="section__title">一个任务的剖析</h2>
+
+        <p>
+          理解设计最清晰的方式，是看一个具体任务。在
+          <code>unison-paper-reproduction</code> 中，智能体要在<b>不给原始实现</b>的前提下，复现
+          <a href="https://dl.acm.org/doi/10.1145/3627703.3629574" target="_blank" rel="noopener">UNISON
+          论文</a>中的一个实验。
+        </p>
+
+        <figure class="figure">
+          <div class="unit-card">
+            <div class="unit-card__head">
+              <span class="unit-card__badge">任务 · 研究复现</span>
+              <h4>复现 UNISON 胖树实验</h4>
+              <p>仅凭论文，构建一条并行仿真流水线，运行胖树 MTP 实验（k=4，4 线程，种子 7），并在容差内匹配参考指标——232 条流、6,254,916 个事件、14.46&nbsp;Gbps。</p>
+            </div>
+            <dl class="unit-card__fields">
+              <div class="unit-field">
+                <dt>环境</dt>
+                <dd><code>/app</code> 中有一个骨架项目；智能体必须实现拓扑生成、LP 划分、确定性执行与调度。</dd>
+              </div>
+              <div class="unit-field">
+                <dt>交付物</dt>
+                <dd>一个 <code>run-fat-tree</code> CLI，外加 <code>unison_report.json</code> 和 <code>summary.csv</code>，包含 LP 计数、调度器统计和一个确定性校验和。</dd>
+              </div>
+              <div class="unit-field">
+                <dt>验证器</dt>
+                <dd>六项隐藏检查覆盖指标保真度、<b>非平凡的</b> LP 划分与调度、同种子的确定性，以及在<b>隐藏种子</b>下合理的指标变化。</dd>
+              </div>
+              <div class="unit-field">
+                <dt>奖励</dt>
+                <dd>通过检查的比例；即使一条确定性流水线没有命中目标数值，仍可获得部分分。</dd>
+              </div>
+            </dl>
+            <div class="unit-card__evidence">
+              <span class="unit-card__evlabel">目录结构</span>
+              <button class="evchip" type="button" data-file="instruction"><code>instruction.md</code></button>
+              <button class="evchip" type="button" data-file="environment"><code>environment/</code> · 骨架项目</button>
+              <button class="evchip" type="button" data-file="tests"><code>tests/</code> · 隐藏验证器</button>
+              <button class="evchip" type="button" data-file="task"><code>task.toml</code></button>
+              <span class="unit-card__evhint">悬停预览 · 点击固定 →</span>
+            </div>
+            <div class="evpanel" id="evpanel" hidden>
+              <div class="evpanel__head">
+                <span class="evpanel__name" id="evpanel-name"></span>
+                <span class="evpanel__hint">真实任务文件</span>
+              </div>
+              <pre class="evpanel__body"><code id="evpanel-code"></code></pre>
+            </div>
+          </div>
+
+          <script type="text/plain" id="file-instruction" data-name="instruction.md">You are reproducing a small experiment from the UNISON paper.
+
+UNISON is a user-transparent parallel simulation kernel for ns-3. Its goal is to
+speed up discrete-event network simulation while preserving the behavior of
+existing ns-3 simulation models.
+
+The project lives in `/app`. You are not given the original UNISON
+implementation. Implement a self-contained reproduction pipeline from the method
+and experiment settings below.
+
+## Method
+  1. Fine-grained logical-process (LP) partitioning
+  2. Decoupling LPs from worker threads
+  3. Load-adaptive scheduling (by-execution-time)
+  4. Deterministic event execution (stable tie-breaking)
+  5. User-transparent interface
+
+## Experiment To Reproduce
+  topology: fat-tree          offered load  = 0.1
+  k = 4                        flow monitor  = disabled
+  hosts = 16                   random seed   = 7
+  threads = 4                  scheduler     = by-execution-time
+  simulation time = 0.2 s      progress interval = 0.1 s
+
+## Ground Truth Reference
+  total flow count            : 232
+  event count                 : 6254916
+  generated data rate         : 14.4599 Gbps
+  generated average flow size : 1.55839 MB
+
+## Constraints
+Do not hard-code the final report as a constant file. The same seed must produce
+the same report across runs; a different hidden seed must change traffic
+statistics while preserving a valid structure.
+
+  … the full instruction.md also pins the exact CLI commands, the required
+  unison_report.json schema, and an 8-check scoring rubric.</script>
+
+          <script type="text/plain" id="file-environment" data-name="environment/ · skeleton app">environment/
+├── Dockerfile
+├── Singularity.def
+└── project/
+    ├── pyproject.toml              # installs the `unison-repro` CLI
+    ├── experiments/
+    │   └── run_unison_suite.py
+    └── src/unison_repro/
+        ├── cli.py                  # run-fat-tree entrypoint (given)
+        ├── topology.py             # TODO: build the fat-tree
+        ├── partition.py            # TODO: split nodes into LPs
+        ├── scheduler.py            # TODO: by-execution-time policy
+        ├── simulator.py            # TODO: deterministic event loop
+        └── report.py               # TODO: emit unison_report.json
+
+# src/unison_repro/cli.py  (the only wired-up file the agent starts with)
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(prog="unison-repro")
+    sub = parser.add_subparsers(dest="command", required=True)
+    run = sub.add_parser("run-fat-tree")
+    run.add_argument("--k", type=int, default=4)
+    run.add_argument("--threads", type=int, default=4)
+    run.add_argument("--seed", type=int, default=7)
+    run.add_argument("--scheduler", default="by-execution-time")
+    ...
+    report = run_fat_tree(_config_from_args(args))   # <- agent must implement
+    write_report(report, args.out)</script>
+
+          <script type="text/plain" id="file-tests" data-name="tests/ · hidden verifier">tests/
+├── test.sh              # verifier entrypoint
+├── test_outputs.py      # 8 hidden pytest checks
+└── fixtures/
+    ├── golden/fat_tree_small.json     # reference metrics
+    └── private/hidden_config.json     # hidden-seed configs
+
+# tests/test.sh  —  reward = fraction of checks passed (partial credit)
+python -m pytest -p no:cacheprovider -q /tests/test_outputs.py > pytest.log
+passed = int(re.search(r'(\d+) passed', text).group(1))
+failed = int(re.search(r'(\d+) failed', text).group(1))
+total  = passed + failed
+reward = (passed / total) if total else 0.0        # written to reward.txt
+
+# test_outputs.py guards against faking the numbers:
+FORBIDDEN_SNIPPETS = [
+    '"generated_data_rate_gbps": 14.4599',
+    '"event_count": 6254916',
+    "return json.loads",
+    "open('/tests", ...
+]
+# checks: files exist · schema · fat-tree metrics within tolerance ·
+#         LP count > threads · scheduler rebalances · multi-worker events ·
+#         same-seed determinism · hidden-seed metrics shift reasonably</script>
+
+          <script type="text/plain" id="file-task" data-name="task.toml">schema_version = "1.1"
+artifacts = ["outputs/unison_report.json", "outputs/summary.csv"]
+
+[task]
+name = "long-horizon-terminal-bench/unison-paper-reproduction"
+description = "Reproduce a calibrated UNISON fat-tree MTP experiment from the paper method and settings."
+keywords = ["paper-reproduction", "unison", "ns-3", "parallel-simulation", "systems", "experiments"]
+
+[metadata]
+difficulty = "hard"
+category = "software-engineering"
+expert_time_estimate_min = 120.0
+junior_time_estimate_min = 360.0
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 5400.0          # 90-minute budget
+continue_until_timeout = true
+
+[environment]
+docker_image = "zli12321/lhtb-unison-paper-reproduction:20260615"
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+gpus = 0
+allow_internet = true</script>
+        </figure>
+      </section>
+
+      <!-- 04 · SETUP -->
+      <section class="section" id="setup">
+        <p class="section__num">第 04 部分</p>
+        <h2 class="section__title">评测设置</h2>
+
+        <p>
+          只有当脚手架完全一致时，比较才有意义。每个模型都跑同一套
+          <b>Terminus-2 评测框架</b>——相同的提示、相同的解析器、相同的摘要策略——
+          唯一的区别只是背后的 API 端点。没有模型专属工具、没有定制智能体、也不会对失败的运行重跑。
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <p class="spec__label">评测框架</p>
+            <p class="spec__value">Terminus-2，所有模型一致</p>
+            <p class="spec__note">JSON 动作解析器、主动的上下文摘要、完整的终端会话录制。</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">预算</p>
+            <p class="spec__value">每项任务 90 分钟</p>
+            <p class="spec__note">一次尝试。超时也保留其部分分——即截止时验证器能回放出的部分。</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label">指标</p>
+            <p class="spec__value">平均奖励 · 解决 @ ≥0.95</p>
+            <p class="spec__note">错误记 0 分。46 项任务的平均奖励是头号数字；解决数则是更稀疏、更严苛的视角。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 · RESULTS -->
+      <section class="section" id="results">
+        <p class="section__num">第 05 部分</p>
+        <h2 class="section__title">结果</h2>
+
+        <h3 class="subhead subhead--result"><span class="subhead__tag">结果 1</span> <span>前沿模型的上限不到满分的一半</span></h3>
+        <p>
+          在全部 46 项任务上取平均，最好的模型拿到的奖励也不到可得分的一半。两个 Anthropic 模型领先，
+          GPT-5.5 紧随其后，一批强大的开源权重与中国前沿模型则密集地落在 0.25 到 0.39 之间。
+          第一名到最后一名的差距接近 2.5 倍——这个基准远未饱和。
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title">排行榜 — 46 项任务</h4>
+                <p class="chart-panel__sub" id="lb-sub">46 项任务的平均奖励 · 解决 = 奖励 ≥ 0.95 · 同一套评测框架</p>
+              </div>
+              <div class="seg-group">
+                <span class="seg-group__label">切换指标
+                  <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5l-4 4 4 4M4 9h11a4 4 0 0 1 4 4v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="seg seg--lg" id="lb-metric" role="tablist" aria-label="排行榜指标">
+                  <button class="seg__btn is-active" data-lb="reward" role="tab">部分奖励</button>
+                  <button class="seg__btn" data-lb="pass" role="tab">二元通过 (R = 1.0)</button>
+                </div>
+              </div>
+            </div>
+            <div class="lb" id="leaderboard"></div>
+          </div>
+          <figcaption>
+            <b>是部分分让排名保持了生命力。</b>按平均奖励，Claude Opus 4.8 领先（0.492），
+            全场在图上铺开。切换到<b>严格二元通过率</b>——即以<b>完美奖励 R = 1.0</b>解决的任务占 46 项的比例——
+            柱状图便随之塌陷：其中十个模型拿到了真实的部分分，却一项都没有彻底解决，
+            而按奖励排出的顺序也不再吻合。信号活在部分奖励里。
+          </figcaption>
+        </figure>
+
+        <h3 class="subhead subhead--result"><span class="subhead__tag">结果 2</span> <span>部分分显示出信号</span></h3>
+        <p>
+          一次性看全部 782 次「模型 × 任务」的运行，分级奖励的理由便不言自明。
+          只有 <b>7%</b> 的运行越过了解决阈值——在二元打分下，这个基准 93% 的部分会变成难以区分的零。
+          连续奖励把这团质量摊开：一半以上的运行落在低部分分区间（0–0.25），
+          在这里模型之间的差别，就在于它们丢线索之前能走多远。
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-duo">
+              <div class="chart-panel">
+                <h4 class="chart-panel__title">782 次运行落在哪里</h4>
+                <p class="chart-panel__sub">按奖励区间划分的全部「模型 × 任务」运行占比</p>
+                <div class="chart" id="chart-dist"></div>
+              </div>
+              <div class="chart-panel">
+                <h4 class="chart-panel__title">未被攻克的前沿</h4>
+                <p class="chart-panel__sub">46 项任务中，有多少被<i>任一</i>模型解决过？</p>
+                <div class="chart" id="chart-frontier"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <b>46 项任务中有 29 项从未被任何模型解决。</b>而且在 9.2% 的运行里，智能体一分未得。
+            一个按通过/失败打分的基准，会把这片地貌压缩到处处接近零；正是部分分让排名保持了信息量。
+          </figcaption>
+        </figure>
+
+        <p>
+          最难的任务要么需要<b>持续的定量反馈循环</b>——运行、测量、调整、再运行——
+          要么需要从非文本模态中提取证据。
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card loc-card">
+            <div class="loc-table-wrap">
+              <table class="loc-table" id="hard-table">
+                <thead>
+                  <tr>
+                    <th>最难的任务</th><th>领域</th>
+                    <th class="grp">均值（17 个模型）</th><th class="grp">最佳单次运行</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption>
+            <b>敞开的前沿。</b>在 <code>robotics-slam-benchmark-repair</code> 上，<i>最好的</i>模型也只拿到 0.03。
+            另一端，<code>spot-scheduler-traces</code>（均值 0.96）和 <code>nbody-accel-iterative</code>（0.93）
+            则说明：当反馈信号清晰可读时，这些模型是能执行长任务的。
+          </figcaption>
+        </figure>
+
+        <h3 class="subhead subhead--result"><span class="subhead__tag">结果 3</span> <span>价格不等于性能</span></h3>
+        <p>
+          成本这一维讲着它自己的故事。每项任务的花费相差近 <b>30 倍</b>（从 hy3 的 2.5 美元到
+          Claude Fable 5 的 73 美元），而平均奖励只跨越 2.5 倍。Anthropic 模型用最大的预算
+          （每项 38–73 美元）买来了领先。一批每项 <b>4–12 美元</b>的模型，
+          则以大约六分之一的成本，交付了领先者 60–80% 的分数。
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title" id="chart-cost-title">平均奖励 vs. 单任务成本</h4>
+                <p class="chart-panel__sub">成本为对数刻度 · 越靠左上越好</p>
+              </div>
+              <div class="seg" id="cost-yaxis" role="tablist" aria-label="Y 轴指标">
+                <button class="seg__btn is-active" data-y="reward" role="tab">平均奖励</button>
+                <button class="seg__btn" data-y="pass" role="tab">Pass@1</button>
+              </div>
+            </div>
+            <div class="chart" id="chart-cost"></div>
+          </div>
+          <figcaption>
+            <b>两条有效前沿。</b>若你非要最高分，就得付 Anthropic 的价（每项 38–73 美元）。
+            若你优化每美元的奖励，MiniMax M3（0.385，$6.13）和 Qwen3.6 Plus（0.313，$4.47）占优。
+            MiniMax 以约六分之一的成本，达到了 Opus 分数的 78%。
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 06 · TAKEAWAYS -->
+      <section class="section" id="takeaways">
+        <p class="section__num">第 06 部分</p>
+        <h2 class="section__title">要点</h2>
+
+        <ul class="ticklist ticklist--takeaways">
+          <li>长程完成才是真正的瓶颈。各模型的运行平均达到 231 步、990 万 token、85 分钟，可最好的模型在奖励=1.0 下仍只解决 46 项中的 7 项。</li>
+          <li>大多数失败不是当下的错误，而是没做完的工作：79% 未解决的运行是在智能体仍在积极推进时超时的。</li>
+          <li>在这个难度下，密集奖励必不可少。在严格的满分阈值下，十五个模型中有十个一项都解决不了，尽管它们的许多运行都取得了可观的部分进度。</li>
+        </ul>
+      </section>
+
+      <!-- FOOTER / citation -->
+      <footer class="footer" id="cite">
+        <h3>引用本工作</h3>
+        <div class="bibtex">
+          <button class="bibtex__copy" id="copy-bib" title="复制 BibTeX">复制</button>
+          <pre id="bibtex-block">@misc{li2026lhtb,
+  title         = {Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading},
+  author        = {Li, Zongxia and Li, Zhongzhi and Shi, Yucheng and Wang, Ruhan and Yang, Junyao and Liu, Zhichao and Wu, Xiyang and Li, Anhao and Yu, Yue and Liu, Ninghao and Sun, Lichao and Mi, Haotao and Liang, Leowei},
+  year          = {2026},
+  eprint        = {2607.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://zli12321.github.io/LHTB/},
+  note          = {Preprint; arXiv ID pending}
+}</pre>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../script.js?v=38"></script>
+</body>
+</html>

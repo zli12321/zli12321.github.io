@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社区排行榜 — Long-Horizon Terminal-Bench</title>
+  <meta name="description" content="Long-Horizon Terminal-Bench 上的社区提交运行：46 项高难度终端任务、单次 90 分钟预算、基于回放的隐藏验证器。自带模型或智能体即可提交。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css?v=38" />
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="index.html#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="3" y="5" width="26" height="22" rx="4" class="bm-frame"/>
+            <path d="M9 13 l4 4 -4 4" class="bm-prompt"/>
+            <line x1="16" y1="21" x2="23" y2="21" class="bm-cursor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Long-Horizon&nbsp;Terminal-Bench</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="index.html#benchmark" class="topbar__link">博客</a>
+        <a href="index.html#results" class="topbar__link">结果</a>
+        <a href="../paper.pdf" class="topbar__link" target="_blank" rel="noopener">论文</a>
+        <a href="showcase.html" class="topbar__link">样例运行</a>
+        <a href="leaderboard.html" class="topbar__link topbar__link--cta" aria-current="page">排行榜</a>
+        <a href="../leaderboard.html" class="topbar__link topbar__lang" hreflang="en" lang="en" title="Switch to English">EN</a>
+        <button id="theme-toggle" class="icon-btn" aria-label="切换深色模式" title="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout layout--solo">
+    <main class="article">
+      <section class="section" id="leaderboard-community">
+        <p class="section__num">排行榜</p>
+        <h2 class="section__title">社区排行榜</h2>
+
+        <p class="lbrd-intro">
+          社区提交的、在 46 项 Long-Horizon Terminal-Bench 任务上的运行，按<b>平均奖励</b>排名。
+          种子条目是我们的 Terminus-2 基线——即<a href="index.html#results">报告中</a>分析的那些运行。
+          LHTB 是开放的，采用与 <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.0" target="_blank" rel="noopener">Terminal-Bench&nbsp;2</a>
+          相同的提交流程：在同样的 90 分钟预算下，将 46 项任务<b>每项跑五次</b>，
+          然后带上你的作业目录提交一个 pull request。一个机器人会校验提交，
+          维护者会对照隐藏验证器审查轨迹，之后它才会登上榜单。带
+          <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>已验证</span>
+          徽章表示我们已复现。
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card loc-card">
+            <div class="lbrd-bar">
+              <span class="lbrd-count" id="lbrd-count"></span>
+              <div class="lbrd-filters">
+                <select class="lbrd-select lbrd-select--thresh" id="filter-threshold" aria-label="解决阈值" title="记为解决的奖励阈值">
+                  <option value="0.9">解决 &ge; 0.90</option>
+                  <option value="0.95" selected>解决 &ge; 0.95</option>
+                  <option value="1">解决 &ge; 1.00</option>
+                </select>
+                <select class="lbrd-select" id="filter-agent" aria-label="按智能体筛选"></select>
+                <select class="lbrd-select" id="filter-model" aria-label="按模型筛选"></select>
+                <select class="lbrd-select" id="filter-org" aria-label="按机构筛选"></select>
+                <label class="lbrd-check"><input type="checkbox" id="filter-verified"/> 仅看已验证</label>
+                <button class="lbrd-clear" id="filter-clear">清除筛选</button>
+              </div>
+            </div>
+            <div class="loc-table-wrap">
+              <table class="loc-table lbrd-table" id="community-table">
+                <thead>
+                  <tr>
+                    <th>排名</th><th>智能体</th><th>模型</th><th>提交者</th>
+                    <th>日期</th><th class="grp" id="th-solved">已解决</th><th class="grp">平均奖励</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption>
+            <b>分数为 46 项任务上的平均奖励</b>（错误 = 0；奖励 ≥ 0.95 记为<i>解决</i>）。
+            种子条目是我们的 Terminus-2 基线；榜单会随社区提交而增长。
+          </figcaption>
+        </figure>
+
+        <figure class="figure figure--wide">
+          <details class="chart-card submit submit--fold">
+            <summary class="submit__head">
+              <span class="submit__headrow">
+                <span class="submit__headtext">
+                  <h4 class="chart-panel__title">提交一次运行</h4>
+                  <p class="chart-panel__sub">与 Terminal-Bench 2 相同的流程——每项任务跑五次，然后提交一个 pull request。</p>
+                </span>
+                <svg class="submit__chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="submit__agent">
+                <b>在用 AI 编程智能体？</b>把它指向我们的
+                <a href="../SUBMIT.md" download="LHTB-SUBMIT.md" onclick="event.stopPropagation()">智能体技能</a>，
+                你的智能体就能自动运行整套任务、生成 <code>metadata.yaml</code>，并替你提交 pull request。
+              </span>
+            </summary>
+
+            <ol class="submit__steps">
+              <li class="submit__step">
+                <span class="submit__stepn">1</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">运行全部 46 项任务，每项五次</p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">评测一个模型 &nbsp;·&nbsp; 参考评测框架</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="复制命令">复制</button>
+                        <pre>harbor run -d long-horizon-terminal-bench \
+  -a terminus-2 -m "your-provider/your-model" -k 5</pre>
+                      </div>
+                    </div>
+                    <div class="cmd">
+                      <p class="cmd__label">自带你的智能体</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="复制命令">复制</button>
+                        <pre>harbor run -d long-horizon-terminal-bench \
+  --agent-import-path "path.to.agent:YourAgent" -k 5</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="submit__step">
+                <span class="submit__stepn">2</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">Fork 排行榜仓库并加入你的作业</p>
+                  <p class="submit__steptext">
+                    Fork <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB 排行榜仓库</a>，
+                    把你的作业文件夹放到 <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code> 下，
+                    并附上一个 <code>metadata.yaml</code>。
+                  </p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">提交目录结构</p>
+                      <div class="cmd__box">
+                        <pre>submissions/long-horizon-terminal-bench/1.0/
+  terminus-2__your-model/
+    metadata.yaml
+    &lt;job-folder&gt;/
+      config.json
+      &lt;trial-1&gt;/result.json
+      &lt;trial-2&gt;/result.json
+      ...            # &ge; 每项任务 5 次，附带运行产物</pre>
+                      </div>
+                    </div>
+                    <div class="cmd">
+                      <p class="cmd__label">metadata.yaml</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="复制命令">复制</button>
+                        <pre>agent: terminus-2
+model: your-provider/your-model
+organization: Your Org
+repo: https://github.com/your/agent   # 可选
+docs: https://.../model-card          # 可选</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="submit__step">
+                <span class="submit__stepn">3</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">提交一个 pull request</p>
+                  <p class="submit__steptext">
+                    我们的机器人会自动校验提交并对任何错误留言。通过后，维护者会审查轨迹并合并——
+                    随后你的运行会被导入榜单，并带上一个
+                    <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>已验证</span> 徽章。
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p class="submit__note">
+              <b>校验规则。</b>每项任务五次（<code>-k 5</code>）· <code>timeout_multiplier = 1.0</code>
+              · 不得覆盖智能体或验证器的超时 · 不得覆盖 CPU / 内存 / 存储 · 每一次运行都要有一份有效的
+              <code>result.json</code> 及运行产物 · 智能体不得访问 LHTB 网站或仓库（奖励作弊）。出错的运行记 0 分。
+            </p>
+          </details>
+        </figure>
+
+        <p class="closing">
+          想看看这些基线背后的完整分析——任务如何构建、如何打分，以及当今前沿在何处耗尽后劲？
+          <a href="index.html">阅读博客 →</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="../script.js?v=38"></script>
+</body>
+</html>
