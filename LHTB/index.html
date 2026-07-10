@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=22" />
+  <link rel="stylesheet" href="style.css?v=30" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -35,7 +35,7 @@
         <a href="#benchmark" class="topbar__link">Blog</a>
         <a href="#results" class="topbar__link">Results</a>
         <a href="paper.pdf" class="topbar__link" target="_blank" rel="noopener">Paper</a>
-        <a href="showcase.html" class="topbar__link">Showcase</a>
+        <a href="showcase.html" class="topbar__link">Sample Run</a>
         <a href="leaderboard.html" class="topbar__link topbar__link--cta">Leaderboard</a>
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
           <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
@@ -84,9 +84,20 @@
           the same harness. None passes even a third of the tasks.
         </p>
 
+        <div class="hero__links" aria-label="Resources">
+          <a class="pill" href="paper.pdf" target="_blank" rel="noopener">
+            <svg class="pill__ic" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 2h8l4 4v16H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 2v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            Paper
+          </a>
+          <a class="pill" href="https://github.com/zli12321/LHTB" target="_blank" rel="noopener">
+            <svg class="pill__ic" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 22v-3.6c0-1 .3-1.7.7-2.1C13 15.9 10 15 10 10.5c0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 .1a10.4 10.4 0 0 1 5.4 0c2.1-.4 3-.1 3-.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.5-3 5.4-5.7 5.8.4.4.8 1.2.8 2.4V22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Code
+          </a>
+        </div>
+
         <div class="hero__byline">
           <p class="authors">Long-Horizon Terminal-Bench (LHTB)</p>
-          <p class="affils">46 tasks &nbsp;·&nbsp; 9 categories &nbsp;·&nbsp; 17 models &nbsp;·&nbsp; one identical harness</p>
+          <p class="affils">46 tasks &nbsp;·&nbsp; 9 categories &nbsp;·&nbsp; 17 models &nbsp;·&nbsp</p>
         </div>
 
         <figure class="hero__figure">
@@ -292,12 +303,140 @@
             </dl>
             <div class="unit-card__evidence">
               <span class="unit-card__evlabel">Layout</span>
-              <span class="evchip"><code>instruction.md</code></span>
-              <span class="evchip"><code>environment/</code> · skeleton app</span>
-              <span class="evchip"><code>tests/</code> · hidden verifier</span>
-              <span class="evchip"><code>task.toml</code></span>
+              <button class="evchip" type="button" data-file="instruction"><code>instruction.md</code></button>
+              <button class="evchip" type="button" data-file="environment"><code>environment/</code> · skeleton app</button>
+              <button class="evchip" type="button" data-file="tests"><code>tests/</code> · hidden verifier</button>
+              <button class="evchip" type="button" data-file="task"><code>task.toml</code></button>
+              <span class="unit-card__evhint">hover to preview · click to pin →</span>
+            </div>
+            <div class="evpanel" id="evpanel" hidden>
+              <div class="evpanel__head">
+                <span class="evpanel__name" id="evpanel-name"></span>
+                <span class="evpanel__hint">actual task file</span>
+              </div>
+              <pre class="evpanel__body"><code id="evpanel-code"></code></pre>
             </div>
           </div>
+
+          <script type="text/plain" id="file-instruction" data-name="instruction.md">You are reproducing a small experiment from the UNISON paper.
+
+UNISON is a user-transparent parallel simulation kernel for ns-3. Its goal is to
+speed up discrete-event network simulation while preserving the behavior of
+existing ns-3 simulation models.
+
+The project lives in `/app`. You are not given the original UNISON
+implementation. Implement a self-contained reproduction pipeline from the method
+and experiment settings below.
+
+## Method
+  1. Fine-grained logical-process (LP) partitioning
+  2. Decoupling LPs from worker threads
+  3. Load-adaptive scheduling (by-execution-time)
+  4. Deterministic event execution (stable tie-breaking)
+  5. User-transparent interface
+
+## Experiment To Reproduce
+  topology: fat-tree          offered load  = 0.1
+  k = 4                        flow monitor  = disabled
+  hosts = 16                   random seed   = 7
+  threads = 4                  scheduler     = by-execution-time
+  simulation time = 0.2 s      progress interval = 0.1 s
+
+## Ground Truth Reference
+  total flow count            : 232
+  event count                 : 6254916
+  generated data rate         : 14.4599 Gbps
+  generated average flow size : 1.55839 MB
+
+## Constraints
+Do not hard-code the final report as a constant file. The same seed must produce
+the same report across runs; a different hidden seed must change traffic
+statistics while preserving a valid structure.
+
+  … the full instruction.md also pins the exact CLI commands, the required
+  unison_report.json schema, and an 8-check scoring rubric.</script>
+
+          <script type="text/plain" id="file-environment" data-name="environment/ · skeleton app">environment/
+├── Dockerfile
+├── Singularity.def
+└── project/
+    ├── pyproject.toml              # installs the `unison-repro` CLI
+    ├── experiments/
+    │   └── run_unison_suite.py
+    └── src/unison_repro/
+        ├── cli.py                  # run-fat-tree entrypoint (given)
+        ├── topology.py             # TODO: build the fat-tree
+        ├── partition.py            # TODO: split nodes into LPs
+        ├── scheduler.py            # TODO: by-execution-time policy
+        ├── simulator.py            # TODO: deterministic event loop
+        └── report.py               # TODO: emit unison_report.json
+
+# src/unison_repro/cli.py  (the only wired-up file the agent starts with)
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(prog="unison-repro")
+    sub = parser.add_subparsers(dest="command", required=True)
+    run = sub.add_parser("run-fat-tree")
+    run.add_argument("--k", type=int, default=4)
+    run.add_argument("--threads", type=int, default=4)
+    run.add_argument("--seed", type=int, default=7)
+    run.add_argument("--scheduler", default="by-execution-time")
+    ...
+    report = run_fat_tree(_config_from_args(args))   # <- agent must implement
+    write_report(report, args.out)</script>
+
+          <script type="text/plain" id="file-tests" data-name="tests/ · hidden verifier">tests/
+├── test.sh              # verifier entrypoint
+├── test_outputs.py      # 8 hidden pytest checks
+└── fixtures/
+    ├── golden/fat_tree_small.json     # reference metrics
+    └── private/hidden_config.json     # hidden-seed configs
+
+# tests/test.sh  —  reward = fraction of checks passed (partial credit)
+python -m pytest -p no:cacheprovider -q /tests/test_outputs.py > pytest.log
+passed = int(re.search(r'(\d+) passed', text).group(1))
+failed = int(re.search(r'(\d+) failed', text).group(1))
+total  = passed + failed
+reward = (passed / total) if total else 0.0        # written to reward.txt
+
+# test_outputs.py guards against faking the numbers:
+FORBIDDEN_SNIPPETS = [
+    '"generated_data_rate_gbps": 14.4599',
+    '"event_count": 6254916',
+    "return json.loads",
+    "open('/tests", ...
+]
+# checks: files exist · schema · fat-tree metrics within tolerance ·
+#         LP count > threads · scheduler rebalances · multi-worker events ·
+#         same-seed determinism · hidden-seed metrics shift reasonably</script>
+
+          <script type="text/plain" id="file-task" data-name="task.toml">schema_version = "1.1"
+artifacts = ["outputs/unison_report.json", "outputs/summary.csv"]
+
+[task]
+name = "long-horizon-terminal-bench/unison-paper-reproduction"
+description = "Reproduce a calibrated UNISON fat-tree MTP experiment from the paper method and settings."
+keywords = ["paper-reproduction", "unison", "ns-3", "parallel-simulation", "systems", "experiments"]
+
+[metadata]
+difficulty = "hard"
+category = "software-engineering"
+expert_time_estimate_min = 120.0
+junior_time_estimate_min = 360.0
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 5400.0          # 90-minute budget
+continue_until_timeout = true
+
+[environment]
+docker_image = "zli12321/lhtb-unison-paper-reproduction:20260615"
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+gpus = 0
+allow_internet = true</script>
           <!-- <figcaption>
             <b>Hard to fake, hard to finish.</b> Hard-coding fails because the verifier reruns the
             pipeline under hidden seeds and configs, so only a real implementation survives. In
@@ -387,9 +526,14 @@
                 <h4 class="chart-panel__title">Leaderboard — 46 tasks</h4>
                 <p class="chart-panel__sub" id="lb-sub">Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness</p>
               </div>
-              <div class="seg" id="lb-metric" role="tablist" aria-label="Leaderboard metric">
-                <button class="seg__btn is-active" data-lb="reward" role="tab">Partial reward</button>
-                <button class="seg__btn" data-lb="pass" role="tab">Binary pass (R = 1.0)</button>
+              <div class="seg-group">
+                <span class="seg-group__label">Switch metric
+                  <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5l-4 4 4 4M4 9h11a4 4 0 0 1 4 4v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="seg seg--lg" id="lb-metric" role="tablist" aria-label="Leaderboard metric">
+                  <button class="seg__btn is-active" data-lb="reward" role="tab">Partial reward</button>
+                  <button class="seg__btn" data-lb="pass" role="tab">Binary pass (R = 1.0)</button>
+                </div>
               </div>
             </div>
             <div class="lb" id="leaderboard"></div>
@@ -503,17 +647,17 @@
         <h2 class="section__title">Takeaways</h2>
 
         <ul class="ticklist ticklist--takeaways">
-          <li>Long-horizon execution is a distinct capability — and today's frontier earns less than half credit on it.</li>
-          <li>Hidden, replay-based verifiers with continuous rewards keep a hard benchmark informative: 29 never-solved tasks still produce a clean ranking.</li>
-          <li>Identical-harness evaluation isolates the model. The 2.5× spread you see is model capability, not scaffolding.</li>
-          <li>Watch the $4–12-per-task tier: it improves fastest, and it is already 60–80% of the way to the leaders at roughly a sixth of the cost.</li>
+          <li>Long-horizon completion is the real bottleneck. Across the models, runs average 231 steps, 9.9M tokens, and 85 minutes, yet the best model still solves only 7 of 46 tasks at reward=1.0.</li>
+          <li>Most failures are not immediate mistakes but unfinished work: 79% of unresolved runs time out while the agent is still actively making progress.</li>
+          <li>Dense rewards are essential at this difficulty level. Under a strict perfect-score threshold, ten of the fifteen models solve zero tasks, even though many of their runs make substantial partial progress.</li>
+          <!-- <li>Current agents also stop too early. The paper finds repeated false finishes: runs that look nearly done, exit with time left, and still fail hidden checks because verification is weak.</li> -->
         </ul>
 
-        <p class="closing">
-          The benchmark's most important number is not the winner's 0.49 — it is the 29 tasks nobody
-          has solved. That is the map of where agent capability ends today, and where the next
-          generation of models has to go.
-        </p>
+        <!-- <p class="closing">
+          The message of the benchmark is not just that frontier models can start hard workflows. It is
+          that they still struggle to <i>finish</i> them reliably: planning over long horizons, preserving
+          state, and verifying that the final artifact is actually correct remain open problems.
+        </p> -->
       </section>
 
       <!-- ========================================================= -->
@@ -523,13 +667,15 @@
         <h3>Cite this work</h3>
         <div class="bibtex">
           <button class="bibtex__copy" id="copy-bib" title="Copy BibTeX">Copy</button>
-          <pre id="bibtex-block">@misc{lhtb2026,
-  title  = {Long-Horizon Terminal-Bench: Measuring What Agents
-            Can Sustain},
-  author = {{Tencent Hunyuan LLM --- Agent Evaluation}},
-  year   = {2026},
-  note   = {46 tasks, 9 categories, 17 frontier models,
-            one identical harness}
+          <pre id="bibtex-block">@misc{li2026lhtb,
+  title         = {Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading},
+  author        = {Li, Zongxia and Li, Zhongzhi and Shi, Yucheng and Wang, Ruhan and Yang, Junyao and Liu, Zhichao and Wu, Xiyang and Li, Anhao and Yu, Yue and Liu, Ninghao and Sun, Lichao and Mi, Haotao and Liang, Leowei},
+  year          = {2026},
+  eprint        = {2607.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://zli12321.github.io/LHTB/},
+  note          = {Preprint; arXiv ID pending}
 }</pre>
         </div>
       </footer>
@@ -537,6 +683,6 @@
     </main>
   </div>
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

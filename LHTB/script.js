@@ -350,7 +350,46 @@
       updateLeaderboard();
     });
   });
-  whenVisible($("#leaderboard"), renderLeaderboard);
+  whenVisible($("#leaderboard"), () => {
+    renderLeaderboard();
+    const seg = $("#lb-metric");
+    if (seg) { seg.classList.add("seg--attn"); }
+  });
+
+  /* ---- anatomy: hover a layout file to preview its real contents ---- */
+  (function initLayoutPreview() {
+    const chips = $$(".evchip[data-file]");
+    const panel = $("#evpanel");
+    if (!chips.length || !panel) return;
+    const nameEl = $("#evpanel-name");
+    const codeEl = $("#evpanel-code");
+    const card = panel.closest(".unit-card");
+    let pinned = null; // data-file key locked open via click
+    const fill = (chip) => {
+      const src = document.getElementById("file-" + chip.getAttribute("data-file"));
+      if (!src) return;
+      codeEl.textContent = src.textContent.replace(/^\n+/, "").replace(/\s+$/, "");
+      nameEl.textContent = src.getAttribute("data-name") || "";
+      panel.hidden = false;
+      panel.querySelector(".evpanel__body").scrollTop = 0;
+      chips.forEach((c) => c.classList.toggle("is-active", c === chip));
+    };
+    const hide = () => {
+      panel.hidden = true;
+      chips.forEach((c) => c.classList.remove("is-active"));
+    };
+    chips.forEach((chip) => {
+      const key = chip.getAttribute("data-file");
+      chip.addEventListener("mouseenter", () => fill(chip));
+      chip.addEventListener("focus", () => { if (!pinned) fill(chip); });
+      chip.addEventListener("click", () => {
+        if (pinned === key) { pinned = null; hide(); }
+        else { pinned = key; fill(chip); }
+      });
+    });
+    // Hide when the pointer leaves the card, unless a file is pinned open.
+    if (card) card.addEventListener("mouseleave", () => { if (!pinned) hide(); });
+  })();
 
   /* ---- long-horizon scale (steps + time per task) ---- */
   function renderHorizon() {

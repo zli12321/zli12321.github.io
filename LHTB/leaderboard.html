@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=22" />
+  <link rel="stylesheet" href="style.css?v=30" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -35,7 +35,7 @@
         <a href="index.html#benchmark" class="topbar__link">Blog</a>
         <a href="index.html#results" class="topbar__link">Results</a>
         <a href="paper.pdf" class="topbar__link" target="_blank" rel="noopener">Paper</a>
-        <a href="showcase.html" class="topbar__link">Showcase</a>
+        <a href="showcase.html" class="topbar__link">Sample Run</a>
         <a href="leaderboard.html" class="topbar__link topbar__link--cta" aria-current="page">Leaderboard</a>
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
           <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
@@ -56,44 +56,14 @@
         <p>
           Community-submitted runs on the 46-task Long-Horizon Terminal-Bench suite, ranked by
           <b>mean reward</b>. The seed entries are our Terminus-2 baselines — the same runs analyzed
-          in <a href="index.html#results">the report</a>. LHTB is open: bring your own model or your
-          own agent, run the same 46 tasks under the same 90-minute budget, and submit your run. We
-          <b>replay the submitted trajectories</b> against the hidden verifiers and reproduce the
-          score before it lands on the board — the same anti-cheat that grades our own runs. A
+          in <a href="index.html#results">the report</a>. LHTB is open and follows the same submission
+          flow as <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.0" target="_blank" rel="noopener">Terminal-Bench&nbsp;2</a>:
+          run the 46 tasks with <b>five trials each</b> under the same 90-minute budget, then open a
+          pull request with your job directories. A bot validates the submission and a maintainer
+          reviews the trajectories against the hidden verifiers before it lands on the board. A
           <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>verified</span>
           badge means we reproduced it.
         </p>
-
-        <figure class="figure figure--wide">
-          <div class="chart-card submit">
-            <div class="submit__head">
-              <h4 class="chart-panel__title">Submit a run</h4>
-              <p class="chart-panel__sub">Two ways in — evaluate a model on the reference harness, or bring a custom agent.</p>
-            </div>
-            <div class="submit__cmds">
-              <div class="cmd">
-                <p class="cmd__label">Evaluate a model &nbsp;·&nbsp; reference harness</p>
-                <div class="cmd__box">
-                  <button class="cmd__copy" title="Copy command">Copy</button>
-                  <pre>harbor run -d long-horizon-terminal-bench \
-  -a terminus-2 -m "your-provider/your-model" -k 1</pre>
-                </div>
-              </div>
-              <div class="cmd">
-                <p class="cmd__label">Bring your own agent</p>
-                <div class="cmd__box">
-                  <button class="cmd__copy" title="Copy command">Copy</button>
-                  <pre>harbor run -d long-horizon-terminal-bench \
-  --agent-import-path "path.to.agent:YourAgent" -k 1</pre>
-                </div>
-              </div>
-            </div>
-            <p class="submit__note">
-              Submissions may not modify the 90-minute per-task budget, the container resources, or
-              the hidden verifiers. One attempt per task (<code>-k 1</code>), errors score 0.
-            </p>
-          </div>
-        </figure>
 
         <figure class="figure figure--wide">
           <div class="chart-card loc-card">
@@ -127,20 +97,112 @@
           <figcaption>
             <b>Scores are mean reward over the 46-task suite</b> (errors = 0; a task counts as
             <i>solved</i> at reward ≥ 0.95). The seed entries are our Terminus-2 baselines; the board
-            grows as the community submits. Submission instructions live at
-            <a href="https://github.com/long-horizon-terminal-bench/leaderboard" target="_blank" rel="noopener">github.com/long-horizon-terminal-bench/leaderboard</a>.
+            grows as the community submits. 
           </figcaption>
+        </figure>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card submit">
+            <div class="submit__head">
+              <h4 class="chart-panel__title">Submit a run</h4>
+              <p class="chart-panel__sub">Same flow as Terminal-Bench 2 — run five trials per task, then open a pull request.</p>
+            </div>
+
+            <ol class="submit__steps">
+              <li class="submit__step">
+                <span class="submit__stepn">1</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">Run all 46 tasks, five trials each</p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">Evaluate a model &nbsp;·&nbsp; reference harness</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="Copy command">Copy</button>
+                        <pre>harbor run -d long-horizon-terminal-bench \
+  -a terminus-2 -m "your-provider/your-model" -k 5</pre>
+                      </div>
+                    </div>
+                    <div class="cmd">
+                      <p class="cmd__label">Bring your own agent</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="Copy command">Copy</button>
+                        <pre>harbor run -d long-horizon-terminal-bench \
+  --agent-import-path "path.to.agent:YourAgent" -k 5</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="submit__step">
+                <span class="submit__stepn">2</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">Fork the leaderboard repo and add your jobs</p>
+                  <p class="submit__steptext">
+                    Fork the <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB leaderboard repo</a> and drop your
+                    job folder(s) under <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code>
+                    alongside a <code>metadata.yaml</code>.
+                  </p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">Submission layout</p>
+                      <div class="cmd__box">
+                        <pre>submissions/long-horizon-terminal-bench/1.0/
+  terminus-2__your-model/
+    metadata.yaml
+    &lt;job-folder&gt;/
+      config.json
+      &lt;trial-1&gt;/result.json
+      &lt;trial-2&gt;/result.json
+      ...            # &ge; 5 trials/task, with artifacts</pre>
+                      </div>
+                    </div>
+                    <div class="cmd">
+                      <p class="cmd__label">metadata.yaml</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="Copy command">Copy</button>
+                        <pre>agent: terminus-2
+model: your-provider/your-model
+organization: Your Org
+repo: https://github.com/your/agent   # optional
+docs: https://.../model-card          # optional</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="submit__step">
+                <span class="submit__stepn">3</span>
+                <div class="submit__stepbody">
+                  <p class="submit__steptitle">Open a pull request</p>
+                  <p class="submit__steptext">
+                    Our bot auto-validates the submission and comments on any errors. Once it passes, a
+                    maintainer reviews the trajectories and merges — then your run is imported to the
+                    board with a <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>verified</span> badge.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p class="submit__note">
+              <b>Validation rules.</b> Five trials per task (<code>-k 5</code>) · <code>timeout_multiplier = 1.0</code>
+              · no agent or verifier timeout overrides · no CPU / memory / storage overrides · every trial
+              has a valid <code>result.json</code> with run artifacts · agents may not access the LHTB website
+              or repository (reward hacking). Errored trials score 0.
+            </p>
+          </div>
         </figure>
 
         <p class="closing">
           Want the full analysis behind these baselines — how the tasks are built, how they're
           graded, and where today's frontier runs out of steam? <a href="index.html">Read the
-          report →</a>
+          blog →</a>
         </p>
       </section>
     </main>
   </div>
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

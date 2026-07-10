@@ -231,6 +231,26 @@ html.dark .icon-moon { display: block; }
 .authors { font-family: var(--font-sans); font-size: 13.5px; font-weight: 550; color: var(--ink); margin: 0 0 4px; }
 .affils  { font-family: var(--font-sans); font-size: 12.5px; color: var(--muted); margin: 0; }
 
+.hero__links {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-sans); font-size: 13.5px; font-weight: 550; line-height: 1;
+  color: var(--pill-ink, #fff); background: var(--pill-bg, #1c1c1a);
+  border: 1px solid var(--pill-bg, #1c1c1a); border-radius: 999px;
+  padding: 9px 16px; text-decoration: none; white-space: nowrap;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.pill:hover {
+  transform: translateY(-1px); background: var(--pill-bg-hover, #000);
+  box-shadow: 0 4px 14px rgba(0,0,0,.16);
+}
+.pill__ic { flex: none; }
+.pill__emoji { font-size: 14px; line-height: 1; }
+:root.dark .pill { --pill-bg: #f1f1ef; --pill-bg-hover: #fff; --pill-ink: #16160f; }
+@media (max-width: 620px) { .pill { font-size: 12.5px; padding: 8px 13px; } }
+
 .hero__figure { margin: 0; }
 
 /* TL;DR */
@@ -344,11 +364,47 @@ figcaption b { color: var(--ink-soft); font-weight: 600; }
   color: var(--faint); margin-right: 4px;
 }
 .evchip {
-  font-size: 12px; color: var(--ink-soft);
+  font-size: 12px; color: var(--ink-soft); font-family: inherit;
   border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px;
-  background: var(--surface); white-space: nowrap;
+  background: var(--surface); white-space: nowrap; cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, box-shadow .15s ease;
 }
 .evchip code { background: none; padding: 0; font-size: 11.5px; color: var(--accent-ink); }
+.evchip:hover, .evchip:focus-visible {
+  border-color: var(--accent); color: var(--ink); outline: none;
+}
+.evchip.is-active {
+  border-color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+.unit-card__evhint {
+  font-size: 10.5px; color: var(--faint); font-style: italic;
+  margin-left: auto; white-space: nowrap;
+}
+.evpanel { border-top: 1px solid var(--line); }
+.evpanel[hidden] { display: none; }
+.evpanel__head {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 9px 22px; background: var(--line-soft); border-bottom: 1px solid var(--line);
+}
+.evpanel__name {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--accent-ink);
+}
+.evpanel__hint {
+  font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--faint);
+}
+.evpanel__body {
+  margin: 0; max-height: 360px; overflow: auto;
+  padding: 14px 22px; background: var(--surface);
+}
+.evpanel__body code {
+  display: block; font-family: var(--font-mono); font-size: 12px; line-height: 1.55;
+  color: var(--ink-soft); white-space: pre; background: none; padding: 0;
+}
+@media (max-width: 620px) {
+  .unit-card__evhint { display: none; }
+  .evpanel__body { font-size: 11px; padding: 12px 16px; }
+}
 
 /* --- Experiment specs --- */
 .specs {
@@ -405,7 +461,8 @@ figcaption b { color: var(--ink-soft); font-weight: 600; }
   border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); padding: 22px 24px 18px;
 }
-.chart-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.chart-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: nowrap; }
+.chart-card__head > :first-child { min-width: 0; flex: 1 1 auto; }
 .chart-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
 
 /* Segmented toggle (chart y-axis switch) */
@@ -417,6 +474,33 @@ figcaption b { color: var(--ink-soft); font-weight: 600; }
 }
 .seg__btn:hover { color: var(--ink); }
 .seg__btn.is-active { color: var(--accent-ink); background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,.07); }
+
+/* Prominent variant for the leaderboard metric switch */
+.seg-group { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex: none; }
+.seg-group__label {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-sans); font-size: 10.5px; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--accent-ink);
+}
+.seg-group__label svg { transform: scaleY(-1); opacity: .85; }
+.seg--lg {
+  background: var(--surface); border: 1.5px solid var(--accent);
+  border-radius: 11px; padding: 3px; gap: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.seg--lg .seg__btn { font-size: 12.5px; font-weight: 650; padding: 6px 15px; color: var(--ink-soft); }
+.seg--lg .seg__btn:hover { color: var(--accent-ink); }
+.seg--lg .seg__btn.is-active {
+  color: #fff; background: var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,.18);
+}
+/* One-time attention pulse when scrolled into view */
+.seg--attn { animation: segPulse 1.5s cubic-bezier(.2,.7,.2,1) 2; }
+@keyframes segPulse {
+  0%, 100% { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  40%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) { .seg--attn { animation: none; } }
 .chart-panel { min-width: 0; }
 .chart-panel__title {
   font-family: var(--font-sans); font-size: 14px; font-weight: 650; color: var(--ink);
@@ -562,7 +646,19 @@ html.dark .hz__logo:not(.hz__logo--dot) { background: #fff; padding: 2px; }
 
 /* --- Community leaderboard: submit card --- */
 .submit { padding-bottom: 20px; }
-.submit__head { margin-bottom: 14px; }
+.submit__head { margin-bottom: 16px; }
+.submit__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.submit__step { display: flex; gap: 14px; align-items: flex-start; }
+.submit__stepn {
+  flex: none; width: 24px; height: 24px; border-radius: 999px;
+  background: var(--accent); color: #fff;
+  font-family: var(--font-sans); font-size: 13px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.submit__stepbody { min-width: 0; flex: 1 1 auto; }
+.submit__steptitle { font-family: var(--font-sans); font-size: 14px; font-weight: 650; color: var(--ink); margin: 2px 0 9px; }
+.submit__steptext { font-family: var(--font-sans); font-size: 13px; color: var(--ink-soft); margin: 0 0 11px; line-height: 1.55; }
+.submit__steptext code { font-size: 11.5px; }
 .submit__cmds { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .cmd__label {
   font-family: var(--font-sans); font-size: 11px; font-weight: 650; letter-spacing: .05em;
