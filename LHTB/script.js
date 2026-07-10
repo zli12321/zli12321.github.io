@@ -264,7 +264,7 @@
         ? `<img class="lb__logo" src="assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="lb__logo lb__logo--dot"></span>`;
       html += `
-      <div class="lb-row${i === 0 ? " top" : ""}${d.anthropic ? " anthropic" : ""}">
+      <div class="lb-row${i === 0 ? " top" : ""}">
         <span class="lb__rank">${i + 1}</span>
         <span class="lb__model">
           ${logo}
@@ -302,7 +302,7 @@
         ? `<img class="hz__logo" src="assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="hz__logo hz__logo--dot"></span>`;
       html += `
-      <div class="hz-row${d.anthropic ? " anthropic" : ""}">
+      <div class="hz-row">
         ${logo}
         <span class="hz__modeltext">
           <span class="hz__name">${d.name}</span>
@@ -484,7 +484,7 @@
       dots += `
         ${leadSeg}
         <circle class="cost-dot" data-i="${i}" cx="${cxp}" cy="${cyp}" r="6.5"
-                fill="${d.anthropic ? SIEN : C_MAIN}" stroke="${SURF}" stroke-width="2"/>
+                fill="${C_MAIN}" stroke="${SURF}" stroke-width="2"/>
         <text class="fade-label" x="${tx}" y="${ty}" font-size="11" font-weight="550"
               fill="${SOFT}" ${anch ? `text-anchor="${anch}"` : ""}>${d.name}</text>`;
     });
@@ -502,18 +502,16 @@
              fill="${AVG_C}" text-anchor="middle">Average</text>`;
 
     // Explicit bordered legend box in the empty top-left region.
-    const lx0 = padL + 16, ly0 = padT + 6, lw = 150, lh = 74;
+    const lx0 = padL + 16, ly0 = padT + 6, lw = 150, lh = 62;
     const legend = `
       <g font-family="var(--font-sans)">
         <rect x="${lx0}" y="${ly0}" width="${lw}" height="${lh}" rx="8"
               fill="${SURF}" stroke="var(--line)" stroke-width="1"/>
         ${T(lx0 + 12, ly0 + 17, "LEGEND", { size: 9, w: 650, fill: FAINT, ls: ".1em" })}
-        <circle cx="${lx0 + 17}" cy="${ly0 + 34}" r="5.5" fill="${SIEN}"/>
-        ${T(lx0 + 29, ly0 + 38, "Anthropic", { size: 11.5, fill: SOFT })}
-        <circle cx="${lx0 + 17}" cy="${ly0 + 52}" r="5.5" fill="${C_MAIN}"/>
-        ${T(lx0 + 29, ly0 + 56, "Other vendors", { size: 11.5, fill: SOFT })}
-        <polygon points="${lx0 + 17},${ly0 + 64} ${lx0 + 23},${ly0 + 70} ${lx0 + 17},${ly0 + 76} ${lx0 + 11},${ly0 + 70}" fill="${AVG_C}"/>
-        ${T(lx0 + 29, ly0 + 74, "Average (17 models)", { size: 11.5, fill: SOFT })}
+        <circle cx="${lx0 + 17}" cy="${ly0 + 34}" r="5.5" fill="${C_MAIN}"/>
+        ${T(lx0 + 29, ly0 + 38, "Model", { size: 11.5, fill: SOFT })}
+        <polygon points="${lx0 + 17},${ly0 + 46} ${lx0 + 23},${ly0 + 52} ${lx0 + 17},${ly0 + 58} ${lx0 + 11},${ly0 + 52}" fill="${AVG_C}"/>
+        ${T(lx0 + 29, ly0 + 56, "Average (17 models)", { size: 11.5, fill: SOFT })}
       </g>`;
 
     el.style.position = "relative";
