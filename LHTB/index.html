@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20" />
+  <link rel="stylesheet" href="style.css?v=21" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -58,7 +58,6 @@
         <a href="#anatomy" class="toc__item">Anatomy of a task</a>
         <a href="#setup" class="toc__item">How we evaluate</a>
         <a href="#results" class="toc__item">Results</a>
-        <a href="#insights" class="toc__item">What we learned</a>
         <a href="#takeaways" class="toc__item">Takeaways</a>
       </nav>
     </aside>
@@ -497,67 +496,10 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- 06 · INSIGHTS                                             -->
-      <!-- ========================================================= -->
-      <section class="section" id="insights">
-        <p class="section__num">Part 06</p>
-        <h2 class="section__title">What we learned</h2>
-
-        <div class="insights">
-          <div class="insight">
-            <span class="insight__n">01</span>
-            <div>
-              <h3>The horizon is the bottleneck, not the knowledge</h3>
-              <p>
-                Average runtimes cluster at 69–93 minutes against a 90-minute budget — most models
-                work until the clock stops them, mid-task. The failures are rarely "didn't know how";
-                they are drift, looping, and lost state deep into the run. More budget helps some
-                tasks, but the models that lead do more <i>per step</i>, not just more steps.
-              </p>
-            </div>
-          </div>
-          <div class="insight">
-            <span class="insight__n">02</span>
-            <div>
-              <h3>Graded rewards separate what pass/fail cannot</h3>
-              <p>
-                Kimi K2.6 solves zero tasks yet averages 0.25 — on a binary benchmark it would tie
-                with a model that produced nothing at all. Nearly half of all runs land between 0 and
-                0.25, and that band is where most of today's frontier competition actually happens.
-              </p>
-            </div>
-          </div>
-          <div class="insight">
-            <span class="insight__n">03</span>
-            <div>
-              <h3>The efficient frontier is crowded at the bottom</h3>
-              <p>
-                Cost per task varies nearly 30×; capability varies 2.5×. A team that can accept a
-                0.39-mean agent (MiniMax M3, $6) over the 0.49-mean leader (Opus, $39) cuts inference
-                cost about 6× — a trade many production workloads will gladly make.
-              </p>
-            </div>
-          </div>
-          <div class="insight">
-            <span class="insight__n">04</span>
-            <div>
-              <h3>Multimodal and control-loop tasks are wide open</h3>
-              <p>
-                All five multimodal tasks sit in the hardest quartile, and quantitative control-loop
-                audits (robotics SLAM, seismic regression, epidemic inverse control) have a best
-                score under 0.17 across every model. Whoever cracks sustained measure-adjust-rerun
-                loops moves the whole leaderboard.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================================= -->
-      <!-- 07 · TAKEAWAYS                                            -->
+      <!-- 06 · TAKEAWAYS                                            -->
       <!-- ========================================================= -->
       <section class="section" id="takeaways">
-        <p class="section__num">Part 07</p>
+        <p class="section__num">Part 06</p>
         <h2 class="section__title">Takeaways</h2>
 
         <ul class="ticklist ticklist--takeaways">
@@ -595,6 +537,6 @@
     </main>
   </div>
 
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>
