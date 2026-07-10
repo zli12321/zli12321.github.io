@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=40" />
+  <link rel="stylesheet" href="style.css?v=41" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -128,8 +128,8 @@
             container per task, a 90-minute budget, and hidden verifiers.
           </li>
           <li>
-            The frontier tops out below half credit: the best model (<b>Claude Sonnet 5</b>) averages
-            <b>0.50</b>, and the best solve count is <b>12 of 46</b> (Claude Fable 5).
+            The frontier tops out below half credit: the best model (<b>Grok 4.5</b>) averages
+            <b>0.51</b>, and also posts the best solve count, <b>13 of 46</b>.
             <b>29 of 46 tasks have never been passed by any model.</b>
           </li>
           <li>
@@ -514,9 +514,9 @@ allow_internet = true</script>
         <!-- ---------- Result 1 ---------- -->
         <h3 class="subhead subhead--result"><span class="subhead__tag">Result 1</span> <span>The frontier tops out below half credit</span></h3>
         <p>
-          Averaged over all 46 tasks, the best model earns less than half the available reward. Three
-          Anthropic models lead, GPT-5.5 follows, and a tight pack of strong open-weight and Chinese
-          frontier models lands between 0.25 and 0.39. The spread from first to last is nearly 2.5× —
+          Averaged over all 46 tasks, the best model earns less than half the available reward. Grok 4.5
+          narrowly leads a trio of Anthropic models, GPT-5.5 follows, and a tight pack of strong
+          open-weight and Chinese frontier models lands between 0.25 and 0.39. The spread from first to last is nearly 2.5× —
           this benchmark is far from saturated.
         </p>
 
@@ -540,8 +540,8 @@ allow_internet = true</script>
             <div class="lb" id="leaderboard"></div>
           </div>
           <figcaption>
-            <b>Partial credit is what keeps the ranking alive.</b> On mean reward, Claude Sonnet 5 leads
-            (0.497) and the field spreads across the chart. Flip to <b>strict binary pass rate</b> — the
+            <b>Partial credit is what keeps the ranking alive.</b> On mean reward, Grok 4.5 leads
+            (0.505) and the field spreads across the chart. Flip to <b>strict binary pass rate</b> — the
             fraction of the 46 tasks solved at a <b>perfect reward of R = 1.0</b> — and the bars collapse:
             ten of the models earn real partial credit yet solve <b>zero</b> tasks outright, and the
             reward-order ranking no longer matches. The signal lives in the partial reward.
@@ -611,10 +611,10 @@ allow_internet = true</script>
         <h3 class="subhead subhead--result"><span class="subhead__tag">Result 3</span> <span>Price is not performance</span></h3>
         <p>
           The cost axis tells its own story. Per-task spend ranges nearly <b>30×</b> (from $2.5
-          (Hy3) to $73 (Claude Fable 5)) while mean reward spans only 2.5×. The Anthropic
-          models buy their lead with the largest budgets ($38–73 per task). A cluster of
-          models around <b>$4–12 per task</b> delivers 60–80% of the leader's score at roughly a
-          sixth of the cost.
+          (Hy3) to $73 (Claude Fable 5)) while mean reward spans only 2.5×. The twist:
+          <b>Grok 4.5 posts the top mean reward at just ~$11 per task</b>. The Anthropic models pay the
+          largest budgets ($38–73 per task) for their scores, while a cluster around <b>$4–12 per task</b>
+          delivers 60–80% of the top score at a fraction of the cost.
         </p>
 
         <figure class="figure figure--wide">
@@ -632,10 +632,10 @@ allow_internet = true</script>
             <div class="chart" id="chart-cost"></div>
           </div>
           <figcaption>
-            <b>Two efficient frontiers.</b> If you must have the best score, you pay Anthropic prices
-            ($38–73 per task). If you optimize reward per dollar, MiniMax M3 (0.385 at $6.13) and
-            Qwen3.6 Plus (0.313 at $4.47) dominate. MiniMax reaches 78% of Opus's score for about
-            one-sixth the cost.
+            <b>The efficient frontier moved.</b> Grok 4.5 lands top-left — the best mean reward (0.505)
+            at just $11.19 per task, top score and low cost at once. Below it, MiniMax M3 (0.385 at $6.13)
+            and Qwen3.6 Plus (0.313 at $4.47) remain the value picks, while the Anthropic models pay
+            $38–73 for comparable or lower scores.
           </figcaption>
         </figure>
       </section>
@@ -684,6 +684,6 @@ allow_internet = true</script>
     </main>
   </div>
 
-  <script src="script.js?v=40"></script>
+  <script src="script.js?v=41"></script>
 </body>
 </html>

@@ -124,6 +124,7 @@
   /* ===================== DATA (from harness/jobs, July 2026) ============ */
   // 17 models · mean reward over 46 tasks (errors = 0) · solved = reward >= 0.95
   const LB = [
+    { name: "Grok 4.5",           vendor: "xAI",       logo: "grok-color",     mean: 0.505, solved: 13, cost: 11.19 },
     { name: "Claude Sonnet 5",    vendor: "Anthropic", logo: "claude-color",   mean: 0.497, solved: 8,  cost: 60.37, anthropic: true },
     { name: "Claude Opus 4.8",    vendor: "Anthropic", logo: "claude-color",   mean: 0.492, solved: 9,  cost: 39.11, anthropic: true },
     { name: "Claude Fable 5",     vendor: "Anthropic", logo: "claude-color",   mean: 0.487, solved: 12, cost: 73.11, anthropic: true },
@@ -148,6 +149,7 @@
   // Tasks solved at the STRICT perfect-reward threshold R = 1.0 (d.solved is at R >= 0.95).
   // Same main-run selection as the paper leaderboard; ten models solve zero at R = 1.0.
   const SOLVED_100 = {
+    "Grok 4.5": 9,
     "Claude Sonnet 5": 5,
     "Claude Opus 4.8": 5, "Claude Fable 5": 7, "GPT-5.5": 5, "MiniMax M3": 3,
     "Claude Sonnet 4.6": 2, "Kimi K2.7 Code": 2, "GLM 5.2": 0, "Qwen3.6 Plus": 0,
@@ -201,6 +203,7 @@
     { name: "Qwen3.7 Max",        vendor: "Alibaba",   logo: "qwen-color",     steps: 218, mins: 84, hours: 64 },
     { name: "GPT-5.5",            vendor: "OpenAI",    logo: "openai",         steps: 208, mins: 73, hours: 56 },
     { name: "Claude Opus 4.8",    vendor: "Anthropic", logo: "claude-color",   steps: 205, mins: 78, hours: 60, anthropic: true },
+    { name: "Grok 4.5",           vendor: "xAI",       logo: "grok-color",     steps: 197, mins: 75, hours: 57 },
     { name: "GLM 5.2",            vendor: "Zhipu",     logo: "zhipu-color",    steps: 195, mins: 89, hours: 68 },
     { name: "Qwen3.6 Plus",       vendor: "Alibaba",   logo: "qwen-color",     steps: 194, mins: 89, hours: 68 },
     { name: "Kimi K2.6",          vendor: "Moonshot",  logo: "kimi-color",     steps: 188, mins: 92, hours: 71 },
@@ -618,6 +621,7 @@
       tickFmt: (v) => v.toFixed(1), val: (d) => d.mean,
       off: {
         // well-separated right side
+        "Grok 4.5":           [0, -15, "middle"],
         "Claude Sonnet 5":    [0, -16, "middle"],
         "Claude Opus 4.8":    [0, -14, "middle"], "Claude Fable 5": [-12, 4, "end"],
         "GPT-5.5":            [0, -14, "middle"], "Claude Sonnet 4.6": [12, 4],
@@ -633,10 +637,11 @@
     },
     pass: {
       title: I18N.costTitlePass,
-      ylabel: I18N.ylabelPass, max: 28, ticks: [0, 5, 10, 15, 20, 25],
+      ylabel: I18N.ylabelPass, max: 30, ticks: [0, 5, 10, 15, 20, 25, 30],
       tickFmt: (v) => String(v), val: passOf,
       off: {
         // well-separated right side + top
+        "Grok 4.5":           [0, -14, "middle"],
         "Claude Sonnet 5":    [14, 5],
         "Claude Fable 5":     [-12, 5, "end"],    "Claude Opus 4.8": [0, -14, "middle"],
         "GPT-5.5":            [0, -14, "middle"], "Claude Sonnet 4.6": [12, 4],
@@ -834,6 +839,7 @@
   // computed from per-task rewards in harness/jobs (July 2026 snapshot).
   const N_TASKS = 46;
   const SOLVED_T = {
+    "Grok 4.5":            [13, 13, 9],
     "Claude Sonnet 5":     [10, 8, 5],
     "Claude Opus 4.8":     [11, 9, 5], "Claude Fable 5":  [12, 12, 7],
     "GPT-5.5":             [8, 7, 5],   "MiniMax M3":     [6, 3, 3],
