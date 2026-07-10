@@ -134,7 +134,7 @@
     { name: "Qwen3.6 Plus",       vendor: "Alibaba",   logo: "qwen-color",     mean: 0.313, solved: 1,  cost: 4.47 },
     { name: "DeepSeek V4 Pro",    vendor: "DeepSeek",  logo: "deepseek-color", mean: 0.307, solved: 3,  cost: 6.32 },
     { name: "Qwen3.7 Max",        vendor: "Alibaba",   logo: "qwen-color",     mean: 0.296, solved: 2,  cost: 7.78 },
-    { name: "hy3",          vendor: "Tencent",   logo: "hunyuan-color",  mean: 0.288, solved: 1,  cost: 2.47 },
+    { name: "Hy3",          vendor: "Tencent",   logo: "hunyuan-color",  mean: 0.288, solved: 1,  cost: 2.47 },
     { name: "Doubao Seed 2.1 Pro",vendor: "ByteDance", logo: "doubao-color",   mean: 0.286, solved: 2,  cost: 5.16 },
     { name: "Gemini 3.1 Pro",     vendor: "Google",    logo: "gemini-color",   mean: 0.279, solved: 2,  cost: 7.61 },
     { name: "GPT-5.4",            vendor: "OpenAI",    logo: "openai",         mean: 0.272, solved: 1,  cost: 27.57 },
@@ -149,7 +149,7 @@
   const SOLVED_100 = {
     "Claude Opus 4.8": 5, "Claude Fable 5": 7, "GPT-5.5": 5, "MiniMax M3": 3,
     "Claude Sonnet 4.6": 2, "Kimi K2.7 Code": 2, "GLM 5.2": 0, "Qwen3.6 Plus": 0,
-    "DeepSeek V4 Pro": 0, "Qwen3.7 Max": 0, "hy3": 0, "Doubao Seed 2.1 Pro": 0,
+    "DeepSeek V4 Pro": 0, "Qwen3.7 Max": 0, "Hy3": 0, "Doubao Seed 2.1 Pro": 0,
     "Gemini 3.1 Pro": 0, "GPT-5.4": 1, "GLM 5.1": 0, "Kimi K2.6": 0,
     "GPT-5.3 Codex": 1, "Grok 4.20": 0,
   };
@@ -194,7 +194,7 @@
     { name: "GPT-5.4",            vendor: "OpenAI",    logo: "openai",         steps: 302, mins: 79, hours: 61 },
     { name: "GPT-5.3 Codex",      vendor: "OpenAI",    logo: "openai",         steps: 299, mins: 81, hours: 62 },
     { name: "Grok 4.20",          vendor: "xAI",       logo: "grok-color",     steps: 288, mins: 69, hours: 53 },
-    { name: "hy3",                vendor: "Tencent",   logo: "hunyuan-color",  steps: 258, mins: 92, hours: 70 },
+    { name: "Hy3",                vendor: "Tencent",   logo: "hunyuan-color",  steps: 258, mins: 92, hours: 70 },
     { name: "Qwen3.7 Max",        vendor: "Alibaba",   logo: "qwen-color",     steps: 218, mins: 84, hours: 64 },
     { name: "GPT-5.5",            vendor: "OpenAI",    logo: "openai",         steps: 208, mins: 73, hours: 56 },
     { name: "Claude Opus 4.8",    vendor: "Anthropic", logo: "claude-color",   steps: 205, mins: 78, hours: 60, anthropic: true },
@@ -617,7 +617,7 @@
         // well-separated right side
         "Claude Opus 4.8":    [0, -14, "middle"], "Claude Fable 5": [-12, 4, "end"],
         "GPT-5.5":            [0, -14, "middle"], "Claude Sonnet 4.6": [12, 4],
-        "GPT-5.4":            [10, 5],            "hy3": [0, 36, "middle", true],
+        "GPT-5.4":            [10, 5],            "Hy3": [0, 36, "middle", true],
         "MiniMax M3":         [0, -16, "middle"], "Grok 4.20": [0, -14, "middle"],
         // crowded $4–12 cluster: routed out with leader lines
         "GLM 5.2":            [57, 30, "start", true],   "DeepSeek V4 Pro": [-35, -87, "middle", true],
@@ -635,7 +635,7 @@
         // well-separated right side + top
         "Claude Fable 5":     [-12, 5, "end"],    "Claude Opus 4.8": [0, -14, "middle"],
         "GPT-5.5":            [0, -14, "middle"], "Claude Sonnet 4.6": [12, 4],
-        "GPT-5.4":            [0, -15, "middle"], "hy3": [10, -6], "Grok 4.20": [0, -14, "middle"],
+        "GPT-5.4":            [0, -15, "middle"], "Hy3": [10, -6], "Grok 4.20": [0, -14, "middle"],
         // crowded low-pass cluster: routed up into the open upper region with leaders
         "Qwen3.6 Plus":       [-42, -83, "end", true],   "Doubao Seed 2.1 Pro": [-65, -80, "end", true],
         "GLM 5.1":            [-64, -35, "end", true],    "MiniMax M3": [-24, -97, "middle", true],
@@ -836,7 +836,7 @@
     "DeepSeek V4 Pro":     [4, 3, 0],   "Qwen3.7 Max":    [3, 2, 0],
     "Doubao Seed 2.1 Pro": [3, 2, 0],   "Gemini 3.1 Pro": [2, 2, 0],
     "GPT-5.4":             [3, 1, 1],   "GLM 5.1":        [3, 2, 0],
-    "Kimi K2.6":           [1, 0, 0],   "hy3":      [2, 1, 0],
+    "Kimi K2.6":           [1, 0, 0],   "Hy3":      [2, 1, 0],
     "GPT-5.3 Codex":       [3, 2, 1],
     "Grok 4.20":           [0, 0, 0]
   };
