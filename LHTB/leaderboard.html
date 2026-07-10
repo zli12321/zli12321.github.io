@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=32" />
+  <link rel="stylesheet" href="style.css?v=33" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -102,11 +102,14 @@
         </figure>
 
         <figure class="figure figure--wide">
-          <div class="chart-card submit">
-            <div class="submit__head">
-              <h4 class="chart-panel__title">Submit a run</h4>
-              <p class="chart-panel__sub">Same flow as Terminal-Bench 2 — run five trials per task, then open a pull request.</p>
-            </div>
+          <details class="chart-card submit submit--fold">
+            <summary class="submit__head">
+              <span class="submit__headtext">
+                <h4 class="chart-panel__title">Submit a run</h4>
+                <p class="chart-panel__sub">Same flow as Terminal-Bench 2 — run five trials per task, then open a pull request.</p>
+              </span>
+              <svg class="submit__chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
 
             <ol class="submit__steps">
               <li class="submit__step">
@@ -191,7 +194,7 @@ docs: https://.../model-card          # optional</pre>
               has a valid <code>result.json</code> with run artifacts · agents may not access the LHTB website
               or repository (reward hacking). Errored trials score 0.
             </p>
-          </div>
+          </details>
         </figure>
 
         <p class="closing">
@@ -203,6 +206,6 @@ docs: https://.../model-card          # optional</pre>
     </main>
   </div>
 
-  <script src="script.js?v=32"></script>
+  <script src="script.js?v=33"></script>
 </body>
 </html>

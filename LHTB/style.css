@@ -647,6 +647,22 @@ html.dark .hz__logo:not(.hz__logo--dot) { background: #fff; padding: 2px; }
 /* --- Community leaderboard: submit card --- */
 .submit { padding-bottom: 20px; }
 .submit__head { margin-bottom: 16px; }
+
+/* Foldable Submit-a-run card */
+.submit--fold { padding-bottom: 0; }
+.submit--fold > .submit__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-bottom: 0; padding: 4px 0; cursor: pointer; list-style: none;
+}
+.submit--fold > .submit__head::-webkit-details-marker { display: none; }
+.submit__headtext { min-width: 0; }
+.submit__chev { flex: none; color: var(--muted); transition: transform .2s ease; }
+.submit--fold[open] > .submit__head .submit__chev { transform: rotate(180deg); }
+.submit--fold > .submit__head:hover .chart-panel__title,
+.submit--fold > .submit__head:hover .submit__chev { color: var(--accent-ink); }
+.submit--fold[open] > .submit__head { margin-bottom: 18px; border-bottom: 1px solid var(--line-soft); padding-bottom: 14px; }
+.submit--fold > .submit__steps { padding-bottom: 4px; }
+.submit--fold > .submit__note { padding-bottom: 20px; }
 .submit__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
 .submit__step { display: flex; gap: 14px; align-items: flex-start; }
 .submit__stepn {
