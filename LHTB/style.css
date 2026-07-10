@@ -680,8 +680,9 @@ html.dark .hz__logo:not(.hz__logo--dot) { background: #fff; padding: 2px; }
 .submit__note { font-family: var(--font-sans); font-size: 12.5px; color: var(--muted); margin: 15px 0 0; line-height: 1.6; }
 .submit__note code { font-size: 11.5px; }
 
-/* Widen the leaderboard intro to match the wide table */
-.article > section > p.lbrd-intro { max-width: var(--col-wide); }
+/* Widen the whole community-leaderboard section (header, intro, table, closing)
+   to one width so every left edge lines up with the table. */
+#leaderboard-community > * { max-width: var(--col-wide); }
 
 /* --- Community leaderboard: filter bar --- */
 .lbrd-bar {
