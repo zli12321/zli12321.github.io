@@ -30,10 +30,16 @@
     }
     .sc-count { font-family: var(--font-sans); font-size: .8rem; color: var(--faint); margin-left: auto; }
 
+    /* Break out of the narrow reading column so clips are large. */
+    .article .sc-toolbar,
+    .article .sc-grid { max-width: 1080px; margin-left: auto; margin-right: auto; }
     .sc-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 560px) {
+      .sc-grid { grid-template-columns: 1fr; }
     }
     .sc-card {
       border: 1px solid var(--line); border-radius: var(--radius);
@@ -43,7 +49,7 @@
     }
     .sc-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .sc-card__video {
-      display: block; width: 100%; aspect-ratio: 16 / 9;
+      display: block; width: 100%; aspect-ratio: 384 / 360;
       background: #0d0d0c; object-fit: contain;
     }
     .sc-card__body {
