@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=18" />
+  <link rel="stylesheet" href="style.css?v=19" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -383,15 +383,24 @@
 
         <figure class="figure figure--wide">
           <div class="chart-card">
-            <h4 class="chart-panel__title">Leaderboard — mean reward over 46 tasks</h4>
-            <p class="chart-panel__sub">Errors count as 0 · solved = reward ≥ 0.95 · one identical harness</p>
+            <div class="chart-card__head">
+              <div>
+                <h4 class="chart-panel__title">Leaderboard — 46 tasks</h4>
+                <p class="chart-panel__sub" id="lb-sub">Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness</p>
+              </div>
+              <div class="seg" id="lb-metric" role="tablist" aria-label="Leaderboard metric">
+                <button class="seg__btn is-active" data-lb="reward" role="tab">Partial reward</button>
+                <button class="seg__btn" data-lb="pass" role="tab">Binary pass rate</button>
+              </div>
+            </div>
             <div class="lb" id="leaderboard"></div>
           </div>
           <figcaption>
-            <b>Nobody passes a third of the benchmark.</b> Claude Opus 4.8 leads on mean reward
-            (0.492); Claude Fable 5 solves the most tasks outright (12/46, 26%). The best
-            non-Anthropic model, GPT-5.5, reaches 0.445 — and after it the field compresses hard:
-            a dense pack of models sits within 0.07 of each other.
+            <b>Partial credit is what keeps the ranking alive.</b> On mean reward, Claude Opus 4.8 leads
+            (0.492) and the field spreads across the chart. Flip to <b>strict binary pass rate</b> — the
+            fraction of the 46 tasks solved outright (reward ≥ 0.95) — and the bars collapse: several
+            models that earn real partial credit, like Kimi K2.6 (0.255 mean), solve <b>zero</b> tasks,
+            and the reward-order ranking no longer matches. The signal lives in the partial reward.
           </figcaption>
         </figure>
 
@@ -587,6 +596,6 @@
     </main>
   </div>
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 </body>
 </html>

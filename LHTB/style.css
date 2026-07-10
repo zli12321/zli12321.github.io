@@ -495,7 +495,10 @@ html.dark .lb__logo:not(.lb__logo--dot) { background: #fff; padding: 2px; }
 .lb__fill {
   position: absolute; top: 3px; bottom: 3px; left: 0; border-radius: 5px 4px 4px 5px;
   background: var(--c-main); transform-origin: left; animation: barIn .7s cubic-bezier(.2,.7,.2,1) both;
+  transition: width .6s cubic-bezier(.2,.7,.2,1), background .3s ease;
 }
+.lb__mean { transition: color .3s ease; }
+@media (prefers-reduced-motion: reduce) { .lb__fill { transition: none; } }
 .lb-row.anthropic .lb__fill { background: var(--sienna); }
 .lb__mean { font-size: 13px; font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
 .lb__solved { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }

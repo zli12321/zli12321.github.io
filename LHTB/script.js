@@ -248,18 +248,40 @@
     o.observe(el);
   }
 
-  /* ---- leaderboard rows ---- */
+  /* ---- leaderboard rows (toggle: partial reward vs strict binary pass rate) ---- */
+  // Rows stay in mean-reward order in BOTH modes: under binary scoring the bars
+  // no longer descend monotonically, which is exactly the point — several models
+  // with real partial credit solve zero tasks. Bars share one scale (max mean
+  // reward) so the collapse from partial -> binary is directly comparable.
+  const LB_MODES = {
+    reward: {
+      val: (d) => d.mean,
+      num: (d) => d.mean.toFixed(3),
+      barHead: "Mean reward",
+      numHead: "Mean",
+      sub: "Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness",
+    },
+    pass: {
+      val: (d) => d.solved / 46,
+      num: (d) => (d.solved / 46 * 100).toFixed(1) + "%",
+      barHead: "Binary pass rate",
+      numHead: "Pass",
+      sub: "Strict pass/fail: share of the 46 tasks solved outright (reward ≥ 0.95) · errors = 0",
+    },
+  };
+  let lbMode = "reward";
   function renderLeaderboard() {
     const el = $("#leaderboard");
     if (!el) return;
-    const max = Math.max(...LB.map((d) => d.mean));
+    const scale = Math.max(...LB.map((d) => d.mean));
+    const m = LB_MODES[lbMode];
     let html = `
       <div class="lb-head">
-        <span></span><span>Model</span><span>Mean reward</span>
-        <span style="text-align:right">Mean</span><span style="text-align:right">Solved</span>
+        <span></span><span>Model</span><span class="lb-head__bar">${m.barHead}</span>
+        <span class="lb-head__num" style="text-align:right">${m.numHead}</span><span style="text-align:right">Solved</span>
       </div>`;
     LB.forEach((d, i) => {
-      const pct = (d.mean / max) * 100;
+      const pct = (m.val(d) / scale) * 100;
       const logo = d.logo
         ? `<img class="lb__logo" src="assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="lb__logo lb__logo--dot"></span>`;
@@ -277,12 +299,42 @@
           <span class="lb__track"></span>
           <span class="lb__fill" style="width:${pct.toFixed(1)}%; animation-delay:${(i * 0.04).toFixed(2)}s"></span>
         </span>
-        <span class="lb__mean">${d.mean.toFixed(3)}</span>
+        <span class="lb__mean">${m.num(d)}</span>
         <span class="lb__solved">${d.solved}/46</span>
       </div>`;
     });
     el.innerHTML = html;
   }
+  // Animate between modes: update widths/numbers in place so CSS transitions run.
+  function updateLeaderboard() {
+    const el = $("#leaderboard");
+    if (!el) return;
+    const scale = Math.max(...LB.map((d) => d.mean));
+    const m = LB_MODES[lbMode];
+    $$(".lb-row", el).forEach((row, i) => {
+      const d = LB[i];
+      if (!d) return;
+      const fill = row.querySelector(".lb__fill");
+      const num = row.querySelector(".lb__mean");
+      if (fill) fill.style.width = ((m.val(d) / scale) * 100).toFixed(1) + "%";
+      if (num) num.textContent = m.num(d);
+    });
+    const bh = $(".lb-head__bar", el), nh = $(".lb-head__num", el), sub = $("#lb-sub");
+    if (bh) bh.textContent = m.barHead;
+    if (nh) nh.textContent = m.numHead;
+    if (sub) sub.textContent = m.sub;
+  }
+  $$("#lb-metric .seg__btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = btn.getAttribute("data-lb");
+      if (!next || next === lbMode) return;
+      lbMode = next;
+      $$("#lb-metric .seg__btn").forEach((b) =>
+        b.classList.toggle("is-active", b === btn)
+      );
+      updateLeaderboard();
+    });
+  });
   whenVisible($("#leaderboard"), renderLeaderboard);
 
   /* ---- long-horizon scale (steps + time per task) ---- */
