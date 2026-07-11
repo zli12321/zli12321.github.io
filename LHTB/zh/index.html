@@ -60,6 +60,63 @@
 
     <main class="article">
 
+      <!-- FEATURED STORY -->
+      <section class="story" aria-label="本期头条">
+        <p class="story__flag">🔥 本期头条</p>
+        <h2 class="story__title">从垫底到称霸：Grok 4.5 的一次惊人反转</h2>
+
+        <div class="story__grid">
+          <div class="story__stat story__stat--down">
+            <span class="story__label">上一代 · Grok 4.20</span>
+            <span class="story__big">0.08</span>
+            <span class="story__sub">平均奖励 · 46 题 0 解 · 20 个模型里垫底</span>
+          </div>
+          <div class="story__arrow" aria-hidden="true">→</div>
+          <div class="story__stat story__stat--up">
+            <span class="story__label">本代 · Grok 4.5</span>
+            <span class="story__big">0.505</span>
+            <span class="story__sub">平均奖励 · 13/46 解出 · Fable 5：0.487，12/46 解出</span>
+          </div>
+        </div>
+
+        <div class="story__lead">
+          <div class="story__lead-copy">
+            <p class="story__body">
+              2026 年 6 月，
+              <a href="https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html" target="_blank" rel="noopener"><b>SpaceX</b></a>
+              收购了
+              <a href="https://www.channelnewsasia.com/business/spacex-locks-in-60-billion-cursor-deal-close-gap-rivals-in-ai-coding-race-6187086" target="_blank" rel="noopener"><b>Cursor（Anysphere）</b></a>，
+              交易规模达 <b>600 亿美元全股票</b>。随后 Grok 4.5 从 <b>0.08、0/46 解出</b> 一路跃升到
+              <b>0.505、13/46 解出</b>：从垫底直冲第一，成为 <b>全场解题最多</b> 的模型。
+            </p>
+
+            <p class="story__body">
+              更扎心的是价格。按<b>每项任务</b>成本算，Grok 4.5 只要 <b>$11.19</b>，却能压过
+              <b>Claude Sonnet 5（$60.37）</b>、<b>Claude Opus 4.8（$39.11）</b> 和
+              <b>Claude Fable 5（$73.11）</b>，成本却只有它们的 <b>约 1/6 到 1/7</b>。
+            </p>
+          </div>
+
+          <figure class="story__media">
+            <a href="https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html" target="_blank" rel="noopener">
+              <img src="../assets/grok45-cursor-acquisition.png" alt="SpaceX 收购 Cursor 的配图">
+            </a>
+            <figcaption class="story__caption">
+              收购报道：
+              <a href="https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html" target="_blank" rel="noopener">CNBC</a>
+              和
+              <a href="https://www.channelnewsasia.com/business/spacex-locks-in-60-billion-cursor-deal-close-gap-rivals-in-ai-coding-race-6187086" target="_blank" rel="noopener">CNA</a>。
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="story__note">
+          LHTB 依旧非常硬核：<b>29/46 题</b> 目前仍被 <b>所有模型全部卡住</b>；只有 <b>17/46 题</b>
+          曾被至少一个模型解出；全部运行里还有 <b>约 55%</b> 的结果停在 <b>reward 0.25 以下</b>。
+          护城河还在，只是 <b>谁能坐上牌桌</b> 这件事，可能已经突然变了。
+        </p>
+      </section>
+
       <!-- HERO -->
       <section class="hero" id="hero">
         <p class="hero__kicker">评测报告 &nbsp;·&nbsp; 腾讯混元大模型前沿 &nbsp;·&nbsp; 2026 年 7 月</p>
