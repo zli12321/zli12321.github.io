@@ -128,7 +128,7 @@
     { name: "Claude Sonnet 5",    vendor: "Anthropic", logo: "claude-color",   mean: 0.497, solved: 8,  cost: 60.37, anthropic: true },
     { name: "Claude Opus 4.8",    vendor: "Anthropic", logo: "claude-color",   mean: 0.492, solved: 9,  cost: 39.11, anthropic: true },
     { name: "Claude Fable 5",     vendor: "Anthropic", logo: "claude-color",   mean: 0.487, solved: 12, cost: 73.11, anthropic: true },
-    { name: "GPT-5.6",            vendor: "OpenAI",    logo: "openai",         mean: 0.451, solved: 7,  cost: 21.61 },
+    { name: "GPT-5.6",            vendor: "OpenAI",    logo: "openai",         mean: 0.451, solved: 7,  cost: 21.14 },
     { name: "GPT-5.5",            vendor: "OpenAI",    logo: "openai",         mean: 0.445, solved: 7,  cost: 21.46 },
     { name: "MiniMax M3",         vendor: "MiniMax",   logo: "minimax-color",  mean: 0.385, solved: 3,  cost: 6.13 },
     { name: "Claude Sonnet 4.6",  vendor: "Anthropic", logo: "claude-color",   mean: 0.373, solved: 4,  cost: 38.00, anthropic: true },
