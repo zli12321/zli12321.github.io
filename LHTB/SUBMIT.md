@@ -2,7 +2,7 @@
 
 The **Long-Horizon-Terminal-Bench (LHTB)** leaderboard follows the same submission
 flow as [Terminal-Bench&nbsp;2](https://www.tbench.ai/leaderboard/terminal-bench/2.0):
-run the full 46-task suite with **five trials per task** under one shared harness,
+run the full 46-task suite **once** under one shared harness,
 then open a pull request against this repo with your job directories. A bot
 validates the submission and a maintainer reviews the trajectories against the
 hidden verifiers before it lands on the board.
@@ -11,27 +11,27 @@ Repo: **`IntelligenceLab/LHTB-leaderboard`** (Hugging Face Dataset)
 
 ---
 
-## 1. Run all 46 tasks, five trials each
+## 1. Run all 46 tasks once
 
-Use the reference `terminus-2` harness and a 90-minute budget per task. `-k 5`
-runs each task five times.
+Use the reference `terminus-2` harness and a 90-minute budget per task. `-k 1`
+runs each task once.
 
 **Evaluate a model (reference harness):**
 
 ```bash
 harbor run -d long-horizon-terminal-bench \
-  -a terminus-2 -m "your-provider/your-model" -k 5
+  -a terminus-2 -m "your-provider/your-model" -k 1
 ```
 
 **Bring your own agent:**
 
 ```bash
 harbor run -d long-horizon-terminal-bench \
-  --agent-import-path "path.to.agent:YourAgent" -k 5
+  --agent-import-path "path.to.agent:YourAgent" -k 1
 ```
 
-This produces a job directory containing a `config.json` and one folder per trial,
-each with a `result.json` and the run artifacts (logs, terminal recordings, etc.).
+This produces a job directory containing a `config.json` and a trial folder
+with a `result.json` and the run artifacts (logs, terminal recordings, etc.).
 
 ---
 
@@ -51,9 +51,7 @@ submissions/long-horizon-terminal-bench/1.0/
     metadata.yaml
     <job-folder>/
       config.json
-      <trial-1>/result.json
-      <trial-2>/result.json
-      ...              # >= 5 trials/task, with artifacts
+      <trial-1>/result.json   # 1 trial/task, with artifacts
 ```
 
 **`metadata.yaml`:**
@@ -82,7 +80,7 @@ Push your fork and open a PR against `IntelligenceLab/LHTB-leaderboard`.
 
 A submission is valid only if **all** of the following hold:
 
-- Five trials per task (`-k 5`).
+- One trial per task (`-k 1`).
 - `timeout_multiplier = 1.0` — no agent or verifier timeout overrides.
 - No CPU / memory / storage overrides.
 - Every trial has a valid `result.json` with run artifacts.

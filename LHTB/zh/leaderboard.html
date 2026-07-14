@@ -54,7 +54,7 @@
           社区提交的、在 46 项 Long-Horizon Terminal-Bench 任务上的运行，按<b>平均奖励</b>排名。
           种子条目是我们的 Terminus-2 基线——即<a href="index.html#results">报告中</a>分析的那些运行。
           LHTB 是开放的，采用与 <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.0" target="_blank" rel="noopener">Terminal-Bench&nbsp;2</a>
-          相同的提交流程：在同样的 90 分钟预算下，将 46 项任务<b>每项跑五次</b>，
+          相同的提交流程：在同样的 90 分钟预算下，将 46 项任务<b>每项跑一次</b>，
           然后带上你的作业目录提交一个 pull request。一个机器人会校验提交，
           维护者会对照隐藏验证器审查轨迹，之后它才会登上榜单。带
           <span class="verified verified--inline"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>已验证</span>
@@ -102,7 +102,7 @@
               <span class="submit__headrow">
                 <span class="submit__headtext">
                   <h4 class="chart-panel__title">提交一次运行</h4>
-                  <p class="chart-panel__sub">与 Terminal-Bench 2 相同的流程——每项任务跑五次，然后提交一个 pull request。</p>
+                  <p class="chart-panel__sub">与 Terminal-Bench 2 相同的流程——每项任务跑一次，然后提交一个 pull request。</p>
                 </span>
                 <svg class="submit__chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
@@ -117,14 +117,14 @@
               <li class="submit__step">
                 <span class="submit__stepn">1</span>
                 <div class="submit__stepbody">
-                  <p class="submit__steptitle">运行全部 46 项任务，每项五次</p>
+                  <p class="submit__steptitle">运行全部 46 项任务，每项一次</p>
                   <div class="submit__cmds">
                     <div class="cmd">
                       <p class="cmd__label">评测一个模型 &nbsp;·&nbsp; 参考评测框架</p>
                       <div class="cmd__box">
                         <button class="cmd__copy" title="复制命令">复制</button>
                         <pre>harbor run -d long-horizon-terminal-bench \
-  -a terminus-2 -m "your-provider/your-model" -k 5</pre>
+  -a terminus-2 -m "your-provider/your-model" -k 1</pre>
                       </div>
                     </div>
                     <div class="cmd">
@@ -132,7 +132,7 @@
                       <div class="cmd__box">
                         <button class="cmd__copy" title="复制命令">复制</button>
                         <pre>harbor run -d long-horizon-terminal-bench \
-  --agent-import-path "path.to.agent:YourAgent" -k 5</pre>
+  --agent-import-path "path.to.agent:YourAgent" -k 1</pre>
                       </div>
                     </div>
                   </div>
@@ -155,11 +155,9 @@
                         <pre>submissions/long-horizon-terminal-bench/1.0/
   terminus-2__your-model/
     metadata.yaml
-    &lt;job-folder&gt;/
+      &lt;job-folder&gt;/
       config.json
-      &lt;trial-1&gt;/result.json
-      &lt;trial-2&gt;/result.json
-      ...            # &ge; 每项任务 5 次，附带运行产物</pre>
+      &lt;trial-1&gt;/result.json   # 每项任务 1 次，附带运行产物</pre>
                       </div>
                     </div>
                     <div class="cmd">
@@ -191,7 +189,7 @@ docs: https://.../model-card          # 可选</pre>
             </ol>
 
             <p class="submit__note">
-              <b>校验规则。</b>每项任务五次（<code>-k 5</code>）· <code>timeout_multiplier = 1.0</code>
+              <b>校验规则。</b>每项任务一次（<code>-k 1</code>）· <code>timeout_multiplier = 1.0</code>
               · 不得覆盖智能体或验证器的超时 · 不得覆盖 CPU / 内存 / 存储 · 每一次运行都要有一份有效的
               <code>result.json</code> 及运行产物 · 智能体不得访问 LHTB 网站或仓库（奖励作弊）。出错的运行记 0 分。
             </p>
