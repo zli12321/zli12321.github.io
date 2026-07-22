@@ -484,6 +484,10 @@ figcaption b { color: var(--ink-soft); font-weight: 600; }
 .seg__btn.is-active { color: var(--accent-ink); background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,.07); }
 
 /* Prominent variant for the leaderboard metric switch */
+.lb-controls { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: flex-end; gap: 12px 18px; }
+.lb-thresh__slider { width: 156px; accent-color: var(--accent); cursor: pointer; margin: 2px 0 1px; }
+.lb-thresh__ticks { display: flex; justify-content: space-between; width: 156px; font-size: 9.5px; font-weight: 700; letter-spacing: .03em; color: var(--faint); }
+.lb-thresh .seg-group__label b { color: var(--accent-ink); }
 .seg-group { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex: none; }
 .seg-group__label {
   display: inline-flex; align-items: center; gap: 5px;
@@ -571,6 +575,10 @@ html.dark .chart-tip__logo-name img { background: #fff; padding: 1px; }
   color: var(--faint); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em;
   font-weight: 650; border-bottom: 1px solid var(--line);
 }
+.lb-sort { transition: color .15s ease; }
+.lb-sort:hover { color: var(--ink, #111); }
+.lb-sort.is-sort { color: var(--accent, #2563eb); }
+.lb-sort__arr { font-size: 10px; opacity: .9; }
 .lb-row { border-bottom: 1px solid var(--line-soft); }
 .lb-row:last-child { border-bottom: none; }
 .lb-row.top { background: color-mix(in srgb, var(--accent-wash) 55%, transparent); border-radius: 8px; }

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=45" />
+  <link rel="stylesheet" href="style.css?v=48" />
 </head>
 <body>
   <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
@@ -522,13 +522,18 @@ allow_internet = true</script>
                 <h4 class="chart-panel__title">Leaderboard — 46 tasks</h4>
                 <p class="chart-panel__sub" id="lb-sub">Mean reward over 46 tasks · solved = reward ≥ 0.95 · one identical harness</p>
               </div>
-              <div class="seg-group">
-                <span class="seg-group__label">Switch metric
-                  <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5l-4 4 4 4M4 9h11a4 4 0 0 1 4 4v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <div class="seg seg--lg" id="lb-metric" role="tablist" aria-label="Leaderboard metric">
-                  <button class="seg__btn is-active" data-lb="reward" role="tab">Partial reward</button>
-                  <button class="seg__btn" data-lb="pass" role="tab">Binary pass (R = 1.0)</button>
+              <div class="lb-controls">
+                <div class="seg-group">
+                  <span class="seg-group__label">Rank by</span>
+                  <div class="seg seg--lg" id="lb-rank" role="tablist" aria-label="Leaderboard ranking">
+                    <button class="seg__btn is-active" data-rank="mean" role="tab">Partial reward</button>
+                    <button class="seg__btn" data-rank="pass" role="tab">Pass rate</button>
+                  </div>
+                </div>
+                <div class="seg-group lb-thresh">
+                  <span class="seg-group__label">Pass threshold&nbsp;·&nbsp;R&nbsp;≥&nbsp;<b id="lb-thresh-val">0.95</b></span>
+                  <input type="range" id="lb-thresh" class="lb-thresh__slider" min="0" max="2" step="1" value="1" aria-label="Pass reward threshold" />
+                  <div class="lb-thresh__ticks"><span>0.90</span><span>0.95</span><span>1.00</span></div>
                 </div>
               </div>
             </div>
@@ -536,10 +541,10 @@ allow_internet = true</script>
           </div>
           <figcaption>
             <b>Partial credit is what keeps the ranking alive.</b> On mean reward, Grok 4.5 leads
-            (0.505) and the field spreads across the chart. Flip to <b>strict binary pass rate</b> — the
-            fraction of the 46 tasks solved at a <b>perfect reward of R = 1.0</b> — and the bars collapse:
-            ten of the models earn real partial credit yet solve <b>zero</b> tasks outright, and the
-            reward-order ranking no longer matches. The signal lives in the partial reward.
+            (0.505) and the field spreads across the chart. Switch <b>Rank by</b> to <b>pass rate</b> and
+            drag the <b>pass threshold</b> up to a <b>perfect reward of R = 1.0</b> — the ranking reshuffles
+            and the bars collapse: ten of the models earn real partial credit yet solve <b>zero</b> tasks
+            outright. The signal lives in the partial reward.
           </figcaption>
         </figure>
 
@@ -678,6 +683,6 @@ allow_internet = true</script>
     </main>
   </div>
 
-  <script src="script.js?v=45"></script>
+  <script src="script.js?v=50"></script>
 </body>
 </html>

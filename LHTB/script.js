@@ -42,6 +42,7 @@
     // leaderboard
     model: t("Model", "模型"),
     solved: t("Solved", "已解决"),
+    sortHint: t("Click to rank by this column", "点击按此列排序"),
     meanRewardHead: t("Mean reward", "平均奖励"),
     meanShort: t("Mean", "平均"),
     binaryPassHead: t("Binary pass rate (R = 1.0)", "二元通过率 (R = 1.0)"),
@@ -357,42 +358,49 @@
     o.observe(el);
   }
 
-  /* ---- leaderboard rows (toggle: partial reward vs strict binary pass rate) ---- */
-  // Rows stay in mean-reward order in BOTH modes: under binary scoring the bars
-  // no longer descend monotonically, which is exactly the point — several models
-  // with real partial credit solve zero tasks. Bars share one scale (max mean
-  // reward) so the collapse from partial -> binary is directly comparable.
-  const LB_MODES = {
-    reward: {
-      val: (d) => d.mean,
-      num: (d) => d.mean.toFixed(3),
-      solvedText: (d) => `${d.solved}/46`,
-      barHead: I18N.meanRewardHead,
-      numHead: I18N.meanShort,
-      sub: I18N.lbSubReward,
-    },
-    pass: {
-      val: (d) => solved100(d) / 46,
-      num: (d) => (solved100(d) / 46 * 100).toFixed(1) + "%",
-      solvedText: (d) => `${solved100(d)}/46`,
-      barHead: I18N.binaryPassHead,
-      numHead: I18N.passShort,
-      sub: I18N.lbSubPass,
-    },
-  };
-  let lbMode = "reward";
+  /* ---- leaderboard: rank by partial reward or pass rate at a chosen threshold ---- */
+  // Two clear controls (wired below): a "Rank by" toggle (partial reward vs pass
+  // rate) and a pass-threshold slider (R >= 0.90 / 0.95 / 1.00). SOLVED_T holds
+  // per-model pass counts at those three thresholds. The bar shows whatever you
+  // rank by; the MEAN and PASS columns always show both numbers.
+  let lbRank = "mean";   // "mean" | "pass"
+  let lbThreshIdx = 1;   // 0 => >=0.90, 1 => >=0.95, 2 => =1.00
+  const LB_THRESHOLDS = ["0.90", "0.95", "1.00"];
+  const lbPassCount = (d) => (SOLVED_T[d.name] || [d.solved, d.solved, d.solved])[lbThreshIdx];
+  const lbPassRate = (d) => lbPassCount(d) / 46;
+  function lbSorted() {
+    if (lbRank === "pass") {
+      return LB.slice().sort((a, b) => (lbPassCount(b) - lbPassCount(a)) || (b.mean - a.mean));
+    }
+    return LB.slice().sort((a, b) => (b.mean - a.mean) || (lbPassCount(b) - lbPassCount(a)));
+  }
   function renderLeaderboard() {
     const el = $("#leaderboard");
     if (!el) return;
-    const scale = Math.max(...LB.map((d) => d.mean));
-    const m = LB_MODES[lbMode];
+    const th = LB_THRESHOLDS[lbThreshIdx];
+    const rankByPass = lbRank === "pass";
+    const barVal = rankByPass ? lbPassRate : (d) => d.mean;
+    const scale = Math.max(...LB.map(barVal), 1e-6);
+    const rows = lbSorted();
+    const barHead = rankByPass
+      ? t(`Pass rate · R ≥ ${th}`, `通过率 · R ≥ ${th}`)
+      : I18N.meanRewardHead;
+    const sub = $("#lb-sub");
+    if (sub) sub.textContent = rankByPass
+      ? t(`Ranked by pass rate at R ≥ ${th} · share of the 46 tasks solved · one identical harness`,
+          `按 R ≥ ${th} 的通过率排序 · 已解决任务占 46 项的比例 · 同一套评测框架`)
+      : t(`Ranked by mean reward over 46 tasks · pass = reward ≥ ${th} · one identical harness`,
+          `按 46 项任务平均奖励排序 · 通过 = 奖励 ≥ ${th} · 同一套评测框架`);
+    const arrow = ' <span class="lb-sort__arr">↓</span>';
+    const passHead = t(`Pass ≥${th}`, `通过 ≥${th}`);
     let html = `
       <div class="lb-head">
-        <span></span><span>${I18N.model}</span><span class="lb-head__bar">${m.barHead}</span>
-        <span class="lb-head__num" style="text-align:right">${m.numHead}</span><span style="text-align:right">${I18N.solved}</span>
+        <span></span><span>${I18N.model}</span><span class="lb-head__bar">${barHead}</span>
+        <span class="lb-head__num lb-sort${!rankByPass ? " is-sort" : ""}" data-sort="mean" role="button" tabindex="0" title="${I18N.sortHint}" style="text-align:right;cursor:pointer;user-select:none">${I18N.meanShort}${!rankByPass ? arrow : ""}</span>
+        <span class="lb-sort${rankByPass ? " is-sort" : ""}" data-sort="pass" role="button" tabindex="0" title="${I18N.sortHint}" style="text-align:right;cursor:pointer;user-select:none">${passHead}${rankByPass ? arrow : ""}</span>
       </div>`;
-    LB.forEach((d, i) => {
-      const pct = (m.val(d) / scale) * 100;
+    rows.forEach((d, i) => {
+      const pct = (barVal(d) / scale) * 100;
       const logo = d.logo
         ? `<img class="lb__logo" src="${BASE}assets/logos/${d.logo}.svg" alt="" width="22" height="22" loading="lazy" decoding="async"/>`
         : `<span class="lb__logo lb__logo--dot"></span>`;
@@ -410,49 +418,51 @@
           <span class="lb__track"></span>
           <span class="lb__fill" style="width:${pct.toFixed(1)}%; animation-delay:${(i * 0.04).toFixed(2)}s"></span>
         </span>
-        <span class="lb__mean">${m.num(d)}</span>
-        <span class="lb__solved">${m.solvedText(d)}</span>
+        <span class="lb__mean">${d.mean.toFixed(3)}</span>
+        <span class="lb__solved">${lbPassCount(d)}/46</span>
       </div>`;
     });
     el.innerHTML = html;
   }
-  // Animate between modes: update widths/numbers in place so CSS transitions run.
-  function updateLeaderboard() {
+  // "Rank by" segmented control + clickable column headers share one setter.
+  function setLbRank(next) {
+    if (!next || (next !== "mean" && next !== "pass") || next === lbRank) return;
+    lbRank = next;
+    $$("#lb-rank .seg__btn").forEach((b) =>
+      b.classList.toggle("is-active", b.getAttribute("data-rank") === lbRank)
+    );
+    renderLeaderboard();
+  }
+  $$("#lb-rank .seg__btn").forEach((btn) => {
+    btn.addEventListener("click", () => setLbRank(btn.getAttribute("data-rank")));
+  });
+  (function initLbSortHeaders() {
     const el = $("#leaderboard");
     if (!el) return;
-    const scale = Math.max(...LB.map((d) => d.mean));
-    const m = LB_MODES[lbMode];
-    $$(".lb-row", el).forEach((row, i) => {
-      const d = LB[i];
-      if (!d) return;
-      const fill = row.querySelector(".lb__fill");
-      const num = row.querySelector(".lb__mean");
-      const sol = row.querySelector(".lb__solved");
-      if (fill) fill.style.width = ((m.val(d) / scale) * 100).toFixed(1) + "%";
-      if (num) num.textContent = m.num(d);
-      if (sol) sol.textContent = m.solvedText(d);
+    const onSort = (e) => {
+      const h = e.target.closest("[data-sort]");
+      if (!h) return;
+      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      setLbRank(h.getAttribute("data-sort"));
+    };
+    el.addEventListener("click", onSort);
+    el.addEventListener("keydown", onSort);
+  })();
+  // Pass-threshold slider: 0 => R>=0.90, 1 => R>=0.95, 2 => R=1.00.
+  (function initLbThreshold() {
+    const sl = $("#lb-thresh");
+    const lab = $("#lb-thresh-val");
+    if (lab) lab.textContent = LB_THRESHOLDS[lbThreshIdx];
+    if (!sl) return;
+    sl.value = String(lbThreshIdx);
+    sl.addEventListener("input", () => {
+      lbThreshIdx = Math.max(0, Math.min(2, parseInt(sl.value, 10) || 0));
+      if (lab) lab.textContent = LB_THRESHOLDS[lbThreshIdx];
+      renderLeaderboard();
     });
-    const bh = $(".lb-head__bar", el), nh = $(".lb-head__num", el), sub = $("#lb-sub");
-    if (bh) bh.textContent = m.barHead;
-    if (nh) nh.textContent = m.numHead;
-    if (sub) sub.textContent = m.sub;
-  }
-  $$("#lb-metric .seg__btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const next = btn.getAttribute("data-lb");
-      if (!next || next === lbMode) return;
-      lbMode = next;
-      $$("#lb-metric .seg__btn").forEach((b) =>
-        b.classList.toggle("is-active", b === btn)
-      );
-      updateLeaderboard();
-    });
-  });
-  whenVisible($("#leaderboard"), () => {
-    renderLeaderboard();
-    const seg = $("#lb-metric");
-    if (seg) { seg.classList.add("seg--attn"); }
-  });
+  })();
+  whenVisible($("#leaderboard"), renderLeaderboard);
 
   /* ---- anatomy: hover a layout file to preview its real contents ---- */
   (function initLayoutPreview() {
