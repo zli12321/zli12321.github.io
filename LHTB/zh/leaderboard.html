@@ -66,6 +66,10 @@
             <div class="lbrd-bar">
               <span class="lbrd-count" id="lbrd-count"></span>
               <div class="lbrd-filters">
+                <select class="lbrd-select lbrd-select--rank" id="filter-rank" aria-label="排序依据" title="排序指标">
+                  <option value="mean">排序：平均奖励</option>
+                  <option value="pass" selected>排序：通过率</option>
+                </select>
                 <select class="lbrd-select lbrd-select--thresh" id="filter-threshold" aria-label="解决阈值" title="记为解决的奖励阈值">
                   <option value="0.9">解决 &ge; 0.90</option>
                   <option value="0.95" selected>解决 &ge; 0.95</option>
@@ -204,6 +208,6 @@ docs: https://.../model-card          # 可选</pre>
     </main>
   </div>
 
-  <script src="../script.js?v=50"></script>
+  <script src="../script.js?v=52"></script>
 </body>
 </html>

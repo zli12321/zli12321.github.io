@@ -879,12 +879,17 @@
     const tbody = $("#community-table tbody");
     if (!tbody) return;
     const fa = $("#filter-agent"), fm = $("#filter-model"), fo = $("#filter-org"),
-          fv = $("#filter-verified"), ft = $("#filter-threshold");
+          fv = $("#filter-verified"), ft = $("#filter-threshold"), fr = $("#filter-rank");
     const tv = ft ? ft.value : "0.95";
     const ti = THRESH_IDX[tv] ?? 1;
     const thSolved = $("#th-solved");
     if (thSolved) thSolved.textContent = I18N.solvedThresh(Number(tv).toFixed(2));
-    const sorted = COMMUNITY.slice().sort((a, b) => b.mean - a.mean);
+    // Rank by pass rate (default) at the selected threshold, or by mean reward.
+    const rankBy = fr ? fr.value : "pass";
+    const sorted = COMMUNITY.slice().sort((a, b) =>
+      rankBy === "pass"
+        ? (b.st[ti] - a.st[ti]) || (b.mean - a.mean)
+        : (b.mean - a.mean));
     const rankOf = new Map(sorted.map((d, i) => [d, i + 1]));
     const rows = sorted.filter((d) =>
       (!fa.value || d.agent === fa.value) &&
@@ -919,7 +924,7 @@
 
   function initCommunity() {
     const fa = $("#filter-agent"), fm = $("#filter-model"), fo = $("#filter-org"),
-          fv = $("#filter-verified"), ft = $("#filter-threshold");
+          fv = $("#filter-verified"), ft = $("#filter-threshold"), fr = $("#filter-rank");
     if (!fa) return;
     const uniq = (arr) => Array.from(new Set(arr));
     const fill = (sel, label, values) => {
@@ -929,10 +934,11 @@
     fill(fa, I18N.allAgents, uniq(COMMUNITY.map((d) => d.agent)));
     fill(fm, I18N.allModels, uniq(COMMUNITY.map((d) => d.name)));
     fill(fo, I18N.allOrgs, uniq(COMMUNITY.map((d) => d.org)).sort());
-    [fa, fm, fo, fv, ft].forEach((c) => c && c.addEventListener("change", renderCommunity));
+    [fa, fm, fo, fv, ft, fr].forEach((c) => c && c.addEventListener("change", renderCommunity));
     $("#filter-clear")?.addEventListener("click", () => {
       fa.value = ""; fm.value = ""; fo.value = ""; fv.checked = false;
       if (ft) ft.value = "0.95";
+      if (fr) fr.value = "pass";
       renderCommunity();
     });
     renderCommunity();

@@ -71,6 +71,10 @@
             <div class="lbrd-bar">
               <span class="lbrd-count" id="lbrd-count"></span>
               <div class="lbrd-filters">
+                <select class="lbrd-select lbrd-select--rank" id="filter-rank" aria-label="Rank by" title="Ranking metric">
+                  <option value="mean">Rank by: Mean reward</option>
+                  <option value="pass" selected>Rank by: Pass rate</option>
+                </select>
                 <select class="lbrd-select lbrd-select--thresh" id="filter-threshold" aria-label="Solved threshold" title="Reward threshold counted as solved">
                   <option value="0.9">Solved &ge; 0.90</option>
                   <option value="0.95" selected>Solved &ge; 0.95</option>
@@ -212,6 +216,6 @@ docs: https://.../model-card          # optional</pre>
     </main>
   </div>
 
-  <script src="script.js?v=50"></script>
+  <script src="script.js?v=52"></script>
 </body>
 </html>
