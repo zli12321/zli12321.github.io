@@ -15,8 +15,10 @@ Repo: **`IntelligenceLab/LHTB-leaderboard`** (Hugging Face Dataset)
 
 ## 1. Run all 46 tasks once
 
-Use the reference `terminus-2` harness and a 90-minute budget per task. `-k 1`
-runs each task once.
+Use the reference `terminus-2` harness with a **uniform 90-minute budget** per task
+(`override_timeout_sec: 5400` on the agent) and `timeout_multiplier = 1.0`. `-k 1`
+runs each task once. This is the exact budget every leaderboard baseline used, so all
+entries stay comparable.
 
 **Evaluate a model (reference harness):**
 
@@ -130,8 +132,14 @@ Once the PR is open:
 
 A submission is valid only if **all** of the following hold:
 
+- **Uniform 90-minute agent budget** — every task runs with
+  `agent.override_timeout_sec = 5400` (90 min), regardless of the task's native
+  `task.toml` budget. This is the shared budget every leaderboard baseline used, so
+  all entries stay comparable.
+- `timeout_multiplier = 1.0`. The verifier uses each task's stock `task.toml` timeout.
 - One trial per task (`-k 1`).
-- `timeout_multiplier = 1.0` — no agent or verifier timeout overrides.
+- Where a task sets `continue_until_timeout = true`, the agent keeps iterating within
+  the 90-minute window until it passes or the budget elapses.
 - No CPU / memory / storage overrides.
 - Every trial has a valid `result.json` with run artifacts.
 - Agents may **not** access the LHTB website or repository (reward hacking).

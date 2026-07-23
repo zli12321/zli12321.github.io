@@ -140,6 +140,7 @@
                       </div>
                     </div>
                   </div>
+                  <p class="submit__note">在智能体上用 <code>override_timeout_sec: 5400</code> 和 <code>timeout_multiplier: 1.0</code> 设置 <b>90 分钟上限</b>（与参考配置一致），这样你的运行才能与榜单可比。</p>
                 </div>
               </li>
 
@@ -211,8 +212,10 @@ hf upload IntelligenceLab/LHTB-leaderboard \
             </ol>
 
             <p class="submit__note">
-              <b>校验规则。</b>每项任务一次（<code>-k 1</code>）· <code>timeout_multiplier = 1.0</code>
-              · 不得覆盖智能体或验证器的超时 · 不得覆盖 CPU / 内存 / 存储 · 每一次运行都要有一份有效的
+              <b>校验规则。</b>每项任务统一 90 分钟智能体预算（<code>override_timeout_sec = 5400</code>，
+              即所有榜单基线所用的统一预算）· <code>timeout_multiplier = 1.0</code> · 每项任务一次（<code>-k 1</code>）·
+              标记了 <code>continue_until_timeout</code> 的任务会在 90 分钟窗口内持续尝试 ·
+              不得覆盖 CPU / 内存 / 存储 · 每一次运行都要有一份有效的
               <code>result.json</code> 及运行产物 · 智能体不得访问 LHTB 网站或仓库（奖励作弊）。出错的运行记 0 分。
             </p>
           </details>

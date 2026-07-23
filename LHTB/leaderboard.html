@@ -146,6 +146,7 @@
                       </div>
                     </div>
                   </div>
+                  <p class="submit__note">Set the <b>90-minute cap</b> with <code>override_timeout_sec: 5400</code> and <code>timeout_multiplier: 1.0</code> on the agent (matching the reference configs) so your run is comparable to the board.</p>
                 </div>
               </li>
 
@@ -217,10 +218,12 @@ hf upload IntelligenceLab/LHTB-leaderboard \
             </ol>
 
             <p class="submit__note">
-              <b>Validation rules.</b> One trial per task (<code>-k 1</code>) · <code>timeout_multiplier = 1.0</code>
-              · no agent or verifier timeout overrides · no CPU / memory / storage overrides · every trial
-              has a valid <code>result.json</code> with run artifacts · agents may not access the LHTB website
-              or repository (reward hacking). Errored trials score 0.
+              <b>Validation rules.</b> Uniform 90-minute agent budget per task
+              (<code>override_timeout_sec = 5400</code>, the shared budget every leaderboard baseline used) ·
+              <code>timeout_multiplier = 1.0</code> · one trial per task (<code>-k 1</code>) ·
+              tasks flagged <code>continue_until_timeout</code> keep iterating within the 90-minute window ·
+              no CPU / memory / storage overrides · every trial has a valid <code>result.json</code> with run
+              artifacts · agents may not access the LHTB website or repository (reward hacking). Errored trials score 0.
             </p>
           </details>
         </figure>
