@@ -11,9 +11,9 @@ I am a fourth-year PhD candidate in Computer Science at the University of Maryla
 
 Research Focus
 ======
-1. **Model Post-Training** — Reinforcement learning and reward design for vision-language models, including self-rewarding via reasoning decomposition, semantically-aware open-ended rewards, and hallucination-targeted alignment for image and video understanding.
+1. **Self-Evolving Agents** — Autonomous agents that bootstrap their own capabilities from minimal or zero human-curated data, spanning self-evolving multimodal reasoning, co-evolving decision-and-skill agents for long-horizon tasks, and exploration-guided visual reasoning.
 
-2. **Self-Evolving Agents** — Autonomous agents that bootstrap their own capabilities from minimal or zero human-curated data, spanning self-evolving multimodal reasoning, co-evolving decision-and-skill agents for long-horizon tasks, and exploration-guided visual reasoning.
+2. **Model Post-Training** — Reinforcement learning and reward design for vision-language models, including self-rewarding via reasoning decomposition, semantically-aware open-ended rewards, and hallucination-targeted alignment for image and video understanding.
 
 3. **Human-AI Collaboration** — How humans and AI systems collaborate to optimize real-world workflows, from LLM-assisted annotation and interactive topic exploration to robust automatic evaluation metrics that faithfully reflect human judgment.
 
@@ -28,6 +28,8 @@ News
 </style>
 <div class="news-scroll" markdown="0">
 <table class="news-table">
+<tr><td class="news-date">Jul 14, 2026</td><td><a href="https://arxiv.org/abs/2607.13285" target="_blank">Harness Handbook</a> is released! Making evolving agent harnesses readable, navigable, and editable.</td></tr>
+<tr><td class="news-date">Jul 9, 2026</td><td><a href="https://arxiv.org/abs/2607.08964" target="_blank">Long-Horizon-Terminal-Bench (LHTB)</a> is released! Testing the limits of agents on long-horizon terminal tasks with dense reward-based grading.</td></tr>
 <tr><td class="news-date">May 1, 2026</td><td><a href="https://github.com/Moms-Organic-Agent-Lab/comfyclaw" target="_blank">ComfyClaw</a> is released! An agentic harness for skill-evolving image generation workflows.</td></tr>
 <tr><td class="news-date">Apr 29, 2026</td><td><a href="https://arxiv.org/abs/2604.20987" target="_blank">COS-PLAY</a> is released! Co-evolving LLM decision and skill bank agents for long-horizon tasks.</td></tr>
 <tr><td class="news-date">Apr 7, 2026</td><td><a href="https://arxiv.org/abs/2604.05333" target="_blank">Graph-of-Skills</a> is released! Dependency-aware structural retrieval for massive agent skills.</td></tr>
@@ -46,7 +48,7 @@ News
 Selected Publications
 ======
 <div class="pub-preview" markdown="0">
-{% assign sel_links = "/publication/2026-05-01-comfyclaw,/publication/2026-04-24-vision-sr1,/publication/2026-03-10-mm-zero,/publication/2025-12-01-videohallu,/publication/2026-06-01-ffgo,/publication/2026-04-07-graph-of-skills,/publication/2026-04-29-cosplay" | split: "," %}
+{% assign sel_links = "/publication/2026-07-09-lhtb,/publication/2026-07-14-harness-handbook,/publication/2026-05-01-comfyclaw,/publication/2026-04-24-vision-sr1,/publication/2026-03-10-mm-zero,/publication/2025-12-01-videohallu,/publication/2026-06-01-ffgo,/publication/2026-04-07-graph-of-skills,/publication/2026-04-29-cosplay" | split: "," %}
 {% for link in sel_links %}
 {% assign post = site.publications | where: "permalink", link | first %}
 {% if post %}
