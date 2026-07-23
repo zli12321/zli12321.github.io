@@ -152,10 +152,11 @@
               <li class="submit__step">
                 <span class="submit__stepn">2</span>
                 <div class="submit__stepbody">
-                  <p class="submit__steptitle">Fork the leaderboard repo and add your jobs</p>
+                  <p class="submit__steptitle">Lay out your jobs — no fork needed</p>
                   <p class="submit__steptext">
-                    Fork the <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB leaderboard repo</a> and drop your
-                    job folder(s) under <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code>
+                    The <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB leaderboard</a> is a Hugging Face Dataset, so
+                    there is <b>no fork</b> — a PR pushes to a <code>refs/pr/N</code> branch directly on the repo (step 3).
+                    Just arrange your job folder(s) locally under <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code>
                     alongside a <code>metadata.yaml</code>.
                   </p>
                   <div class="submit__cmds">
@@ -188,7 +189,24 @@ docs: https://.../model-card          # optional</pre>
               <li class="submit__step">
                 <span class="submit__stepn">3</span>
                 <div class="submit__stepbody">
-                  <p class="submit__steptitle">Open a pull request</p>
+                  <p class="submit__steptitle">Open a pull request — no fork</p>
+                  <p class="submit__steptext">
+                    The Hugging Face CLI uploads your folder to a fresh <code>refs/pr/N</code> branch and opens
+                    the PR in one step (browser alternative: <b>Community → New pull request</b> on the dataset).
+                  </p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">Upload + open PR &nbsp;·&nbsp; no fork</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="Copy command">Copy</button>
+                        <pre>pip install -U huggingface_hub && hf auth login
+hf upload IntelligenceLab/LHTB-leaderboard \
+  submissions/long-horizon-terminal-bench/1.0/terminus-2__your-model \
+  submissions/long-horizon-terminal-bench/1.0/terminus-2__your-model \
+  --repo-type dataset --create-pr</pre>
+                      </div>
+                    </div>
+                  </div>
                   <p class="submit__steptext">
                     Our bot auto-validates the submission and comments on any errors. Once it passes, a
                     maintainer reviews the trajectories and merges — then your run is imported to the

@@ -146,10 +146,11 @@
               <li class="submit__step">
                 <span class="submit__stepn">2</span>
                 <div class="submit__stepbody">
-                  <p class="submit__steptitle">Fork 排行榜仓库并加入你的作业</p>
+                  <p class="submit__steptitle">整理作业目录——无需 fork</p>
                   <p class="submit__steptext">
-                    Fork <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB 排行榜仓库</a>，
-                    把你的作业文件夹放到 <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code> 下，
+                    <a href="https://huggingface.co/datasets/IntelligenceLab/LHTB-leaderboard" target="_blank" rel="noopener">LHTB 排行榜</a>是一个 Hugging Face 数据集，
+                    因此<b>无需 fork</b>——PR 会直接推送到仓库上的 <code>refs/pr/N</code> 分支（见第 3 步）。
+                    只需在本地把你的作业文件夹放到 <code>submissions/long-horizon-terminal-bench/1.0/&lt;agent&gt;__&lt;model&gt;/</code> 下，
                     并附上一个 <code>metadata.yaml</code>。
                   </p>
                   <div class="submit__cmds">
@@ -182,7 +183,24 @@ docs: https://.../model-card          # 可选</pre>
               <li class="submit__step">
                 <span class="submit__stepn">3</span>
                 <div class="submit__stepbody">
-                  <p class="submit__steptitle">提交一个 pull request</p>
+                  <p class="submit__steptitle">提交一个 pull request——无需 fork</p>
+                  <p class="submit__steptext">
+                    Hugging Face CLI 会把你的文件夹上传到新的 <code>refs/pr/N</code> 分支并一步开好 PR
+                    （也可在数据集页面用<b>Community → New pull request</b>）。
+                  </p>
+                  <div class="submit__cmds">
+                    <div class="cmd">
+                      <p class="cmd__label">上传并开 PR &nbsp;·&nbsp; 无需 fork</p>
+                      <div class="cmd__box">
+                        <button class="cmd__copy" title="复制命令">复制</button>
+                        <pre>pip install -U huggingface_hub && hf auth login
+hf upload IntelligenceLab/LHTB-leaderboard \
+  submissions/long-horizon-terminal-bench/1.0/terminus-2__your-model \
+  submissions/long-horizon-terminal-bench/1.0/terminus-2__your-model \
+  --repo-type dataset --create-pr</pre>
+                      </div>
+                    </div>
+                  </div>
                   <p class="submit__steptext">
                     我们的机器人会自动校验提交并对任何错误留言。通过后，维护者会审查轨迹并合并——
                     随后你的运行会被导入榜单，并带上一个
