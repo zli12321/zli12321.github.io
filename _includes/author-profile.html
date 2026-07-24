@@ -36,6 +36,7 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
+      <li><a href="{{ '/cv/' | relative_url }}"><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i>CV</a></li>
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.academia %}
