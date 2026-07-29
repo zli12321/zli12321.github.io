@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vlm-radar/docs/snapshot.schema.json",
+  "title": "VLM Radar daily snapshot",
+  "description": "The canonical record of one scan. Snapshots are append-only and are the only generated artifact committed to the repository; site/data/radar.json is derived from them.",
+  "type": "object",
+  "required": ["schema_version", "date", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "UTC scan date. Also the filename."
+    },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "since": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start of the window this scan considered new."
+    },
+    "selection": {
+      "type": "object",
+      "description": "The funnel from raw rows to published records, so a quiet day is distinguishable from a broken one.",
+      "properties": {
+        "fetched": { "type": "integer", "minimum": 0 },
+        "deduplicated": { "type": "integer", "minimum": 0 },
+        "out_of_domain": { "type": "integer", "minimum": 0 },
+        "suppressed": { "type": "integer", "minimum": 0 },
+        "below_threshold": { "type": "integer", "minimum": 0 },
+        "published": { "type": "integer", "minimum": 0 },
+        "pinned": { "type": "integer", "minimum": 0 },
+        "minimum_score": { "type": "number" }
+      }
+    },
+    "health": {
+      "type": "array",
+      "description": "Per-source fetch outcome. A source can be healthy and still return nothing.",
+      "items": {
+        "type": "object",
+        "required": ["source", "ok"],
+        "properties": {
+          "source": { "type": "string" },
+          "ok": { "type": "boolean" },
+          "item_count": { "type": "integer", "minimum": 0 },
+          "required": { "type": "boolean" },
+          "duration_seconds": { "type": "number", "minimum": 0 },
+          "detail": { "type": "string" }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "source",
+        "source_id",
+        "title",
+        "url",
+        "categories",
+        "total_score",
+        "score_version",
+        "event_kind",
+        "provenance"
+      ],
+      "properties": {
+        "source": { "type": "string", "description": "Human-readable source name." },
+        "source_id": { "type": "string", "description": "Stable identifier within that source." },
+        "title": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "published_at": { "type": "string" },
+        "updated_at": { "type": "string" },
+        "summary": {
+          "type": "string",
+          "description": "Upstream prose only. Empty when the source has none; the radar never synthesizes filler, because a record must not score on text the radar invented."
+        },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "organizations": { "type": "array", "items": { "type": "string" } },
+        "artifact_urls": { "type": "array", "items": { "type": "string" } },
+        "metrics": {
+          "type": "object",
+          "description": "Adoption signals such as stars, downloads, likes, citations, upvotes.",
+          "additionalProperties": { "type": "number" }
+        },
+        "facets": {
+          "type": "object",
+          "description": "Source-specific metadata: tags, pipeline_tag, license, arXiv categories, query provenance."
+        },
+        "venue": { "type": "string" },
+        "section": { "type": "string", "description": "Heading trail, for curated survey rows." },
+        "event_kind": {
+          "type": "string",
+          "description": "published, updated, released, featured, cross-listed, or curated."
+        },
+        "provenance": {
+          "enum": ["live", "curated"],
+          "description": "live: fetched from an upstream API. curated: transcribed from the human-maintained survey."
+        },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Taxonomy keys from config.yml. A published record always has at least one."
+        },
+        "matched_terms": { "type": "array", "items": { "type": "string" } },
+        "model_families": { "type": "array", "items": { "type": "string" } },
+        "watchlist": { "type": "array", "items": { "type": "string" } },
+        "watchlist_notes": { "type": "array", "items": { "type": "string" } },
+        "corroborating_sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Other sources that returned the same record. Cross-source agreement earns an evidence credit."
+        },
+        "relevance_score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "evidence_score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "recency_score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "adoption_score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "total_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Weighted blend of the four components. Ranks discovery confidence, not research quality."
+        },
+        "score_version": { "type": "integer" },
+        "rationale": { "type": "array", "items": { "type": "string" } },
+        "suppression_reasons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Present only on records that were dropped; published records have none."
+        },
+        "discovered_at": { "type": "string" },
+        "raw_payload_hash": {
+          "type": "string",
+          "description": "SHA-256 of the upstream payload. The payload itself is not republished."
+        }
+      }
+    }
+  }
+}

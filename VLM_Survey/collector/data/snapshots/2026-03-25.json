@@ -1,0 +1,1824 @@
+{
+  "schema_version": 1,
+  "date": "2026-03-25",
+  "generated_at": "2026-03-25T00:00:00+00:00",
+  "since": "2026-02-23T00:00:00+00:00",
+  "selection": {
+    "fetched": 49,
+    "deduplicated": 48,
+    "out_of_domain": 6,
+    "suppressed": 0,
+    "below_threshold": 4,
+    "published": 38,
+    "pinned": 9,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 49,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-03-25.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:vlmq-post-training-quantization-for-vlms:https-openreview-net-pdf-id-cxvf8vx2e2",
+      "title": "VLMQ: Post-Training Quantization for VLMs",
+      "url": "https://openreview.net/pdf?id=CXVf8Vx2E2",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 66.68,
+      "score_version": 1,
+      "published_at": "2026-03-25T00:00:00+00:00",
+      "summary": "Key Contribution: 16.45% improvement on MME-RealWorld under 2-bit quantization",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.4 Efficient Training & Quantization",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "VLMQ: Post-Training Quantization for VLMs",
+          "Date": "2026 (ICLR)",
+          "Key Contribution": "16.45% improvement on MME-RealWorld under 2-bit quantization"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.4 Efficient Training & Quantization",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment",
+        "quantization"
+      ],
+      "watchlist": [
+        "MME"
+      ],
+      "watchlist_notes": [
+        "Perception and cognition breadth measurement."
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: vlm, post training, alignment, quantization",
+        "Perception and cognition breadth measurement.",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:67d6eec37ff61a77051ba6d7258e5b49d92ce0094ea9654274456802accb13b4"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:gpt-5-4-gpt-5-4-thinking:https-openai-com-index-introducing-gpt-5-4",
+      "title": "GPT-5.4 / GPT-5.4 Thinking",
+      "url": "https://openai.com/index/introducing-gpt-5-4/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 88.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 54.05,
+      "score_version": 1,
+      "published_at": "2026-03-06T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: Undisclosed. Parameters: Undisclosed. Vision Encoder: Undisclosed. Pretrained Backbone: Undisclosed",
+      "organizations": [
+        "OpenAI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "GPT-5.4 / GPT-5.4 Thinking (OpenAI)",
+          "Date": "03/06/2026",
+          "Architecture": "Decoder-only",
+          "Training Data": "Undisclosed",
+          "Parameters": "Undisclosed",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "Undisclosed"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "GPT-4V / GPT-5"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder",
+        "Tracked family: GPT-4V / GPT-5",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ebd4ce77dbf27a35b92f513e567dd153de75abc68f26f5dd699b738ddf4dc9f2"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:phi-4-reasoning-vision-15b:https-arxiv-org-abs-2603-03975",
+      "title": "Phi-4-Reasoning-Vision-15B",
+      "url": "https://arxiv.org/abs/2603.03975",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 88.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 52.38,
+      "score_version": 1,
+      "published_at": "2026-03-04T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: Curated synthetic + filtered data. Parameters: 15B. Vision Encoder: High-res dynamic-resolution ViT. Pretrained Backbone: Phi-4",
+      "organizations": [
+        "Microsoft"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "Phi-4-Reasoning-Vision-15B (Microsoft)",
+          "Date": "03/04/2026",
+          "Architecture": "Decoder-only",
+          "Training Data": "Curated synthetic + filtered data",
+          "Parameters": "15B",
+          "Vision Encoder": "High-res dynamic-resolution ViT",
+          "Pretrained Backbone": "Phi-4"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "Phi Vision"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder",
+        "Tracked family: Phi Vision",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cdb86387131ca881b0961af560c3c562b0048410f82741b11e974644cdb8935e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:gemini-3-0:https-www-ai-agentsplus-com-blog-google-gemini-3-multimodal-",
+      "title": "Gemini 3.0",
+      "url": "https://www.ai-agentsplus.com/blog/google-gemini-3-multimodal-10m-context",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 88.0,
+      "evidence_score": 52.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 49.88,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Architecture: Unified Model. Training Data: Undisclosed. Parameters: Undisclosed. Vision Encoder: Undisclosed. Pretrained Backbone: Undisclosed",
+      "organizations": [
+        "Google"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "Gemini 3.0 (Google)",
+          "Date": "03/2026",
+          "Architecture": "Unified Model",
+          "Training Data": "Undisclosed",
+          "Parameters": "Undisclosed",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "Undisclosed"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "Gemini / Gemma"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder",
+        "Tracked family: Gemini / Gemma",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:6e07e9e1ca54227c10595db80c020801a699a96ef7565c016c61042d7c48fac4"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:molmo2:https-arxiv-org-abs-2601-10611",
+      "title": "Molmo2",
+      "url": "https://arxiv.org/abs/2601.10611",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 48.68,
+      "score_version": 1,
+      "published_at": "2026-01-15T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: 7 new video + 2 multi-image datasets (9.19M videos). Parameters: 4B / 7B / 8B. Vision Encoder: Bi-directional attention ViT. Pretrained Backbone: Qwen 3 / OLMo",
+      "organizations": [
+        "Allen AI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "Molmo2 (Allen AI)",
+          "Date": "01/15/2026",
+          "Architecture": "Decoder-only",
+          "Training Data": "7 new video + 2 multi-image datasets (9.19M videos)",
+          "Parameters": "4B / 7B / 8B",
+          "Vision Encoder": "Bi-directional attention ViT",
+          "Pretrained Backbone": "Qwen 3 / OLMo"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "dataset",
+        "datasets"
+      ],
+      "model_families": [
+        "Molmo"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder, dataset, datasets",
+        "Tracked family: Molmo",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:64095decec8edb8ffee3a01803fea538409cf51168eee520274cc1bb8c895076"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:drivevlm-rl-neuroscience-inspired-rl-with-vlms-for-safe-driving:https-arxiv-org-abs-2603-18315",
+      "title": "DriveVLM-RL: Neuroscience-Inspired RL with VLMs for Safe Driving",
+      "url": "https://arxiv.org/abs/2603.18315",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "embodied_vla",
+        "safety"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 34.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 47.82,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Dual-pathway (CLIP spatial safety + offline VLM), real-time feasible",
+      "organizations": [
+        "Community"
+      ],
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Autonomous Driving",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "DriveVLM-RL: Neuroscience-Inspired RL with VLMs for Safe Driving",
+          "Date": "03/2026",
+          "Key Contribution": "Dual-pathway (CLIP spatial safety + offline VLM), real-time feasible"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.2 Autonomous Driving",
+      "matched_terms": [
+        "vlm",
+        "autonomous driving",
+        "safety"
+      ],
+      "model_families": [
+        "CLIP / SigLIP"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Embodied & VLA, Safety & fairness",
+        "Matched: vlm, autonomous driving, safety",
+        "Tracked family: CLIP / SigLIP",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:dce5ea3efb001fe488a2fb1888a8b3560f888432e10efa89b89560ffa3d52f27"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:video-mmmu:https-arxiv-org-abs-2501-13826",
+      "title": "Video-MMMU",
+      "url": "https://arxiv.org/abs/2501.13826",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 45.64,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Task: Knowledge acquisition from professional videos. Eval Protocol: MC + knowledge gain metric. Size: 300 expert videos, 900 questions, 6 disciplines",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "Video-MMMU",
+          "Date": "01/2026",
+          "Task": "Knowledge acquisition from professional videos",
+          "Eval Protocol": "MC + knowledge gain metric",
+          "Size": "300 expert videos, 900 questions, 6 disciplines"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding"
+      ],
+      "watchlist": [
+        "MMMU"
+      ],
+      "watchlist_notes": [
+        "College-level multi-discipline multimodal understanding."
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Video understanding",
+        "Matched: benchmark, dataset, datasets, video understanding",
+        "College-level multi-discipline multimodal understanding.",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cac8dfdebda6dfeb39f7fb742c47721551d16b8b4beff3bc17ea2c28021addb8"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:claude-opus-4-6:https-docs-anthropic-com-en-docs-about-claude-models-whats-n",
+      "title": "Claude Opus 4.6",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/models/whats-new-claude-4-5",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 88.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 44.88,
+      "score_version": 1,
+      "published_at": "2026-02-01T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: Undisclosed. Parameters: Undisclosed. Vision Encoder: Undisclosed. Pretrained Backbone: Undisclosed",
+      "organizations": [
+        "Anthropic"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "Claude Opus 4.6 (Anthropic)",
+          "Date": "02/2026",
+          "Architecture": "Decoder-only",
+          "Training Data": "Undisclosed",
+          "Parameters": "Undisclosed",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "Undisclosed"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "Claude"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder",
+        "Tracked family: Claude",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:fdc56eeec2342a7c492e3ad4ff55f5343dc37adaee54c408ba3cbb83ac81a2b3"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:molmoweb:https-allenai-org-blog-molmoweb",
+      "title": "MolmoWeb",
+      "url": "https://allenai.org/blog/molmoweb",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "dataset",
+        "gui_agent"
+      ],
+      "relevance_score": 58.0,
+      "evidence_score": 52.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 38.48,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Open visual web agent on Molmo 2 (4B/8B); interprets visual interfaces, includes MolmoWebMix training dataset",
+      "organizations": [
+        "Allen AI"
+      ],
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Web Agents",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "MolmoWeb (Allen AI)",
+          "Date": "03/2026",
+          "Key Contribution": "Open visual web agent on Molmo 2 (4B/8B); interprets visual interfaces, includes MolmoWebMix training dataset"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.3 Web Agents",
+      "matched_terms": [
+        "dataset",
+        "web agent"
+      ],
+      "model_families": [
+        "Molmo"
+      ],
+      "rationale": [
+        "Topics: Datasets, GUI & web agents",
+        "Matched: dataset, web agent",
+        "Tracked family: Molmo",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:41b731a1e6ff28140b841ea8fce7f9738d040b4ee1448cdf39465d180c2d79da"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:safer-vlm-safety-aware-rl-for-multimodal-reasoning:https-openreview-net-pdf-4f379d45027946b58a820908fd3a1711d66",
+      "title": "SaFeR-VLM: Safety-Aware RL for Multimodal Reasoning",
+      "url": "https://openreview.net/pdf/4f379d45027946b58a820908fd3a1711d66daa85.pdf",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "reasoning",
+        "safety"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 70.48,
+      "score_version": 1,
+      "published_at": "2026-03-25T00:00:00+00:00",
+      "summary": "RL Method: GRPO + safety reward",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "SaFeR-VLM: Safety-Aware RL for Multimodal Reasoning",
+          "Date": "2026 (ICLR)",
+          "RL Method": "GRPO + safety reward"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "post training",
+        "alignment",
+        "multimodal reasoning",
+        "safety"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Visual reasoning, Safety & fairness",
+        "Matched: vlm, grpo, post training, alignment, multimodal reasoning, safety",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:819c29e7ee9c9ff4bf46808dd15aa7c95346d0037cfc45e7f334090271a1f078"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:safer-vlm-safety-into-multimodal-reasoning-via-rl:https-openreview-net-pdf-4f379d45027946b58a820908fd3a1711d66",
+      "title": "SaFeR-VLM: Safety into Multimodal Reasoning via RL",
+      "url": "https://openreview.net/pdf/4f379d45027946b58a820908fd3a1711d66daa85.pdf",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "reasoning",
+        "safety"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 70.48,
+      "score_version": 1,
+      "published_at": "2026-03-25T00:00:00+00:00",
+      "summary": "Key Contribution: QI-Safe-10K dataset; SaFeR-VLM-3B outperforms Qwen2.5VL-72B on safety",
+      "facets": {
+        "survey_section": "5. Challenges > 5.2 Safety",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "SaFeR-VLM: Safety into Multimodal Reasoning via RL",
+          "Date": "2026 (ICLR)",
+          "Key Contribution": "QI-Safe-10K dataset; SaFeR-VLM-3B outperforms Qwen2.5VL-72B on safety"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "5. Challenges > 5.2 Safety",
+      "matched_terms": [
+        "vlm",
+        "dataset",
+        "multimodal reasoning",
+        "safety"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Visual reasoning, Safety & fairness",
+        "Matched: vlm, dataset, multimodal reasoning, safety",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:8fc753465cd33df6372f2a56c2e6024ed73b0369f1b2bf2108b94262f5375992"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:mergetune-continued-fine-tuning-of-vlms:https-arxiv-org-abs-2601-10497",
+      "title": "MERGETUNE: Continued Fine-Tuning of VLMs",
+      "url": "https://arxiv.org/abs/2601.10497",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 58.32,
+      "score_version": 1,
+      "published_at": "2026-03-25T00:00:00+00:00",
+      "summary": "Key Contribution: Linear mode connectivity to recover pretrained knowledge post-adaptation",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "MERGETUNE: Continued Fine-Tuning of VLMs",
+          "Date": "01/2026 (ICLR 2026)",
+          "Key Contribution": "Linear mode connectivity to recover pretrained knowledge post-adaptation"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "vlm",
+        "sft",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, sft, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:d15ea4155bc33baaf1b6dd76bd5326791934d7e72b21b6b6481d85176d33016a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:holisafe-holistic-safety-evaluation-for-vlms:https-openreview-net-pdf-c0a7991cefe100852616861d5046c3b90cf",
+      "title": "HoliSafe: Holistic Safety Evaluation for VLMs",
+      "url": "https://openreview.net/pdf/c0a7991cefe100852616861d5046c3b90cfed936.pdf",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "safety"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 57.56,
+      "score_version": 1,
+      "published_at": "2026-03-25T00:00:00+00:00",
+      "summary": "Key Contribution: Visual guard module (VGM) plug-in; covers all 5 image-text combination types",
+      "facets": {
+        "survey_section": "5. Challenges > 5.2 Safety",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "HoliSafe: Holistic Safety Evaluation for VLMs",
+          "Date": "2026 (ICLR)",
+          "Key Contribution": "Visual guard module (VGM) plug-in; covers all 5 image-text combination types"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "5. Challenges > 5.2 Safety",
+      "matched_terms": [
+        "vlm",
+        "safety"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Safety & fairness",
+        "Matched: vlm, safety",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:44075530a8569694bb75a41c97fce6659909bd0fd50a94979354207fe1a1ec43"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:mmou:https-arxiv-org-abs-2603-14145",
+      "title": "MMOU",
+      "url": "https://arxiv.org/abs/2603.14145",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "omni_unified",
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 54.44,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Task: Omni-modal (visual+audio+text) long video understanding. Eval Protocol: MC. Size: 15K questions, 9,038 videos, 13 skill categories",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "MMOU",
+          "Date": "03/2026",
+          "Task": "Omni-modal (visual+audio+text) long video understanding",
+          "Eval Protocol": "MC",
+          "Size": "15K questions, 9,038 videos, 13 skill categories"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+      "matched_terms": [
+        "omni modal",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding",
+        "long video"
+      ],
+      "rationale": [
+        "Topics: Omni & unified, Benchmarks, Datasets, Video understanding",
+        "Matched: omni modal, benchmark, dataset, datasets, video understanding, long video",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:2f0d0f06b53ba3884ff7d9a47b5341a606dc7155881a7276e33d008842f6c415"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:omniearth:https-arxiv-org-abs-2603-09471",
+      "title": "OmniEarth",
+      "url": "https://arxiv.org/abs/2603.09471",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "dataset",
+        "domain_apps",
+        "reasoning"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 54.44,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Task: Geospatial/remote sensing VLM eval. Eval Protocol: MC + Open VQA. Size: 9,275 satellite images, 44,210 instructions, 28 tasks",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "OmniEarth",
+          "Date": "03/2026",
+          "Task": "Geospatial/remote sensing VLM eval",
+          "Eval Protocol": "MC + Open VQA",
+          "Size": "9,275 satellite images, 44,210 instructions, 28 tasks"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "remote sensing"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Datasets, Applied domains",
+        "Matched: vlm, benchmark, dataset, datasets, remote sensing",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:72bf874d9345b5d879eab9c7d6cd28007b190942f1f065e8aac4b1ecf32ebb17"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:multihaystack:https-arxiv-org-abs-2603-05697",
+      "title": "MultiHaystack",
+      "url": "https://arxiv.org/abs/2603.05697",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 51.78,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Task: Multimodal retrieval & reasoning (docs, images, videos). Eval Protocol: Retrieval + QA. Size: 46K+ candidates, 747 questions",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "MultiHaystack",
+          "Date": "03/2026",
+          "Task": "Multimodal retrieval & reasoning (docs, images, videos)",
+          "Eval Protocol": "Retrieval + QA",
+          "Size": "46K+ candidates, 747 questions"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Visual reasoning",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:38917aae193c8d80488bb61eadeb256afd2f5f9bfb5bc2b320f9f3bdbe59994f"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:datbench:https-arxiv-org-abs-2601-02316",
+      "title": "DatBench",
+      "url": "https://arxiv.org/abs/2601.02316",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 49.44,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Task: Discriminative, faithful VLM evaluation. Eval Protocol: MC (format-aware). Size: Identifies up to 70% blindly solvable questions in existing benchmarks",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "DatBench",
+          "Date": "01/2026",
+          "Task": "Discriminative, faithful VLM evaluation",
+          "Eval Protocol": "MC (format-aware)",
+          "Size": "Identifies up to 70% blindly solvable questions in existing benchmarks"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Datasets, Visual reasoning",
+        "Matched: vlm, benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b600716246cb425ec1d1ae4cdcf2b8a2075c3c6691104a99a00f108048abdf61"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:qwen3-5:https-github-com-qwenlm-qwen3-5",
+      "title": "Qwen3.5",
+      "url": "https://github.com/QwenLM/Qwen3.5",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "benchmark"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 46.78,
+      "score_version": 1,
+      "published_at": "2026-02-16T00:00:00+00:00",
+      "summary": "Architecture: Unified VL (early fusion). Training Data: Trillions of multimodal tokens. Parameters: 0.8B–397B (MoE, 17B active). Vision Encoder: ViT (native). Pretrained Backbone: Qwen3.5",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Model": "Qwen3.5 (Alibaba)",
+          "Date": "02/16/2026",
+          "Architecture": "Unified VL (early fusion)",
+          "Training Data": "Trillions of multimodal tokens",
+          "Parameters": "0.8B–397B (MoE, 17B active)",
+          "Vision Encoder": "ViT (native)",
+          "Pretrained Backbone": "Qwen3.5"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "early fusion"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Benchmarks",
+        "Matched: vlm, vision encoder, early fusion",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c681d2d26df5394ba8b91c891475f1fb02619c506dc2e07aa15457441e636708"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:rover:https-openreview-net-pdf-id-gu3dradwii",
+      "title": "ROVER",
+      "url": "https://openreview.net/pdf?id=gu3DRaDWiI",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 46.78,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Task: Reciprocal cross-modal reasoning for unified models. Eval Protocol: Visual gen + verbal gen eval. Size: 1,312 tasks, 1,876 images",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "ROVER",
+          "Date": "2026",
+          "Task": "Reciprocal cross-modal reasoning for unified models",
+          "Eval Protocol": "Visual gen + verbal gen eval",
+          "Size": "1,312 tasks, 1,876 images"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Multimodal General / Reasoning Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Visual reasoning",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c43cd4e6182ab36c9032022e10e278af316826fce8fee7733d40a5175c01858c"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:halp-detecting-hallucinations-without-generating-a-token:https-arxiv-org-abs-2603-05465",
+      "title": "HALP: Detecting Hallucinations without Generating a Token",
+      "url": "https://arxiv.org/abs/2603.05465",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "hallucination",
+        "safety"
+      ],
+      "relevance_score": 85.0,
+      "evidence_score": 42.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 46.54,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Paper: Paper / ACL. Key Contribution: Probes internal representations pre-generation; up to 0.93 AUROC across 8 VLMs",
+      "artifact_urls": [
+        "https://aclanthology.org/2026.eacl-long.287/"
+      ],
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 Hallucination",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "HALP: Detecting Hallucinations without Generating a Token",
+          "Date": "03/2026",
+          "Paper": "Paper / ACL",
+          "Key Contribution": "Probes internal representations pre-generation; up to 0.93 AUROC across 8 VLMs"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "5. Challenges > 5.1 Hallucination",
+      "matched_terms": [
+        "vlm",
+        "hallucination",
+        "hallucinations"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Hallucination, Safety & fairness",
+        "Matched: vlm, hallucination, hallucinations",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:dae2afa86896ee4f0bcc07b4745ed3e7ac66af430c0cb4f37af2e95e18e0f248"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:mmvu:https-arxiv-org-abs-2501-12380",
+      "title": "MMVU",
+      "url": "https://arxiv.org/abs/2501.12380",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 45.64,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Task: Expert-level multi-discipline video understanding. Eval Protocol: MC. Size: 3K expert-annotated questions, 27 subjects",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "MMVU",
+          "Date": "01/2026",
+          "Task": "Expert-level multi-discipline video understanding",
+          "Eval Protocol": "MC",
+          "Size": "3K expert-annotated questions, 27 subjects"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Video Understanding Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Video understanding",
+        "Matched: benchmark, dataset, datasets, video understanding",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:4a05fb6087096167e5120ec2e826177b5dd6a0a57f6e6d4cedfa3d00f89c309b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:image-lora-towards-minimal-fine-tuning-of-vlms:https-arxiv-org-abs-2512-19219",
+      "title": "Image-LoRA: Towards Minimal Fine-Tuning of VLMs",
+      "url": "https://arxiv.org/abs/2512.19219",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 45.48,
+      "score_version": 1,
+      "published_at": "2025-12-01T00:00:00+00:00",
+      "summary": "Key Contribution: Low-rank adaptation only on value paths in visual-token attention layers",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "Image-LoRA: Towards Minimal Fine-Tuning of VLMs",
+          "Date": "12/2025",
+          "Key Contribution": "Low-rank adaptation only on value paths in visual-token attention layers"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "vlm",
+        "sft",
+        "post training",
+        "alignment",
+        "visual token",
+        "lora"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: vlm, sft, post training, alignment, visual token, lora",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:dc43b5c0af91d85683d65a2556a9e01c72aa2a10e5f00373005cb3907b39a8d7"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:from-sight-to-insight-improving-visual-reasoning-via-rl:https-arxiv-org-abs-2601-00215",
+      "title": "From Sight to Insight: Improving Visual Reasoning via RL",
+      "url": "https://arxiv.org/abs/2601.00215",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "reasoning"
+      ],
+      "relevance_score": 99.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 45.1,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "RL Method: GRPO (6 reward functions)",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "From Sight to Insight: Improving Visual Reasoning via RL",
+          "Date": "01/2026",
+          "RL Method": "GRPO (6 reward functions)"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "post training",
+        "alignment",
+        "visual reasoning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Visual reasoning",
+        "Matched: vlm, grpo, post training, alignment, visual reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:5e7ddbb5c02d22c346f4b1ef388edaee82f0ce24dc97ec72b20232cbabc585f9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:medmo-grounding-understanding-mllms-for-medical-images:https-arxiv-org-abs-2602-06965",
+      "title": "MedMO: Grounding & Understanding MLLMs for Medical Images",
+      "url": "https://arxiv.org/abs/2602.06965",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "domain_apps"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 44.72,
+      "score_version": 1,
+      "published_at": "2026-02-01T00:00:00+00:00",
+      "summary": "Key Contribution: Multi-stage training + RL with verifiable rewards; +13.7% VQA, +40.4% IoU",
+      "facets": {
+        "survey_section": "4. Applications > 4.4 Healthcare",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "MedMO: Grounding & Understanding MLLMs for Medical Images",
+          "Date": "02/2026",
+          "Key Contribution": "Multi-stage training + RL with verifiable rewards; +13.7% VQA, +40.4% IoU"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.4 Healthcare",
+      "matched_terms": [
+        "mllm",
+        "verifiable reward",
+        "medical",
+        "healthcare"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Applied domains",
+        "Matched: mllm, verifiable reward, medical, healthcare",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:85560716364e9250e80b43d7a1a9fced1fdfeab5035687fc75630928cd261d1f"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:wdpo-winsorized-direct-preference-optimization-for-robust-alignment:https-arxiv-org-abs-2603-07211",
+      "title": "wDPO: Winsorized Direct Preference Optimization for Robust Alignment",
+      "url": "https://arxiv.org/abs/2603.07211",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 73.0,
+      "evidence_score": 34.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 40.22,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "RL Method: wDPO",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "wDPO: Winsorized Direct Preference Optimization for Robust Alignment",
+          "Date": "03/2026",
+          "RL Method": "wDPO"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "direct preference optimization",
+        "post training",
+        "alignment",
+        "preference optimization"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, direct preference optimization, post training, alignment, preference optimization",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a265108ed2951a66e5502a56b25cfa540e841e8fb797bff11ddd6a5f5e2e52a6"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:tone-matters-linguistic-tone-s-impact-on-vlm-hallucination:https-arxiv-org-abs-2601-06460",
+      "title": "Tone Matters: Linguistic Tone's Impact on VLM Hallucination",
+      "url": "https://arxiv.org/abs/2601.06460",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "hallucination",
+        "safety"
+      ],
+      "relevance_score": 80.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 37.88,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Key Contribution: 5-Level Prompt Intensity Framework; hallucination rates are non-monotonic with pressure",
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 Hallucination",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "Tone Matters: Linguistic Tone's Impact on VLM Hallucination",
+          "Date": "01/2026",
+          "Key Contribution": "5-Level Prompt Intensity Framework; hallucination rates are non-monotonic with pressure"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "5. Challenges > 5.1 Hallucination",
+      "matched_terms": [
+        "vlm",
+        "hallucination"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Hallucination, Safety & fairness",
+        "Matched: vlm, hallucination",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:3044bb3763ca6f59a7647f6f2c19d9859abf717e4718114d86e84a4f195dd9a0"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:evoprompt-evolving-prompt-adaptation-for-vlms:https-arxiv-org-abs-2603-09493",
+      "title": "EvoPrompt: Evolving Prompt Adaptation for VLMs",
+      "url": "https://arxiv.org/abs/2603.09493",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 63.0,
+      "evidence_score": 34.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 36.42,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Evolutionary prompt trajectories with Feature Geometric Regularization",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Prompt Optimization",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "EvoPrompt: Evolving Prompt Adaptation for VLMs",
+          "Date": "03/2026",
+          "Key Contribution": "Evolutionary prompt trajectories with Feature Geometric Regularization"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Prompt Optimization",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ba8438cabece31f1a63a2e0e94fa123f09abb3581bbdc0275d1e5dea510f56d1"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:st4vla-spatial-guided-training-for-vla:https-arxiv-org-abs-2602-10109",
+      "title": "ST4VLA: Spatial Guided Training for VLA",
+      "url": "https://arxiv.org/abs/2602.10109",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 36.36,
+      "score_version": 1,
+      "published_at": "2026-02-01T00:00:00+00:00",
+      "summary": "Key Contribution: Spatial grounding pre-training + spatially guided action post-training",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "ST4VLA: Spatial Guided Training for VLA",
+          "Date": "02/2026",
+          "Key Contribution": "Spatial grounding pre-training + spatially guided action post-training"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "post training",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: Post-training, Embodied & VLA",
+        "Matched: post training, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:833f39053272bf068452063a24a2cad40591f22fd08986ef7adeb549413faed9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:sail-rl-dual-reward-rl-tuning-for-mllms:https-arxiv-org-abs-2511-02280",
+      "title": "SAIL-RL: Dual-Reward RL Tuning for MLLMs",
+      "url": "https://arxiv.org/abs/2511.02280",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 72.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 34.84,
+      "score_version": 1,
+      "published_at": "2025-11-01T00:00:00+00:00",
+      "summary": "RL Method: Dual-Reward (Thinking + Judging)",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "SAIL-RL: Dual-Reward RL Tuning for MLLMs",
+          "Date": "11/2025",
+          "RL Method": "Dual-Reward (Thinking + Judging)"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "mllm",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, mllm, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:2e72b79218f4c97c97323018ddb3536fbbe9144e91201d93c17927e646387a50"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:ovid:https-openreview-net-pdf-54b83db2dc00f01b015b8356db617fdd6e3",
+      "title": "OVID",
+      "url": "https://openreview.net/pdf/54b83db2dc00f01b015b8356db617fdd6e38240f.pdf",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset"
+      ],
+      "relevance_score": 71.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 34.46,
+      "score_version": 1,
+      "published_at": "2026-01-01T00:00:00+00:00",
+      "summary": "Task: Open video pre-training. Size: 10M hours, 300M frame-caption pairs",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "OVID",
+          "Date": "2026",
+          "Task": "Open video pre-training",
+          "Size": "10M hours, 300M frame-caption pairs"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:fc3896eaf3aa38c7f5e958912abfe6d0e6e376dbd6fcd8954924aa1e03c846d5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:opendrivevla-e2e-driving-with-large-vla-model:https-arxiv-org-abs-2503-23463",
+      "title": "OpenDriveVLA: E2E Driving with Large VLA Model",
+      "url": "https://arxiv.org/abs/2503.23463",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 71.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 34.46,
+      "score_version": 1,
+      "published_at": "2025-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Hierarchical vision-language alignment for spatially grounded actions",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Autonomous Driving",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "OpenDriveVLA: E2E Driving with Large VLA Model",
+          "Date": "03/2025",
+          "Key Contribution": "Hierarchical vision-language alignment for spatially grounded actions"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.2 Autonomous Driving",
+      "matched_terms": [
+        "alignment",
+        "vla",
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: Post-training, Embodied & VLA",
+        "Matched: alignment, vla, autonomous driving",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1aea054112426149ad2f41fd7ecd130967373eb0fb675af04af1bbb4acee5bbc"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:f-grpo-and-beyond-divergence-based-rl-for-general-llm-alignment:https-arxiv-org-abs-2602-05946",
+      "title": "f-GRPO and Beyond: Divergence-Based RL for General LLM Alignment",
+      "url": "https://arxiv.org/abs/2602.05946",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 33.32,
+      "score_version": 1,
+      "published_at": "2026-02-01T00:00:00+00:00",
+      "summary": "RL Method: f-GRPO / f-HAL",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "f-GRPO and Beyond: Divergence-Based RL for General LLM Alignment",
+          "Date": "02/2026",
+          "RL Method": "f-GRPO / f-HAL"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, grpo, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:e662ddbf89bacc2b99ae66f5d90b37ecd20aa150f3d4eb3c6171719e0e0924fc"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:mask-fine-tuning-mft-unlocking-hidden-capabilities-in-vlms:https-arxiv-org-abs-2512-23073",
+      "title": "Mask Fine-Tuning (MFT): Unlocking Hidden Capabilities in VLMs",
+      "url": "https://arxiv.org/abs/2512.23073",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 33.32,
+      "score_version": 1,
+      "published_at": "2025-12-01T00:00:00+00:00",
+      "summary": "Key Contribution: Learnable gating scores to reorganize subnetworks instead of weight updates",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "Mask Fine-Tuning (MFT): Unlocking Hidden Capabilities in VLMs",
+          "Date": "12/2025",
+          "Key Contribution": "Learnable gating scores to reorganize subnetworks instead of weight updates"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "vlm",
+        "sft",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, sft, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1cee2bbcb8a6a941081afbce299ae70c32e63aea5b00cdc37010949bcd0ea5ab"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:reassessing-sft-in-vlm-reasoning:https-arxiv-org-abs-2512-12690",
+      "title": "Reassessing SFT in VLM Reasoning",
+      "url": "https://arxiv.org/abs/2512.12690",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 33.32,
+      "score_version": 1,
+      "published_at": "2025-12-01T00:00:00+00:00",
+      "summary": "Key Contribution: SFT achieves comparable reasoning to RL with 10× less data (2K vs 20K)",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "Reassessing SFT in VLM Reasoning",
+          "Date": "12/2025",
+          "Key Contribution": "SFT achieves comparable reasoning to RL with 10× less data (2K vs 20K)"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "vlm",
+        "sft",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, sft, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:3c6b01c3e7a01fa2ad3c88a8d6aa5145d5bf7436bbc9b25e01aa901189d01bfe"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:dam-vla-dynamic-action-model-based-vla-for-robot-manipulation:https-arxiv-org-abs-2603-00926",
+      "title": "DAM-VLA: Dynamic Action Model-Based VLA for Robot Manipulation",
+      "url": "https://arxiv.org/abs/2603.00926",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla"
+      ],
+      "relevance_score": 54.0,
+      "evidence_score": 34.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 33.0,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Action routing for arm vs gripper; diffusion-based action models",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "DAM-VLA: Dynamic Action Model-Based VLA for Robot Manipulation",
+          "Date": "03/2026",
+          "Key Contribution": "Action routing for arm vs gripper; diffusion-based action models"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "vla",
+        "embodied",
+        "embodied ai",
+        "robot manipulation"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA",
+        "Matched: vla, embodied, embodied ai, robot manipulation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:884d724551a7c056486b8fe0ad34694651672c9ba6cba3f6df97e20898d422cc"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:ns-vla-neuro-symbolic-vision-language-action-models:https-arxiv-org-abs-2603-09542",
+      "title": "NS-VLA: Neuro-Symbolic Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2603.09542",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla"
+      ],
+      "relevance_score": 54.0,
+      "evidence_score": 34.0,
+      "recency_score": 20.0,
+      "adoption_score": 0.0,
+      "total_score": 33.0,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Key Contribution: Symbolic encoders + online RL for zero-shot generalization",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "NS-VLA: Neuro-Symbolic Vision-Language-Action Models",
+          "Date": "03/2026",
+          "Key Contribution": "Symbolic encoders + online RL for zero-shot generalization"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "vision language action",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA",
+        "Matched: vision language action, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:bec83c1b72d2055f0991f356f8bd741102b3bbb7d4a40d797d46a0de8c41b7b8"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:omniscience:https-arxiv-org-abs-2602-13758",
+      "title": "OmniScience",
+      "url": "https://arxiv.org/abs/2602.13758",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset"
+      ],
+      "relevance_score": 67.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 32.94,
+      "score_version": 1,
+      "published_at": "2026-02-01T00:00:00+00:00",
+      "summary": "Task: Scientific image understanding. Size: 1.5M figure-caption-context triplets across 10+ disciplines",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Dataset": "OmniScience",
+          "Date": "02/2026",
+          "Task": "Scientific image understanding",
+          "Size": "1.5M figure-caption-context triplets across 10+ disciplines"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c56b14a6bf890540062a45294ccf0ca55d07a232b58f5ba316635d89abdb11bd"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-03-25:gift-group-relative-implicit-fine-tuning:https-arxiv-org-abs-2510-23868",
+      "title": "GIFT: Group-relative Implicit Fine Tuning",
+      "url": "https://arxiv.org/abs/2510.23868",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 63.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 31.42,
+      "score_version": 1,
+      "published_at": "2025-10-01T00:00:00+00:00",
+      "summary": "RL Method: GIFT (convex MSE loss)",
+      "organizations": [
+        "GRPO + DPO + UNA"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-03-25",
+        "columns": {
+          "Title": "GIFT: Group-relative Implicit Fine Tuning (GRPO + DPO + UNA)",
+          "Date": "10/2025",
+          "RL Method": "GIFT (convex MSE loss)"
+        },
+        "report_date": "2026-03-25"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-03-25T00:00:00+00:00",
+      "raw_payload_hash": "sha256:78aa5f080e537b4e2152398991c0d2a23b5208bb9a6fe79cf072e9433a04dd4d"
+    }
+  ]
+}

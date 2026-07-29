@@ -1,0 +1,1373 @@
+{
+  "schema_version": 1,
+  "date": "2026-04-28",
+  "generated_at": "2026-04-28T00:00:00+00:00",
+  "since": "2026-03-29T00:00:00+00:00",
+  "selection": {
+    "fetched": 29,
+    "deduplicated": 28,
+    "out_of_domain": 0,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 28,
+    "pinned": 4,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 29,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-04-28.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:video-mme-v2:https-github-com-mme-benchmarks-video-mme-v2",
+      "title": "Video-MME-v2",
+      "url": "https://github.com/MME-Benchmarks/Video-MME-v2",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 56.94,
+      "score_version": 1,
+      "published_at": "2026-04-07T00:00:00+00:00",
+      "summary": "Task: Comprehensive video understanding. Eval Protocol: Mixed MC + open-ended, with multi-resolution and long-form sub-tracks. Size: 3,300+ human-annotated hours",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Video & World-Model Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "Video-MME-v2",
+          "Date": "04/07/2026",
+          "Task": "Comprehensive video understanding",
+          "Eval Protocol": "Mixed MC + open-ended, with multi-resolution and long-form sub-tracks",
+          "Size": "3,300+ human-annotated hours"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Video & World-Model Benchmarks",
+      "matched_terms": [
+        "world model",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding"
+      ],
+      "watchlist": [
+        "MME",
+        "Video-MME"
+      ],
+      "watchlist_notes": [
+        "Perception and cognition breadth measurement.",
+        "Full-spectrum video analysis under varying durations."
+      ],
+      "rationale": [
+        "Topics: World models, Benchmarks, Datasets, Video understanding",
+        "Matched: world model, benchmark, dataset, datasets, video understanding",
+        "Perception and cognition breadth measurement.",
+        "Full-spectrum video analysis under varying durations.",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b398f53bbf7f2b861ef95d8e2cabf07ac40adb4d7b13254d29f18523a5b74236"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:s1-vl-scientific-multimodal-reasoning-with-thinking-with-images:https-arxiv-org-abs-2604-21409",
+      "title": "S1-VL: Scientific Multimodal Reasoning with Thinking-with-Images",
+      "url": "https://arxiv.org/abs/2604.21409",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "reasoning"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 50.89,
+      "score_version": 1,
+      "published_at": "2026-04-23T00:00:00+00:00",
+      "summary": "Key Contribution: Specialist post-trained from Qwen3-VL-32B-Thinking that interleaves Python-driven image manipulation (crop, zoom, measure) with chain-of-thought; SoTA on HRBench-4K, Physics, and VRSBench",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Scientific Reasoning",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "S1-VL: Scientific Multimodal Reasoning with Thinking-with-Images",
+          "Date": "04/23/2026",
+          "Key Contribution": "Specialist post-trained from Qwen3-VL-32B-Thinking that interleaves Python-driven image manipulation (crop, zoom, measure) with chain-of-thought; SoTA on HRBench-4K, Physics, and VRSBench"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.3 Scientific Reasoning",
+      "matched_terms": [
+        "multimodal reasoning",
+        "chain of thought",
+        "thinking with images"
+      ],
+      "model_families": [
+        "Qwen-VL"
+      ],
+      "rationale": [
+        "Topics: Visual reasoning",
+        "Matched: multimodal reasoning, chain of thought, thinking with images",
+        "Tracked family: Qwen-VL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c39933d190dea7be422d9f404d1d61271e66787bba8b48d96313eb6c7f8afd67"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:claude-mythos:https-whatllm-org-blog-new-ai-models-april-2026",
+      "title": "Claude Mythos",
+      "url": "https://whatllm.org/blog/new-ai-models-april-2026",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 35.66,
+      "score_version": 1,
+      "published_at": "2026-04-07T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only (frontier). Training Data: Undisclosed. Parameters: Undisclosed. Vision Encoder: Undisclosed. Pretrained Backbone: Undisclosed",
+      "organizations": [
+        "Anthropic, gated preview",
+        "Anthropic"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Model": "Claude Mythos (Anthropic, gated preview)",
+          "Date": "04/07/2026",
+          "Architecture": "Decoder-only (frontier)",
+          "Training Data": "Undisclosed",
+          "Parameters": "Undisclosed",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "Undisclosed"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "Claude"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Tracked family: Claude",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:7ec9cd9bea71ae0768c226ad2321a77f6854c0da510062aaddfe4d21bb5b92ff"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:glm-5v-turbo:https-www-marktechpost-com-2026-04-01-z-ai-launches-glm-5v-t",
+      "title": "GLM-5V-Turbo",
+      "url": "https://www.marktechpost.com/2026/04/01/z-ai-launches-glm-5v-turbo-a-native-multimodal-vision-coding-model-optimized-for-openclaw-and-high-capacity-agentic-engineering-workflows-everywhere/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 10.0,
+      "adoption_score": 0.0,
+      "total_score": 32.56,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Architecture: Native multimodal (vision-coding) with Multi-Token Prediction (MTP). Training Data: 30+ Task Joint RL. Parameters: Undisclosed. Vision Encoder: CogViT. Pretrained Backbone: GLM-5",
+      "organizations": [
+        "Zhipu / Z.AI",
+        "Zhipu AI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Model": "GLM-5V-Turbo (Zhipu / Z.AI)",
+          "Date": "04/01/2026",
+          "Architecture": "Native multimodal (vision-coding) with Multi-Token Prediction (MTP)",
+          "Training Data": "30+ Task Joint RL",
+          "Parameters": "Undisclosed",
+          "Vision Encoder": "CogViT",
+          "Pretrained Backbone": "GLM-5"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "native multimodal"
+      ],
+      "model_families": [
+        "GLM-V"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder, native multimodal",
+        "Tracked family: GLM-V",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:99cd2994f95796761d1535680e6d1eacec6cf28f8d7973114154ae98cf30ccd6"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:worldmark:https-arxiv-org-abs-2604-21686",
+      "title": "WorldMark",
+      "url": "https://arxiv.org/abs/2604.21686",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "world_model",
+        "benchmark",
+        "dataset",
+        "hallucination",
+        "video"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 74.44,
+      "score_version": 1,
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "Task: Unified benchmark for interactive Image-to-Video world models (Genie, YUME, etc.). Eval Protocol: Hierarchical 500-case test suite; WASD-style action mapping; VLM-judge for spatiotemporal hallucinations. Size: 500 cases",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Video & World-Model Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "WorldMark",
+          "Date": "04/28/2026",
+          "Task": "Unified benchmark for interactive Image-to-Video world models (Genie, YUME, etc.)",
+          "Eval Protocol": "Hierarchical 500-case test suite; WASD-style action mapping; VLM-judge for spatiotemporal hallucinations",
+          "Size": "500 cases"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Video & World-Model Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "world model",
+        "world models",
+        "video world",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "hallucination",
+        "hallucinations"
+      ],
+      "rationale": [
+        "Topics: VLM releases, World models, Benchmarks, Datasets",
+        "Matched: vlm, world model, world models, video world, benchmark, dataset",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:87a6194f9d742285c012dd2044523396fd00be85ff46efaac365853995a01464"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:gmpo-geometric-mean-policy-optimization:https-www-paperdigest-org-2026-04-iclr-2026-papers-with-code",
+      "title": "GMPO: Geometric-Mean Policy Optimization",
+      "url": "https://www.paperdigest.org/2026/04/iclr-2026-papers-with-code-data/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 70.48,
+      "score_version": 1,
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "RL Method: Geometric-mean variant of GRPO; suppresses token-reward outliers",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "GMPO: Geometric-Mean Policy Optimization",
+          "Date": "2026 (ICLR 2026)",
+          "RL Method": "Geometric-mean variant of GRPO; suppresses token-reward outliers"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "policy optimization",
+        "post training",
+        "alignment",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA",
+        "Matched: vlm, grpo, policy optimization, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:7a6d40e1bdf4ae4e0e906affabb5edadfc6c810a41d6f09292357998e11056f2"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:slowba-latency-targeted-backdoor-attacks-on-vlm-based-gui-agents:https-github-com-osu-nlp-group-gui-agents-paper-list",
+      "title": "SlowBA: Latency-Targeted Backdoor Attacks on VLM-Based GUI Agents",
+      "url": "https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "gui_agent",
+        "safety"
+      ],
+      "relevance_score": 89.0,
+      "evidence_score": 52.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 70.26,
+      "score_version": 1,
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "Key Contribution: First backdoor attack that targets response efficiency rather than correctness — pop-up triggers induce latency without changing task output, a denial-of-service-style threat for VLM agents",
+      "facets": {
+        "survey_section": "5. Challenges > 5.2 Safety / Backdoors",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "SlowBA: Latency-Targeted Backdoor Attacks on VLM-Based GUI Agents",
+          "Date": "03–04/2026",
+          "Key Contribution": "First backdoor attack that targets response efficiency rather than correctness — pop-up triggers induce latency without changing task output, a denial-of-service-style threat for VLM agents"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "5. Challenges > 5.2 Safety / Backdoors",
+      "matched_terms": [
+        "vlm",
+        "gui agent",
+        "safety"
+      ],
+      "rationale": [
+        "Topics: VLM releases, GUI & web agents, Safety & fairness",
+        "Matched: vlm, gui agent, safety",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:d7a3933a2ade42c58af0e87d698c8456e5afe7b4d140f2f9f923223e4e79d99a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:grpo-vps-enhancing-group-relative-policy-optimization-with-verifier-proxy-signals:https-arxiv-org-pdf-2604-20659",
+      "title": "GRPO-VPS: Enhancing Group Relative Policy Optimization with Verifier-Proxy Signals",
+      "url": "https://arxiv.org/pdf/2604.20659",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 96.67,
+      "adoption_score": 0.0,
+      "total_score": 69.65,
+      "score_version": 1,
+      "published_at": "2026-04-27T00:00:00+00:00",
+      "summary": "RL Method: GRPO + verifier-proxy reward shaping",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "GRPO-VPS: Enhancing Group Relative Policy Optimization with Verifier-Proxy Signals",
+          "Date": "04/27/2026",
+          "RL Method": "GRPO + verifier-proxy reward shaping"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "policy optimization",
+        "post training",
+        "alignment",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA",
+        "Matched: vlm, grpo, policy optimization, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:682e977f3184bbe8e2a0a1ee6d8858e643ce90f5ffeaa1b57e536c762b6a918a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:vla-forget-vision-language-action-unlearning-for-embodied-foundation-models:https-arxiv-org-abs-2604-03956",
+      "title": "VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models",
+      "url": "https://arxiv.org/abs/2604.03956",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla",
+        "safety"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 80.0,
+      "adoption_score": 0.0,
+      "total_score": 69.44,
+      "score_version": 1,
+      "published_at": "2026-04-22T00:00:00+00:00",
+      "summary": "Key Contribution: First unlearning method for VLAs: ratio-aware selective editing on perception/projector + layer-selective unlearning on reasoning/action; preserves utility on retained skills while removing unsafe trajectories",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning & Unlearning",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models",
+          "Date": "04/22/2026",
+          "Key Contribution": "First unlearning method for VLAs: ratio-aware selective editing on perception/projector + layer-selective unlearning on reasoning/action; preserves utility on retained skills while removing unsafe trajectories"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning & Unlearning",
+      "matched_terms": [
+        "projector",
+        "post training",
+        "alignment",
+        "vision language action",
+        "vla",
+        "embodied",
+        "unlearning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA, Safety & fairness",
+        "Matched: projector, post training, alignment, vision language action, vla, embodied",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:4255597506751ce31e96d72825614c0df2be6abee382463cc95ef08608694f44"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:arpo-agentic-reinforced-policy-optimization:https-www-paperdigest-org-2026-04-iclr-2026-papers-with-code",
+      "title": "ARPO: Agentic Reinforced Policy Optimization",
+      "url": "https://www.paperdigest.org/2026/04/iclr-2026-papers-with-code-data/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 95.0,
+      "evidence_score": 34.0,
+      "recency_score": 100.0,
+      "adoption_score": 0.0,
+      "total_score": 68.58,
+      "score_version": 1,
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "RL Method: Multi-turn agent RL with fine-grained tool-call exploration",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "ARPO: Agentic Reinforced Policy Optimization",
+          "Date": "2026 (ICLR 2026)",
+          "RL Method": "Multi-turn agent RL with fine-grained tool-call exploration"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "policy optimization",
+        "post training",
+        "alignment",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA",
+        "Matched: vlm, policy optimization, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:e79b0c11be99c16b40b11a01b09fb48228c69b2d1da51317f753165a3e927a5b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:quota-towards-joint-quantization-and-token-pruning-of-vision-language-models:https-arxiv-org-abs-2604-17320",
+      "title": "QUOTA: Towards Joint Quantization and Token Pruning of Vision-Language Models",
+      "url": "https://arxiv.org/abs/2604.17320",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 70.0,
+      "adoption_score": 0.0,
+      "total_score": 66.94,
+      "score_version": 1,
+      "published_at": "2026-04-19T00:00:00+00:00",
+      "summary": "Key Contribution: Identifies that naive stage-wise pruning + low-bit quantization is brittle; co-optimizes calibration and a layer-wise token-allocation schedule. 95.65% accuracy retention while pruning 70% of visual tokens at W4A4.",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "QUOTA: Towards Joint Quantization and Token Pruning of Vision-Language Models",
+          "Date": "04/19/2026",
+          "Key Contribution": "Identifies that naive stage-wise pruning + low-bit quantization is brittle; co-optimizes calibration and a layer-wise token-allocation schedule. 95.65% accuracy retention while pruning 70% of visual tokens at W4A4."
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+      "matched_terms": [
+        "vision language model",
+        "post training",
+        "alignment",
+        "token pruning",
+        "visual token",
+        "quantization",
+        "low bit",
+        "pruning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: vision language model, post training, alignment, token pruning, visual token, quantization",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ceb9dcc91be8e7c6e0f03eb84995cd961523b7047468cc90210af97e2abfd2f9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:crossmath:https-arxiv-org-abs-2604-16256",
+      "title": "CrossMath",
+      "url": "https://arxiv.org/abs/2604.16256",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 62.61,
+      "score_version": 1,
+      "published_at": "2026-04-17T00:00:00+00:00",
+      "summary": "Task: Modality-isolation eval for math reasoning (text-only, image-only, image+text). Eval Protocol: Cross-format consistency; measures visual reliance. Size: Multimodal math problems with parallel text/image variants",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Reasoning / Modality-Gap Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "CrossMath",
+          "Date": "04/17/2026",
+          "Task": "Modality-isolation eval for math reasoning (text-only, image-only, image+text)",
+          "Eval Protocol": "Cross-format consistency; measures visual reliance",
+          "Size": "Multimodal math problems with parallel text/image variants"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Reasoning / Modality-Gap Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Visual reasoning",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:7ce8d4922e86e3b2b77b4050ee53b77838b2d9047340aba7edfee9e98cadeea3"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:webforge-webforge-bench:https-github-com-osu-nlp-group-gui-agents-paper-list",
+      "title": "WebForge / WebForge-Bench",
+      "url": "https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "gui_agent"
+      ],
+      "relevance_score": 95.0,
+      "evidence_score": 52.0,
+      "recency_score": 50.0,
+      "adoption_score": 0.0,
+      "total_score": 60.04,
+      "score_version": 1,
+      "published_at": "2026-04-13T00:00:00+00:00",
+      "summary": "Task: Browser agent eval with auto-constructed environments. Eval Protocol: Plan–Generate–Refine–Validate pipeline; programmatic task verification. Size: 934 tasks across diverse sites. Link: (paper aggregator)",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Web / GUI Agent Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "WebForge / WebForge-Bench",
+          "Date": "04/13/2026",
+          "Task": "Browser agent eval with auto-constructed environments",
+          "Eval Protocol": "Plan–Generate–Refine–Validate pipeline; programmatic task verification",
+          "Size": "934 tasks across diverse sites",
+          "Link": "(paper aggregator)"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Web / GUI Agent Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "gui agent",
+        "browser agent"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, GUI & web agents",
+        "Matched: benchmark, dataset, datasets, gui agent, browser agent",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:2723466800a2f0278a2340c42f4793c4ffd41590ce2619469aecb80bb78e1f83"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:vla-world-learning-vision-language-action-world-models-for-autonomous-driving:https-arxiv-org-abs-2604-09059",
+      "title": "VLA-World: Learning Vision-Language-Action World Models for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2604.09059",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "dataset",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 40.0,
+      "adoption_score": 0.0,
+      "total_score": 59.44,
+      "score_version": 1,
+      "published_at": "2026-04-10T00:00:00+00:00",
+      "summary": "Key Contribution: Unifies predictive imagination (next-state generation) with reflective reasoning in one VLA. Three-stage pipeline: pretraining → SFT → GRPO RL. Releases nuScenes-GR-20K generative-reasoning dataset.",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "VLA-World: Learning Vision-Language-Action World Models for Autonomous Driving",
+          "Date": "04/10/2026",
+          "Key Contribution": "Unifies predictive imagination (next-state generation) with reflective reasoning in one VLA. Three-stage pipeline: pretraining → SFT → GRPO RL. Releases nuScenes-GR-20K generative-reasoning dataset."
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "dataset",
+        "grpo",
+        "sft",
+        "vision language action",
+        "vla",
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: World models, Datasets, Post-training, Embodied & VLA",
+        "Matched: world model, world models, dataset, grpo, sft, vision language action",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:7d45e9b8e652a0c1898b50fff1af7ef4b2a331eb7c45323e7651578d816709d4"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:freshper-freshness-aware-prioritized-experience-replay-for-llm-vlm-reinforcement-learning:https-arxiv-org-abs-2604-16918",
+      "title": "FreshPER: Freshness-Aware Prioritized Experience Replay for LLM/VLM Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2604.16918",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 34.0,
+      "recency_score": 66.67,
+      "adoption_score": 0.0,
+      "total_score": 58.35,
+      "score_version": 1,
+      "published_at": "2026-04-18T00:00:00+00:00",
+      "summary": "RL Method: Trajectory-level PER with multiplicative exponential age decay",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "FreshPER: Freshness-Aware Prioritized Experience Replay for LLM/VLM Reinforcement Learning",
+          "Date": "04/18/2026",
+          "RL Method": "Trajectory-level PER with multiplicative exponential age decay"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA",
+        "Matched: vlm, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:4be5dbe6d263f50813b4749774115c419056ffed5551f8d57c5fbc652501335b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:fast-dvlm-efficient-block-diffusion-vlm-via-direct-conversion-from-autoregressive-vlm:https-arxiv-org-abs-2604-06832",
+      "title": "Fast-dVLM: Efficient Block-Diffusion VLM via Direct Conversion from Autoregressive VLM",
+      "url": "https://arxiv.org/abs/2604.06832",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 94.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 55.49,
+      "score_version": 1,
+      "published_at": "2026-04-08T00:00:00+00:00",
+      "summary": "Key Contribution: Converts a pretrained AR VLM into a block-diffusion VLM for parallel decoding; >6× speedup with FP8 quantization and SGLang integration",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "Fast-dVLM: Efficient Block-Diffusion VLM via Direct Conversion from Autoregressive VLM",
+          "Date": "04/08/2026",
+          "Key Contribution": "Converts a pretrained AR VLM into a block-diffusion VLM for parallel decoding; >6× speedup with FP8 quantization and SGLang integration"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment",
+        "quantization"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: vlm, post training, alignment, quantization",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:64235b581be9b7a58ed9fe424fca526cda957371316438556258c827e7fd5629"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:qwen3-6-35b-a3b:https-qwen-ai-blog-id-qwen3-6-35b-a3b",
+      "title": "Qwen3.6-35B-A3B",
+      "url": "https://qwen.ai/blog?id=qwen3.6-35b-a3b",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 56.67,
+      "adoption_score": 0.0,
+      "total_score": 54.49,
+      "score_version": 1,
+      "published_at": "2026-04-15T00:00:00+00:00",
+      "summary": "Architecture: MoE / natively multimodal. Training Data: Multimodal pretraining + agentic SFT/RL. Parameters: 35B total · 3B active. Vision Encoder: Native multimodal ViT. Pretrained Backbone: Qwen3.6",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Model": "Qwen3.6-35B-A3B (Alibaba)",
+          "Date": "04/15/2026",
+          "Architecture": "MoE / natively multimodal",
+          "Training Data": "Multimodal pretraining + agentic SFT/RL",
+          "Parameters": "35B total · 3B active",
+          "Vision Encoder": "Native multimodal ViT",
+          "Pretrained Backbone": "Qwen3.6"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "native multimodal",
+        "sft"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: vlm, vision encoder, native multimodal, sft",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:2bd402fd4bffa251baff7f697f8961a0ab46d099b6fee3a696edf31b035e93b5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:r-vlm-region-aware-vision-language-model-for-precise-gui-grounding:https-www-amazon-science-publications-r-vlm-region-aware-vis",
+      "title": "R-VLM: Region-aware Vision-Language Model for Precise GUI Grounding",
+      "url": "https://www.amazon.science/publications/r-vlm-region-aware-vision-language-model-for-precise-gui-grounding",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "gui_agent"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 56.67,
+      "adoption_score": 0.0,
+      "total_score": 54.49,
+      "score_version": 1,
+      "published_at": "2026-04-15T00:00:00+00:00",
+      "summary": "Key Contribution: Reduces processing of irrelevant regions in cluttered screenshots via learned region selection; sharper GUI grounding with lower compute",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Web & GUI Agents",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "R-VLM: Region-aware Vision-Language Model for Precise GUI Grounding",
+          "Date": "04/15/2026",
+          "Key Contribution": "Reduces processing of irrelevant regions in cluttered screenshots via learned region selection; sharper GUI grounding with lower compute"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.2 Web & GUI Agents",
+      "matched_terms": [
+        "vision language model",
+        "vlm",
+        "gui agent",
+        "gui grounding"
+      ],
+      "rationale": [
+        "Topics: VLM releases, GUI & web agents",
+        "Matched: vision language model, vlm, gui agent, gui grounding",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ddea326928e4e7a5ec8130233afbf827ae2732d15b62e51fbbd80efedc14c3f0"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:spanvla-efficient-action-bridging-and-learning-from-negative-trajectories:http-adsabs-harvard-edu-abs-2026arxiv260419710z",
+      "title": "SpanVLA: Efficient Action Bridging and Learning from Negative Trajectories",
+      "url": "http://adsabs.harvard.edu/abs/2026arXiv260419710Z",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "generation",
+        "embodied_vla"
+      ],
+      "relevance_score": 63.0,
+      "evidence_score": 52.0,
+      "recency_score": 70.0,
+      "adoption_score": 0.0,
+      "total_score": 52.88,
+      "score_version": 1,
+      "published_at": "2026-04-19T00:00:00+00:00",
+      "summary": "Key Contribution: End-to-end framework integrating autoregressive reasoning with a flow-matching action expert; learns explicitly from negative (failure) trajectories",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "SpanVLA: Efficient Action Bridging and Learning from Negative Trajectories",
+          "Date": "04/19/2026",
+          "Key Contribution": "End-to-end framework integrating autoregressive reasoning with a flow-matching action expert; learns explicitly from negative (failure) trajectories"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "flow matching",
+        "vla",
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: Visual generation, Embodied & VLA",
+        "Matched: flow matching, vla, autonomous driving",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:931119da02cf1e6c701a11d549685083e4eb1c46d91ad433cd5280522635e934"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:do-vision-language-models-truly-perform-vision-reasoning-a-rigorous-study-of-the-modality-gap:https-arxiv-org-abs-2604-16256",
+      "title": "Do Vision-Language Models Truly Perform Vision Reasoning? A Rigorous Study of the Modality Gap",
+      "url": "https://arxiv.org/abs/2604.16256",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "safety"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 52.35,
+      "score_version": 1,
+      "published_at": "2026-04-17T00:00:00+00:00",
+      "summary": "Key Contribution: Comparing text-only, image-only, and image+text variants of identical math problems shows VLMs lean heavily on the textual backbone — the \"modality gap\" persists even for top frontier models. Proposes CrossMath as a diagnostic.",
+      "organizations": [
+        "CrossMath"
+      ],
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 VLM Limitations & Modality Gap",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "Do Vision-Language Models Truly Perform Vision Reasoning? A Rigorous Study of the Modality Gap (CrossMath)",
+          "Date": "04/17/2026",
+          "Key Contribution": "Comparing text-only, image-only, and image+text variants of identical math problems shows VLMs lean heavily on the textual backbone — the \"modality gap\" persists even for top frontier models. Proposes CrossMath as a diagnostic."
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "5. Challenges > 5.1 VLM Limitations & Modality Gap",
+      "matched_terms": [
+        "vision language model",
+        "vlm"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Safety & fairness",
+        "Matched: vision language model, vlm",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:589cc6d1fbfe8c9ddddb0a96ccfd5215e5321bc9cf6b41c7422b4426792af971"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:babyvision:https-arxiv-org-abs-2604-20665",
+      "title": "BabyVision",
+      "url": "https://arxiv.org/abs/2604.20665",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 10.0,
+      "adoption_score": 0.0,
+      "total_score": 51.94,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Task: Toddler-level visual reasoning. Eval Protocol: Diagnostic suite of perception tasks easy for young children, hard for VLMs",
+      "organizations": [
+        "The Expense of Seeing"
+      ],
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.3 Reasoning / Modality-Gap Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "BabyVision (The Expense of Seeing)",
+          "Date": "04/2026",
+          "Task": "Toddler-level visual reasoning",
+          "Eval Protocol": "Diagnostic suite of perception tasks easy for young children, hard for VLMs"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.3 Reasoning / Modality-Gap Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "visual reasoning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Datasets, Visual reasoning",
+        "Matched: vlm, benchmark, dataset, datasets, visual reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:614a454342eada2a50ad6bfea39e0f78bf865d2f2399625630ee3322abfbb3c9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:facts-vlm-leaderboard:https-benchlm-ai-benchmarks-factsvlm",
+      "title": "Facts-VLM Leaderboard",
+      "url": "https://benchlm.ai/benchmarks/factsVlm",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "dataset",
+        "gui_agent",
+        "hallucination"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 23.33,
+      "adoption_score": 0.0,
+      "total_score": 51.31,
+      "score_version": 1,
+      "published_at": "2026-04-05T00:00:00+00:00",
+      "summary": "Task: Grounded multimodal factuality. Eval Protocol: Pairwise factuality eval. Size: Public leaderboard",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Web / GUI Agent Benchmarks",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Dataset": "Facts-VLM Leaderboard",
+          "Date": "04/05/2026",
+          "Task": "Grounded multimodal factuality",
+          "Eval Protocol": "Pairwise factuality eval",
+          "Size": "Public leaderboard"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Web / GUI Agent Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "leaderboard",
+        "dataset",
+        "datasets",
+        "gui agent",
+        "factuality"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Datasets, GUI & web agents",
+        "Matched: vlm, benchmark, leaderboard, dataset, datasets, gui agent",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:80d86ea9dbb2ef5ccd077a326f6a74c99272cad5b9e3cd9c6ae28b4b0ad55961"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:qwen3-6-27b:https-qwen-ai-blog-id-qwen3-6-27b",
+      "title": "Qwen3.6-27B",
+      "url": "https://qwen.ai/blog?id=qwen3.6-27b",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 80.0,
+      "adoption_score": 0.0,
+      "total_score": 50.06,
+      "score_version": 1,
+      "published_at": "2026-04-22T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only / natively multimodal (thinking + non-thinking). Training Data: Multimodal pretraining + agentic mid-training. Parameters: 27B dense. Vision Encoder: Native multimodal ViT. Pretrained Backbone: Qwen3.6",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Model": "Qwen3.6-27B (Alibaba)",
+          "Date": "04/22/2026",
+          "Architecture": "Decoder-only / natively multimodal (thinking + non-thinking)",
+          "Training Data": "Multimodal pretraining + agentic mid-training",
+          "Parameters": "27B dense",
+          "Vision Encoder": "Native multimodal ViT",
+          "Pretrained Backbone": "Qwen3.6"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "native multimodal"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder, native multimodal",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:4cbb0d84e357f746ba9d4426aac279e497e753993da94d5d6e035739e17519f4"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:position-mllms-can-significantly-advance-scientific-reasoning:https-arxiv-org-html-2502-02871v2",
+      "title": "Position: MLLMs Can Significantly Advance Scientific Reasoning",
+      "url": "https://arxiv.org/html/2502.02871v2",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "reasoning"
+      ],
+      "relevance_score": 53.0,
+      "evidence_score": 52.0,
+      "recency_score": 73.33,
+      "adoption_score": 0.0,
+      "total_score": 49.91,
+      "score_version": 1,
+      "published_at": "2026-04-20T00:00:00+00:00",
+      "summary": "Key Contribution: Position paper proposing a research roadmap for MLLMs in science: integrates diverse data types and agent-based collaboration to solve multi-disciplinary problems",
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Scientific Reasoning",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "Position: MLLMs Can Significantly Advance Scientific Reasoning",
+          "Date": "04/20/2026",
+          "Key Contribution": "Position paper proposing a research roadmap for MLLMs in science: integrates diverse data types and agent-based collaboration to solve multi-disciplinary problems"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.3 Scientific Reasoning",
+      "matched_terms": [
+        "mllm"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual reasoning",
+        "Matched: mllm",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:2b09573c6dbdb3ad0d5e26400f2f88cbe27915a07dbce24a4d32b887f376cef5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:gui-shift-rule-based-rl-data-filtering-for-vlm-gui-agents:https-github-com-osu-nlp-group-gui-agents-paper-list",
+      "title": "GUI-Shift: Rule-based RL + Data Filtering for VLM GUI Agents",
+      "url": "https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "dataset",
+        "post_training",
+        "embodied_vla",
+        "gui_agent"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 34.0,
+      "recency_score": 10.0,
+      "adoption_score": 0.0,
+      "total_score": 47.98,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "RL Method: Rule-based GRPO with curated trajectory filtering",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "GUI-Shift: Rule-based RL + Data Filtering for VLM GUI Agents",
+          "Date": "04/2026",
+          "RL Method": "Rule-based GRPO with curated trajectory filtering"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "data filtering",
+        "grpo",
+        "post training",
+        "alignment",
+        "vla",
+        "gui agent"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Datasets, Post-training, Embodied & VLA",
+        "Matched: vlm, data filtering, grpo, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1154de2436ece01bfebce2083d60b9b2b817c0406485d8076e44ac38c8489611"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:timesearch-r-rl-for-interleaved-textvideo-thinking:https-github-com-osu-nlp-group-gui-agents-paper-list",
+      "title": "TimeSearch-R: RL for Interleaved Text–Video Thinking",
+      "url": "https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 95.0,
+      "evidence_score": 34.0,
+      "recency_score": 10.0,
+      "adoption_score": 0.0,
+      "total_score": 46.08,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "RL Method: GRPO-CSV (chain-search-verify)",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "TimeSearch-R: RL for Interleaved Text–Video Thinking",
+          "Date": "04/2026",
+          "RL Method": "GRPO-CSV (chain-search-verify)"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM / VLA",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "post training",
+        "alignment",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Embodied & VLA",
+        "Matched: vlm, grpo, post training, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b92e84afcdc76b67d50ccbf294c566a47281a300cd073bebd240e6ac1301e9c7"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:the-expense-of-seeing-attaining-trustworthy-multimodal-reasoning:https-arxiv-org-abs-2604-20665",
+      "title": "The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning",
+      "url": "https://arxiv.org/abs/2604.20665",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "reasoning",
+        "safety"
+      ],
+      "relevance_score": 84.0,
+      "evidence_score": 52.0,
+      "recency_score": 10.0,
+      "adoption_score": 0.0,
+      "total_score": 45.86,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Key Contribution: Shows SoTA VLMs fail at perceptual tasks easy for toddlers (object permanence, basic counting, occlusion). Argues current scaling does not close this gap.",
+      "organizations": [
+        "BabyVision"
+      ],
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 VLM Limitations & Modality Gap",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning (BabyVision)",
+          "Date": "04/2026",
+          "Key Contribution": "Shows SoTA VLMs fail at perceptual tasks easy for toddlers (object permanence, basic counting, occlusion). Argues current scaling does not close this gap."
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "5. Challenges > 5.1 VLM Limitations & Modality Gap",
+      "matched_terms": [
+        "vlm",
+        "multimodal reasoning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual reasoning, Safety & fairness",
+        "Matched: vlm, multimodal reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cf3309a57742f99cdd730922fe2cf532904fb2d05c60749e3a7345df0f4205c0"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-28:uiloop-cyclic-screenuiaction-gui-reasoning:https-github-com-osu-nlp-group-gui-agents-paper-list",
+      "title": "UILoop: Cyclic Screen–UI–Action GUI Reasoning",
+      "url": "https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "gui_agent"
+      ],
+      "relevance_score": 35.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 33.07,
+      "score_version": 1,
+      "published_at": "2026-04-08T00:00:00+00:00",
+      "summary": "Key Contribution: Reformulates GUI reasoning as a cyclic Screen → UI elements → Action → Screen process; improves grounding and interpretability of GUI agents",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Web & GUI Agents",
+        "survey_origin": "report/2026-04-28",
+        "columns": {
+          "Title": "UILoop: Cyclic Screen–UI–Action GUI Reasoning",
+          "Date": "04/08/2026",
+          "Key Contribution": "Reformulates GUI reasoning as a cyclic Screen → UI elements → Action → Screen process; improves grounding and interpretability of GUI agents"
+        },
+        "report_date": "2026-04-28"
+      },
+      "section": "4. Applications > 4.2 Web & GUI Agents",
+      "matched_terms": [
+        "gui agent"
+      ],
+      "rationale": [
+        "Topics: GUI & web agents",
+        "Matched: gui agent",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-28T00:00:00+00:00",
+      "raw_payload_hash": "sha256:64c65d095cd9e40a5dd050c32c872d8ce5a1ecf9edef2c60bfe2d8319c6fa22b"
+    }
+  ]
+}

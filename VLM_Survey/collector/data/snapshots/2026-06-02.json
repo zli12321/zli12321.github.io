@@ -1,0 +1,916 @@
+{
+  "schema_version": 1,
+  "date": "2026-06-02",
+  "generated_at": "2026-06-02T00:00:00+00:00",
+  "since": "2026-05-03T00:00:00+00:00",
+  "selection": {
+    "fetched": 20,
+    "deduplicated": 20,
+    "out_of_domain": 1,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 19,
+    "pinned": 1,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 20,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-06-02.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:fastocr-dynamic-visual-fixation-via-kv-cache-pruning-for-efficient-document-parsing:https-arxiv-org-abs-2605-17447",
+      "title": "FastOCR: Dynamic Visual Fixation via KV Cache Pruning for Efficient Document Parsing",
+      "url": "https://arxiv.org/abs/2605.17447",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "document_ocr",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 46.67,
+      "adoption_score": 0.0,
+      "total_score": 61.11,
+      "score_version": 1,
+      "published_at": "2026-05-17T00:00:00+00:00",
+      "summary": "Key Contribution: Training-free; observes attention is temporally sparse (gradual fixation shifts, like human reading). Focal-Guided Pruning + Cross-Step Fixation Reuse retain 98% accuracy attending to only 5% of visual tokens/step, cutting attention latency 3.0× on Qwen2.5-VL",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Inference",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "FastOCR: Dynamic Visual Fixation via KV Cache Pruning for Efficient Document Parsing",
+          "Date": "05/17/2026",
+          "Key Contribution": "Training-free; observes attention is temporally sparse (gradual fixation shifts, like human reading). Focal-Guided Pruning + Cross-Step Fixation Reuse retain 98% accuracy attending to only 5% of visual tokens/step, cutting attention latency 3.0× on Qwen2.5-VL"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Inference",
+      "matched_terms": [
+        "post training",
+        "alignment",
+        "document parsing",
+        "visual token",
+        "kv cache",
+        "pruning"
+      ],
+      "model_families": [
+        "Qwen-VL"
+      ],
+      "rationale": [
+        "Topics: Post-training, Document & OCR, Efficiency",
+        "Matched: post training, alignment, document parsing, visual token, kv cache, pruning",
+        "Tracked family: Qwen-VL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:79239f53451e60591eeb44887423c09078f8e142c96358f73ff15b265d45cd25"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:vgenst-bench:https-arxiv-org-abs-2605-22570",
+      "title": "VGenST-Bench",
+      "url": "https://arxiv.org/abs/2605.22570",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 64.44,
+      "score_version": 1,
+      "published_at": "2026-05-21T00:00:00+00:00",
+      "summary": "Task: Spatio-temporal reasoning via active video synthesis. Eval Protocol: 3×2×2 taxonomy (Spatial Scale × Perspective × Scene Dynamics); hierarchical suite decoupling perception from reasoning. Size: Synthesized + human-QC'd controlled scenes",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Video Understanding Benchmarks",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Dataset": "VGenST-Bench",
+          "Date": "05/21/2026",
+          "Task": "Spatio-temporal reasoning via active video synthesis",
+          "Eval Protocol": "3×2×2 taxonomy (Spatial Scale × Perspective × Scene Dynamics); hierarchical suite decoupling perception from reasoning",
+          "Size": "Synthesized + human-QC'd controlled scenes"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Video Understanding Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding",
+        "temporal reasoning"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Video understanding",
+        "Matched: benchmark, dataset, datasets, video understanding, temporal reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ae46f215f11b0a4ef3969b2307f95a4d9bf48dfa86f0f262ce52385dda44c23a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:hallucxr:https-arxiv-org-abs-2605-20469",
+      "title": "HalluCXR",
+      "url": "https://arxiv.org/abs/2605.20469",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "dataset",
+        "hallucination",
+        "domain_apps"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 53.33,
+      "adoption_score": 0.0,
+      "total_score": 62.77,
+      "score_version": 1,
+      "published_at": "2026-05-19T00:00:00+00:00",
+      "summary": "Task: Benchmarking & mitigating hallucinations in chest-radiograph interpretation. Eval Protocol: 8-category hallucination taxonomy; 3 query types; validated against 250 human annotations. Size: 856 stratified MIMIC-CXR radiographs × 6 VLMs = 15,408 evaluations",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Medical & Clinical Benchmarks",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Dataset": "HalluCXR",
+          "Date": "05/19/2026",
+          "Task": "Benchmarking & mitigating hallucinations in chest-radiograph interpretation",
+          "Eval Protocol": "8-category hallucination taxonomy; 3 query types; validated against 250 human annotations",
+          "Size": "856 stratified MIMIC-CXR radiographs × 6 VLMs = 15,408 evaluations"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Medical & Clinical Benchmarks",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "hallucination",
+        "hallucinations",
+        "medical",
+        "clinical"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Datasets, Hallucination",
+        "Matched: vlm, benchmark, dataset, datasets, hallucination, hallucinations",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:bfbe299c9657cdf184ea16d382df0aa32bc07f093c13877fdca6744b78cd0b17"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:hallucxr-hallucinations-in-medical-vlms-for-chest-radiograph-interpretation:https-arxiv-org-abs-2605-20469",
+      "title": "HalluCXR: Hallucinations in Medical VLMs for Chest-Radiograph Interpretation",
+      "url": "https://arxiv.org/abs/2605.20469",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "hallucination",
+        "safety",
+        "domain_apps"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 53.33,
+      "adoption_score": 0.0,
+      "total_score": 62.77,
+      "score_version": 1,
+      "published_at": "2026-05-19T00:00:00+00:00",
+      "summary": "Key Contribution: Across 6 VLMs, 61.9–82.3% of outputs contain hallucinations, with clinically dangerous errors in up to 80.2% of cases; ensembling substantially reduces fabrication and verbosity is a measurable deployment-risk indicator",
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 Hallucination & Clinical Safety",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "HalluCXR: Hallucinations in Medical VLMs for Chest-Radiograph Interpretation",
+          "Date": "05/19/2026",
+          "Key Contribution": "Across 6 VLMs, 61.9–82.3% of outputs contain hallucinations, with clinically dangerous errors in up to 80.2% of cases; ensembling substantially reduces fabrication and verbosity is a measurable deployment-risk indicator"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "5. Challenges > 5.1 Hallucination & Clinical Safety",
+      "matched_terms": [
+        "vlm",
+        "hallucination",
+        "hallucinations",
+        "safety",
+        "medical",
+        "clinical"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Hallucination, Safety & fairness, Applied domains",
+        "Matched: vlm, hallucination, hallucinations, safety, medical, clinical",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b900b42c0e2febfef071d42ac0b8d2b4a4e2a90d84a59efbca10453b2a6c404e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:vgenst-bench-spatio-temporal-reasoning-via-active-video-synthesis:https-arxiv-org-abs-2605-22570",
+      "title": "VGenST-Bench: Spatio-Temporal Reasoning via Active Video Synthesis",
+      "url": "https://arxiv.org/abs/2605.22570",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "video",
+        "safety"
+      ],
+      "relevance_score": 88.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 59.88,
+      "score_version": 1,
+      "published_at": "2026-05-21T00:00:00+00:00",
+      "summary": "Key Contribution: Moves evaluation from passive curation to generative synthesis of controlled scenes, decoupling visual perception from reasoning so spatio-temporal failures can be diagnosed rather than confounded by static-image shortcuts",
+      "facets": {
+        "survey_section": "5. Challenges > 5.3 Video Benchmark Integrity",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "VGenST-Bench: Spatio-Temporal Reasoning via Active Video Synthesis",
+          "Date": "05/21/2026",
+          "Key Contribution": "Moves evaluation from passive curation to generative synthesis of controlled scenes, decoupling visual perception from reasoning so spatio-temporal failures can be diagnosed rather than confounded by static-image shortcuts"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "5. Challenges > 5.3 Video Benchmark Integrity",
+      "matched_terms": [
+        "benchmark",
+        "temporal reasoning"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Video understanding, Safety & fairness",
+        "Matched: benchmark, temporal reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cd3d0886392e6d01e4383aa3a21786cf5ac280f455e5f1364cbc3abc5bdb1994"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:polar-personalizing-embodied-mllm-agents-over-long-term-user-interactions:https-arxiv-org-abs-2605-26256",
+      "title": "POLAR: Personalizing Embodied MLLM Agents over Long-Term User Interactions",
+      "url": "https://arxiv.org/abs/2605.26256",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "embodied_vla"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 73.33,
+      "adoption_score": 0.0,
+      "total_score": 58.65,
+      "score_version": 1,
+      "published_at": "2026-05-25T00:00:00+00:00",
+      "summary": "Key Contribution: Memory-augmented framework organizing prior interactions into a multimodal knowledge graph (semantic + episodic memory) for personalized long-horizon embodied assistance",
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "POLAR: Personalizing Embodied MLLM Agents over Long-Term User Interactions",
+          "Date": "05/25/2026",
+          "Key Contribution": "Memory-augmented framework organizing prior interactions into a multimodal knowledge graph (semantic + episodic memory) for personalized long-horizon embodied assistance"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.3 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "mllm",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Embodied & VLA",
+        "Matched: mllm, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:56a77d469be0373cf0d2555d5025cc04e01825917d30697adca187db59becab0"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:reducing-hallucination-in-vlms-via-stage-wise-preference-optimization-under-distribution-shift:https-arxiv-org-abs-2605-16411",
+      "title": "Reducing Hallucination in VLMs via Stage-wise Preference Optimization under Distribution Shift",
+      "url": "https://arxiv.org/abs/2605.16411",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "reasoning",
+        "hallucination"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 57.77,
+      "score_version": 1,
+      "published_at": "2026-05-13T00:00:00+00:00",
+      "summary": "Key Contribution: Progressively constructs hallucination-focused DPO preference pairs near known failure boundaries; argues hallucination partly stems from autoregressive decoding favoring linguistically plausible but visually ungrounded continuations; surpasses several proprietary systems on ambiguous spatial-reasoning and adversarial cases",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Hallucination-Focused Preference Optimization",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "Reducing Hallucination in VLMs via Stage-wise Preference Optimization under Distribution Shift",
+          "Date": "05/13/2026",
+          "Key Contribution": "Progressively constructs hallucination-focused DPO preference pairs near known failure boundaries; argues hallucination partly stems from autoregressive decoding favoring linguistically plausible but visually ungrounded continuations; surpasses several proprietary systems on ambiguous spatial-reasoning and adversarial cases"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Hallucination-Focused Preference Optimization",
+      "matched_terms": [
+        "vlm",
+        "dpo",
+        "post training",
+        "alignment",
+        "preference optimization",
+        "spatial reasoning",
+        "hallucination",
+        "ungrounded"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Visual reasoning, Hallucination",
+        "Matched: vlm, dpo, post training, alignment, preference optimization, spatial reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:342559ec533821b34ca3131fc98d4981e7702646512a06b4cdf473c7e4300b76"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:stage-wise-preference-optimization-under-distribution-shift:https-arxiv-org-abs-2605-16411",
+      "title": "Stage-wise Preference Optimization under Distribution Shift",
+      "url": "https://arxiv.org/abs/2605.16411",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "hallucination",
+        "safety",
+        "domain_apps"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 57.77,
+      "score_version": 1,
+      "published_at": "2026-05-13T00:00:00+00:00",
+      "summary": "Key Contribution: Traces hallucination to AR decoding's bias toward plausible-but-ungrounded text; boundary-focused DPO improves grounding on ambiguous spatial and adversarial inputs beyond several proprietary systems",
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 Hallucination & Clinical Safety",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "Stage-wise Preference Optimization under Distribution Shift",
+          "Date": "05/13/2026",
+          "Key Contribution": "Traces hallucination to AR decoding's bias toward plausible-but-ungrounded text; boundary-focused DPO improves grounding on ambiguous spatial and adversarial inputs beyond several proprietary systems"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "5. Challenges > 5.1 Hallucination & Clinical Safety",
+      "matched_terms": [
+        "dpo",
+        "preference optimization",
+        "hallucination",
+        "ungrounded",
+        "safety",
+        "bias",
+        "clinical"
+      ],
+      "rationale": [
+        "Topics: Post-training, Hallucination, Safety & fairness, Applied domains",
+        "Matched: dpo, preference optimization, hallucination, ungrounded, safety, bias",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:f8812e62ea7c9089b27ba9417447e1c48dee024d52c0ce7f04c583f0778b2bd5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:alphagrpo-self-reflective-multimodal-generation-in-umms-via-decompositional-verifiable-reward:https-arxiv-org-abs-2605-12495",
+      "title": "AlphaGRPO: Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
+      "url": "https://arxiv.org/abs/2605.12495",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "omni_unified",
+        "post_training"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 56.94,
+      "score_version": 1,
+      "published_at": "2026-05-12T00:00:00+00:00",
+      "summary": "RL Method: GRPO for unified multimodal models; an LLM decomposes each request into atomic, verifiable semantic/quality questions to provide stable generation reward",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for Multimodal Generation & VLM",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "AlphaGRPO: Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
+          "Date": "05/12/2026",
+          "RL Method": "GRPO for unified multimodal models; an LLM decomposes each request into atomic, verifiable semantic/quality questions to provide stable generation reward"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for Multimodal Generation & VLM",
+      "matched_terms": [
+        "vlm",
+        "unified multimodal",
+        "grpo",
+        "post training",
+        "alignment",
+        "verifiable reward"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Omni & unified, Post-training",
+        "Matched: vlm, unified multimodal, grpo, post training, alignment, verifiable reward",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:92ec91002eb73c517dbf16a3386123f003b499c444741692ba70a351436b7d6b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:toc-bench-temporal-object-consistency-for-video-llms:https-arxiv-org-abs-2605-09904",
+      "title": "TOC-Bench: Temporal Object Consistency for Video-LLMs",
+      "url": "https://arxiv.org/abs/2605.09904",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "hallucination",
+        "safety",
+        "video"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 26.67,
+      "adoption_score": 0.0,
+      "total_score": 56.11,
+      "score_version": 1,
+      "published_at": "2026-05-11T00:00:00+00:00",
+      "summary": "Key Contribution: Models that look adequate on general video QA fail at tracking object identity/continuity — event counting, ordering, identity-sensitive reasoning, and hallucination detection — exposing a perception gap masked by aggregate scores",
+      "facets": {
+        "survey_section": "5. Challenges > 5.3 Video Benchmark Integrity",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "TOC-Bench: Temporal Object Consistency for Video-LLMs",
+          "Date": "05/11/2026",
+          "Key Contribution": "Models that look adequate on general video QA fail at tracking object identity/continuity — event counting, ordering, identity-sensitive reasoning, and hallucination detection — exposing a perception gap masked by aggregate scores"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "5. Challenges > 5.3 Video Benchmark Integrity",
+      "matched_terms": [
+        "benchmark",
+        "hallucination"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Hallucination, Safety & fairness, Video understanding",
+        "Matched: benchmark, hallucination",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:99ceea2d490d68e3f62893443ff3f2b33d734f9c2b565cdac9c8e9f1529c81aa"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:fast-ddrive-efficient-block-diffusion-vlm-for-autonomous-driving:https-arxiv-org-abs-2605-23163",
+      "title": "Fast-dDrive: Efficient Block-Diffusion VLM for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2605.23163",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "embodied_vla"
+      ],
+      "relevance_score": 71.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 54.25,
+      "score_version": 1,
+      "published_at": "2026-05-22T00:00:00+00:00",
+      "summary": "Key Contribution: Block-diffusion VLA — bidirectional refinement within semantic units, strict causal ordering across them; SoTA on WOD-E2E, 0.32 m L2 on nuScenes (−22%), and 12× throughput over AR baselines with SGLang",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "Fast-dDrive: Efficient Block-Diffusion VLM for Autonomous Driving",
+          "Date": "05/22/2026",
+          "Key Contribution": "Block-diffusion VLA — bidirectional refinement within semantic units, strict causal ordering across them; SoTA on WOD-E2E, 0.32 m L2 on nuScenes (−22%), and 12× throughput over AR baselines with SGLang"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "vlm",
+        "vla",
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Embodied & VLA",
+        "Matched: vlm, vla, autonomous driving",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ec388c2dd33e6173ac031bfec6c460d77789af2ef517e698250a6b18d6890b0c"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:litegui-distilling-compact-gui-agents-with-reinforcement-learning:https-arxiv-org-abs-2605-07505",
+      "title": "LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2605.07505",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "embodied_vla",
+        "gui_agent",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 16.67,
+      "adoption_score": 0.0,
+      "total_score": 53.61,
+      "score_version": 1,
+      "published_at": "2026-05-08T00:00:00+00:00",
+      "summary": "Key Contribution: SFT-free training: Guided On-policy Distillation + a Multi-solution Dual-level GRPO framework lets 2B/3B agents match much larger models, breaking imitation-learning limits",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Web & GUI Agents",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning",
+          "Date": "05/08/2026",
+          "Key Contribution": "SFT-free training: Guided On-policy Distillation + a Multi-solution Dual-level GRPO framework lets 2B/3B agents match much larger models, breaking imitation-learning limits"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.2 Web & GUI Agents",
+      "matched_terms": [
+        "grpo",
+        "sft",
+        "imitation learning",
+        "gui agent",
+        "distillation"
+      ],
+      "rationale": [
+        "Topics: Post-training, Embodied & VLA, GUI & web agents, Efficiency",
+        "Matched: grpo, sft, imitation learning, gui agent, distillation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:fbf03ed3d8ad9c92d175040f6823421bb4e1c8e5a6793ce3bc647fd8e1732d33"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:toc-bench:https-arxiv-org-abs-2605-09904",
+      "title": "TOC-Bench",
+      "url": "https://arxiv.org/abs/2605.09904",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "video"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 52.0,
+      "recency_score": 26.67,
+      "adoption_score": 0.0,
+      "total_score": 52.31,
+      "score_version": 1,
+      "published_at": "2026-05-11T00:00:00+00:00",
+      "summary": "Task: Temporal object consistency for Video-LLMs (identity/continuity through occlusion & state change). Eval Protocol: 3-layer temporal-necessity filtering; human-verified. Size: 2,323 QA pairs over 1,951 videos (from 17,900 temporally-dependent items)",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Video Understanding Benchmarks",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Dataset": "TOC-Bench",
+          "Date": "05/11/2026",
+          "Task": "Temporal object consistency for Video-LLMs (identity/continuity through occlusion & state change)",
+          "Eval Protocol": "3-layer temporal-necessity filtering; human-verified",
+          "Size": "2,323 QA pairs over 1,951 videos (from 17,900 temporally-dependent items)"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Video Understanding Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "video understanding"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Video understanding",
+        "Matched: benchmark, dataset, datasets, video understanding",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:36ccda86a72ecae26feda58777362f72971210336059215f59629c843f5beec9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:health-conditioned-vla-for-malfunction-aware-robot-control:https-arxiv-org-abs-2605-16056",
+      "title": "Health-Conditioned VLA for Malfunction-Aware Robot Control",
+      "url": "https://arxiv.org/abs/2605.16056",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "embodied_vla"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 40.0,
+      "adoption_score": 0.0,
+      "total_score": 50.32,
+      "score_version": 1,
+      "published_at": "2026-05-15T00:00:00+00:00",
+      "summary": "Key Contribution: Lightweight Health Projector conditions the policy on joint-degradation state, letting robots complete tasks despite malfunctions (joint degradation, weak grippers) that break standard pretrained VLAs",
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "Health-Conditioned VLA for Malfunction-Aware Robot Control",
+          "Date": "05/15/2026",
+          "Key Contribution": "Lightweight Health Projector conditions the policy on joint-degradation state, letting robots complete tasks despite malfunctions (joint degradation, weak grippers) that break standard pretrained VLAs"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.3 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "projector",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Embodied & VLA",
+        "Matched: projector, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:e2d911045d30a8d7034fc00e420556a0bf4c3052578e63a6155a336eeabb5203"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:windowquant-mixed-precision-kv-cache-quantization-via-window-level-similarity-for-vlm-inference:https-arxiv-org-abs-2605-02262",
+      "title": "WindowQuant: Mixed-Precision KV Cache Quantization via Window-Level Similarity for VLM Inference",
+      "url": "https://arxiv.org/abs/2605.02262",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 3.33,
+      "adoption_score": 0.0,
+      "total_score": 50.27,
+      "score_version": 1,
+      "published_at": "2026-05-04T00:00:00+00:00",
+      "summary": "Key Contribution: Window-adaptive mixed-precision KV-cache quantization for video LLMs; bit-width chosen per window from visual-token↔text-prompt similarity, with cache reordering for hardware efficiency; reduces latency & GPU memory while beating prior KV-quant baselines",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Inference",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "WindowQuant: Mixed-Precision KV Cache Quantization via Window-Level Similarity for VLM Inference",
+          "Date": "05/04/2026",
+          "Key Contribution": "Window-adaptive mixed-precision KV-cache quantization for video LLMs; bit-width chosen per window from visual-token↔text-prompt similarity, with cache reordering for hardware efficiency; reduces latency & GPU memory while beating prior KV-quant baselines"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Inference",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment",
+        "kv cache",
+        "quantization"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: vlm, post training, alignment, kv cache, quantization",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:f74b6e2d8e75606654938ca1a19cfb8354080bb16fe6056dd514ccea48f309d1"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:vlm3:https-arxiv-org-abs-2605-30561",
+      "title": "VLM3",
+      "url": "https://arxiv.org/abs/2605.30561",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 48.99,
+      "score_version": 1,
+      "published_at": "2026-05-28T00:00:00+00:00",
+      "summary": "Architecture: Standard decoder-only VLM (no architecture change). Training Data: Mixed 2D/3D task data with focal-length unification. Parameters: Backbone-agnostic recipe. Vision Encoder: Standard ViT. Pretrained Backbone: Any standard VLM",
+      "facets": {
+        "survey_section": "1. New SoTA & Unified Models",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Model": "VLM3 (native 3D)",
+          "Date": "05/28/2026",
+          "Architecture": "Standard decoder-only VLM (no architecture change)",
+          "Training Data": "Mixed 2D/3D task data with focal-length unification",
+          "Parameters": "Backbone-agnostic recipe",
+          "Vision Encoder": "Standard ViT",
+          "Pretrained Backbone": "Any standard VLM"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "1. New SoTA & Unified Models",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:e0800ed5e3e01053a7bb5996574d446adc350b1f6bb596f12262705a408359e2"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:clover-closed-loop-value-estimation-ranking-for-end-to-end-driving-planning:https-arxiv-org-abs-2605-15120",
+      "title": "CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Driving Planning",
+      "url": "https://arxiv.org/abs/2605.15120",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla",
+        "efficiency"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 46.45,
+      "score_version": 1,
+      "published_at": "2026-05-14T00:00:00+00:00",
+      "summary": "Key Contribution: Generator–scorer framework ranks diverse trajectory candidates by planning metrics with conservative closed-loop self-distillation; 94.5 PDMS / 90.4 EPDMS on NAVSIM (SoTA), 48.3 EPDMS on NavHard, lowest L2 & collision on nuScenes",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Driving Planning",
+          "Date": "05/14/2026",
+          "Key Contribution": "Generator–scorer framework ranks diverse trajectory candidates by planning metrics with conservative closed-loop self-distillation; 94.5 PDMS / 90.4 EPDMS on NAVSIM (SoTA), 48.3 EPDMS on NavHard, lowest L2 & collision on nuScenes"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "vla",
+        "autonomous driving",
+        "end to end driving",
+        "distillation"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA, Efficiency",
+        "Matched: vla, autonomous driving, end to end driving, distillation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:52d6c15b6eec7d075546897b4fcbe0d059109d88e86a6a53f24fce52c1402736"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:coworld-vla-thinking-in-a-multi-expert-world-model-for-autonomous-driving:https-arxiv-org-abs-2605-10426",
+      "title": "CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2605.10426",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "embodied_vla"
+      ],
+      "relevance_score": 67.0,
+      "evidence_score": 52.0,
+      "recency_score": 26.67,
+      "adoption_score": 0.0,
+      "total_score": 43.57,
+      "score_version": 1,
+      "published_at": "2026-05-11T00:00:00+00:00",
+      "summary": "Key Contribution: Multi-source supervision builds specialized expert tokens for different aspects of a driving scene to guide trajectory generation; competitive on NAVSIM v1 with improved collision avoidance",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Title": "CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving",
+          "Date": "05/11/2026",
+          "Key Contribution": "Multi-source supervision builds specialized expert tokens for different aspects of a driving scene to guide trajectory generation; competitive on NAVSIM v1 with improved collision avoidance"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "world model",
+        "vla",
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: World models, Embodied & VLA",
+        "Matched: world model, vla, autonomous driving",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:27dee2dba9714b9e1a17530b00245294a72005664e8501012ba212a2a1ec0714"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-02:mamoda2-5:https-arxiv-org-abs-2605-02641",
+      "title": "Mamoda2.5",
+      "url": "https://arxiv.org/abs/2605.02641",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "generation"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 3.33,
+      "adoption_score": 0.0,
+      "total_score": 37.35,
+      "score_version": 1,
+      "published_at": "2026-05-04T00:00:00+00:00",
+      "summary": "Architecture: AR-Diffusion + DiT-MoE (unified I/O, Era 3b). Training Data: Multimodal understanding + image/video generation & editing. Parameters: 25B total · 3B active (128 experts, Top-8). Vision Encoder: Semantic tokenizer + DiT decoder head. Pretrained Backbone: Mamoda2",
+      "organizations": [
+        "InclusionAI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & Unified Models",
+        "survey_origin": "report/2026-06-02",
+        "columns": {
+          "Model": "Mamoda2.5 (InclusionAI)",
+          "Date": "05/04/2026",
+          "Architecture": "AR-Diffusion + DiT-MoE (unified I/O, Era 3b)",
+          "Training Data": "Multimodal understanding + image/video generation & editing",
+          "Parameters": "25B total · 3B active (128 experts, Top-8)",
+          "Vision Encoder": "Semantic tokenizer + DiT decoder head",
+          "Pretrained Backbone": "Mamoda2"
+        },
+        "report_date": "2026-06-02"
+      },
+      "section": "1. New SoTA & Unified Models",
+      "matched_terms": [
+        "vision encoder",
+        "video generation"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual generation",
+        "Matched: vision encoder, video generation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-02T00:00:00+00:00",
+      "raw_payload_hash": "sha256:26418fc78ac96a7e298b0f30ad2333b162754c11fd5933abe612feb461e33ec1"
+    }
+  ]
+}

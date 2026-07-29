@@ -6,6 +6,10 @@ on:
       - main
       - master
   workflow_dispatch:
+  # Lets the VLM radar workflow redeploy after it commits new data. Its own push
+  # cannot trigger the event above, because GitHub suppresses workflow triggers
+  # for pushes made with the default GITHUB_TOKEN.
+  workflow_call:
 
 permissions:
   contents: read

@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "date": "2026-06-27",
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "since": "2026-05-28T00:00:00+00:00",
+  "selection": {
+    "fetched": 11,
+    "deduplicated": 11,
+    "out_of_domain": 0,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 11,
+    "pinned": 2,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 11,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-06-27.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:imcbench:https-arxiv-org-abs-2606-28556",
+      "title": "IMCBench",
+      "url": "https://arxiv.org/abs/2606.28556",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "safety",
+        "domain_apps"
+      ],
+      "relevance_score": 94.0,
+      "evidence_score": 52.0,
+      "recency_score": 96.67,
+      "adoption_score": 0.0,
+      "total_score": 71.33,
+      "score_version": 1,
+      "published_at": "2026-06-26T00:00:00+00:00",
+      "summary": "Task: Multi-turn image-grounded medical conversations. Eval Protocol: Clinical images + synthetic patient profiles, judged on safety / accuracy / uncertainty handling; 8 frontier models across 4 families (Claude, GPT, Nova, Llama). Key Finding: Best model (Claude Opus 4.6) scores only 3.61/5; no model excels uniformly, and safety degrades on malignant or rare conditions",
+      "organizations": [
+        "Anthropic"
+      ],
+      "facets": {
+        "survey_section": "3. New Benchmarks",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Dataset": "IMCBench",
+          "Date": "06/26/2026",
+          "Task": "Multi-turn image-grounded medical conversations",
+          "Eval Protocol": "Clinical images + synthetic patient profiles, judged on safety / accuracy / uncertainty handling; 8 frontier models across 4 families (Claude, GPT, Nova, Llama)",
+          "Key Finding": "Best model (Claude Opus 4.6) scores only 3.61/5; no model excels uniformly, and safety degrades on malignant or rare conditions"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "3. New Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "safety",
+        "medical",
+        "clinical"
+      ],
+      "model_families": [
+        "Claude"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Safety & fairness, Applied domains",
+        "Matched: benchmark, safety, medical, clinical",
+        "Tracked family: Claude",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:96c1ded494570b3744eb7a9eea6c37f3a95365eee6e708aa07eac64f12033bdd"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:cosmos-3:https-arxiv-org-abs-2606-02800",
+      "title": "Cosmos 3",
+      "url": "https://arxiv.org/abs/2606.02800",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "omni_unified",
+        "world_model",
+        "generation"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 13.33,
+      "adoption_score": 0.0,
+      "total_score": 52.01,
+      "score_version": 1,
+      "published_at": "2026-06-01T00:00:00+00:00",
+      "summary": "Type: Omnimodal world-model family — language, image, video, audio, and action in one mixture-of-transformers. Scale / License: Family of models; code, checkpoints, data, and evals under OpenMDW-1.1. Key Result: SoTA across vision-language, video generation, and robotic policy: rated best open-source T2I and I2V models and best policy model on RoboArena",
+      "organizations": [
+        "NVIDIA"
+      ],
+      "facets": {
+        "survey_section": "1. World Models > 1.1 World-Model Foundation Releases",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Model": "Cosmos 3 (NVIDIA)",
+          "Date": "06/01/2026",
+          "Type": "Omnimodal world-model family — language, image, video, audio, and action in one mixture-of-transformers",
+          "Scale / License": "Family of models; code, checkpoints, data, and evals under OpenMDW-1.1",
+          "Key Result": "SoTA across vision-language, video generation, and robotic policy: rated best open-source T2I and I2V models and best policy model on RoboArena"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "1. World Models > 1.1 World-Model Foundation Releases",
+      "matched_terms": [
+        "omnimodal",
+        "world model",
+        "world models",
+        "video generation"
+      ],
+      "model_families": [
+        "NVIDIA VLM"
+      ],
+      "rationale": [
+        "Topics: Omni & unified, World models, Visual generation",
+        "Matched: omnimodal, world model, world models, video generation",
+        "Tracked family: NVIDIA VLM",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:9566c62de00f936c6addb584465c9ecf00e441da928c717f1c9e33bdd15f5ad8"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:hpp-hierarchical-programmatic-probing-for-long-video-understanding:https-arxiv-org-abs-2606-21734",
+      "title": "HPP: Hierarchical Programmatic Probing for Long Video Understanding",
+      "url": "https://arxiv.org/abs/2606.21734",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "video"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 73.33,
+      "adoption_score": 0.0,
+      "total_score": 67.01,
+      "score_version": 1,
+      "published_at": "2026-06-19T00:00:00+00:00",
+      "summary": "Key Contribution: Decouples perception from reasoning: a coding-capable LLM iteratively probes hierarchically segmented video, calling a VLM only for localized analysis; substantially outperforms end-to-end methods on long-video benchmarks",
+      "facets": {
+        "survey_section": "4. Applications > 4.3 Long Video Understanding",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "HPP: Hierarchical Programmatic Probing for Long Video Understanding",
+          "Date": "06/19/2026",
+          "Key Contribution": "Decouples perception from reasoning: a coding-capable LLM iteratively probes hierarchically segmented video, calling a VLM only for localized analysis; substantially outperforms end-to-end methods on long-video benchmarks"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "4. Applications > 4.3 Long Video Understanding",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "video understanding",
+        "long video"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Video understanding",
+        "Matched: vlm, benchmark, video understanding, long video",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:fd3116cfb4f305396a733e581b91d96473c514dcf60ff512f40fa80da8ffd588"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:zppo-zone-of-proximal-policy-optimization-teacher-in-prompts-not-gradients:https-arxiv-org-abs-2606-18216",
+      "title": "ZPPO: Zone of Proximal Policy Optimization — Teacher in Prompts, Not Gradients",
+      "url": "https://arxiv.org/abs/2606.18216",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 65.27,
+      "score_version": 1,
+      "published_at": "2026-06-16T00:00:00+00:00",
+      "summary": "Method: Teacher guidance injected via reformulated prompts (correct teacher + incorrect student responses on hard questions), not gradient-level distillation. Key Result: On Qwen3.5 at 4 student scales (0.8B–9B) with a 27B teacher, post-trained as VLMs: outperforms off/on-policy distillation and GRPO across a 31-benchmark suite (16 VLM, 10 LLM, 5 video)",
+      "facets": {
+        "survey_section": "2. Post-Training / Alignment",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "ZPPO: Zone of Proximal Policy Optimization — Teacher in Prompts, Not Gradients",
+          "Date": "06/16/2026",
+          "Method": "Teacher guidance injected via reformulated prompts (correct teacher + incorrect student responses on hard questions), not gradient-level distillation",
+          "Key Result": "On Qwen3.5 at 4 student scales (0.8B–9B) with a 27B teacher, post-trained as VLMs: outperforms off/on-policy distillation and GRPO across a 31-benchmark suite (16 VLM, 10 LLM, 5 video)"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "2. Post-Training / Alignment",
+      "matched_terms": [
+        "vlm",
+        "benchmark",
+        "grpo",
+        "policy optimization",
+        "post training",
+        "alignment",
+        "distillation"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks, Post-training, Efficiency",
+        "Matched: vlm, benchmark, grpo, policy optimization, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:293a689cbaf9764e2e61a795ec882c9b3f0621da8fd0a9bf25d8b5807ded632a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:qwen-robotmanip-alignment-unlocks-scale-for-robotic-manipulation-foundation-models:https-arxiv-org-abs-2606-17846",
+      "title": "Qwen-RobotManip: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+      "url": "https://arxiv.org/abs/2606.17846",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 65.27,
+      "score_version": 1,
+      "published_at": "2026-06-16T00:00:00+00:00",
+      "summary": "Key Contribution: Unified alignment across representation, motion, and behavior dimensions enables scaling to a ~38,100-hour pretraining corpus (open datasets + human videos); emergent zero-shot instruction following and cross-embodiment transfer; substantially beats prior SoTA on OOD benchmarks and real robots",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "Qwen-RobotManip: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+          "Date": "06/16/2026",
+          "Key Contribution": "Unified alignment across representation, motion, and behavior dimensions enables scaling to a ~38,100-hour pretraining corpus (open datasets + human videos); emergent zero-shot instruction following and cross-embodiment transfer; substantially beats prior SoTA on OOD benchmarks and real robots"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "corpus",
+        "alignment",
+        "vla",
+        "embodied",
+        "embodied ai",
+        "robotic manipulation"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Post-training, Embodied & VLA",
+        "Matched: benchmark, dataset, datasets, corpus, alignment, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:4cdf2626ddf02dbe6548ba9087960ecd7f9ff340430eed7b2dbd9239b76de719"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:kairos:https-arxiv-org-abs-2606-16533",
+      "title": "Kairos",
+      "url": "https://arxiv.org/abs/2606.16533",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "benchmark",
+        "embodied_vla",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 64.44,
+      "score_version": 1,
+      "published_at": "2026-06-15T00:00:00+00:00",
+      "summary": "Type: \"Native world model stack\" for Physical AI — unified understanding + generation + prediction. Scale / License: 4B unified architecture; Hybrid Linear Temporal Attention (sliding + dilated windows + gated linear attention). Key Result: Native pre-training via a cross-embodiment data curriculum (open-world video → human behavior → robot interaction); real-time rollout on consumer/edge hardware; beats 14B models on embodied benchmarks",
+      "facets": {
+        "survey_section": "1. World Models > 1.1 World-Model Foundation Releases",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Model": "Kairos",
+          "Date": "06/15/2026",
+          "Type": "\"Native world model stack\" for Physical AI — unified understanding + generation + prediction",
+          "Scale / License": "4B unified architecture; Hybrid Linear Temporal Attention (sliding + dilated windows + gated linear attention)",
+          "Key Result": "Native pre-training via a cross-embodiment data curriculum (open-world video → human behavior → robot interaction); real-time rollout on consumer/edge hardware; beats 14B models on embodied benchmarks"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "1. World Models > 1.1 World-Model Foundation Releases",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "benchmark",
+        "embodied",
+        "linear attention"
+      ],
+      "rationale": [
+        "Topics: World models, Benchmarks, Embodied & VLA, Efficiency",
+        "Matched: world model, world models, benchmark, embodied, linear attention",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:d5b9922ba79fe30100ea34eebd1d5c00e1a7a17aed400bcf8b779d2d9ac420b2"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:supervise-what-survives-geometry-guided-vla-adaptation-from-synthetic-robot-videos:https-arxiv-org-abs-2606-24448",
+      "title": "Supervise What Survives: Geometry-Guided VLA Adaptation from Synthetic Robot Videos",
+      "url": "https://arxiv.org/abs/2606.24448",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "generation",
+        "embodied_vla"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 86.67,
+      "adoption_score": 0.0,
+      "total_score": 61.99,
+      "score_version": 1,
+      "published_at": "2026-06-23T00:00:00+00:00",
+      "summary": "Key Contribution: Asymmetric Preservation Principle: geometric content survives video generation, control signals don't. GRA supervises perception with 2D end-effector waypoints from synthetic videos while training actions only on real demos — beating pseudo-action baselines",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "Supervise What Survives: Geometry-Guided VLA Adaptation from Synthetic Robot Videos",
+          "Date": "06/23/2026",
+          "Key Contribution": "Asymmetric Preservation Principle: geometric content survives video generation, control signals don't. GRA supervises perception with 2D end-effector waypoints from synthetic videos while training actions only on real demos — beating pseudo-action baselines"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "video generation",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: Visual generation, Embodied & VLA",
+        "Matched: video generation, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cb7a2466abc3480a13973088c883b63a14d4ff9d6ab3f182cd9dccf1e73fb10c"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:dreamx-world-1-0:https-arxiv-org-abs-2606-16993",
+      "title": "DreamX-World 1.0",
+      "url": "https://arxiv.org/abs/2606.16993",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "efficiency"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 68.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 58.84,
+      "score_version": 1,
+      "published_at": "2026-06-15T00:00:00+00:00",
+      "summary": "Type: General-purpose interactive text/image-to-video world model. Scale / License: 5B (Wan2.2-T2V-5B base); MIT-licensed open weights (HF, GitHub). Key Result: Controllable long-horizon generation with camera navigation, revisits to previously seen regions, and promptable events; E-PRoPE camera-aware positional encoding; causal forcing + DMD distillation turn a bidirectional generator into a few-step autoregressive world model, with long-rollout training suppressing drift",
+      "organizations": [
+        "Alibaba AMAP"
+      ],
+      "artifact_urls": [
+        "https://huggingface.co/GD-ML/DreamX-World-5B",
+        "https://github.com/AMAP-ML/DreamX-World"
+      ],
+      "facets": {
+        "survey_section": "1. World Models > 1.1 World-Model Foundation Releases",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Model": "DreamX-World 1.0 (Alibaba AMAP)",
+          "Date": "06/15/2026",
+          "Type": "General-purpose interactive text/image-to-video world model",
+          "Scale / License": "5B (Wan2.2-T2V-5B base); MIT-licensed open weights (HF, GitHub)",
+          "Key Result": "Controllable long-horizon generation with camera navigation, revisits to previously seen regions, and promptable events; E-PRoPE camera-aware positional encoding; causal forcing + DMD distillation turn a bidirectional generator into a few-step autoregressive world model, with long-rollout training suppressing drift"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "1. World Models > 1.1 World-Model Foundation Releases",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "video world",
+        "distillation"
+      ],
+      "rationale": [
+        "Topics: World models, Efficiency",
+        "Matched: world model, world models, video world, distillation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:7ff519db422666cad055ca39a734c9d1392951473c3117f1222fd2cc40d3b2e0"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:viscritic-visual-state-comparison-as-process-reward-for-gui-agents:https-arxiv-org-abs-2606-24525",
+      "title": "VisCritic: Visual State Comparison as Process Reward for GUI Agents",
+      "url": "https://arxiv.org/abs/2606.24525",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "gui_agent"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 86.67,
+      "adoption_score": 0.0,
+      "total_score": 58.19,
+      "score_version": 1,
+      "published_at": "2026-06-23T00:00:00+00:00",
+      "summary": "Key Contribution: Judges GUI actions by comparing before/after screenshots (Siamese ViT + action-aware head) instead of text reasoning; plug-and-play process reward improving multiple agent architectures across five benchmarks, with interpretable visual diagnostics",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 GUI Agents",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "VisCritic: Visual State Comparison as Process Reward for GUI Agents",
+          "Date": "06/23/2026",
+          "Key Contribution": "Judges GUI actions by comparing before/after screenshots (Siamese ViT + action-aware head) instead of text reasoning; plug-and-play process reward improving multiple agent architectures across five benchmarks, with interpretable visual diagnostics"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "4. Applications > 4.2 GUI Agents",
+      "matched_terms": [
+        "benchmark",
+        "gui agent"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, GUI & web agents",
+        "Matched: benchmark, gui agent",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:64485b81811f5f68a406e369afacbf300de79f4a82b962ada8a06bb67f91224d"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:current-world-models-lack-a-persistent-state-core:https-arxiv-org-abs-2606-20545",
+      "title": "Current World Models Lack a Persistent State Core",
+      "url": "https://arxiv.org/abs/2606.20545",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "safety"
+      ],
+      "relevance_score": 62.0,
+      "evidence_score": 52.0,
+      "recency_score": 70.0,
+      "adoption_score": 0.0,
+      "total_score": 52.5,
+      "score_version": 1,
+      "published_at": "2026-06-18T00:00:00+00:00",
+      "summary": "Key Contribution: World models treat the world as a \"tracking shot\": off-screen entities are frozen and resumed as-left rather than evolving while unseen. The failure persists across architectures and scales — better image quality or more parameters won't fix it; a decoupled internal state is architecturally missing",
+      "facets": {
+        "survey_section": "5. Challenges > World-Model Persistent State",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "Current World Models Lack a Persistent State Core",
+          "Date": "06/18/2026",
+          "Key Contribution": "World models treat the world as a \"tracking shot\": off-screen entities are frozen and resumed as-left rather than evolving while unseen. The failure persists across architectures and scales — better image quality or more parameters won't fix it; a decoupled internal state is architecturally missing"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "5. Challenges > World-Model Persistent State",
+      "matched_terms": [
+        "world model",
+        "world models"
+      ],
+      "rationale": [
+        "Topics: World models, Safety & fairness",
+        "Matched: world model, world models",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a9cd96611cf4d6a3f89efe4b79bbcdcfebbfeb3bbfdeb6e2ddda3a7caf1c795a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-27:echo-memory-a-controlled-study-of-memory-in-action-world-models:https-arxiv-org-abs-2606-09803",
+      "title": "Echo-Memory: A Controlled Study of Memory in Action World Models",
+      "url": "https://arxiv.org/abs/2606.09803",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model"
+      ],
+      "relevance_score": 45.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 37.71,
+      "score_version": 1,
+      "published_at": "2026-06-08T00:00:00+00:00",
+      "summary": "Key Contribution: Controlled framework isolating memory mechanisms in action-conditioned video models; finds raw context beats compressed memory for capacity, and state-space recurrence is best for revisit consistency when the camera returns to a previously seen location",
+      "facets": {
+        "survey_section": "1. World Models > 1.2 World-Model Memory & State",
+        "survey_origin": "report/2026-06-27",
+        "columns": {
+          "Title": "Echo-Memory: A Controlled Study of Memory in Action World Models",
+          "Date": "06/08/2026",
+          "Key Contribution": "Controlled framework isolating memory mechanisms in action-conditioned video models; finds raw context beats compressed memory for capacity, and state-space recurrence is best for revisit consistency when the camera returns to a previously seen location"
+        },
+        "report_date": "2026-06-27"
+      },
+      "section": "1. World Models > 1.2 World-Model Memory & State",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "action conditioned video"
+      ],
+      "rationale": [
+        "Topics: World models",
+        "Matched: world model, world models, action conditioned video",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-27T00:00:00+00:00",
+      "raw_payload_hash": "sha256:10ea2009ef2bf6430e08fdf75b9440133a8c9646a63574685bf9b8d71b78c3d3"
+    }
+  ]
+}

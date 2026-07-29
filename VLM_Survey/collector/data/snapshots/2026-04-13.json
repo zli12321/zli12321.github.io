@@ -1,0 +1,974 @@
+{
+  "schema_version": 1,
+  "date": "2026-04-13",
+  "generated_at": "2026-04-13T00:00:00+00:00",
+  "since": "2026-03-14T00:00:00+00:00",
+  "selection": {
+    "fetched": 20,
+    "deduplicated": 20,
+    "out_of_domain": 0,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 20,
+    "pinned": 5,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 20,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-04-13.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:come-vl-scaling-complementary-multi-encoder-vl-learning:https-arxiv-org-abs-2604-03231",
+      "title": "CoME-VL: Scaling Complementary Multi-Encoder VL Learning",
+      "url": "https://arxiv.org/abs/2604.03231",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 67.0,
+      "evidence_score": 52.0,
+      "recency_score": 66.67,
+      "adoption_score": 0.0,
+      "total_score": 53.57,
+      "score_version": 1,
+      "published_at": "2026-04-03T00:00:00+00:00",
+      "summary": "Key Contribution: Fuses CLIP + DINO encoders via entropy-guided multi-layer aggregation + RoPE cross-attention; +4.9% understanding, +5.4% grounding",
+      "organizations": [
+        "Community"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "CoME-VL: Scaling Complementary Multi-Encoder VL Learning",
+          "Date": "04/03/2026",
+          "Key Contribution": "Fuses CLIP + DINO encoders via entropy-guided multi-layer aggregation + RoPE cross-attention; +4.9% understanding, +5.4% grounding"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+      "matched_terms": [
+        "post training",
+        "alignment",
+        "quantization"
+      ],
+      "model_families": [
+        "CLIP / SigLIP"
+      ],
+      "rationale": [
+        "Topics: Post-training, Efficiency",
+        "Matched: post training, alignment, quantization",
+        "Tracked family: CLIP / SigLIP",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:6dd42600f4d974f6eb03786d0cb7bdbf53361ac87a28bc9b98dcdd0bfa7ae58e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:molmoweb-open-visual-web-agent-and-open-data-for-the-open-web:https-huggingface-tw-papers-2604-08516",
+      "title": "MolmoWeb: Open Visual Web Agent and Open Data for the Open Web",
+      "url": "https://huggingface.tw/papers/2604.08516",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "gui_agent"
+      ],
+      "relevance_score": 35.0,
+      "evidence_score": 52.0,
+      "recency_score": 90.0,
+      "adoption_score": 0.0,
+      "total_score": 47.24,
+      "score_version": 1,
+      "published_at": "2026-04-10T00:00:00+00:00",
+      "summary": "Key Contribution: Full paper release (4B/8B); screenshot-only web agent (no HTML/a11y tree needed); SoTA on WebVoyager (94.7% pass@4), Online-Mind2Web (60.5% pass@4); outperforms GPT-4o set-of-marks agents; open checkpoints, data, code",
+      "organizations": [
+        "OpenAI"
+      ],
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Web Agents",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "MolmoWeb: Open Visual Web Agent and Open Data for the Open Web",
+          "Date": "04/10/2026",
+          "Key Contribution": "Full paper release (4B/8B); screenshot-only web agent (no HTML/a11y tree needed); SoTA on WebVoyager (94.7% pass@4), Online-Mind2Web (60.5% pass@4); outperforms GPT-4o set-of-marks agents; open checkpoints, data, code"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "4. Applications > 4.2 Web Agents",
+      "matched_terms": [
+        "web agent"
+      ],
+      "model_families": [
+        "GPT-4V / GPT-5"
+      ],
+      "watchlist": [
+        "WebArena / OSWorld"
+      ],
+      "watchlist_notes": [
+        "GUI and web agent evaluation."
+      ],
+      "rationale": [
+        "Topics: GUI & web agents",
+        "Matched: web agent",
+        "Tracked family: GPT-4V / GPT-5",
+        "GUI and web agent evaluation.",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b629f83475dbecb7408c0ed60274900b1cf221c0971455d7567f0ac1c976719d"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:gemma-4:https-blog-google-innovation-and-ai-technology-developers-to",
+      "title": "Gemma 4",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 45.89,
+      "score_version": 1,
+      "published_at": "2026-04-02T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only / MoE. Training Data: Undisclosed (140+ languages). Parameters: E2B / E4B / 26B MoE (~3.8B active) / 31B Dense. Vision Encoder: Native multimodal (image/video/audio). Pretrained Backbone: Gemini 3",
+      "organizations": [
+        "Google"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "Gemma 4 (Google)",
+          "Date": "04/02/2026",
+          "Architecture": "Decoder-only / MoE",
+          "Training Data": "Undisclosed (140+ languages)",
+          "Parameters": "E2B / E4B / 26B MoE (~3.8B active) / 31B Dense",
+          "Vision Encoder": "Native multimodal (image/video/audio)",
+          "Pretrained Backbone": "Gemini 3"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "native multimodal"
+      ],
+      "model_families": [
+        "Gemini / Gemma"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder, native multimodal",
+        "Tracked family: Gemini / Gemma",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c03c10e582d1b1d292406da7219ef067bc1746746ba62ed1c10a6ade5d1c4241"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:internvl-u:https-arxiv-org-abs-2603-09877",
+      "title": "InternVL-U",
+      "url": "https://arxiv.org/abs/2603.09877",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 30.06,
+      "score_version": 1,
+      "published_at": "2026-03-10T00:00:00+00:00",
+      "summary": "Architecture: Unified (MLLM + MMDiT gen head). Training Data: Multimodal understanding + generation data. Parameters: 4B. Vision Encoder: InternViT. Pretrained Backbone: InternVL",
+      "organizations": [
+        "Shanghai AI Lab"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "InternVL-U (Shanghai AI Lab)",
+          "Date": "03/10/2026",
+          "Architecture": "Unified (MLLM + MMDiT gen head)",
+          "Training Data": "Multimodal understanding + generation data",
+          "Parameters": "4B",
+          "Vision Encoder": "InternViT",
+          "Pretrained Backbone": "InternVL"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "mllm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "InternVL"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, mllm, vision encoder",
+        "Tracked family: InternVL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:56d20718e37d1bb6dc4e930450ba46ca7255e6914a2f35630022b3b424fee37c"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:glm-4-6v:https-z-ai-blog-glm-4-6v",
+      "title": "GLM-4.6V",
+      "url": "https://z.ai/blog/glm-4.6v",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 28.16,
+      "score_version": 1,
+      "published_at": "2025-12-01T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: Undisclosed. Parameters: 106B / 9B (Flash). Vision Encoder: Undisclosed. Pretrained Backbone: GLM-4.6",
+      "organizations": [
+        "Zhipu / Z.AI",
+        "Zhipu AI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "GLM-4.6V (Zhipu / Z.AI)",
+          "Date": "12/2025",
+          "Architecture": "Decoder-only",
+          "Training Data": "Undisclosed",
+          "Parameters": "106B / 9B (Flash)",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "GLM-4.6"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "model_families": [
+        "GLM-V"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Tracked family: GLM-V",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:30ba4570b23f9bba99b00d1bc585dd681c791efd3f284530eb6935b7466aff1b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:qapruner-quantization-aware-vision-token-pruning-for-mllms:https-arxiv-org-abs-2604-02816",
+      "title": "QAPruner: Quantization-Aware Vision Token Pruning for MLLMs",
+      "url": "https://arxiv.org/abs/2604.02816",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 64.44,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Key Contribution: First method co-optimizing vision token pruning + PTQ; +2.24% accuracy at 12.5% token retention vs baselines",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "QAPruner: Quantization-Aware Vision Token Pruning for MLLMs",
+          "Date": "04/2026",
+          "Key Contribution": "First method co-optimizing vision token pruning + PTQ; +2.24% accuracy at 12.5% token retention vs baselines"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+      "matched_terms": [
+        "mllm",
+        "post training",
+        "alignment",
+        "token pruning",
+        "quantization",
+        "pruning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Efficiency",
+        "Matched: mllm, post training, alignment, token pruning, quantization, pruning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:9cae7c8c0261aaf54101ae4d1ce908788b5d1bdbb71037098cfcaa61af631b47"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:focus-matters-phase-aware-suppression-for-hallucination-in-vlms:https-arxiv-org-abs-2604-03556",
+      "title": "Focus Matters: Phase-Aware Suppression for Hallucination in VLMs",
+      "url": "https://arxiv.org/abs/2604.03556",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "hallucination",
+        "safety"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 70.0,
+      "adoption_score": 0.0,
+      "total_score": 64.28,
+      "score_version": 1,
+      "published_at": "2026-04-04T00:00:00+00:00",
+      "summary": "Key Contribution: Identifies three-phase structure in vision encoder attention dynamics; training-free inference-time intervention using DPP to suppress redundant tokens during focus phase",
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 Hallucination",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "Focus Matters: Phase-Aware Suppression for Hallucination in VLMs",
+          "Date": "04/04/2026",
+          "Key Contribution": "Identifies three-phase structure in vision encoder attention dynamics; training-free inference-time intervention using DPP to suppress redundant tokens during focus phase"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "5. Challenges > 5.1 Hallucination",
+      "matched_terms": [
+        "vlm",
+        "vision encoder",
+        "hallucination"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Hallucination, Safety & fairness",
+        "Matched: vlm, vision encoder, hallucination",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:9d14bd53f7e322709f4c9c4f2139ef65fa477055d75e170228a5e42a9c1eff23"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:tablevision:https-arxiv-org-abs-2604-03660",
+      "title": "TableVision",
+      "url": "https://arxiv.org/abs/2604.03660",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 89.0,
+      "evidence_score": 52.0,
+      "recency_score": 70.0,
+      "adoption_score": 0.0,
+      "total_score": 62.76,
+      "score_version": 1,
+      "published_at": "2026-04-04T00:00:00+00:00",
+      "summary": "Task: Spatially grounded reasoning over complex hierarchical tables. Eval Protocol: 3-level cognitive eval (Perception, Reasoning, Analysis). Size: 6,799 reasoning trajectories, 13 sub-categories",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.2 Multimodal General / Reasoning Benchmarks",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Dataset": "TableVision",
+          "Date": "04/04/2026",
+          "Task": "Spatially grounded reasoning over complex hierarchical tables",
+          "Eval Protocol": "3-level cognitive eval (Perception, Reasoning, Analysis)",
+          "Size": "6,799 reasoning trajectories, 13 sub-categories"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.2 Multimodal General / Reasoning Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Visual reasoning",
+        "Matched: benchmark, dataset, datasets",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cf1ae9bba2c1c36db5804118382dbdf3b1088d48d64b876deafe2ae9d4176ca6"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:vero-an-open-rl-recipe-for-general-visual-reasoning:https-arxiv-org-html-2604-04917v1",
+      "title": "Vero: An Open RL Recipe for General Visual Reasoning",
+      "url": "https://arxiv.org/html/2604.04917v1",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "reasoning"
+      ],
+      "relevance_score": 99.0,
+      "evidence_score": 42.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 61.86,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "RL Method: Task-routed rewards across 6 categories; GRPO-based",
+      "artifact_urls": [
+        "https://github.com/TIGER-AI-Lab/Vero"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "Vero: An Open RL Recipe for General Visual Reasoning",
+          "Date": "04/2026",
+          "RL Method": "Task-routed rewards across 6 categories; GRPO-based"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL Alignment for VLM",
+      "matched_terms": [
+        "vlm",
+        "grpo",
+        "post training",
+        "alignment",
+        "visual reasoning"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Visual reasoning",
+        "Matched: vlm, grpo, post training, alignment, visual reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:25320e5e4abd513e0f6fa26fab7b7af4b9f7797c8c3c9ed4c24afc880775f4e4"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:molmowebmix:https-huggingface-tw-papers-2604-08516",
+      "title": "MolmoWebMix",
+      "url": "https://huggingface.tw/papers/2604.08516",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "gui_agent"
+      ],
+      "relevance_score": 94.0,
+      "evidence_score": 34.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 58.2,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Task: Web agent training trajectories. Size: 100K+ synthetic trajectories + 30K human demos + GUI perception data",
+      "organizations": [
+        "Allen AI"
+      ],
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Dataset": "MolmoWebMix (Allen AI)",
+          "Date": "04/2026",
+          "Task": "Web agent training trajectories",
+          "Size": "100K+ synthetic trajectories + 30K human demos + GUI perception data"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "web agent"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, GUI & web agents",
+        "Matched: benchmark, dataset, datasets, web agent",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:0be3e6920c5e95f324ba7900365b6e599f6133381e66892c81a1d1430cdd9b5e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:vero-600k:https-arxiv-org-html-2604-04917v1",
+      "title": "Vero-600K",
+      "url": "https://arxiv.org/html/2604.04917v1",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "reasoning"
+      ],
+      "relevance_score": 90.0,
+      "evidence_score": 34.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 56.68,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Task: Broad visual reasoning RL training. Size: 600K samples from 59 datasets across 6 task categories",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Dataset": "Vero-600K",
+          "Date": "04/2026",
+          "Task": "Broad visual reasoning RL training",
+          "Size": "600K samples from 59 datasets across 6 task categories"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "visual reasoning"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Visual reasoning",
+        "Matched: benchmark, dataset, datasets, visual reasoning",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:cf44a3f939b25a31c2048147b10c479498d6fc8c24413b66d497ee54937cb2e3"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:firebolt-vl-efficient-vl-understanding-with-cross-modality-modulation:https-arxiv-org-abs-2604-04579",
+      "title": "Firebolt-VL: Efficient VL Understanding with Cross-Modality Modulation",
+      "url": "https://arxiv.org/abs/2604.04579",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "efficiency"
+      ],
+      "relevance_score": 63.0,
+      "evidence_score": 52.0,
+      "recency_score": 76.67,
+      "adoption_score": 0.0,
+      "total_score": 54.55,
+      "score_version": 1,
+      "published_at": "2026-04-06T00:00:00+00:00",
+      "summary": "Key Contribution: Replaces Transformer decoder with Liquid Foundation Model decoder; Token-Grid Correlation for fine-grained grounding; linear-time inference",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "Firebolt-VL: Efficient VL Understanding with Cross-Modality Modulation",
+          "Date": "04/06/2026",
+          "Key Contribution": "Replaces Transformer decoder with Liquid Foundation Model decoder; Token-Grid Correlation for fine-grained grounding; linear-time inference"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.3 Efficient Training & Quantization",
+      "matched_terms": [
+        "post training",
+        "alignment",
+        "quantization"
+      ],
+      "rationale": [
+        "Topics: Post-training, Efficiency",
+        "Matched: post training, alignment, quantization",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:3bf6a800b7b6b79e7d621bc661b4ee521b2c33fdf07a64ec5b27fff006f4e4c3"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:lfm2-5-vl-450m:https-www-marktechpost-com-2026-04-11-liquid-ai-releases-lfm",
+      "title": "LFM2.5-VL-450M",
+      "url": "https://www.marktechpost.com/2026/04/11/liquid-ai-releases-lfm2-5-vl-450m-a-450m-parameter-vision-language-model-with-bounding-box-prediction-multilingual-support-and-sub-250ms-edge-inference/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 93.33,
+      "adoption_score": 0.0,
+      "total_score": 51.49,
+      "score_version": 1,
+      "published_at": "2026-04-11T00:00:00+00:00",
+      "summary": "Architecture: Liquid Foundation Model. Training Data: Undisclosed. Parameters: 450M. Vision Encoder: Non-overlapping tile ViT (native res up to 512×512). Pretrained Backbone: LFM2.5",
+      "organizations": [
+        "Liquid AI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "LFM2.5-VL-450M (Liquid AI)",
+          "Date": "04/11/2026",
+          "Architecture": "Liquid Foundation Model",
+          "Training Data": "Undisclosed",
+          "Parameters": "450M",
+          "Vision Encoder": "Non-overlapping tile ViT (native res up to 512×512)",
+          "Pretrained Backbone": "LFM2.5"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:73f57658f26065c5d5b1a20f0007011f2cb3a690f965cc9dc0c8c124a1bad78b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:agft-alignment-guided-fine-tuning-for-zero-shot-adversarial-robustness:https-arxiv-org-abs-2603-29410",
+      "title": "AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness",
+      "url": "https://arxiv.org/abs/2603.29410",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "safety"
+      ],
+      "relevance_score": 68.0,
+      "evidence_score": 52.0,
+      "recency_score": 56.67,
+      "adoption_score": 0.0,
+      "total_score": 51.45,
+      "score_version": 1,
+      "published_at": "2026-03-31T00:00:00+00:00",
+      "summary": "Key Contribution: Preserves cross-modal semantic structure via soft alignment distributions; enhances adversarial robustness",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness",
+          "Date": "03/31/2026",
+          "Key Contribution": "Preserves cross-modal semantic structure via soft alignment distributions; enhances adversarial robustness"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "sft",
+        "post training",
+        "alignment",
+        "adversarial robustness"
+      ],
+      "rationale": [
+        "Topics: Post-training, Safety & fairness",
+        "Matched: sft, post training, alignment, adversarial robustness",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:d5e9f70cf8375ad4cfd14d87e49f2a48a9ed9c16e5a0da644a368c63064030e1"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:exaone-4-5:https-en-sedaily-com-finance-2026-04-09-lg-unveils-exaone-45",
+      "title": "EXAONE 4.5",
+      "url": "https://en.sedaily.com/finance/2026/04/09/lg-unveils-exaone-45-multimodal-ai-claims-victory-over",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 86.67,
+      "adoption_score": 0.0,
+      "total_score": 49.83,
+      "score_version": 1,
+      "published_at": "2026-04-09T00:00:00+00:00",
+      "summary": "Architecture: Unified VL. Training Data: Undisclosed. Parameters: 33B. Vision Encoder: Proprietary vision encoder. Pretrained Backbone: EXAONE 4.5",
+      "organizations": [
+        "LG AI Research"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "EXAONE 4.5 (LG AI Research)",
+          "Date": "04/09/2026",
+          "Architecture": "Unified VL",
+          "Training Data": "Undisclosed",
+          "Parameters": "33B",
+          "Vision Encoder": "Proprietary vision encoder",
+          "Pretrained Backbone": "EXAONE 4.5"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:81e58c4da3d9998f1e0abe67aedea2e609e9dd9724a4decf6c57f34727266630"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:vlms-need-words-vlms-ignore-visual-detail-in-favor-of-semantic-anchors:https-arxiv-org-abs-2604-02486",
+      "title": "VLMs Need Words: VLMs Ignore Visual Detail in Favor of Semantic Anchors",
+      "url": "https://arxiv.org/abs/2604.02486",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "safety"
+      ],
+      "relevance_score": 57.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 48.93,
+      "score_version": 1,
+      "published_at": "2026-04-02T00:00:00+00:00",
+      "summary": "Key Contribution: Demonstrates VLMs rely on linguistic concepts over fine-grained visual details; performance degrades for unnamed/unknown entities; a learned shortcut from training, not an architectural limitation",
+      "facets": {
+        "survey_section": "5. Challenges > 5.2 VLM Limitations & Analysis",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "VLMs Need Words: VLMs Ignore Visual Detail in Favor of Semantic Anchors",
+          "Date": "04/02/2026",
+          "Key Contribution": "Demonstrates VLMs rely on linguistic concepts over fine-grained visual details; performance degrades for unnamed/unknown entities; a learned shortcut from training, not an architectural limitation"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "5. Challenges > 5.2 VLM Limitations & Analysis",
+      "matched_terms": [
+        "vlm"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Safety & fairness",
+        "Matched: vlm",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:16ac4ef7a2bbd9c562561d8b91fb2d1e768cb93a3c2f24380833abe5b36b29d7"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:bigearthnet-txt:https-arxiv-org-abs-2603-29630",
+      "title": "BigEarthNet.txt",
+      "url": "https://arxiv.org/abs/2603.29630",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "dataset",
+        "domain_apps"
+      ],
+      "relevance_score": 94.0,
+      "evidence_score": 34.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 43.2,
+      "score_version": 1,
+      "published_at": "2026-03-01T00:00:00+00:00",
+      "summary": "Task: Multi-sensor Earth observation image-text. Size: 464K co-registered Sentinel-1/2 images, 9.6M text annotations",
+      "facets": {
+        "survey_section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Dataset": "BigEarthNet.txt",
+          "Date": "03/2026",
+          "Task": "Multi-sensor Earth observation image-text",
+          "Size": "464K co-registered Sentinel-1/2 images, 9.6M text annotations"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "2. New Datasets & Benchmarks > 2.1 Training Datasets",
+      "matched_terms": [
+        "benchmark",
+        "dataset",
+        "datasets",
+        "earth observation"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Datasets, Applied domains",
+        "Matched: benchmark, dataset, datasets, earth observation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:5a836d5d99257878955527c186a5710c96e982de1fe7848263262d9a6abcdd51"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:granite-4-0-3b-vision:https-www-marktechpost-com-2026-04-01-ibm-releases-granite-4",
+      "title": "Granite 4.0 3B Vision",
+      "url": "https://www.marktechpost.com/2026/04/01/ibm-releases-granite-4-0-3b-vision-a-new-vision-language-model-for-enterprise-grade-document-data-extraction/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 44.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 43.16,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only. Training Data: Enterprise document corpora. Parameters: 3B. Vision Encoder: Undisclosed. Pretrained Backbone: Granite 4.0",
+      "organizations": [
+        "IBM"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA VLMs",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Model": "Granite 4.0 3B Vision (IBM)",
+          "Date": "04/01/2026",
+          "Architecture": "Decoder-only",
+          "Training Data": "Enterprise document corpora",
+          "Parameters": "3B",
+          "Vision Encoder": "Undisclosed",
+          "Pretrained Backbone": "Granite 4.0"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "1. New SoTA VLMs",
+      "matched_terms": [
+        "vlm",
+        "vision encoder"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm, vision encoder",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:fbc33ed0211e114a86d72a78f627dcc6ea553327c64644e0eaac16e9518c84be"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:covft-context-aware-visual-fine-tuning-for-mllms:https-arxiv-org-abs-2603-21077",
+      "title": "CoVFT: Context-aware Visual Fine-tuning for MLLMs",
+      "url": "https://arxiv.org/abs/2603.21077",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training"
+      ],
+      "relevance_score": 72.0,
+      "evidence_score": 34.0,
+      "recency_score": 26.67,
+      "adoption_score": 0.0,
+      "total_score": 41.51,
+      "score_version": 1,
+      "published_at": "2026-03-22T00:00:00+00:00",
+      "summary": "Key Contribution: Context Vector Extraction + Contextual MoE to resolve visual preference conflicts during SFT",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "CoVFT: Context-aware Visual Fine-tuning for MLLMs",
+          "Date": "03/22/2026",
+          "Key Contribution": "Context Vector Extraction + Contextual MoE to resolve visual preference conflicts during SFT"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Fine-Tuning (SFT)",
+      "matched_terms": [
+        "mllm",
+        "sft",
+        "post training",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training",
+        "Matched: mllm, sft, post training, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:3a1dd27f66bba2053025290636d0d465a70fba62a9f0ecae5f26c8fe7522ed20"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-04-13:unidrivevla-unifying-understanding-perception-and-action-planning-for-autonomous-driving:https-arxiv-org-abs-2604-02190",
+      "title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2604.02190",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla"
+      ],
+      "relevance_score": 35.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 39.74,
+      "score_version": 1,
+      "published_at": "2026-04-01T00:00:00+00:00",
+      "summary": "Key Contribution: Mixture-of-Transformers with 3 specialized experts (understanding, perception, planning); masked joint attention; SoTA on nuScenes + Bench2Drive",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Autonomous Driving",
+        "survey_origin": "report/2026-04-13",
+        "columns": {
+          "Title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+          "Date": "04/2026",
+          "Key Contribution": "Mixture-of-Transformers with 3 specialized experts (understanding, perception, planning); masked joint attention; SoTA on nuScenes + Bench2Drive"
+        },
+        "report_date": "2026-04-13"
+      },
+      "section": "4. Applications > 4.1 Autonomous Driving",
+      "matched_terms": [
+        "autonomous driving"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA",
+        "Matched: autonomous driving",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-04-13T00:00:00+00:00",
+      "raw_payload_hash": "sha256:6c2c917b44dc74f61ef50d65a0ac8bbb6ad45a065ea910640d94e415b5a1077f"
+    }
+  ]
+}

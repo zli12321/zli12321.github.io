@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "date": "2026-06-23",
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "since": "2026-05-24T00:00:00+00:00",
+  "selection": {
+    "fetched": 14,
+    "deduplicated": 14,
+    "out_of_domain": 0,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 14,
+    "pinned": 4,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 14,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-06-23.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:longspace-long-horizon-spatial-memory-from-perception-to-recall-in-video:https-arxiv-org-abs-2606-05677",
+      "title": "LongSpace: Long-Horizon Spatial Memory from Perception to Recall in Video",
+      "url": "https://arxiv.org/abs/2606.05677",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "reasoning",
+        "video",
+        "safety"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 58.61,
+      "score_version": 1,
+      "published_at": "2026-06-04T00:00:00+00:00",
+      "summary": "Key Contribution: Quantifies how poorly video MLLMs preserve/retrieve scene structure across long clips; explicit spatial-memory mechanisms (3D cues + layer-aware retrieval) are needed for navigation- and driving-grade long-video spatial reasoning",
+      "organizations": [
+        "Community"
+      ],
+      "facets": {
+        "survey_section": "5. Challenges > 5.2 Long-Horizon Spatial Memory",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "LongSpace: Long-Horizon Spatial Memory from Perception to Recall in Video",
+          "Date": "06/04/2026",
+          "Key Contribution": "Quantifies how poorly video MLLMs preserve/retrieve scene structure across long clips; explicit spatial-memory mechanisms (3D cues + layer-aware retrieval) are needed for navigation- and driving-grade long-video spatial reasoning"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "5. Challenges > 5.2 Long-Horizon Spatial Memory",
+      "matched_terms": [
+        "mllm",
+        "spatial reasoning",
+        "long video"
+      ],
+      "model_families": [
+        "CLIP / SigLIP"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual reasoning, Video understanding, Safety & fairness",
+        "Matched: mllm, spatial reasoning, long video",
+        "Tracked family: CLIP / SigLIP",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ad5021a538ff2c99ecf010b210710c26fc7930c5ec382b65919f70d13e3aa0eb"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:longspace-bench:https-arxiv-org-abs-2606-05677",
+      "title": "LongSpace-Bench",
+      "url": "https://arxiv.org/abs/2606.05677",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "world_model",
+        "benchmark"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 57.85,
+      "score_version": 1,
+      "published_at": "2026-06-04T00:00:00+00:00",
+      "summary": "What It Measures: Long-horizon spatial memory in video MLLMs — perceive, update, recall scene structure across long clips. Structure: Room-tour video benchmark + the LongSpace framework (3D structural cues + layer-aware retrieval)",
+      "organizations": [
+        "Community"
+      ],
+      "facets": {
+        "survey_section": "1. World Models > 1.2 World-Model Benchmarks",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Dataset": "LongSpace-Bench",
+          "Date": "06/04/2026",
+          "What It Measures": "Long-horizon spatial memory in video MLLMs — perceive, update, recall scene structure across long clips",
+          "Structure": "Room-tour video benchmark + the LongSpace framework (3D structural cues + layer-aware retrieval)"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "1. World Models > 1.2 World-Model Benchmarks",
+      "matched_terms": [
+        "mllm",
+        "world model",
+        "world models",
+        "benchmark"
+      ],
+      "model_families": [
+        "CLIP / SigLIP"
+      ],
+      "rationale": [
+        "Topics: VLM releases, World models, Benchmarks",
+        "Matched: mllm, world model, world models, benchmark",
+        "Tracked family: CLIP / SigLIP",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:c0059f7ca68351b7fe5a7d1f18dc2b1daed34b2a5f86a3dc9e7becc32d2da86b"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:pp-ocrv6:https-arxiv-org-abs-2606-13108",
+      "title": "PP-OCRv6",
+      "url": "https://arxiv.org/abs/2606.13108",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "document_ocr"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 51.52,
+      "score_version": 1,
+      "published_at": "2026-06-11T00:00:00+00:00",
+      "summary": "Architecture: MetaFormer-style with structural reparameterization; decoupled spatial/channel token mixing. Parameters: 1.5M – 34.5M (tiny/small/medium). Key Result: Medium tier hits 83.2% recognition / 86.2% detection Hmean, surpassing billion-scale VLMs (Qwen3-VL-235B, GPT-5.5, Gemini-3.1-Pro) on OCR at a fraction of the cost; open weights",
+      "organizations": [
+        "Baidu PaddleOCR",
+        "Alibaba",
+        "Google",
+        "OpenAI"
+      ],
+      "facets": {
+        "survey_section": "2. New SoTA & VLMs",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Model": "PP-OCRv6 (Baidu PaddleOCR)",
+          "Date": "06/11/2026",
+          "Architecture": "MetaFormer-style with structural reparameterization; decoupled spatial/channel token mixing",
+          "Parameters": "1.5M – 34.5M (tiny/small/medium)",
+          "Key Result": "Medium tier hits 83.2% recognition / 86.2% detection Hmean, surpassing billion-scale VLMs (Qwen3-VL-235B, GPT-5.5, Gemini-3.1-Pro) on OCR at a fraction of the cost; open weights"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "2. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "ocr"
+      ],
+      "model_families": [
+        "Qwen-VL",
+        "Gemini / Gemma",
+        "GPT-4V / GPT-5"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Document & OCR",
+        "Matched: vlm, ocr",
+        "Tracked family: Qwen-VL, Gemini / Gemma, GPT-4V / GPT-5",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1344767f47029819650c2af9a2f1a75f53bdbe3efa9fe68e71e7a7bfd19c0da6"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:nvidia-omnidreams:https-arxiv-org-abs-2606-03159",
+      "title": "NVIDIA OmniDreams",
+      "url": "https://arxiv.org/abs/2606.03159",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "embodied_vla"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 47.82,
+      "score_version": 1,
+      "published_at": "2026-06-02T00:00:00+00:00",
+      "summary": "Type: Real-time generative world model for closed-loop AV simulation. Backbone / Data: Mid/post-trained from Cosmos diffusion on 21k hours of driving. Key Result: Reactively generates action-conditioned sensor video; a world-action model derived from it beats the VLA-based Alpamayo 1.5 policy on NuRec using 1/5 the parameters",
+      "organizations": [
+        "NVIDIA"
+      ],
+      "facets": {
+        "survey_section": "1. World Models > 1.1 Generative World Models & Simulators",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Model": "NVIDIA OmniDreams",
+          "Date": "06/02/2026",
+          "Type": "Real-time generative world model for closed-loop AV simulation",
+          "Backbone / Data": "Mid/post-trained from Cosmos diffusion on 21k hours of driving",
+          "Key Result": "Reactively generates action-conditioned sensor video; a world-action model derived from it beats the VLA-based Alpamayo 1.5 policy on NuRec using 1/5 the parameters"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "1. World Models > 1.1 Generative World Models & Simulators",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "world action model",
+        "vla"
+      ],
+      "model_families": [
+        "NVIDIA VLM"
+      ],
+      "rationale": [
+        "Topics: World models, Embodied & VLA",
+        "Matched: world model, world models, world action model, vla",
+        "Tracked family: NVIDIA VLM",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:83b5323d27f0b81cde67ff5ed8a4987940ab377b8f9f3f87cc4590d14d5fd8eb"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:reward-as-an-agent-for-embodied-world-models:https-arxiv-org-abs-2606-19990",
+      "title": "Reward as An Agent for Embodied World Models",
+      "url": "https://arxiv.org/abs/2606.19990",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "post_training",
+        "embodied_vla"
+      ],
+      "relevance_score": 99.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 69.89,
+      "score_version": 1,
+      "published_at": "2026-06-18T00:00:00+00:00",
+      "summary": "Type: RL post-training for world models. Backbone / Data: DynDiff-GRPO + agentic reward. Key Result: Replaces conservative rollouts with explicit action-space exploration; agentic reward verification curbs reward hacking, improving accuracy across multiple open-source embodied world models",
+      "facets": {
+        "survey_section": "1. World Models > 1.1 Generative World Models & Simulators",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Model": "Reward as An Agent for Embodied World Models",
+          "Date": "06/18/2026",
+          "Type": "RL post-training for world models",
+          "Backbone / Data": "DynDiff-GRPO + agentic reward",
+          "Key Result": "Replaces conservative rollouts with explicit action-space exploration; agentic reward verification curbs reward hacking, improving accuracy across multiple open-source embodied world models"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "1. World Models > 1.1 Generative World Models & Simulators",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "grpo",
+        "post training",
+        "embodied"
+      ],
+      "rationale": [
+        "Topics: World models, Post-training, Embodied & VLA",
+        "Matched: world model, world models, grpo, post training, embodied",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:12844739f71850e666e21ccb71a55c31f449d006639a7e47ce6a129340588471"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:finetuning-vision-language-action-models-requires-fewer-layers-than-you-think:https-arxiv-org-abs-2606-20246",
+      "title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+      "url": "https://arxiv.org/abs/2606.20246",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "embodied_vla",
+        "efficiency"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 69.51,
+      "score_version": 1,
+      "published_at": "2026-06-18T00:00:00+00:00",
+      "summary": "Key Contribution: VLAs show severe layer-wise redundancy; a training-free Centered Kernel Alignment criterion prunes up to 50% of depth while matching/exceeding baselines, yielding 40–50% less training time and up to 30% faster inference",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.2 Efficient Training & Inference",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+          "Date": "06/18/2026",
+          "Key Contribution": "VLAs show severe layer-wise redundancy; a training-free Centered Kernel Alignment criterion prunes up to 50% of depth while matching/exceeding baselines, yielding 40–50% less training time and up to 30% faster inference"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "3. Post-Training / Alignment > 3.2 Efficient Training & Inference",
+      "matched_terms": [
+        "post training",
+        "alignment",
+        "vision language action",
+        "vla"
+      ],
+      "rationale": [
+        "Topics: Post-training, Embodied & VLA, Efficiency",
+        "Matched: post training, alignment, vision language action, vla",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:61f29eb71d0bb804a5d66c4037c6296c9e325ce924a20288373394059c09ca23"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:occ-vlm:https-arxiv-org-abs-2606-19776",
+      "title": "Occ-VLM",
+      "url": "https://arxiv.org/abs/2606.19776",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "reasoning",
+        "spatial_3d"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 67.61,
+      "score_version": 1,
+      "published_at": "2026-06-18T00:00:00+00:00",
+      "summary": "Architecture: Occupancy-grounded VLM: 3D occupancy reconstruction + 2D VL processing. Key Result: From posed RGB only, grounds image tokens in reconstructed 3D space to unify geometric + semantic indoor scene understanding; competitive on occupancy prediction and 3D visual reasoning",
+      "facets": {
+        "survey_section": "2. New SoTA & VLMs",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Model": "Occ-VLM",
+          "Date": "06/18/2026",
+          "Architecture": "Occupancy-grounded VLM: 3D occupancy reconstruction + 2D VL processing",
+          "Key Result": "From posed RGB only, grounds image tokens in reconstructed 3D space to unify geometric + semantic indoor scene understanding; competitive on occupancy prediction and 3D visual reasoning"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "2. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "visual reasoning",
+        "occupancy prediction"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual reasoning, 3D & spatial",
+        "Matched: vlm, visual reasoning, occupancy prediction",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a2df09484665125b8ed91a08a2ac994d0731124a36c6fb5d30dbafaa7435db2e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:hy-embodied-0-5-vla-from-vla-models-to-a-real-world-robot-learning-stack:https-arxiv-org-abs-2606-14409",
+      "title": "Hy-Embodied-0.5-VLA: From VLA Models to a Real-World Robot Learning Stack",
+      "url": "https://arxiv.org/abs/2606.14409",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "dataset",
+        "post_training",
+        "generation",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 65.27,
+      "score_version": 1,
+      "published_at": "2026-06-12T00:00:00+00:00",
+      "summary": "Key Contribution: End-to-end stack spanning data collection → deployment; pairs a Hy-Embodied-0.5-MoT backbone with a flow-matching action expert, pretrained on a 10,000-hour egocentric UMI corpus, plus RL post-training",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "Hy-Embodied-0.5-VLA: From VLA Models to a Real-World Robot Learning Stack",
+          "Date": "06/12/2026",
+          "Key Contribution": "End-to-end stack spanning data collection → deployment; pairs a Hy-Embodied-0.5-MoT backbone with a flow-matching action expert, pretrained on a 10,000-hour egocentric UMI corpus, plus RL post-training"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "corpus",
+        "post training",
+        "flow matching",
+        "vla",
+        "embodied",
+        "embodied ai",
+        "robot learning"
+      ],
+      "rationale": [
+        "Topics: Datasets, Post-training, Visual generation, Embodied & VLA",
+        "Matched: corpus, post training, flow matching, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:768d65c036c7b11f3694f14656d214810102b12d40eefc7e0d4c823c6eb75cd5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:efficient-reinforcement-for-visual-textual-thinking-with-discrete-diffusion:https-arxiv-org-abs-2606-14792",
+      "title": "Efficient Reinforcement for Visual-Textual Thinking with Discrete Diffusion",
+      "url": "https://arxiv.org/abs/2606.14792",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "reasoning",
+        "generation"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 60.0,
+      "adoption_score": 0.0,
+      "total_score": 64.44,
+      "score_version": 1,
+      "published_at": "2026-06-11T00:00:00+00:00",
+      "summary": "RL Method: GRPO over a multimodal discrete diffusion model; visual rollouts via localized visual editing instead of full image-token regeneration. Key Result: Cuts GRPO rollout computation by 26.9% vs autoregressive baselines with minimal performance drop for interleaved visual-textual reasoning",
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment > 3.1 RL for Multimodal Reasoning",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "Efficient Reinforcement for Visual-Textual Thinking with Discrete Diffusion",
+          "Date": "06/11/2026",
+          "RL Method": "GRPO over a multimodal discrete diffusion model; visual rollouts via localized visual editing instead of full image-token regeneration",
+          "Key Result": "Cuts GRPO rollout computation by 26.9% vs autoregressive baselines with minimal performance drop for interleaved visual-textual reasoning"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "3. Post-Training / Alignment > 3.1 RL for Multimodal Reasoning",
+      "matched_terms": [
+        "grpo",
+        "post training",
+        "alignment",
+        "multimodal reasoning",
+        "diffusion model"
+      ],
+      "rationale": [
+        "Topics: Post-training, Visual reasoning, Visual generation",
+        "Matched: grpo, post training, alignment, multimodal reasoning, diffusion model",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:eba969b82d9d61ec4d9f886b2010f1c34d8498226aefa6cd5debb3de8076d32a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:worldolympiad:https-arxiv-org-abs-2606-11129",
+      "title": "WorldOlympiad",
+      "url": "https://arxiv.org/abs/2606.11129",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "world_model",
+        "benchmark"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 53.33,
+      "adoption_score": 0.0,
+      "total_score": 62.01,
+      "score_version": 1,
+      "published_at": "2026-06-09T00:00:00+00:00",
+      "summary": "What It Measures: Whether generated videos obey physics, hold 3D structure, and sustain controllable interaction. Structure: A \"triathlon\": physical (segmentation + MLLM-as-judge), geometry (Gaussian-splat reconstruction), interaction (action-prompt adherence), across gaming / robotics / real-world",
+      "facets": {
+        "survey_section": "1. World Models > 1.2 World-Model Benchmarks",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Dataset": "WorldOlympiad",
+          "Date": "06/09/2026",
+          "What It Measures": "Whether generated videos obey physics, hold 3D structure, and sustain controllable interaction",
+          "Structure": "A \"triathlon\": physical (segmentation + MLLM-as-judge), geometry (Gaussian-splat reconstruction), interaction (action-prompt adherence), across gaming / robotics / real-world"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "1. World Models > 1.2 World-Model Benchmarks",
+      "matched_terms": [
+        "mllm",
+        "world model",
+        "world models",
+        "benchmark"
+      ],
+      "rationale": [
+        "Topics: VLM releases, World models, Benchmarks",
+        "Matched: mllm, world model, world models, benchmark",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:831fabad369c680ba3f94ff52882f7ef12a516438cdddf8e4cf96c0656164649"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:worldolympiad-can-your-world-model-survive-a-triathlon:https-arxiv-org-abs-2606-11129",
+      "title": "WorldOlympiad: Can Your World Model Survive a Triathlon?",
+      "url": "https://arxiv.org/abs/2606.11129",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "benchmark",
+        "safety"
+      ],
+      "relevance_score": 89.0,
+      "evidence_score": 52.0,
+      "recency_score": 53.33,
+      "adoption_score": 0.0,
+      "total_score": 58.59,
+      "score_version": 1,
+      "published_at": "2026-06-09T00:00:00+00:00",
+      "summary": "Key Contribution: SoTA world models show substantial gaps in physical reasoning, 3D consistency, and long-horizon interaction; prior benchmarks fail to test whether generated video actually obeys physics, holds 3D structure, or stays controllable over time",
+      "facets": {
+        "survey_section": "5. Challenges > 5.1 World-Model Physical & 3D Consistency",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "WorldOlympiad: Can Your World Model Survive a Triathlon?",
+          "Date": "06/09/2026",
+          "Key Contribution": "SoTA world models show substantial gaps in physical reasoning, 3D consistency, and long-horizon interaction; prior benchmarks fail to test whether generated video actually obeys physics, holds 3D structure, or stays controllable over time"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "5. Challenges > 5.1 World-Model Physical & 3D Consistency",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "benchmark"
+      ],
+      "rationale": [
+        "Topics: World models, Benchmarks, Safety & fairness",
+        "Matched: world model, world models, benchmark",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:ad83a755cec3f86051f6af546fd894fdde837acd1e8471ee71349cbbe7f141a9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:rt-vla-real-time-vision-language-action-models-via-knowledge-distillation:https-arxiv-org-abs-2606-14010",
+      "title": "RT-VLA: Real-Time Vision-Language-Action Models via Knowledge Distillation",
+      "url": "https://arxiv.org/abs/2606.14010",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla",
+        "efficiency"
+      ],
+      "relevance_score": 81.0,
+      "evidence_score": 52.0,
+      "recency_score": 63.33,
+      "adoption_score": 0.0,
+      "total_score": 58.05,
+      "score_version": 1,
+      "published_at": "2026-06-12T00:00:00+00:00",
+      "summary": "Key Contribution: Distills the SimLingo teacher into a lightweight driving VLA that keeps language reasoning + explainability while cutting inference time 44.8× (vision-only) / 7.9× (vision+language) at competitive driving performance",
+      "facets": {
+        "survey_section": "4. Applications > 4.2 Autonomous Driving (VLA)",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "RT-VLA: Real-Time Vision-Language-Action Models via Knowledge Distillation",
+          "Date": "06/12/2026",
+          "Key Contribution": "Distills the SimLingo teacher into a lightweight driving VLA that keeps language reasoning + explainability while cutting inference time 44.8× (vision-only) / 7.9× (vision+language) at competitive driving performance"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "4. Applications > 4.2 Autonomous Driving (VLA)",
+      "matched_terms": [
+        "vision language action",
+        "vla",
+        "autonomous driving",
+        "distillation",
+        "knowledge distillation"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA, Efficiency",
+        "Matched: vision language action, vla, autonomous driving, distillation, knowledge distillation",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1b94abd159fadbed0c85577d62769bda2684b88355142a08722c73ff4c28b8bb"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:learning-what-to-say-to-your-vla-mostly-harmless-vla-steering:https-arxiv-org-abs-2606-12299",
+      "title": "Learning What to Say to Your VLA: Mostly Harmless VLA Steering",
+      "url": "https://arxiv.org/abs/2606.12299",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla",
+        "safety"
+      ],
+      "relevance_score": 72.0,
+      "evidence_score": 52.0,
+      "recency_score": 56.67,
+      "adoption_score": 0.0,
+      "total_score": 52.97,
+      "score_version": 1,
+      "published_at": "2026-06-10T00:00:00+00:00",
+      "summary": "Key Contribution: Interactively searches for language sequences that improve closed-loop VLA performance and distills them into a feedback policy; +24.7% in sim, +65.0% on hardware with safety guarantees against harmful steering in OOD scenes",
+      "facets": {
+        "survey_section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Title": "Learning What to Say to Your VLA: Mostly Harmless VLA Steering",
+          "Date": "06/10/2026",
+          "Key Contribution": "Interactively searches for language sequences that improve closed-loop VLA performance and distills them into a feedback policy; +24.7% in sim, +65.0% on hardware with safety guarantees against harmful steering in OOD scenes"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "4. Applications > 4.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "vla",
+        "embodied",
+        "embodied ai",
+        "safety"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA, Safety & fairness",
+        "Matched: vla, embodied, embodied ai, safety",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:88be9cd5c677f9cb6deaf326d72e063c4cc4ca64b6396d375aa94a5e374ab901"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-06-23:mirage-latent-spatial-memory-for-video-world-models:https-arxiv-org-abs-2606-09828",
+      "title": "Mirage — Latent Spatial Memory for Video World Models",
+      "url": "https://arxiv.org/abs/2606.09828",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "spatial_3d"
+      ],
+      "relevance_score": 76.0,
+      "evidence_score": 52.0,
+      "recency_score": 50.0,
+      "adoption_score": 0.0,
+      "total_score": 52.82,
+      "score_version": 1,
+      "published_at": "2026-06-08T00:00:00+00:00",
+      "summary": "Type: Memory-augmented video world model. Backbone / Data: Diffusion latent space (no explicit RGB memory). Key Result: Stores 3D scene memory by lifting latent tokens into 3D via depth-guided back-projection and querying through latent-space warping — faster generation with far lower memory than explicit-3D baselines",
+      "facets": {
+        "survey_section": "1. World Models > 1.1 Generative World Models & Simulators",
+        "survey_origin": "report/2026-06-23",
+        "columns": {
+          "Model": "Mirage — Latent Spatial Memory for Video World Models",
+          "Date": "06/08/2026",
+          "Type": "Memory-augmented video world model",
+          "Backbone / Data": "Diffusion latent space (no explicit RGB memory)",
+          "Key Result": "Stores 3D scene memory by lifting latent tokens into 3D via depth-guided back-projection and querying through latent-space warping — faster generation with far lower memory than explicit-3D baselines"
+        },
+        "report_date": "2026-06-23"
+      },
+      "section": "1. World Models > 1.1 Generative World Models & Simulators",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "video world",
+        "3d scene"
+      ],
+      "rationale": [
+        "Topics: World models, 3D & spatial",
+        "Matched: world model, world models, video world, 3d scene",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-06-23T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a67b483958f6c8a2bc330916f38de05276434fd042c56829e60e6cedfb317e50"
+    }
+  ]
+}

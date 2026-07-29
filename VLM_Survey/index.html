@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A daily map of vision-language model releases, papers, benchmarks, and datasets."
+    >
+    <title>Multimodal Model RADAR</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="Multimodal Model RADAR home">
+        <span class="brand-mark" aria-hidden="true"><span class="sweep"></span></span>
+        <span class="brand-text">
+          <strong id="site-title">Multimodal Model RADAR</strong>
+          <small id="site-tagline">Vision-language models, daily</small>
+        </span>
+      </a>
+      <div class="masthead-end">
+        <dl class="stat-strip" id="stat-strip" aria-label="Corpus summary">
+          <div><dt>Scans</dt><dd data-stat="days">—</dd></div>
+          <div><dt>Records</dt><dd data-stat="items">—</dd></div>
+          <div><dt>Catalogued</dt><dd data-stat="atlas">—</dd></div>
+          <div><dt>Latest</dt><dd data-stat="latest">—</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <nav class="view-nav" aria-label="Dashboard views">
+      <button type="button" data-view="today" aria-controls="today-view">Today</button>
+      <button type="button" data-view="models" aria-controls="models-view">Models</button>
+      <button type="button" data-view="trends" aria-controls="trends-view">Trends</button>
+      <button type="button" data-view="map" aria-controls="map-view">Map</button>
+      <button type="button" data-view="atlas" aria-controls="atlas-view">Atlas</button>
+      <button type="button" id="rubric-nav" aria-haspopup="dialog">Rubric</button>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+      <section class="view" id="today-view" aria-labelledby="today-heading">
+        <header class="view-heading">
+          <div>
+            <p class="eyebrow">Daily scan</p>
+            <h1 id="today-heading">Multimodal Model Trend</h1>
+          </div>
+          <p class="heading-note">
+            Scores rank discovery confidence, not research quality. Open the Rubric
+            panel for the arithmetic.
+          </p>
+        </header>
+
+        <form class="filter-panel" id="filters">
+          <label class="search-field">
+            Search
+            <input
+              id="search-filter"
+              name="q"
+              type="search"
+              placeholder="Title, summary, organization"
+              autocomplete="off"
+            >
+          </label>
+          <label>Scan date<select id="date-filter" name="date"></select></label>
+          <label>Topic<select id="category-filter" name="category"></select></label>
+          <label>Source<select id="source-filter" name="source"></select></label>
+          <label>Model family<select id="family-filter" name="family"></select></label>
+          <label>Organization<select id="organization-filter" name="organization"></select></label>
+          <label>Event<select id="event-filter" name="event"></select></label>
+          <label>Provenance<select id="provenance-filter" name="provenance"></select></label>
+          <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
+        </form>
+
+        <div class="content-grid">
+          <div>
+            <div class="section-title">
+              <h2>Matching records</h2>
+              <span id="today-count" aria-live="polite"></span>
+            </div>
+            <div class="signal-list" id="today-list"></div>
+          </div>
+
+          <aside class="side-column">
+            <section class="panel" aria-labelledby="funnel-heading">
+              <h2 class="panel-title" id="funnel-heading">Selection funnel</h2>
+              <ul class="funnel" id="funnel-list"></ul>
+            </section>
+            <section class="panel" aria-labelledby="health-heading">
+              <h2 class="panel-title" id="health-heading">Source health</h2>
+              <ul class="health-list" id="health-list"></ul>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="models-view" aria-labelledby="models-heading" hidden>
+        <header class="view-heading">
+          <div>
+            <p class="eyebrow">Release watch</p>
+            <h1 id="models-heading">Model families and new weights</h1>
+          </div>
+          <p class="heading-note">
+            A family tag records that the text names that lineage. It is a routing
+            decision, not a claim about who built what.
+          </p>
+        </header>
+
+        <div class="section-title">
+          <h2>Tracked families</h2>
+          <span id="family-count"></span>
+        </div>
+        <div class="family-grid" id="family-grid"></div>
+
+        <div class="section-title">
+          <h2>Newest model, omni, and world-model records</h2>
+          <span id="release-count"></span>
+        </div>
+        <div class="signal-list" id="release-list"></div>
+      </section>
+
+      <section class="view" id="trends-view" aria-labelledby="trends-heading" hidden>
+        <header class="view-heading">
+          <div>
+            <p class="eyebrow">Corpus rhythm</p>
+            <h1 id="trends-heading">Volume over time</h1>
+          </div>
+          <p class="heading-note">
+            Counts describe discovery volume. A jump can mean a busy week upstream or
+            a source that came back online.
+          </p>
+        </header>
+
+        <div class="panel">
+          <div class="section-title">
+            <h2 id="domain-heading">By topic</h2>
+            <span id="domain-date"></span>
+          </div>
+          <div class="domain-grid" id="domain-grid" aria-labelledby="domain-heading"></div>
+        </div>
+
+        <div class="panel">
+          <div class="section-title">
+            <h2>Records per scan</h2>
+            <div class="legend" id="trend-legend" aria-label="Topic legend"></div>
+          </div>
+          <p class="section-note" id="trend-message" role="status"></p>
+          <div
+            class="trend-chart"
+            id="trend-chart"
+            role="img"
+            aria-label="Records per scan date, stacked by topic"
+          ></div>
+        </div>
+
+        <section class="panel" aria-labelledby="ledger-heading">
+          <div class="section-title">
+            <h2 id="ledger-heading">Daily ledger</h2>
+            <span id="ledger-count"></span>
+          </div>
+          <p class="section-note">
+            Source mix counts published records. Fetch health counts raw rows returned
+            before scoring, so a source can be healthy and still contribute nothing.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Scan</th>
+                  <th scope="col">Coverage (UTC)</th>
+                  <th scope="col">Records</th>
+                  <th scope="col">Pinned</th>
+                  <th scope="col">Source mix</th>
+                  <th scope="col">Top topics</th>
+                  <th scope="col">Funnel</th>
+                  <th scope="col">Health</th>
+                </tr>
+              </thead>
+              <tbody id="ledger-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="map-view" aria-labelledby="map-heading" hidden>
+        <header class="view-heading">
+          <div>
+            <p class="eyebrow">Cumulative corpus</p>
+            <h1 id="map-heading">Artifacts and their context</h1>
+          </div>
+          <p class="heading-note">
+            Artifacts merge only on exact identifiers: DOI, arXiv id, Hugging Face or
+            GitHub repository. Never on similar titles.
+          </p>
+        </header>
+        <p class="section-note" id="map-summary"></p>
+        <div class="map-layout">
+          <div
+            class="map-canvas"
+            id="map-canvas"
+            role="region"
+            aria-label="Artifact relationship map"
+            tabindex="0"
+          ></div>
+          <aside class="map-detail panel" id="map-detail" aria-live="polite">
+            <p class="eyebrow">Select a node</p>
+            <h2>Inspect a relationship</h2>
+            <p class="section-note">
+              Topic, family, organization, and source nodes carry into the Today
+              filters. Artifact nodes open the record.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="atlas-view" aria-labelledby="atlas-heading" hidden>
+        <header class="view-heading">
+          <div>
+            <p class="eyebrow">Curated catalogue</p>
+            <h1 id="atlas-heading">What already exists</h1>
+          </div>
+          <p class="heading-note" id="atlas-origin"></p>
+        </header>
+
+        <form class="filter-panel compact" id="atlas-filters">
+          <label class="search-field">
+            Search catalogue
+            <input id="atlas-search" type="search" placeholder="Model, benchmark, dataset" autocomplete="off">
+          </label>
+          <label>Section<select id="atlas-section"></select></label>
+          <label>Topic<select id="atlas-category"></select></label>
+          <button class="clear-button" id="atlas-clear" type="button">Clear</button>
+        </form>
+
+        <div class="section-title">
+          <h2>Entries</h2>
+          <span id="atlas-count" aria-live="polite"></span>
+        </div>
+        <div class="atlas-list" id="atlas-list"></div>
+      </section>
+
+      <section class="error-state panel" id="error-state" hidden>
+        <p class="eyebrow">Dashboard unavailable</p>
+        <h1 id="error-title">The data file could not be loaded.</h1>
+        <p id="error-detail"></p>
+        <p class="section-note">
+          Build it locally with <code>vlm-radar seed</code> (offline) or
+          <code>vlm-radar run</code> (live), then reload this page.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="rubric-dialog" aria-labelledby="rubric-title">
+      <button class="dialog-close" id="rubric-close" type="button" aria-label="Close rubric">×</button>
+      <div id="rubric-content"></div>
+    </dialog>
+
+    <footer>
+      <p id="build-meta">Loading…</p>
+    </footer>
+  </body>
+</html>

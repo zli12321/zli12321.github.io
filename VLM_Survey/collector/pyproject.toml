@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vlm-radar"
+version = "0.1.0"
+description = "Daily radar for vision-language model releases, papers, benchmarks, and datasets."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["vision-language-models", "vlm", "multimodal", "benchmarks", "radar"]
+dependencies = [
+  "certifi>=2024.2.2",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+vlm-radar = "vlm_radar.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vlm_radar"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Fixtures quote upstream markdown verbatim; rewrapping them would stop them
+# being faithful copies of what the survey repository actually contains.
+"tests/test_survey_source.py" = ["E501"]

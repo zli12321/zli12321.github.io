@@ -1,0 +1,739 @@
+# VLM Radar configuration.
+#
+# Everything the collector does is declared here: what counts as in-domain, how
+# records are bucketed, which sources are queried, and which named artifacts get
+# pinned. Editing this file is the normal way to retune the radar -- the Python
+# code carries no hardcoded keyword lists.
+
+radar:
+  # How far back a scan looks for "new" activity.
+  lookback_hours: 48
+  # Curated survey entries arrive in batches every few weeks, so they decay on a
+  # much slower clock than an arXiv listing.
+  curated_lookback_hours: 720
+  # Sources return hundreds of rows a day. Cap per source, not globally, so one
+  # chatty source cannot crowd out the rest.
+  max_items_per_source: 300
+  # The snapshot and dashboard keep every scored record; only the Markdown digest
+  # is truncated.
+  report_limit: 400
+  issue_item_limit: 40
+  # Explainable 0-100 scale. See src/vlm_radar/rubric.py for the weights. Thirty
+  # keeps single-category records that carry real evidence while the domain and
+  # category gates do the heavy filtering.
+  minimum_score: 30
+
+# A record must mention the vision-language domain to be eligible at all. Without
+# this gate, text-only LLM papers flood every query, because "benchmark" and
+# "evaluation" are modality-agnostic words.
+domain:
+  anchors:
+    - vision language
+    - visionlanguage
+    - vision language action
+    - multimodal
+    - cross modal
+    - vlm
+    - mllm
+    - lvlm
+    - lmm
+    - vqa
+    - visual question answering
+    - image
+    - images
+    - visual
+    - vision
+    - video
+    - frame
+    - ocr
+    - document understanding
+    - chart
+    - diagram
+    - screenshot
+    - gui
+    - caption
+    - captioning
+    - diffusion
+    - text to image
+    - text to video
+    - image generation
+    - video generation
+    - perception
+    - segmentation
+    - detection
+    - grounding
+    - embodied
+    - robot
+    - robotics
+    - manipulation
+    - navigation
+    - autonomous driving
+    - point cloud
+    - 3d scene
+    - spatial
+    - egocentric
+    - remote sensing
+    - radiology
+    - pathology
+    - clip
+    - siglip
+    - vit
+    - vision transformer
+    - vision encoder
+    - world model
+    - omni modal
+    - audio visual
+    - any to any
+  minimum_hits: 1
+
+# Buckets are ordered as they appear on the dashboard. `terms` drive matching;
+# `label` and `blurb` are published to the frontend so the UI never hardcodes
+# domain language.
+taxonomy:
+  vlm_model:
+    label: VLM releases
+    blurb: New or updated vision-language models and their architectures.
+    terms:
+      - vision language model
+      - visionlanguage model
+      - multimodal large language model
+      - multimodal llm
+      - large multimodal model
+      - large vision language model
+      - multimodal foundation model
+      - vlm
+      - mllm
+      - lvlm
+      - visual instruction tuning
+      - vision encoder
+      - vision language pretraining
+      - image text pretraining
+      - contrastive language image
+      - projector
+      - connector module
+      - early fusion
+      - encoder free
+      - native multimodal
+      - visual tokenizer
+
+  omni_unified:
+    label: Omni & unified
+    blurb: Any-to-any models that both understand and generate across modalities.
+    terms:
+      - omni modal
+      - omnimodal
+      - any to any
+      - unified understanding and generation
+      - unified multimodal
+      - understanding and generation
+      - interleaved generation
+      - audio visual language
+      - speech vision
+      - autoregressive image generation
+      - unified tokenizer
+
+  world_model:
+    label: World models
+    blurb: Learned simulators, video world models, and world-action models.
+    terms:
+      - world model
+      - world models
+      - world action model
+      - neural simulator
+      - learned simulator
+      - video world
+      - interactive video generation
+      - physics simulation
+      - dynamics model
+      - long horizon rollout
+      - action conditioned video
+
+  benchmark:
+    label: Benchmarks
+    blurb: Evaluation suites, leaderboards, arenas, and judge protocols.
+    terms:
+      - benchmark
+      - leaderboard
+      - evaluation suite
+      - eval suite
+      - test set
+      - challenge set
+      - arena
+      - evaluation protocol
+      - evaluation framework
+      - judge model
+      - llm as a judge
+      - human preference evaluation
+      - holistic evaluation
+      - contamination
+      - data leakage
+
+  dataset:
+    label: Datasets
+    blurb: Training corpora, instruction data, preference data, and curation work.
+    terms:
+      - dataset
+      - datasets
+      - corpus
+      - data curation
+      - data mixture
+      - instruction data
+      - instruction tuning data
+      - synthetic data
+      - preference data
+      - image text pairs
+      - caption dataset
+      - annotation pipeline
+      - data filtering
+      - pretraining data
+      - data recipe
+
+  post_training:
+    label: Post-training
+    blurb: RL alignment, SFT recipes, and preference optimization for VLMs.
+    terms:
+      - reinforcement learning from human feedback
+      - rlhf
+      - rlaif
+      - grpo
+      - dpo
+      - ppo
+      - direct preference optimization
+      - policy optimization
+      - reward model
+      - supervised fine tuning
+      - sft
+      - post training
+      - alignment
+      - self rewarding
+      - verifiable reward
+      - reinforcement learning with verifiable rewards
+      - preference optimization
+
+  reasoning:
+    label: Visual reasoning
+    blurb: Chain-of-thought, visual math, and multi-step multimodal reasoning.
+    terms:
+      - visual reasoning
+      - multimodal reasoning
+      - chain of thought
+      - chain of though
+      - reasoning trace
+      - visual math
+      - mathematical reasoning
+      - geometry problem
+      - test time scaling
+      - test time compute
+      - thinking with images
+      - slow thinking
+      - deliberate reasoning
+      - compositional reasoning
+      - spatial reasoning
+
+  video:
+    label: Video understanding
+    blurb: Long video, temporal grounding, and streaming video models.
+    terms:
+      - video understanding
+      - long video
+      - video language
+      - temporal grounding
+      - temporal reasoning
+      - video question answering
+      - video captioning
+      - streaming video
+      - video retrieval
+      - hour long
+      - frame sampling
+      - egocentric video
+      - movie understanding
+
+  document_ocr:
+    label: Document & OCR
+    blurb: OCR, document, chart, table, and screenshot understanding.
+    terms:
+      - ocr
+      - optical character recognition
+      - document understanding
+      - document parsing
+      - document ai
+      - chart understanding
+      - chart question answering
+      - table understanding
+      - table recognition
+      - layout analysis
+      - text recognition
+      - handwriting
+      - pdf extraction
+      - scientific figure
+
+  grounding:
+    label: Grounding & perception
+    blurb: Detection, segmentation, referring expressions, and dense prediction.
+    terms:
+      - visual grounding
+      - referring expression
+      - open vocabulary detection
+      - open vocabulary segmentation
+      - semantic segmentation
+      - instance segmentation
+      - object detection
+      - bounding box prediction
+      - keypoint
+      - dense prediction
+      - pixel level understanding
+      - region level
+      - visual prompting
+      - pointing
+
+  spatial_3d:
+    label: 3D & spatial
+    blurb: 3D scenes, point clouds, and spatial intelligence.
+    terms:
+      - point cloud
+      - 3d scene
+      - 3d understanding
+      - 3d reconstruction
+      - spatial intelligence
+      - depth estimation
+      - novel view synthesis
+      - gaussian splatting
+      - occupancy prediction
+      - scene graph
+      - camera pose
+
+  generation:
+    label: Visual generation
+    blurb: Text-to-image and text-to-video generation, editing, and its evaluation.
+    terms:
+      - text to image
+      - text to video
+      - image generation
+      - video generation
+      - image editing
+      - instruction based editing
+      - diffusion model
+      - diffusion transformer
+      - flow matching
+      - rectified flow
+      - autoregressive generation
+      - image synthesis
+      - subject driven generation
+      - controllable generation
+
+  embodied_vla:
+    label: Embodied & VLA
+    blurb: Vision-language-action models, manipulation, navigation, and driving.
+    terms:
+      - vision language action
+      - vla
+      - embodied
+      - embodied ai
+      - robot manipulation
+      - robotic manipulation
+      - robot learning
+      - dexterous
+      - grasping
+      - visual navigation
+      - object goal navigation
+      - autonomous driving
+      - end to end driving
+      - humanoid
+      - sim to real
+      - imitation learning
+      - action chunking
+
+  gui_agent:
+    label: GUI & web agents
+    blurb: Screen understanding and computer-use agents driven by pixels.
+    terms:
+      - gui agent
+      - gui grounding
+      - computer use
+      - screen understanding
+      - screenshot understanding
+      - web agent
+      - browser agent
+      - mobile agent
+      - ui automation
+      - device control
+      - os agent
+      - click prediction
+
+  efficiency:
+    label: Efficiency
+    blurb: Token compression, quantization, distillation, and fast inference.
+    terms:
+      - token compression
+      - token pruning
+      - token reduction
+      - visual token
+      - kv cache
+      - quantization
+      - low bit
+      - pruning
+      - distillation
+      - knowledge distillation
+      - parameter efficient
+      - lora
+      - inference acceleration
+      - speculative decoding
+      - memory efficient
+      - linear attention
+      - edge deployment
+      - on device
+
+  hallucination:
+    label: Hallucination
+    blurb: Measuring and mitigating ungrounded multimodal outputs.
+    terms:
+      - hallucination
+      - hallucinations
+      - hallucinate
+      - object hallucination
+      - faithfulness
+      - factuality
+      - ungrounded
+      - visual grounding error
+      - contrastive decoding
+
+  safety:
+    label: Safety & fairness
+    blurb: Jailbreaks, guardrails, bias, privacy, and robustness.
+    terms:
+      - safety
+      - jailbreak
+      - adversarial attack
+      - adversarial robustness
+      - red teaming
+      - guardrail
+      - toxicity
+      - bias
+      - fairness
+      - stereotype
+      - privacy
+      - watermark
+      - deepfake
+      - membership inference
+      - unlearning
+
+  domain_apps:
+    label: Applied domains
+    blurb: Medicine, remote sensing, science, and accessibility deployments.
+    terms:
+      - medical
+      - clinical
+      - radiology
+      - chest x ray
+      - pathology
+      - biomedical
+      - healthcare
+      - remote sensing
+      - satellite imagery
+      - earth observation
+      - agriculture
+      - industrial inspection
+      - accessibility
+      - blind and low vision
+      - assistive
+      - scientific discovery
+      - chemistry
+      - materials
+
+# Named model families. A hit pins the record to the top of the digest, tags it,
+# and creates a model-family node in the corpus graph. This is a routing
+# decision, not a quality claim.
+model_families:
+  - name: Qwen-VL
+    aliases: [qwen vl, qwen2 vl, qwen2.5 vl, qwen3 vl, qwen3 omni, qwen omni, qwen2.5 omni, qwenvl]
+    org: Alibaba
+  - name: InternVL
+    aliases: [internvl, internvit, intern vl, internlm xcomposer]
+    org: Shanghai AI Lab
+  - name: LLaVA
+    aliases: [llava, llava next, llava onevision, llava one vision]
+    org: Community
+  - name: Gemini / Gemma
+    aliases: [gemini, gemini pro, gemini flash, paligemma, gemma vision, gemma 3, gemma 4]
+    org: Google
+  - name: GPT-4V / GPT-5
+    aliases: [gpt 4v, gpt 4o, gpt 5, gpt 5.4, gpt 5.5, gpt 5.6, o3, o4 mini]
+    org: OpenAI
+  - name: Claude
+    aliases: [claude, claude opus, claude sonnet, claude mythos]
+    org: Anthropic
+  - name: DeepSeek-VL
+    aliases: [deepseek vl, deepseek ocr, janus, janus pro, deepseek janus]
+    org: DeepSeek
+  - name: Molmo
+    aliases: [molmo, molmo2, pixmo]
+    org: Allen AI
+  - name: Emu / BAGEL
+    aliases: [emu3, emu3.5, bagel, seed edit]
+    org: BAAI / ByteDance
+  - name: Pixtral
+    aliases: [pixtral, mistral vision]
+    org: Mistral
+  - name: Phi Vision
+    aliases: [phi 3 vision, phi 3.5 vision, phi 4 multimodal, phi 4 reasoning vision]
+    org: Microsoft
+  - name: SmolVLM
+    aliases: [smolvlm, idefics, smol vlm]
+    org: Hugging Face
+  - name: MiniCPM-V
+    aliases: [minicpm v, minicpm o, minicpm llama3 v]
+    org: OpenBMB
+  - name: GLM-V
+    aliases: [glm 4v, glm 4.5v, glm 4.6v, glm 5v, cogvlm, cogagent]
+    org: Zhipu AI
+  - name: Kimi-VL
+    aliases: [kimi vl, kimi k2, kimi k3, moonshot vision]
+    org: Moonshot AI
+  - name: Llama Vision
+    aliases: [llama 3.2 vision, llama 4 scout, llama 4 maverick, metaclip]
+    org: Meta
+  - name: NVIDIA VLM
+    aliases: [nemotron vision, nemotron nano omni, vila, eagle 2, cosmos, omnidreams]
+    org: NVIDIA
+  - name: CLIP / SigLIP
+    aliases: [clip, openclip, siglip, siglip2, eva clip, dfn clip]
+    org: Community
+  - name: Ovis / Aria / Keye
+    aliases: [ovis, ovis2, aria, keye vl, kwai keye]
+    org: Community
+  - name: Grok Vision
+    aliases: [grok 4, grok 4.5, grok vision]
+    org: xAI
+
+# Named benchmarks and eval harnesses worth surfacing whenever they move.
+watchlist:
+  - name: MMMU
+    aliases: [mmmu, mmmu pro]
+    note: College-level multi-discipline multimodal understanding.
+  - name: MMBench
+    aliases: [mmbench, mmbench video]
+    note: Fine-grained multimodal capability suite with CircularEval.
+  - name: MMStar
+    aliases: [mmstar]
+    note: Vision-indispensable subset probing genuine visual dependence.
+  - name: MathVista / MathVision
+    aliases: [mathvista, mathvision, mathverse, math vista, math vision]
+    note: Visual mathematical reasoning.
+  - name: SEED-Bench
+    aliases: [seed bench, seedbench]
+    note: Generative comprehension across image and video dimensions.
+  - name: MME
+    aliases: [mme, mme realworld, mme survey]
+    note: Perception and cognition breadth measurement.
+  - name: Video-MME
+    aliases: [video mme, videomme, video mme v2]
+    note: Full-spectrum video analysis under varying durations.
+  - name: BLINK
+    aliases: [blink benchmark, blink]
+    note: Core visual perception tasks that humans solve in a blink.
+  - name: HallusionBench / POPE
+    aliases: [hallusionbench, pope, chair metric, amber benchmark]
+    note: Hallucination and visual illusion diagnosis.
+  - name: ChartQA / DocVQA
+    aliases: [chartqa, docvqa, infographicvqa, textvqa, ocrbench]
+    note: Document, chart, and scene-text understanding.
+  - name: RealWorldQA
+    aliases: [realworldqa, real world qa]
+    note: Spatial understanding of real-world driving scenes.
+  - name: VLMEvalKit / lmms-eval
+    aliases: [vlmevalkit, lmms eval, lmms-eval, open compass multimodal]
+    note: The two harnesses most VLM papers report through.
+  - name: PhysBench / WorldModelBench
+    aliases: [physbench, worldmodelbench, worldsimbench, videophy, vbench]
+    note: Physical plausibility and world-model evaluation.
+  - name: EmbodiedBench / CALVIN
+    aliases: [embodiedbench, calvin benchmark, vlmbench, vima bench, libero]
+    note: Embodied and manipulation policy evaluation.
+  - name: WebArena / OSWorld
+    aliases: [webarena, osworld, screenspot, mind2web, androidworld]
+    note: GUI and web agent evaluation.
+
+# Records matching these patterns are demoted or dropped. Most of them exist
+# because a specific source produces predictable noise: Hugging Face search is
+# dominated by quantized re-uploads, and GitHub search surfaces link lists.
+low_value:
+  demote:
+    - pattern: "(?i)\\b(gguf|awq|gptq|w4a16|int4|int8|bnb 4bit|mlx|onnx|openvino|safetensors mirror)\\b"
+      reason: Derivative quantization or format conversion of an existing model.
+    - pattern: "(?i)\\b(lora|qlora) (adapter|weights)\\b"
+      reason: Adapter weights rather than a new model.
+    - pattern: "(?i)\\b(fine ?tuned? (version|copy) of|merge of|merged model|duplicate of|mirror of|copy of)\\b"
+      reason: Derivative upload of an existing artifact.
+    - pattern: "(?i)\\b(awesome|paper list|reading list|curated list|collection of papers)\\b"
+      reason: Link collection rather than a primary artifact.
+  suppress:
+    - pattern: "(?i)^(test|untitled|my dataset|my model|new dataset|example|demo|tmp|temp)\\b"
+      reason: Placeholder upload.
+    - pattern: "(?i)\\b(withdrawn|retracted|submission placeholder)\\b"
+      reason: Withdrawn or placeholder record.
+
+sources:
+  # arXiv category RSS is the highest-signal free feed for VLM papers. The Atom
+  # query API is available too but rate limits hard, so it is off by default.
+  arxiv:
+    enabled: true
+    required: true
+    rss_categories: [cs.CV, cs.CL, cs.AI, cs.LG, cs.RO, cs.MM]
+    request_delay_seconds: 3
+    atom_enabled: false
+    atom_queries:
+      - 'abs:"vision language model" OR abs:"multimodal large language model"'
+      - '(abs:"vision language" AND (abs:benchmark OR abs:dataset))'
+      - 'abs:"vision language action" OR abs:"world model"'
+    atom_max_results: 100
+
+  # Where new model weights actually land.
+  huggingface_models:
+    enabled: true
+    required: false
+    searches:
+      - vision-language
+      - multimodal
+      - vlm
+      - image-text-to-text
+      - video-text-to-text
+      - omni
+    pipeline_tags: [image-text-to-text, video-text-to-text, any-to-any, visual-question-answering]
+    # Fetching a model card costs one extra request each, so only the freshest
+    # results get prose.
+    card_limit: 14
+
+  huggingface_datasets:
+    enabled: true
+    required: false
+    searches:
+      - vision-language
+      - multimodal benchmark
+      - visual instruction
+      - vqa
+      - video understanding
+      - image caption
+    card_limit: 10
+
+  # The Hugging Face daily papers feed is the closest thing to a community
+  # front page for multimodal work.
+  huggingface_papers:
+    enabled: true
+    required: false
+    days: 3
+
+  github:
+    enabled: true
+    required: false
+    queries:
+      - '"vision language model" in:name,description,readme'
+      - '"multimodal LLM" in:name,description,readme'
+      - '"VLM benchmark" in:name,description,readme'
+      - '"vision language action" in:name,description,readme'
+    per_page: 40
+
+  github_releases:
+    enabled: true
+    required: false
+    repositories:
+      - QwenLM/Qwen3-VL
+      - OpenGVLab/InternVL
+      - open-compass/VLMEvalKit
+      - EvolvingLMMs-Lab/lmms-eval
+      - haotian-liu/LLaVA
+      - LLaVA-VL/LLaVA-NeXT
+      - huggingface/transformers
+      - vllm-project/vllm
+      - OpenBMB/MiniCPM-V
+      - deepseek-ai/DeepSeek-VL2
+      - THUDM/GLM-V
+      - allenai/molmo
+      - huggingface/lighteval
+      - NVIDIA/Cosmos
+    per_page: 10
+
+  semantic_scholar:
+    enabled: true
+    required: false
+    searches:
+      - vision language model benchmark
+      - multimodal large language model evaluation
+      - vision language action robot policy
+    page_size: 100
+    max_requests: 3
+
+  openalex:
+    enabled: false
+    required: false
+    searches:
+      - vision language model evaluation
+      - multimodal benchmark dataset
+    per_page: 50
+
+  # The sibling survey repository is treated as a first-class source: its
+  # progressive reports are dated, human-curated discovery events.
+  survey:
+    enabled: true
+    required: false
+    # Local checkout, relative to this collector directory. Set
+    # VLM_RADAR_SURVEY_PATH to override, which is how CI points at the copy it
+    # checks out into .survey-source.
+    path: ../../../VLM_survey/Vision-Language-Models-Overview
+    readme: README.md
+    reports_dir: progressive reports
+    # Section heading -> categories. Matching is case-insensitive substring on
+    # the heading trail, so "4.3.1 Manipulation" inherits from "Robotics".
+    heading_categories:
+      sota vlm: [vlm_model]
+      new sota: [vlm_model]
+      world model: [world_model]
+      training dataset: [dataset]
+      pre-training: [dataset]
+      dataset and evaluation: [benchmark, dataset]
+      datasets and evaluation: [benchmark, dataset]
+      new benchmark: [benchmark]
+      benchmark: [benchmark]
+      embodied vlm: [embodied_vla, benchmark]
+      post-training: [post_training]
+      post training: [post_training]
+      rl alignment: [post_training]
+      finetuning: [post_training]
+      sft: [post_training]
+      prompt: [post_training]
+      generative visual media: [generation]
+      robotics: [embodied_vla]
+      manipulation: [embodied_vla]
+      navigation: [embodied_vla]
+      human-robot: [embodied_vla]
+      autonomous driving: [embodied_vla]
+      human-centered: [domain_apps]
+      web agent: [gui_agent]
+      web-gui: [gui_agent]
+      gui: [gui_agent]
+      accessibility: [domain_apps]
+      medical: [domain_apps]
+      healthcare: [domain_apps]
+      social goodness: [domain_apps]
+      challenge: [safety]
+      hallucination: [hallucination]
+      safety: [safety]
+      fairness: [safety]
+      alignment: [post_training]
+      efficient: [efficiency]
+      efficient inference: [efficiency]
+      quantization: [efficiency]
+      reasoning: [reasoning]
+      video: [video]
+      scarce of high-quality dataset: [dataset]
+
+publish:
+  site_title: Multimodal Model RADAR
+  tagline: A daily map of vision-language model releases, papers, benchmarks, and datasets.
+  dashboard_url: "https://zli12321.github.io/VLM_Survey/"
+  repository: zli12321/zli12321.github.io
+  # The dashboard is served from the parent directory so its public URL is
+  # /VLM_Survey/ rather than /VLM_Survey/collector/site/. Jekyll copies that
+  # folder verbatim; it skips this collector via _config.yml's exclude list.
+  site_dir: ".."
+  issue_title_prefix: "🛰️ VLM Radar"
+  labels: [daily-radar, automated]

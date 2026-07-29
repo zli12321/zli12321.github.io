@@ -1,0 +1,1197 @@
+/* Multimodal Model RADAR dashboard styles.
+   No framework, no build step: the deployed CSS is the source.
+
+   The look is meant to read like a research publication rather than a console.
+   Serif for anything editorial, sans for interface furniture, and monospace
+   reserved for figures that need to align in columns. Colour carries meaning
+   only: each topic keeps one muted hue everywhere it appears. */
+
+:root {
+  color-scheme: light;
+
+  /* Warm paper tones. Nothing is pure white or pure black, which is what makes
+     long reading sessions comfortable. */
+  --paper: #f4f1ec;
+  --card: #fffefc;
+  --panel: #faf8f4;
+  --ink: #1d1b17;
+  --ink-soft: #423d36;
+  --muted: #756c60;
+  --faint: #9a9186;
+  --rule: #e2dcd2;
+  --rule-strong: #cfc7ba;
+
+  --accent: #2f4d5e;
+  --accent-soft: #eaf0f3;
+  --warm: #9c5a2b;
+  --warm-soft: #fbf2e9;
+  --warm-tint: #fdf8f2;
+  --positive: #3f6b52;
+  --negative: #9c3f3f;
+
+  --serif: ui-serif, "Iowan Old Style", Charter, Palatino, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --shadow: 0 1px 2px rgb(29 27 23 / 4%), 0 12px 32px rgb(29 27 23 / 5%);
+  --radius: 7px;
+  --measure: min(1180px, calc(100% - 56px));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: var(--rule-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+a:hover {
+  color: var(--warm);
+  text-decoration-color: currentcolor;
+}
+
+code {
+  padding: 0.1em 0.34em;
+  border-radius: 3px;
+  background: var(--accent-soft);
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 40;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--card);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.masthead,
+.view-nav,
+main,
+footer {
+  width: var(--measure);
+  margin-inline: auto;
+}
+
+/* ---------- shared typography ---------- */
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* Small interface labels. Sentence case in the body sans, because uppercase
+   monospace at this size is what made the old layout feel like a terminal. */
+.eyebrow,
+.filter-panel label,
+.panel-title,
+.section-title span,
+.stat-strip dt,
+th {
+  color: var(--faint);
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heading-note,
+.section-note,
+.card-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.numeric,
+.trend-total,
+.funnel b,
+.stat-strip dd,
+td.numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.7rem 1.35rem;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 0.95rem;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+/* A quiet radar mark: two rings and a single blip, drawn in CSS. */
+.brand-mark {
+  position: relative;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 45%, var(--rule) 45% 46%, transparent 46%),
+    var(--card);
+}
+
+.brand-mark .sweep {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warm);
+}
+
+.brand-text strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.brand-text small {
+  display: block;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.stat-strip {
+  display: flex;
+  gap: 2.1rem;
+  margin: 0;
+}
+
+.stat-strip div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.stat-strip dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+/* ---------- navigation ---------- */
+
+.view-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.view-nav button {
+  position: relative;
+  padding: 0.55rem 0 0.7rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 120ms ease;
+}
+
+.view-nav button:hover {
+  color: var(--ink);
+}
+
+.view-nav button[aria-current="page"] {
+  color: var(--ink);
+}
+
+.view-nav button[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* ---------- structure ---------- */
+
+main {
+  padding-block: 2.4rem 4rem;
+}
+
+.view-heading {
+  display: grid;
+  gap: 0.6rem 3rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30ch);
+  align-items: end;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.view-heading h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.heading-note {
+  margin: 0;
+}
+
+.section-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 2.4rem 0 1rem;
+}
+
+.section-title h2 {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.section-title span {
+  white-space: nowrap;
+}
+
+.section-note {
+  max-width: 82ch;
+  margin: 0 0 1.1rem;
+}
+
+.panel {
+  margin-bottom: 1.7rem;
+  padding: 1.4rem 1.6rem 1.6rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.panel-title {
+  margin: 0 0 0.85rem;
+}
+
+.panel > .section-title:first-child {
+  margin-top: 0;
+}
+
+.content-grid {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
+}
+
+/* minmax(0, 1fr) rather than an implicit auto track: an auto track is sized to
+   its content's max-content width and would push the panels past the column. */
+.side-column {
+  position: sticky;
+  top: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.side-column .panel {
+  margin: 0;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+@media (max-width: 1040px) {
+  .content-grid,
+  .view-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side-column {
+    position: static;
+  }
+}
+
+/* ---------- filters ---------- */
+
+/* Underlined controls rather than boxes: the same affordance with a fraction of
+   the visual weight. */
+.filter-panel {
+  display: grid;
+  gap: 1.1rem 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: end;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.filter-panel label {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.filter-panel .search-field {
+  grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .filter-panel .search-field {
+    grid-column: span 1;
+  }
+}
+
+.filter-panel input,
+.filter-panel select {
+  width: 100%;
+  padding: 0.3rem 0.1rem 0.4rem;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.94rem;
+  letter-spacing: normal;
+  text-transform: none;
+  transition: border-color 120ms ease;
+}
+
+.filter-panel select {
+  appearance: none;
+  padding-right: 1.1rem;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%) right 0.42rem top 55% / 5px 5px
+      no-repeat,
+    linear-gradient(-45deg, var(--muted) 50%, transparent 50%) right 0.07rem top 55% / 5px 5px
+      no-repeat;
+}
+
+.filter-panel input:hover,
+.filter-panel select:hover,
+.filter-panel input:focus,
+.filter-panel select:focus {
+  border-bottom-color: var(--ink);
+}
+
+.filter-panel input::placeholder {
+  color: var(--faint);
+}
+
+.clear-button,
+.ghost-button {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.clear-button:hover,
+.ghost-button:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--card);
+}
+
+/* ---------- record cards ---------- */
+
+.signal-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.signal {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.signal:hover {
+  border-color: var(--rule-strong);
+  box-shadow: var(--shadow);
+}
+
+.signal[open] {
+  border-color: var(--rule-strong);
+}
+
+/* Pinned records get a barely-there warm wash. Most records are pinned on a busy
+   scan, so anything stronger turns the whole list beige. */
+.signal[data-pinned="true"] {
+  background: var(--warm-tint);
+}
+
+.signal > summary {
+  display: grid;
+  gap: 0.4rem 1.1rem;
+  grid-template-columns: 54px minmax(0, 1fr);
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.signal > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The score reads as a figure in a table, not a badge. */
+.score-chip {
+  display: grid;
+  gap: 0.18rem;
+  align-content: start;
+  justify-items: start;
+  padding-top: 0.1rem;
+}
+
+.score-chip b {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.score-chip span {
+  color: var(--faint);
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.score-track {
+  width: 44px;
+  height: 2px;
+  background: var(--rule);
+}
+
+.score-track i {
+  display: block;
+  height: 100%;
+}
+
+.signal-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 500;
+  line-height: 1.32;
+}
+
+.signal-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.signal-title a:hover {
+  color: var(--warm);
+}
+
+.signal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.85rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.81rem;
+}
+
+.meta-source {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Topics are a coloured dot plus a word. Eighteen outlined chips was the single
+   biggest source of visual noise in the previous layout. */
+.pill {
+  display: inline-flex;
+  gap: 0.36rem;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.pill.topic::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pill-color, var(--rule-strong));
+  transform: translateY(-1px);
+}
+
+.pill.pin {
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: rgb(156 90 43 / 12%);
+  color: var(--warm);
+  font-size: 0.76rem;
+}
+
+.pill.curated {
+  color: var(--faint);
+  font-style: italic;
+}
+
+.signal-body {
+  padding: 0.2rem 1.2rem 1.2rem;
+  margin-left: 54px;
+}
+
+.signal-body > p:first-child {
+  max-width: 78ch;
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+@media (max-width: 640px) {
+  .signal > summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .signal-body {
+    margin-left: 0;
+  }
+}
+
+.kv {
+  display: grid;
+  gap: 0.34rem 1.4rem;
+  grid-template-columns: max-content minmax(0, 1fr);
+  margin: 0 0 1.1rem;
+  font-size: 0.88rem;
+}
+
+.kv dt {
+  color: var(--faint);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+
+.kv dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.signal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.empty {
+  padding: 3rem 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------- funnel and health ---------- */
+
+.funnel,
+.health-list {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.87rem;
+}
+
+/* A ruled list, as in an index: the dotted rule carries the eye from each label
+   to its figure without any element needing an intrinsic width. */
+.funnel li,
+.health-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dotted var(--rule-strong);
+  color: var(--ink-soft);
+}
+
+.funnel li:last-child,
+.health-list li:last-child {
+  border-bottom: none;
+}
+
+.funnel li span,
+.health-list li span:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.funnel li b {
+  flex: none;
+  font-weight: 500;
+}
+
+.health-list .state {
+  flex: none;
+  font-size: 0.8rem;
+}
+
+.health-list .ok {
+  color: var(--positive);
+}
+
+.health-list .bad {
+  color: var(--negative);
+}
+
+/* ---------- topic and family cards ---------- */
+
+/* A hairline grid instead of a field of floating boxes. Rules come from each
+   cell's own right and bottom border, so a partly filled last row simply ends
+   instead of leaving empty tinted tiles behind. */
+.family-grid,
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.family-card,
+.domain-card {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  padding: 1.05rem 1.15rem 1.15rem;
+  border: none;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--card);
+  text-align: left;
+  transition: background 140ms ease;
+}
+
+.family-card:hover,
+.domain-card:hover {
+  background: var(--accent-soft);
+}
+
+.family-card h3,
+.domain-card h3 {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  margin: 0;
+  font-size: 0.82rem;
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.domain-card h3::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--topic-color, var(--rule-strong));
+}
+
+.card-figure {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.card-note {
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.delta {
+  font-size: 0.79rem;
+}
+
+.delta.up {
+  color: var(--positive);
+}
+
+.delta.down {
+  color: var(--negative);
+}
+
+.delta.flat {
+  color: var(--faint);
+}
+
+/* ---------- trend chart ---------- */
+
+/* Wide enough to sit beside the heading when there is room, and to drop onto its
+   own line rather than squeezing the heading when there is not. */
+.legend {
+  display: flex;
+  flex: 1 1 340px;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  justify-content: flex-end;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.legend span {
+  display: inline-flex;
+  gap: 0.36rem;
+  align-items: center;
+}
+
+.legend i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--swatch, var(--rule-strong));
+}
+
+.trend-chart {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-end;
+  padding: 1.2rem 0 0;
+  border-bottom: 1px solid var(--rule-strong);
+  overflow-x: auto;
+}
+
+/* Bar heights are set in pixels by app.js: a percentage would resolve against
+   an auto-height column and collapse to nothing. */
+.trend-column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 44px;
+}
+
+.trend-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 46px;
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+}
+
+.trend-stack i {
+  display: block;
+  min-height: 2px;
+  background: var(--swatch, var(--accent));
+}
+
+.trend-total {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.trend-label {
+  color: var(--faint);
+  font-size: 0.73rem;
+  white-space: nowrap;
+}
+
+/* ---------- tables ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+  border-top: 1px solid var(--rule-strong);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+th,
+td {
+  padding: 0.72rem 0.9rem 0.72rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  padding-top: 0.6rem;
+  white-space: nowrap;
+}
+
+tbody th {
+  font-family: var(--sans);
+  font-size: 0.87rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink);
+}
+
+td.numeric {
+  padding-right: 1.4rem;
+  text-align: right;
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+  background: var(--panel);
+}
+
+tfoot th,
+tfoot td {
+  border-bottom: none;
+  font-weight: 500;
+}
+
+/* ---------- map ---------- */
+
+.map-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  align-items: start;
+}
+
+@media (max-width: 1040px) {
+  .map-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.map-canvas {
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.map-canvas svg {
+  display: block;
+  width: 100%;
+  min-width: 700px;
+}
+
+.map-edge {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 0.8;
+  opacity: 0.7;
+}
+
+.map-edge.active {
+  stroke: var(--warm);
+  stroke-width: 1.6;
+  opacity: 1;
+}
+
+.map-node {
+  cursor: pointer;
+}
+
+.map-node rect {
+  fill: var(--card);
+  stroke: var(--rule-strong);
+  rx: 4;
+}
+
+.map-node:hover rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.map-node.selected rect {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.map-node.selected text {
+  fill: var(--card);
+}
+
+.map-node text {
+  fill: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 11.5px;
+}
+
+.map-column-label {
+  fill: var(--faint);
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.map-detail h2 {
+  margin: 0.3rem 0 0.7rem;
+  font-size: 1.35rem;
+}
+
+/* ---------- atlas ---------- */
+
+.atlas-list {
+  border-top: 1px solid var(--rule-strong);
+}
+
+.atlas-entry {
+  border-bottom: 1px solid var(--rule);
+}
+
+.atlas-entry > summary {
+  display: grid;
+  gap: 0.2rem 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  padding: 0.8rem 0.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.atlas-entry > summary::-webkit-details-marker {
+  display: none;
+}
+
+.atlas-entry:hover > summary {
+  background: var(--panel);
+}
+
+.atlas-entry .name {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+}
+
+.atlas-entry .name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.atlas-entry:hover .name a {
+  text-decoration: underline;
+}
+
+.atlas-entry .signal-meta {
+  justify-content: flex-end;
+}
+
+.atlas-body {
+  padding: 0.2rem 0.2rem 1rem;
+}
+
+@media (max-width: 760px) {
+  .atlas-entry > summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atlas-entry .signal-meta {
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- rubric dialog ---------- */
+
+dialog {
+  width: min(720px, calc(100% - 2.5rem));
+  max-height: 86vh;
+  padding: 2.2rem 2.4rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: 0 24px 70px rgb(29 27 23 / 18%);
+  color: var(--ink);
+}
+
+dialog::backdrop {
+  background: rgb(29 27 23 / 34%);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.dialog-close:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+#rubric-content h2 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+
+#rubric-content h3 {
+  margin: 1.7rem 0 0.5rem;
+  color: var(--faint);
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#rubric-content p {
+  max-width: 68ch;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+}
+
+#rubric-content ul {
+  max-width: 68ch;
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.91rem;
+}
+
+#rubric-content li {
+  margin-bottom: 0.4rem;
+}
+
+#rubric-content .formula {
+  padding: 0.8rem 1rem;
+  border-left: 2px solid var(--accent);
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.79rem;
+  line-height: 1.7;
+}
+
+/* ---------- footer and error ---------- */
+
+.error-state {
+  max-width: 56ch;
+  margin-inline: auto;
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.error-state h1 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: 1.6rem;
+}
+
+footer {
+  padding-block: 1.6rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: 0.81rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

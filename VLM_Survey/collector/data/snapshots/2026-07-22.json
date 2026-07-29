@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-22",
+  "generated_at": "2026-07-22T00:00:00+00:00",
+  "since": "2026-06-22T00:00:00+00:00",
+  "selection": {
+    "fetched": 19,
+    "deduplicated": 19,
+    "out_of_domain": 0,
+    "suppressed": 0,
+    "below_threshold": 0,
+    "published": 19,
+    "pinned": 10,
+    "minimum_score": 30.0
+  },
+  "health": [
+    {
+      "source": "VLM Survey Report",
+      "ok": true,
+      "item_count": 19,
+      "required": false,
+      "duration_seconds": 0.0,
+      "detail": "Replayed from progressive reports/2026-07-22.md"
+    }
+  ],
+  "items": [
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:kimi-k3:https-openrouter-ai-moonshotai-kimi-k3",
+      "title": "Kimi K3",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "reasoning"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 83.33,
+      "adoption_score": 0.0,
+      "total_score": 57.35,
+      "score_version": 1,
+      "published_at": "2026-07-17T00:00:00+00:00",
+      "summary": "Architecture: MoE, natively multimodal reasoning — text + image + video in one trunk, no separate vision module; 1M context. Parameters: ~2.8T total. Key Result: Announced open-weight (weights due 07/27/2026); targets long-horizon coding + agent workloads",
+      "organizations": [
+        "Moonshot AI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "Kimi K3 (Moonshot AI)",
+          "Date": "07/17/2026",
+          "Architecture": "MoE, natively multimodal reasoning — text + image + video in one trunk, no separate vision module; 1M context",
+          "Parameters": "~2.8T total",
+          "Key Result": "Announced open-weight (weights due 07/27/2026); targets long-horizon coding + agent workloads"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "multimodal reasoning"
+      ],
+      "model_families": [
+        "Kimi-VL"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Visual reasoning",
+        "Matched: vlm, multimodal reasoning",
+        "Tracked family: Kimi-VL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:30d7c03e0900fc93306bc23ec538a52db1ebe620f9f0f2cee427d729fd1bdf40"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:scientific-visualization-literacy:https-arxiv-org-abs-2607-15176",
+      "title": "Scientific Visualization Literacy",
+      "url": "https://arxiv.org/abs/2607.15176",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark"
+      ],
+      "relevance_score": 62.0,
+      "evidence_score": 52.0,
+      "recency_score": 80.0,
+      "adoption_score": 0.0,
+      "total_score": 55.0,
+      "score_version": 1,
+      "published_at": "2026-07-16T00:00:00+00:00",
+      "summary": "Task: MLLM literacy on scientific visualizations vs. human baseline. Size: 49 items / 18 visualizations / 485 human participants. Key Finding: Gemini exceeds the human mean; open-source models remain below it; models excel at illustrations/spatial tasks, fail at texture-based visualization and quantitative estimation",
+      "organizations": [
+        "Google"
+      ],
+      "facets": {
+        "survey_section": "4. New Benchmarks",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Dataset": "Scientific Visualization Literacy",
+          "Date": "07/16/2026",
+          "Task": "MLLM literacy on scientific visualizations vs. human baseline",
+          "Size": "49 items / 18 visualizations / 485 human participants",
+          "Key Finding": "Gemini exceeds the human mean; open-source models remain below it; models excel at illustrations/spatial tasks, fail at texture-based visualization and quantitative estimation"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "4. New Benchmarks",
+      "matched_terms": [
+        "mllm",
+        "benchmark"
+      ],
+      "model_families": [
+        "Gemini / Gemma"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks",
+        "Matched: mllm, benchmark",
+        "Tracked family: Gemini / Gemma",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a0ed1887d763ae47dc6226776b81dba3c90f8599fab6a8d76a06683be2455905"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:gemini-3-6-flash:https-deepmind-google-models-gemini",
+      "title": "Gemini 3.6 Flash",
+      "url": "https://deepmind.google/models/gemini/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 39.0,
+      "evidence_score": 52.0,
+      "recency_score": 96.67,
+      "adoption_score": 0.0,
+      "total_score": 50.43,
+      "score_version": 1,
+      "published_at": "2026-07-21T00:00:00+00:00",
+      "summary": "Architecture: Natively multimodal: text, image, speech, video in → text out; 1M context. Parameters: Undisclosed. Key Result: Google's new \"workhorse\"; better coding/knowledge/multimodal at up to 17% fewer tokens",
+      "organizations": [
+        "Google"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "Gemini 3.6 Flash (Google)",
+          "Date": "07/21/2026",
+          "Architecture": "Natively multimodal: text, image, speech, video in → text out; 1M context",
+          "Parameters": "Undisclosed",
+          "Key Result": "Google's new \"workhorse\"; better coding/knowledge/multimodal at up to 17% fewer tokens"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm"
+      ],
+      "model_families": [
+        "Gemini / Gemma"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm",
+        "Tracked family: Gemini / Gemma",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:0a904fa7bfae5fdba1e755b42de404caf47ce6fd3abe39574d662b0e55985c5e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:gemma-4-technical-report:https-arxiv-org-abs-2607-02770",
+      "title": "Gemma 4 Technical Report",
+      "url": "https://arxiv.org/abs/2607.02770",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark"
+      ],
+      "relevance_score": 71.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 46.75,
+      "score_version": 1,
+      "published_at": "2026-07-02T00:00:00+00:00",
+      "summary": "Architecture: Dense + MoE; 12B variant is encoder-free — ingests raw audio and image patches with no separate vision/audio encoder. Parameters: 2.3B – 31B. Key Result: Leap across STEM, multimodal, and long-context benchmarks; rivals larger frontier open models on human-rated tasks",
+      "organizations": [
+        "Google"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "Gemma 4 Technical Report (Google)",
+          "Date": "07/02/2026",
+          "Architecture": "Dense + MoE; 12B variant is encoder-free — ingests raw audio and image patches with no separate vision/audio encoder",
+          "Parameters": "2.3B – 31B",
+          "Key Result": "Leap across STEM, multimodal, and long-context benchmarks; rivals larger frontier open models on human-rated tasks"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "encoder free",
+        "benchmark"
+      ],
+      "model_families": [
+        "Gemini / Gemma"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks",
+        "Matched: vlm, encoder free, benchmark",
+        "Tracked family: Gemini / Gemma",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b307034e11c318cfd69d7083678a2533f8c26baefb1ca93557a2914f19d4986a"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:perceive-to-reason-decoupling-perception-and-reasoning-for-fine-grained-visual-reasoning:https-arxiv-org-abs-2607-01191",
+      "title": "Perceive-to-Reason: Decoupling Perception and Reasoning for Fine-Grained Visual Reasoning",
+      "url": "https://arxiv.org/abs/2607.01191",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "post_training",
+        "reasoning"
+      ],
+      "relevance_score": 72.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 46.3,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "RL Method: PRA-GRPO — role-aware RL alternating perception-focused and reasoning-focused updates, final-answer supervision only. Key Result: P2R-4B (Qwen3-VL base): 93.2% V-Star, 81.9% HR-Bench-4K, 80.5% HR-Bench-8K",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "Perceive-to-Reason: Decoupling Perception and Reasoning for Fine-Grained Visual Reasoning",
+          "Date": "07/01/2026",
+          "RL Method": "PRA-GRPO — role-aware RL alternating perception-focused and reasoning-focused updates, final-answer supervision only",
+          "Key Result": "P2R-4B (Qwen3-VL base): 93.2% V-Star, 81.9% HR-Bench-4K, 80.5% HR-Bench-8K"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "3. Post-Training / Alignment",
+      "matched_terms": [
+        "grpo",
+        "post training",
+        "alignment",
+        "visual reasoning"
+      ],
+      "model_families": [
+        "Qwen-VL"
+      ],
+      "rationale": [
+        "Topics: Post-training, Visual reasoning",
+        "Matched: grpo, post training, alignment, visual reasoning",
+        "Tracked family: Qwen-VL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:36c7f0f66c98412ef695cfd9599b658ea2fb0efe3c2ead83a26292befe2d77a9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:omnifocus-query-guided-modality-balanced-token-compression-for-omni-modal-llms:https-arxiv-org-abs-2607-03050",
+      "title": "OmniFocus: Query-Guided Modality-Balanced Token Compression for Omni-Modal LLMs",
+      "url": "https://arxiv.org/abs/2607.03050",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "omni_unified",
+        "efficiency"
+      ],
+      "relevance_score": 62.0,
+      "evidence_score": 52.0,
+      "recency_score": 36.67,
+      "adoption_score": 0.0,
+      "total_score": 44.17,
+      "score_version": 1,
+      "published_at": "2026-07-03T00:00:00+00:00",
+      "summary": "Key Contribution: Training-free, per-modality importance estimation for video + audio token compression; on Qwen2.5-Omni retains 59.40 accuracy at 25% token retention with 1.38× prefill speedup (DailyOmni)",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "5. Applications > 5.2 Efficient Inference",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "OmniFocus: Query-Guided Modality-Balanced Token Compression for Omni-Modal LLMs",
+          "Date": "07/03/2026",
+          "Key Contribution": "Training-free, per-modality importance estimation for video + audio token compression; on Qwen2.5-Omni retains 59.40 accuracy at 25% token retention with 1.38× prefill speedup (DailyOmni)"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "5. Applications > 5.2 Efficient Inference",
+      "matched_terms": [
+        "omni modal",
+        "token compression"
+      ],
+      "model_families": [
+        "Qwen-VL"
+      ],
+      "rationale": [
+        "Topics: Omni & unified, Efficiency",
+        "Matched: omni modal, token compression",
+        "Tracked family: Qwen-VL",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:51c8feba953454eda984ecccef354f2da5ef1f683da3d665d31b676aa0d1a1e7"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:mohallbench:https-arxiv-org-abs-2607-01117",
+      "title": "MoHallBench",
+      "url": "https://arxiv.org/abs/2607.01117",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "benchmark",
+        "hallucination"
+      ],
+      "relevance_score": 62.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 42.5,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Task: Motion hallucination in Video-LLMs (co-occurrence priors, sequential inference, similarity confusion). Size: 11,306 clips / 40,493 QA pairs. Key Finding: Across 10 VideoLLMs, models that recognize actions fail on adversarial clips lacking those motions; sequential-inference hallucination is worst",
+      "organizations": [
+        "Community"
+      ],
+      "facets": {
+        "survey_section": "4. New Benchmarks",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Dataset": "MoHallBench",
+          "Date": "07/01/2026",
+          "Task": "Motion hallucination in Video-LLMs (co-occurrence priors, sequential inference, similarity confusion)",
+          "Size": "11,306 clips / 40,493 QA pairs",
+          "Key Finding": "Across 10 VideoLLMs, models that recognize actions fail on adversarial clips lacking those motions; sequential-inference hallucination is worst"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "4. New Benchmarks",
+      "matched_terms": [
+        "benchmark",
+        "hallucination"
+      ],
+      "model_families": [
+        "CLIP / SigLIP"
+      ],
+      "rationale": [
+        "Topics: Benchmarks, Hallucination",
+        "Matched: benchmark, hallucination",
+        "Tracked family: CLIP / SigLIP",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b5fba218b4b19f9c5058f9547cd41a4c66f2b2a4a64e383a9678425d9c0f2bb6"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:gpt-5-6-sol:https-openai-com-index-gpt-5-6",
+      "title": "GPT-5.6 Sol",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 35.0,
+      "evidence_score": 52.0,
+      "recency_score": 56.67,
+      "adoption_score": 0.0,
+      "total_score": 38.91,
+      "score_version": 1,
+      "published_at": "2026-07-09T00:00:00+00:00",
+      "summary": "Architecture: Text + image in; 1.05M context / 128K output; max & ultra reasoning modes; Sol Ultra orchestrates sub-agents. Parameters: Undisclosed. Key Result: Flagship of the Luna / Terra / Sol family; SoTA on coding, knowledge work, cybersecurity, science",
+      "organizations": [
+        "OpenAI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "GPT-5.6 Sol (OpenAI)",
+          "Date": "07/09/2026",
+          "Architecture": "Text + image in; 1.05M context / 128K output; max & ultra reasoning modes; Sol Ultra orchestrates sub-agents",
+          "Parameters": "Undisclosed",
+          "Key Result": "Flagship of the Luna / Terra / Sol family; SoTA on coding, knowledge work, cybersecurity, science"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm"
+      ],
+      "model_families": [
+        "GPT-4V / GPT-5"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm",
+        "Tracked family: GPT-4V / GPT-5",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:8ed0d91696204c3e1eb8988ea6aacc6391ec98dd44e100b53d7e9325b9e8904e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:grok-4-5:https-artificialanalysis-ai-models-grok-4-5",
+      "title": "Grok 4.5",
+      "url": "https://artificialanalysis.ai/models/grok-4-5",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model"
+      ],
+      "relevance_score": 35.0,
+      "evidence_score": 52.0,
+      "recency_score": 53.33,
+      "adoption_score": 0.0,
+      "total_score": 38.07,
+      "score_version": 1,
+      "published_at": "2026-07-08T00:00:00+00:00",
+      "summary": "Architecture: Decoder-only reasoning (extended thinking); text + image + files in; 500K context. Parameters: ~1.5T (reported). Key Result: Opus-class positioning at a fraction of competitor cost; coding/agent focus",
+      "organizations": [
+        "xAI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "Grok 4.5 (xAI)",
+          "Date": "07/08/2026",
+          "Architecture": "Decoder-only reasoning (extended thinking); text + image + files in; 500K context",
+          "Parameters": "~1.5T (reported)",
+          "Key Result": "Opus-class positioning at a fraction of competitor cost; coding/agent focus"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm"
+      ],
+      "model_families": [
+        "Grok Vision"
+      ],
+      "rationale": [
+        "Topics: VLM releases",
+        "Matched: vlm",
+        "Tracked family: Grok Vision",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:9e0a4cf6749dad9d547803fbcd80d25f6cb33940603a51413b1f001518d0c966"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:gpt-5-5:https-openai-com-index-introducing-gpt-5-5",
+      "title": "GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "gui_agent"
+      ],
+      "relevance_score": 62.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 35.0,
+      "score_version": 1,
+      "published_at": "2026-04-23T00:00:00+00:00",
+      "summary": "Architecture: Text + image in (GPT-5 input stack); computer-use screen reading in Codex. Parameters: Undisclosed. Key Result: Topped the Artificial Analysis Intelligence Index at release (60.24); missed by our spring cuts",
+      "organizations": [
+        "OpenAI"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "GPT-5.5 (OpenAI)",
+          "Date": "04/23/2026",
+          "Architecture": "Text + image in (GPT-5 input stack); computer-use screen reading in Codex",
+          "Parameters": "Undisclosed",
+          "Key Result": "Topped the Artificial Analysis Intelligence Index at release (60.24); missed by our spring cuts"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "computer use"
+      ],
+      "model_families": [
+        "GPT-4V / GPT-5"
+      ],
+      "rationale": [
+        "Topics: VLM releases, GUI & web agents",
+        "Matched: vlm, computer use",
+        "Tracked family: GPT-4V / GPT-5",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:e5c4c4a778cc4f00ff959a1f336e96bb901894391a99c83ded354d15ff1566e5"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:from-foundation-to-application-improving-vla-models-in-practice:https-arxiv-org-abs-2607-06403",
+      "title": "From Foundation to Application: Improving VLA Models in Practice",
+      "url": "https://arxiv.org/abs/2607.06403",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "benchmark",
+        "dataset",
+        "embodied_vla"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 50.0,
+      "adoption_score": 0.0,
+      "total_score": 61.94,
+      "score_version": 1,
+      "published_at": "2026-07-07T00:00:00+00:00",
+      "summary": "Key Contribution: Trained on ~60,000 hours across 20 robot configurations — the largest VLA corpus reported to date; whole-body action spaces, predictive dynamics modeling, strong cross-embodiment mobile manipulation on the GM-100 benchmark",
+      "organizations": [
+        "LingBot-VLA 2.0"
+      ],
+      "facets": {
+        "survey_section": "5. Applications > 5.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "From Foundation to Application: Improving VLA Models in Practice (LingBot-VLA 2.0)",
+          "Date": "07/07/2026",
+          "Key Contribution": "Trained on ~60,000 hours across 20 robot configurations — the largest VLA corpus reported to date; whole-body action spaces, predictive dynamics modeling, strong cross-embodiment mobile manipulation on the GM-100 benchmark"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "5. Applications > 5.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "dynamics model",
+        "benchmark",
+        "corpus",
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: World models, Benchmarks, Datasets, Embodied & VLA",
+        "Matched: dynamics model, benchmark, corpus, vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b35f7edbd93c526ac5575aa4487932fc42d13b7fa9b63efd2c5eb831e2c058c8"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:gigaworld-1-wmbench:https-arxiv-org-abs-2607-02642",
+      "title": "GigaWorld-1 + WMBench",
+      "url": "https://arxiv.org/abs/2607.02642",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "benchmark",
+        "dataset",
+        "post_training"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 57.77,
+      "score_version": 1,
+      "published_at": "2026-07-02T00:00:00+00:00",
+      "summary": "Type: World model specialized for robot policy evaluation + benchmark from real teleoperation data & matched rollouts. Key Result: Finds evaluation quality depends on long-horizon, action-faithful rollout consistency — not short-term visual realism; action encoding, memory design, and eval-focused training drive real-behavior alignment; code, models, datasets released",
+      "facets": {
+        "survey_section": "2. World Models > 2.1 World Models for Policy Evaluation",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model / System": "GigaWorld-1 + WMBench",
+          "Date": "07/02/2026",
+          "Type": "World model specialized for robot policy evaluation + benchmark from real teleoperation data & matched rollouts",
+          "Key Result": "Finds evaluation quality depends on long-horizon, action-faithful rollout consistency — not short-term visual realism; action encoding, memory design, and eval-focused training drive real-behavior alignment; code, models, datasets released"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "2. World Models > 2.1 World Models for Policy Evaluation",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "benchmark",
+        "dataset",
+        "datasets",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: World models, Benchmarks, Datasets, Post-training",
+        "Matched: world model, world models, benchmark, dataset, datasets, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:1471d9e04aebeb2ca161a52a6bf03a997a08417bd03bd2e4c73eb53f3a59e372"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:visually-grounded-self-reflection-for-vlms-via-rl:https-arxiv-org-abs-2607-02490",
+      "title": "Visually Grounded Self-Reflection for VLMs via RL",
+      "url": "https://arxiv.org/abs/2607.02490",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "post_training",
+        "grounding"
+      ],
+      "relevance_score": 98.0,
+      "evidence_score": 52.0,
+      "recency_score": 33.33,
+      "adoption_score": 0.0,
+      "total_score": 57.01,
+      "score_version": 1,
+      "published_at": "2026-07-02T00:00:00+00:00",
+      "summary": "RL Method: Random trajectory-prefix masking (error recovery) + buffered roll-ins from experience replay (diverse failure states). Key Result: Substantially improves OOD accuracy on visual grounding and spatial navigation under distribution shift",
+      "organizations": [
+        "VRRL"
+      ],
+      "facets": {
+        "survey_section": "3. Post-Training / Alignment",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "Visually Grounded Self-Reflection for VLMs via RL (VRRL)",
+          "Date": "07/02/2026",
+          "RL Method": "Random trajectory-prefix masking (error recovery) + buffered roll-ins from experience replay (diverse failure states)",
+          "Key Result": "Substantially improves OOD accuracy on visual grounding and spatial navigation under distribution shift"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "3. Post-Training / Alignment",
+      "matched_terms": [
+        "vlm",
+        "post training",
+        "alignment",
+        "visual grounding"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Post-training, Grounding & perception",
+        "Matched: vlm, post training, alignment, visual grounding",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b2bbb3c5cfbcb5c6b4d792690dcf12d538632a377084986c12be58bc2b8d1e29"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:roboworld:https-arxiv-org-abs-2607-01060",
+      "title": "RoboWorld",
+      "url": "https://arxiv.org/abs/2607.01060",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "world_model",
+        "post_training"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 56.94,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Type: Fast AR video world model + task-progress-aware VLM scoring for generalist policy evaluation. Key Result: Step Forcing (anchored + one-step self-forwarded contexts) cuts train-test mismatch; real-world alignment Pearson r = 0.989, Spearman ρ = 0.970",
+      "facets": {
+        "survey_section": "2. World Models > 2.1 World Models for Policy Evaluation",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model / System": "RoboWorld",
+          "Date": "07/01/2026",
+          "Type": "Fast AR video world model + task-progress-aware VLM scoring for generalist policy evaluation",
+          "Key Result": "Step Forcing (anchored + one-step self-forwarded contexts) cuts train-test mismatch; real-world alignment Pearson r = 0.989, Spearman ρ = 0.970"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "2. World Models > 2.1 World Models for Policy Evaluation",
+      "matched_terms": [
+        "vlm",
+        "world model",
+        "world models",
+        "video world",
+        "alignment"
+      ],
+      "rationale": [
+        "Topics: VLM releases, World models, Post-training",
+        "Matched: vlm, world model, world models, video world, alignment",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:11c921d6a413e12f324f7f0bc3976c9303301a3ec9aa3ea06db1a79f14b4947c"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:ispa-memory-efficient-autoregressive-video-generation-via-instance-specific-parametric-absorption:https-arxiv-org-abs-2607-00712",
+      "title": "ISPA: Memory-Efficient Autoregressive Video Generation via Instance-Specific Parametric Absorption",
+      "url": "https://arxiv.org/abs/2607.00712",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model",
+        "generation",
+        "efficiency"
+      ],
+      "relevance_score": 100.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 56.94,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Key Contribution: Absorbs historical context into model weights (least-squares, at warmup), converting full-attention to local-attention layers; up to 50% KV-cache reduction with maintained quality across 1.3B–14B models",
+      "facets": {
+        "survey_section": "2. World Models > 2.2 Efficient Long-Horizon Generation",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "ISPA: Memory-Efficient Autoregressive Video Generation via Instance-Specific Parametric Absorption",
+          "Date": "07/01/2026",
+          "Key Contribution": "Absorbs historical context into model weights (least-squares, at warmup), converting full-attention to local-attention layers; up to 50% KV-cache reduction with maintained quality across 1.3B–14B models"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "2. World Models > 2.2 Efficient Long-Horizon Generation",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "video generation",
+        "kv cache",
+        "memory efficient"
+      ],
+      "rationale": [
+        "Topics: World models, Visual generation, Efficiency",
+        "Matched: world model, world models, video generation, kv cache, memory efficient",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:bfb76c473102b728beeb818b8ac64c1bbd7baec1e64d1369424c8546cc95ed30"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:qwen3-7-plus:https-www-marktechpost-com-2026-06-02-alibabas-qwen-team-lau",
+      "title": "Qwen3.7-Plus",
+      "url": "https://www.marktechpost.com/2026/06/02/alibabas-qwen-team-launches-qwen3-7-plus-adding-vision-deep-reasoning-tool-invocation-and-autonomous-iteration-on-the-bailian-platform/",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "video",
+        "gui_agent"
+      ],
+      "relevance_score": 93.0,
+      "evidence_score": 52.0,
+      "recency_score": 0.0,
+      "adoption_score": 0.0,
+      "total_score": 46.78,
+      "score_version": 1,
+      "published_at": "2026-06-01T00:00:00+00:00",
+      "summary": "Architecture: Natively multimodal agent: image + video understanding, GUI grounding, tool invocation. Parameters: Undisclosed. Key Result: The multimodal member of the Qwen3.7 series — Qwen3.7-Max (05/20) is text-only",
+      "organizations": [
+        "Alibaba"
+      ],
+      "facets": {
+        "survey_section": "1. New SoTA & VLMs",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model": "Qwen3.7-Plus (Alibaba)",
+          "Date": "06/01/2026",
+          "Architecture": "Natively multimodal agent: image + video understanding, GUI grounding, tool invocation",
+          "Parameters": "Undisclosed",
+          "Key Result": "The multimodal member of the Qwen3.7 series — Qwen3.7-Max (05/20) is text-only"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "1. New SoTA & VLMs",
+      "matched_terms": [
+        "vlm",
+        "video understanding",
+        "gui grounding"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Video understanding, GUI & web agents",
+        "Matched: vlm, video understanding, gui grounding",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:a5281e34b9125e3a2f5b4b96ec039060171285f6ea3f65aa7aae672ab26c74a9"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:longvqubench:https-arxiv-org-abs-2607-01086",
+      "title": "LongVQUBench",
+      "url": "https://arxiv.org/abs/2607.01086",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "vlm_model",
+        "benchmark"
+      ],
+      "relevance_score": 66.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 44.02,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Task: Long-term video quality understanding (movies, surveillance, egocentric, animation). Size: 1,200+ videos / 1,500 questions. Key Finding: Across 14 LVLMs, performance degrades significantly with video length and reasoning depth",
+      "facets": {
+        "survey_section": "4. New Benchmarks",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Dataset": "LongVQUBench",
+          "Date": "07/01/2026",
+          "Task": "Long-term video quality understanding (movies, surveillance, egocentric, animation)",
+          "Size": "1,200+ videos / 1,500 questions",
+          "Key Finding": "Across 14 LVLMs, performance degrades significantly with video length and reasoning depth"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "4. New Benchmarks",
+      "matched_terms": [
+        "lvlm",
+        "benchmark"
+      ],
+      "rationale": [
+        "Topics: VLM releases, Benchmarks",
+        "Matched: lvlm, benchmark",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:aac11df656ed58d6d64fc1c1ed1b00145b61c25010e62e9ca539ba0ec44d7453"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:rosa-a-robotics-foundation-model-serving-system-for-robot-factories:https-arxiv-org-abs-2607-01088",
+      "title": "ROSA: A Robotics Foundation Model Serving System for Robot Factories",
+      "url": "https://arxiv.org/abs/2607.01088",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "embodied_vla"
+      ],
+      "relevance_score": 49.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 37.56,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Key Contribution: Serving infrastructure for robotics foundation models at factory scale — the MLOps layer arriving for VLA deployment",
+      "facets": {
+        "survey_section": "5. Applications > 5.1 Robotics & Embodied AI (VLA)",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Title": "ROSA: A Robotics Foundation Model Serving System for Robot Factories",
+          "Date": "07/01/2026",
+          "Key Contribution": "Serving infrastructure for robotics foundation models at factory scale — the MLOps layer arriving for VLA deployment"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "5. Applications > 5.1 Robotics & Embodied AI (VLA)",
+      "matched_terms": [
+        "vla",
+        "embodied",
+        "embodied ai"
+      ],
+      "rationale": [
+        "Topics: Embodied & VLA",
+        "Matched: vla, embodied, embodied ai",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:b532bcc795bb8a3e990f002326614828298510cbe27749a64783a25bc9cd0a2e"
+    },
+    {
+      "source": "VLM Survey Report",
+      "source_id": "report/2026-07-22:from-world-models-to-world-action-models-a-concise-tutorial:https-arxiv-org-abs-2607-00836",
+      "title": "From World Models to World Action Models: A Concise Tutorial",
+      "url": "https://arxiv.org/abs/2607.00836",
+      "event_kind": "curated",
+      "provenance": "curated",
+      "categories": [
+        "world_model"
+      ],
+      "relevance_score": 45.0,
+      "evidence_score": 52.0,
+      "recency_score": 30.0,
+      "adoption_score": 0.0,
+      "total_score": 36.04,
+      "score_version": 1,
+      "published_at": "2026-07-01T00:00:00+00:00",
+      "summary": "Type: Tutorial / survey. Key Result: Systematizes the world-model → world-action-model transition for robotics into four representative paradigms — a citable reference for the Era-4 framing",
+      "facets": {
+        "survey_section": "2. World Models > 2.1 World Models for Policy Evaluation",
+        "survey_origin": "report/2026-07-22",
+        "columns": {
+          "Model / System": "From World Models to World Action Models: A Concise Tutorial",
+          "Date": "07/01/2026",
+          "Type": "Tutorial / survey",
+          "Key Result": "Systematizes the world-model → world-action-model transition for robotics into four representative paradigms — a citable reference for the Era-4 framing"
+        },
+        "report_date": "2026-07-22"
+      },
+      "section": "2. World Models > 2.1 World Models for Policy Evaluation",
+      "matched_terms": [
+        "world model",
+        "world models",
+        "world action model"
+      ],
+      "rationale": [
+        "Topics: World models",
+        "Matched: world model, world models, world action model",
+        "Primary record: VLM Survey Report"
+      ],
+      "discovered_at": "2026-07-22T00:00:00+00:00",
+      "raw_payload_hash": "sha256:80d6950f417627d3aec9b5a097d2cdcff76b9f749bfa666cad977ed2b8bd3810"
+    }
+  ]
+}

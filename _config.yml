@@ -163,6 +163,10 @@ include:
   - _pages
   - files
 exclude:
+  # The VLM radar collector is a Python project that generates
+  # VLM_Survey/data/radar.json. Only the generated dashboard should be
+  # published, not its source, tests, or snapshot archive.
+  - VLM_Survey/collector
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

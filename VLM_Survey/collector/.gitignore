@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.env
+
+# Everything under data/ is tracked: snapshots are the canonical record, and
+# data/atlas.json is derived from a *separate* repository that CI does not always
+# have, so committing it keeps deploys hermetic.
+#
+# The published dashboard at ../data/radar.json is tracked too. Jekyll only
+# copies files; nothing regenerates it at deploy time.
+out/
+
+# Scratch checkout of the survey repository used by the daily workflow.
+.survey-source/
