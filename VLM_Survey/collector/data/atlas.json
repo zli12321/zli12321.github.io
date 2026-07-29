@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-29T05:02:08.063514+00:00",
+  "generated_at": "2026-07-29T19:03:19.547047+00:00",
   "available": true,
   "origin": {
-    "repository": "Vision-Language-Models-Overview",
-    "path": "/Users/tencentintern/Downloads/projects/VLM_survey/Vision-Language-Models-Overview",
+    "repository": ".survey-source",
+    "path": "/home/runner/work/zli12321.github.io/zli12321.github.io/.survey-source",
     "reports": [
       "2026-03-25",
       "2026-04-13",
