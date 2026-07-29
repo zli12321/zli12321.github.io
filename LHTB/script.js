@@ -144,8 +144,8 @@
     { name: "GPT-5.4",            vendor: "OpenAI",    logo: "openai",         mean: 0.272, solved: 1,  cost: 27.57 },
     { name: "GLM 5.1",            vendor: "Zhipu",     logo: "zhipu-color",    mean: 0.267, solved: 2,  cost: 5.13 },
     { name: "Kimi K2.6",          vendor: "Moonshot",  logo: "kimi-color",     mean: 0.255, solved: 0,  cost: 9.94 },
-    { name: "GPT-5.3 Codex",      vendor: "OpenAI",    logo: "openai",         mean: 0.203, solved: 2,  cost: 8.20 },
-    { name: "Grok 4.20",          vendor: "xAI",       logo: "grok-color",     mean: 0.080, solved: 0,  cost: 20.63 }
+    { name: "GPT-5.3 Codex",      vendor: "OpenAI",    logo: "openai",         mean: 0.215, solved: 2,  cost: 8.20 },
+    { name: "Grok 4.20",          vendor: "xAI",       logo: "grok-color",     mean: 0.102, solved: 0,  cost: 20.63 }
   ];
 
   // Tasks solved at the STRICT perfect-reward threshold R = 1.0 (d.solved is at R >= 0.95).

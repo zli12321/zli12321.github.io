@@ -67,6 +67,7 @@ submissions/long-horizon-terminal-bench/1.0/
 ```yaml
 agent: terminus-2
 model: your-provider/your-model
+reasoning_effort: default              # exact tier used: minimal/low/medium/high, adaptive, off, or "default"
 organization: Your Org
 repo: https://github.com/your/agent   # optional
 docs: https://.../model-card          # optional
