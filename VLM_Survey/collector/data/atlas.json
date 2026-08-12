@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-11T07:42:31.792485+00:00",
+  "generated_at": "2026-08-12T07:56:10.389205+00:00",
   "available": true,
   "origin": {
     "repository": ".survey-source",
@@ -13,7 +13,8 @@
       "2026-06-02",
       "2026-06-23",
       "2026-06-27",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-08-10"
     ]
   },
   "sections": [
@@ -21,6 +22,108 @@
       "key": "4-applications",
       "title": "4. Applications",
       "entries": [
+        {
+          "title": "RESPClinBench: Multimodal Clinical Decision-Making and Longitudinal Disease Tracking",
+          "url": "https://arxiv.org/abs/2608.04514",
+          "categories": [
+            "domain_apps"
+          ],
+          "section": "4. Applications > 4.4. Human-Centered AI > 4.4.3. Healthcare",
+          "published_at": "2026-08-07T00:00:00+00:00",
+          "columns": {
+            "Title": "RESPClinBench: Multimodal Clinical Decision-Making and Longitudinal Disease Tracking",
+            "Year": "08/07/2026"
+          },
+          "subsection": "4.4. Human-Centered AI > 4.4.3. Healthcare"
+        },
+        {
+          "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+          "url": "https://arxiv.org/abs/2608.03979",
+          "categories": [
+            "domain_apps",
+            "gui_agent"
+          ],
+          "section": "4. Applications > 4.4. Human-Centered AI > 4.4.1. Web Agent",
+          "published_at": "2026-08-05T00:00:00+00:00",
+          "columns": {
+            "Title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+            "Year": "08/05/2026"
+          },
+          "subsection": "4.4. Human-Centered AI > 4.4.1. Web Agent"
+        },
+        {
+          "title": "Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data",
+          "url": "https://huggingface.co/papers/2608.02580",
+          "categories": [
+            "embodied_vla"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-08-03T00:00:00+00:00",
+          "columns": {
+            "Title": "Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data",
+            "Year": "08/03/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "N₀-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens",
+          "url": "https://huggingface.co/papers/2607.23782",
+          "categories": [
+            "embodied_vla"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-07-26T00:00:00+00:00",
+          "columns": {
+            "Title": "N₀-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens",
+            "Year": "07/26/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents",
+          "url": "https://huggingface.co/papers/2607.22798",
+          "categories": [
+            "domain_apps",
+            "gui_agent"
+          ],
+          "section": "4. Applications > 4.4. Human-Centered AI > 4.4.1. Web Agent",
+          "published_at": "2026-07-24T00:00:00+00:00",
+          "columns": {
+            "Title": "StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents",
+            "Year": "07/24/2026"
+          },
+          "subsection": "4.4. Human-Centered AI > 4.4.1. Web Agent"
+        },
+        {
+          "title": "Metis: Memory Foundation Model",
+          "url": "https://huggingface.co/papers/2607.26760",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-07-01T00:00:00+00:00",
+          "columns": {
+            "Title": "Metis: Memory Foundation Model",
+            "Year": "07/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers",
+          "url": "https://huggingface.co/papers/2607.28611",
+          "categories": [
+            "generation"
+          ],
+          "section": "4. Applications > 4.2. Generative Visual Media Applications",
+          "published_at": "2026-07-01T00:00:00+00:00",
+          "columns": {
+            "Title": "Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers",
+            "Year": "07/2026"
+          },
+          "subsection": "4.2. Generative Visual Media Applications"
+        },
         {
           "title": "IMCBench: Multimodal LLMs in Image-grounded Medical Conversations",
           "url": "https://arxiv.org/abs/2606.28556",
@@ -2306,7 +2409,7 @@
           "subsection": "4.4. Human-Centered AI > 4.4.3. Healthcare"
         }
       ],
-      "count": 142
+      "count": 149
     },
     {
       "key": "2-benchmarks-and-evaluation",
@@ -2642,6 +2745,38 @@
           "subsection": "Benchmark for Unified Models"
         },
         {
+          "title": "GST-Bench",
+          "url": "https://arxiv.org/abs/2608.05747",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Global Spatial Awareness from Continuous Video. Eval Protocol: Long-traversal scene integration (vs. single-viewpoint local perception)",
+          "columns": {
+            "Dataset": "GST-Bench",
+            "Task": "Global Spatial Awareness from Continuous Video",
+            "Eval Protocol": "Long-traversal scene integration (vs. single-viewpoint local perception)"
+          },
+          "subsection": "Video Understanding"
+        },
+        {
+          "title": "ChronoVision",
+          "url": "https://arxiv.org/abs/2608.05631",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Multi-step Temporal Reasoning. Eval Protocol: Latent state reconstruction",
+          "columns": {
+            "Dataset": "ChronoVision",
+            "Task": "Multi-step Temporal Reasoning",
+            "Eval Protocol": "Latent state reconstruction"
+          },
+          "subsection": "Video Understanding"
+        },
+        {
           "title": "VGenST-Bench",
           "url": "https://arxiv.org/abs/2605.22570",
           "categories": [
@@ -2954,6 +3089,53 @@
             "https://huggingface.co/lmarena-ai"
           ],
           "subsection": "Multimodal Conversation"
+        },
+        {
+          "title": "HumanCLAW",
+          "url": "https://arxiv.org/abs/2607.27180",
+          "categories": [
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Can a VLM Act Through a Body?. Eval Protocol: Decouples the decision from motor control so failures attribute to perception, planning, or actuation",
+          "columns": {
+            "Dataset": "HumanCLAW",
+            "Task": "Can a VLM Act Through a Body?",
+            "Eval Protocol": "Decouples the decision from motor control so failures attribute to perception, planning, or actuation"
+          },
+          "subsection": "Multimodal General Intelligence"
+        },
+        {
+          "title": "PerceptionBench",
+          "url": "https://arxiv.org/abs/2607.24957",
+          "categories": [
+            "benchmark"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Atomic Visual Perception. Eval Protocol: Decomposes perception into primitive operations rather than end-task accuracy",
+          "columns": {
+            "Dataset": "PerceptionBench",
+            "Task": "Atomic Visual Perception",
+            "Eval Protocol": "Decomposes perception into primitive operations rather than end-task accuracy"
+          },
+          "subsection": "Multimodal General Intelligence"
+        },
+        {
+          "title": "C$^3$PO",
+          "url": "https://arxiv.org/abs/2608.05381",
+          "categories": [
+            "benchmark",
+            "omni_unified"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Cross-Modal Composition & Counterfactuals (omni-modal). Eval Protocol: Compositional and counterfactual probes for any-to-any models",
+          "columns": {
+            "Dataset": "C$^3$PO",
+            "Task": "Cross-Modal Composition & Counterfactuals (omni-modal)",
+            "Eval Protocol": "Compositional and counterfactual probes for any-to-any models"
+          },
+          "subsection": "Multimodal General Intelligence"
         },
         {
           "title": "OmniEarth",
@@ -3363,6 +3545,38 @@
           "subsection": "Visual Reasoning / VQA (+ Multilingual & OCR)"
         },
         {
+          "title": "ExtractBench",
+          "url": "https://arxiv.org/abs/2607.29677",
+          "categories": [
+            "benchmark",
+            "document_ocr"
+          ],
+          "section": "2. Benchmarks and Evaluation > Visual Text / Document Understanding (+ Charts)",
+          "summary": "Task: Schema-Guided Enterprise Document Extraction. Eval Protocol: Scored against a target schema rather than free-form answers",
+          "columns": {
+            "Dataset": "ExtractBench",
+            "Task": "Schema-Guided Enterprise Document Extraction",
+            "Eval Protocol": "Scored against a target schema rather than free-form answers"
+          },
+          "subsection": "Visual Text / Document Understanding (+ Charts)"
+        },
+        {
+          "title": "ConfBench",
+          "url": "https://arxiv.org/abs/2608.01792",
+          "categories": [
+            "benchmark",
+            "document_ocr"
+          ],
+          "section": "2. Benchmarks and Evaluation > Visual Text / Document Understanding (+ Charts)",
+          "summary": "Task: Confidence Calibration on Document Extraction. Eval Protocol: Asks whether the model knows when it is wrong, not only whether it is right",
+          "columns": {
+            "Dataset": "ConfBench",
+            "Task": "Confidence Calibration on Document Extraction",
+            "Eval Protocol": "Asks whether the model knows when it is wrong, not only whether it is right"
+          },
+          "subsection": "Visual Text / Document Understanding (+ Charts)"
+        },
+        {
           "title": "TableVision",
           "url": "https://arxiv.org/abs/2604.03660",
           "categories": [
@@ -3451,6 +3665,37 @@
             "https://github.com/vis-nlp/ChartQA"
           ],
           "subsection": "Visual Text / Document Understanding (+ Charts)"
+        },
+        {
+          "title": "FilmBench",
+          "url": "https://arxiv.org/abs/2607.24241",
+          "categories": [
+            "benchmark",
+            "generation"
+          ],
+          "section": "2. Benchmarks and Evaluation > Text‑to‑Image Generation",
+          "summary": "Task: Film-Grade Cinematic Video Generation. Eval Protocol: Craft criteria — shot grammar, continuity, staging",
+          "columns": {
+            "Dataset": "FilmBench",
+            "Task": "Film-Grade Cinematic Video Generation",
+            "Eval Protocol": "Craft criteria — shot grammar, continuity, staging"
+          },
+          "subsection": "Text‑to‑Image Generation"
+        },
+        {
+          "title": "MPIE-Bench",
+          "url": "https://arxiv.org/abs/2607.27616",
+          "categories": [
+            "benchmark"
+          ],
+          "section": "2. Benchmarks and Evaluation > Text‑to‑Image Generation",
+          "summary": "Task: Anatomically Plausible Multi-Person Interaction Editing. Eval Protocol: Anatomical plausibility under multi-subject edits",
+          "columns": {
+            "Dataset": "MPIE-Bench",
+            "Task": "Anatomically Plausible Multi-Person Interaction Editing",
+            "Eval Protocol": "Anatomical plausibility under multi-subject edits"
+          },
+          "subsection": "Text‑to‑Image Generation"
         },
         {
           "title": "MSCOCO‑30K",
@@ -3749,6 +3994,26 @@
             "https://github.com/chenyil6/MVI-Bench"
           ],
           "subsection": "Hallucination Detection / Control"
+        },
+        {
+          "title": "OSReward",
+          "url": "https://arxiv.org/abs/2607.28609",
+          "categories": [
+            "benchmark",
+            "embodied_vla",
+            "vlm_model",
+            "dataset",
+            "post_training",
+            "gui_agent"
+          ],
+          "section": "2. Benchmarks and Evaluation > 2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM",
+          "summary": "Domain: Computer-Use Agents. Type: Cross-platform reward-model evaluation",
+          "columns": {
+            "Benchmark": "OSReward",
+            "Domain": "Computer-Use Agents",
+            "Type": "Cross-platform reward-model evaluation"
+          },
+          "subsection": "2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM"
         },
         {
           "title": "Drive-Bench",
@@ -4254,12 +4519,155 @@
           "subsection": "2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM"
         }
       ],
-      "count": 92
+      "count": 102
     },
     {
       "key": "1-sota-vlms",
       "title": "1. SoTA VLMs",
       "entries": [
+        {
+          "title": "HelloWorld",
+          "url": "https://arxiv.org/abs/2608.05070",
+          "categories": [
+            "vlm_model",
+            "world_model"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-06T00:00:00+00:00",
+          "summary": "Type: Video world model with socially interactive characters. Key Result: Pushes world models past physics and navigation into social dynamics: characters that respond to the viewer rather than merely persisting",
+          "columns": {
+            "Model": "HelloWorld",
+            "Date": "08/06/2026",
+            "Type": "Video world model with socially interactive characters",
+            "Key Result": "Pushes world models past physics and navigation into social dynamics: characters that respond to the viewer rather than merely persisting"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "DiffusionGemma",
+          "url": "https://arxiv.org/abs/2608.00146",
+          "categories": [
+            "vlm_model"
+          ],
+          "section": "1. SoTA VLMs",
+          "published_at": "2026-08-05T00:00:00+00:00",
+          "summary": "Architecture: Diffusion (non-autoregressive) language model in the Gemma family. Training Data: Undisclosed. Parameters: 26B total · 4B active. Vision Encoder/Tokenizer: Native multimodal. Pretrained Backbone Model: Gemma",
+          "organizations": [
+            "Google"
+          ],
+          "columns": {
+            "Model": "DiffusionGemma (Google)",
+            "Year": "08/05/2026",
+            "Architecture": "Diffusion (non-autoregressive) language model in the Gemma family",
+            "Training Data": "Undisclosed",
+            "Parameters": "26B total · 4B active",
+            "Vision Encoder/Tokenizer": "Native multimodal",
+            "Pretrained Backbone Model": "Gemma"
+          },
+          "subsection": ""
+        },
+        {
+          "title": "Hunyuan3D-Buffalo 1.0",
+          "url": "https://arxiv.org/abs/2608.02711",
+          "categories": [
+            "vlm_model",
+            "omni_unified"
+          ],
+          "section": "1. SoTA VLMs",
+          "published_at": "2026-08-05T00:00:00+00:00",
+          "summary": "Architecture: Unified multimodal — 3D generation + understanding + editing. Training Data: Undisclosed. Parameters: Undisclosed. Vision Encoder/Tokenizer: Undisclosed. Pretrained Backbone Model: Undisclosed",
+          "organizations": [
+            "Tencent"
+          ],
+          "columns": {
+            "Model": "Hunyuan3D-Buffalo 1.0 (Tencent)",
+            "Year": "08/05/2026",
+            "Architecture": "Unified multimodal — 3D generation + understanding + editing",
+            "Training Data": "Undisclosed",
+            "Parameters": "Undisclosed",
+            "Vision Encoder/Tokenizer": "Undisclosed",
+            "Pretrained Backbone Model": "Undisclosed"
+          },
+          "subsection": ""
+        },
+        {
+          "title": "WorldExam",
+          "url": "https://arxiv.org/abs/2608.02603",
+          "categories": [
+            "vlm_model",
+            "world_model"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-04T00:00:00+00:00",
+          "summary": "What It Shows: Separates apparent appearance from inherent reactivity: a world model can look right while reacting wrong, formalising the critique that visual realism has been over-weighted",
+          "columns": {
+            "Title": "WorldExam",
+            "Date": "08/04/2026",
+            "What It Shows": "Separates apparent appearance from inherent reactivity: a world model can look right while reacting wrong, formalising the critique that visual realism has been over-weighted"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "Qwen3.8-Max",
+          "url": "https://www.aimadetools.com/blog/qwen-3-8-max-vs-kimi-k3/",
+          "categories": [
+            "vlm_model",
+            "benchmark"
+          ],
+          "section": "1. SoTA VLMs",
+          "published_at": "2026-08-03T00:00:00+00:00",
+          "summary": "Architecture: Sparse MoE + hybrid attention; text + vision in, 1M context; Vision Arena #2. Training Data: Undisclosed. Parameters: 2.4T total · 95B active. Vision Encoder/Tokenizer: Native multimodal. Pretrained Backbone Model: Qwen3.8",
+          "organizations": [
+            "Alibaba"
+          ],
+          "columns": {
+            "Model": "Qwen3.8-Max (Alibaba)",
+            "Year": "08/03/2026",
+            "Architecture": "Sparse MoE + hybrid attention; text + vision in, 1M context; Vision Arena #2",
+            "Training Data": "Undisclosed",
+            "Parameters": "2.4T total · 95B active",
+            "Vision Encoder/Tokenizer": "Native multimodal",
+            "Pretrained Backbone Model": "Qwen3.8"
+          },
+          "subsection": ""
+        },
+        {
+          "title": "VideoCoCo",
+          "url": "https://arxiv.org/abs/2607.27380",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "generation"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-07-31T00:00:00+00:00",
+          "summary": "Type: Agentic dual-engine text-to-video with Code-as-CoT. Key Result: Infers temporal evolution symbolically via generated code instead of implicitly, then renders — a hybrid attack on physics violations in T2V",
+          "columns": {
+            "Model": "VideoCoCo",
+            "Date": "07/31/2026",
+            "Type": "Agentic dual-engine text-to-video with Code-as-CoT",
+            "Key Result": "Infers temporal evolution symbolically via generated code instead of implicitly, then renders — a hybrid attack on physics violations in T2V"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "StatePlay",
+          "url": "https://huggingface.co/papers/2607.26754",
+          "categories": [
+            "vlm_model",
+            "world_model"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-07-29T00:00:00+00:00",
+          "summary": "Type: State-aware game world model. Key Result: Enforces mechanics consistency through explicit state, an answer to the persistent-state critique below",
+          "columns": {
+            "Model": "StatePlay",
+            "Date": "07/29/2026",
+            "Type": "State-aware game world model",
+            "Key Result": "Enforces mechanics consistency through explicit state, an answer to the persistent-state critique below"
+          },
+          "subsection": "1.1. World Models"
+        },
         {
           "title": "Gemini 3.6 Flash",
           "url": "https://deepmind.google/models/gemini/",
@@ -6295,12 +6703,59 @@
           "subsection": ""
         }
       ],
-      "count": 82
+      "count": 89
     },
     {
       "key": "5-challenges",
       "title": "5. Challenges",
       "entries": [
+        {
+          "title": "TruthLens: Object Hallucination Detection via Self-Evaluating Truthfulness Scores in LVLMs",
+          "url": "https://arxiv.org/abs/2608.05616",
+          "categories": [
+            "safety",
+            "hallucination",
+            "vlm_model"
+          ],
+          "section": "5. Challenges > 5.1 Hallucination",
+          "published_at": "2026-08-07T00:00:00+00:00",
+          "columns": {
+            "Title": "TruthLens: Object Hallucination Detection via Self-Evaluating Truthfulness Scores in LVLMs",
+            "Year": "08/07/2026"
+          },
+          "subsection": "5.1 Hallucination"
+        },
+        {
+          "title": "OmniPack: Unified Token Compression for Efficient Omni-modal Large Language Models",
+          "url": "https://arxiv.org/abs/2608.03812",
+          "categories": [
+            "safety",
+            "efficiency",
+            "omni_unified"
+          ],
+          "section": "5. Challenges > 5.5 Efficient Training and Fine-Tuning",
+          "published_at": "2026-08-05T00:00:00+00:00",
+          "columns": {
+            "Title": "OmniPack: Unified Token Compression for Efficient Omni-modal Large Language Models",
+            "Year": "08/05/2026"
+          },
+          "subsection": "5.5 Efficient Training and Fine-Tuning"
+        },
+        {
+          "title": "GSTEP: Global Spatio-Temporal Density-Driven Visual Token Pruning for Efficient Video LLMs",
+          "url": "https://arxiv.org/abs/2608.03083",
+          "categories": [
+            "safety",
+            "efficiency"
+          ],
+          "section": "5. Challenges > 5.5 Efficient Training and Fine-Tuning",
+          "published_at": "2026-08-05T00:00:00+00:00",
+          "columns": {
+            "Title": "GSTEP: Global Spatio-Temporal Density-Driven Visual Token Pruning for Efficient Video LLMs",
+            "Year": "08/05/2026"
+          },
+          "subsection": "5.5 Efficient Training and Fine-Tuning"
+        },
         {
           "title": "FastOCR: Dynamic Visual Fixation via KV Cache Pruning",
           "url": "https://arxiv.org/abs/2605.17447",
@@ -7677,12 +8132,42 @@
           "subsection": "5.5 Efficient Training and Fine-Tuning"
         }
       ],
-      "count": 78
+      "count": 81
     },
     {
       "key": "3-post-training",
       "title": "3. Post-Training",
       "entries": [
+        {
+          "title": "Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes",
+          "url": "https://arxiv.org/abs/2608.05000",
+          "categories": [
+            "post_training",
+            "vlm_model"
+          ],
+          "section": "3. Post-Training > 3.2. Finetuning for VLM",
+          "published_at": "2026-08-01T00:00:00+00:00",
+          "columns": {
+            "Title": "Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes",
+            "Year": "08/2026"
+          },
+          "subsection": "3.2. Finetuning for VLM"
+        },
+        {
+          "title": "SpatialCLI: Learning to Reason With Spatial Tools, Then Without Them",
+          "url": "https://huggingface.co/papers/2607.27703",
+          "categories": [
+            "post_training",
+            "vlm_model"
+          ],
+          "section": "3. Post-Training > 3.2. Finetuning for VLM",
+          "published_at": "2026-07-01T00:00:00+00:00",
+          "columns": {
+            "Title": "SpatialCLI: Learning to Reason With Spatial Tools, Then Without Them",
+            "Year": "07/2026"
+          },
+          "subsection": "3.2. Finetuning for VLM"
+        },
         {
           "title": "ZPPO: Zone of Proximal Policy Optimization — Teacher in Prompts, Not Gradients",
           "url": "https://arxiv.org/abs/2606.18216",
@@ -8753,55 +9238,55 @@
           "subsection": "3.4. Prompt Optimization"
         }
       ],
-      "count": 63
+      "count": 65
     }
   ],
   "counts": {
-    "entries": 457,
+    "entries": 486,
     "sections": 5,
-    "report_entries": 196,
-    "reports": 8
+    "report_entries": 225,
+    "reports": 9
   },
   "category_counts": [
     {
       "category": "vlm_model",
       "label": "VLM releases",
-      "count": 249
-    },
-    {
-      "category": "embodied_vla",
-      "label": "Embodied & VLA",
-      "count": 122
+      "count": 262
     },
     {
       "category": "benchmark",
       "label": "Benchmarks",
-      "count": 118
+      "count": 130
+    },
+    {
+      "category": "embodied_vla",
+      "label": "Embodied & VLA",
+      "count": 126
     },
     {
       "category": "post_training",
       "label": "Post-training",
-      "count": 95
+      "count": 98
     },
     {
       "category": "safety",
       "label": "Safety & fairness",
-      "count": 84
+      "count": 87
     },
     {
       "category": "domain_apps",
       "label": "Applied domains",
-      "count": 47
+      "count": 50
     },
     {
       "category": "dataset",
       "label": "Datasets",
-      "count": 44
+      "count": 45
     },
     {
       "category": "hallucination",
       "label": "Hallucination",
-      "count": 33
+      "count": 34
     },
     {
       "category": "reasoning",
@@ -8811,37 +9296,37 @@
     {
       "category": "world_model",
       "label": "World models",
-      "count": 24
+      "count": 28
     },
     {
       "category": "efficiency",
       "label": "Efficiency",
-      "count": 21
+      "count": 23
     },
     {
       "category": "video",
       "label": "Video understanding",
-      "count": 19
+      "count": 21
     },
     {
       "category": "document_ocr",
       "label": "Document & OCR",
-      "count": 19
+      "count": 21
     },
     {
       "category": "generation",
       "label": "Visual generation",
-      "count": 16
+      "count": 19
     },
     {
       "category": "gui_agent",
       "label": "GUI & web agents",
-      "count": 15
+      "count": 18
     },
     {
       "category": "omni_unified",
       "label": "Omni & unified",
-      "count": 5
+      "count": 8
     },
     {
       "category": "grounding",
