@@ -873,6 +873,16 @@
     submitter: d.vendor === "Anthropic" ? "Lehigh University" : "Tencent",
     org: d.vendor, date: "2026-07-01", verified: true
   }));
+
+  // Runs submitted after the paper. They share the harness and the 90-minute
+  // budget, so they rank here, but they stay out of LB: that array carries the
+  // paper's figures, including per-token cost estimates these runs don't have.
+  // st = tasks solved at reward >= 0.9 / >= 0.95 / = 1.0.
+  COMMUNITY.push({
+    agent: "Terminus-2", name: "Kimi K3", vendor: "Moonshot", logo: "kimi-color",
+    mean: 0.378, st: [7, 6, 5],
+    submitter: "Tencent", org: "Moonshot", date: "2026-07-22", verified: true
+  });
   const CHECK = `<svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`;
 
   function renderCommunity() {
