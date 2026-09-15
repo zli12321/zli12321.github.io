@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T12:03:14.452804+00:00",
+  "generated_at": "2026-09-15T11:53:18.487675+00:00",
   "available": true,
   "origin": {
     "repository": ".survey-source",
@@ -14,7 +14,8 @@
       "2026-06-23",
       "2026-06-27",
       "2026-07-22",
-      "2026-08-10"
+      "2026-08-10",
+      "2026-09-13"
     ]
   },
   "sections": [
@@ -22,6 +23,313 @@
       "key": "4-applications",
       "title": "4. Applications",
       "entries": [
+        {
+          "title": "AuK (Tencent Hunyuan): open-source foundation model for speech generation and editing — multimodal LLM + jointly trained VAE + hybrid rectified-flow Transformer (MMDiT → single-stream DiT); AuK-Flash gives 4.5× wall-clock speedup via 4-step inference; trained on ~3.03B instruction-audio instances / 1.95M h",
+          "url": "https://arxiv.org/abs/2609.08936",
+          "categories": [
+            "generation",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.2. Generative Visual Media Applications",
+          "published_at": "2026-09-08T00:00:00+00:00",
+          "columns": {
+            "Title": "AuK (Tencent Hunyuan): open-source foundation model for speech generation and editing — multimodal LLM + jointly trained VAE + hybrid rectified-flow Transformer (MMDiT → single-stream DiT); AuK-Flash gives 4.5× wall-clock speedup via 4-step inference; trained on ~3.03B instruction-audio instances / 1.95M h",
+            "Year": "09/08/2026"
+          },
+          "artifact_urls": [
+            "https://github.com/Tencent-Hunyuan/AuK"
+          ],
+          "subsection": "4.2. Generative Visual Media Applications"
+        },
+        {
+          "title": "SimpleMemVLA: Native-Video Memory for Vision-Language-Action Models",
+          "url": "https://arxiv.org/abs/2609.05533",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-09-06T00:00:00+00:00",
+          "columns": {
+            "Title": "SimpleMemVLA: Native-Video Memory for Vision-Language-Action Models",
+            "Year": "09/06/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "WM-R1: Training GUI Agents to Reason and Leverage World Models with RL",
+          "url": "https://arxiv.org/abs/2608.27508",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model",
+            "world_model",
+            "gui_agent"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-09-01T00:00:00+00:00",
+          "columns": {
+            "Title": "WM-R1: Training GUI Agents to Reason and Leverage World Models with RL",
+            "Year": "09/01/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+          "url": "https://arxiv.org/abs/2608.30935",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model",
+            "spatial_3d"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-31T00:00:00+00:00",
+          "columns": {
+            "Title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+            "Year": "08/31/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "ZimaBlue: Evolving Generalizable World-Action Models via >120k h video pre-training — 30 Hz on RTX 4090, 36.1% → 77.8% zero-shot real-robot success",
+          "url": "https://arxiv.org/abs/2609.00188",
+          "categories": [
+            "embodied_vla",
+            "world_model"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-08-31T00:00:00+00:00",
+          "columns": {
+            "Title": "ZimaBlue: Evolving Generalizable World-Action Models via >120k h video pre-training — 30 Hz on RTX 4090, 36.1% → 77.8% zero-shot real-robot success",
+            "Year": "08/31/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation — dual-channel pointing + residual-VQ action tokenizer; SoTA monocular success across 10 navigation sims",
+          "url": "https://arxiv.org/abs/2608.30935",
+          "categories": [
+            "embodied_vla",
+            "vlm_model",
+            "grounding",
+            "spatial_3d"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.2. Navigation",
+          "published_at": "2026-08-31T00:00:00+00:00",
+          "columns": {
+            "Title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation — dual-channel pointing + residual-VQ action tokenizer; SoTA monocular success across 10 navigation sims",
+            "Year": "08/31/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.2. Navigation"
+        },
+        {
+          "title": "Qwen-Drive-1.0 (Alibaba): first VL foundation model for autonomous driving — pretrained VLM backbone + BEV perception head + Planning Expert",
+          "url": "https://arxiv.org/abs/2609.00111",
+          "categories": [
+            "embodied_vla",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.4. Autonomous Driving",
+          "published_at": "2026-08-31T00:00:00+00:00",
+          "columns": {
+            "Title": "Qwen-Drive-1.0 (Alibaba): first VL foundation model for autonomous driving — pretrained VLM backbone + BEV perception head + Planning Expert",
+            "Year": "08/31/2026"
+          },
+          "artifact_urls": [
+            "https://github.com/QwenLM/Qwen-Drive-1.0"
+          ],
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.4. Autonomous Driving"
+        },
+        {
+          "title": "UI-Venus-2 Technical Report — open-source foundation GUI agent",
+          "url": "https://arxiv.org/abs/2609.00028",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model",
+            "gui_agent"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-27T00:00:00+00:00",
+          "columns": {
+            "Title": "UI-Venus-2 Technical Report — open-source foundation GUI agent (mobile, web, desktop)",
+            "Year": "08/27/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for VLAs (VLAct) — 82.6% LIBERO-Plus, 92.5% RoboTwin 2.0 with 20% of trajectories",
+          "url": "https://arxiv.org/abs/2608.27550",
+          "categories": [
+            "embodied_vla"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-08-27T00:00:00+00:00",
+          "watchlist": [
+            "EmbodiedBench / CALVIN"
+          ],
+          "columns": {
+            "Title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for VLAs (VLAct) — 82.6% LIBERO-Plus, 92.5% RoboTwin 2.0 with 20% of trajectories",
+            "Year": "08/27/2026"
+          },
+          "artifact_urls": [
+            "https://starvla.github.io/VLAct"
+          ],
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "Embodied-Navigator (TAMP-Nav): Point, Think, Memorize, Align — 66.2% SR on R2R-CE",
+          "url": "https://arxiv.org/abs/2608.17512",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-18T00:00:00+00:00",
+          "columns": {
+            "Title": "Embodied-Navigator (TAMP-Nav): Point, Think, Memorize, Align — 66.2% SR on R2R-CE",
+            "Year": "08/18/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "Embodied-Navigator (TAMP-Nav): Point-Think-Memorize-Align with Space-Time Indicator memory — 66.2% SR on R2R-CE using only 90k training trajectories",
+          "url": "https://arxiv.org/abs/2608.17512",
+          "categories": [
+            "embodied_vla"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.2. Navigation",
+          "published_at": "2026-08-18T00:00:00+00:00",
+          "columns": {
+            "Title": "Embodied-Navigator (TAMP-Nav): Point-Think-Memorize-Align with Space-Time Indicator memory — 66.2% SR on R2R-CE using only 90k training trajectories",
+            "Year": "08/18/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.2. Navigation"
+        },
+        {
+          "title": "UI-Mate: Open-Weight Foundation GUI Agent (UI-Mate-27B on Qwen3.6-27B; 77.0% OSWorld-Verified, 66.2% WindowsAgentArena)",
+          "url": "https://arxiv.org/abs/2608.15930",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model",
+            "gui_agent"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-16T00:00:00+00:00",
+          "watchlist": [
+            "WebArena / OSWorld"
+          ],
+          "columns": {
+            "Title": "UI-Mate: Open-Weight Foundation GUI Agent (UI-Mate-27B on Qwen3.6-27B; 77.0% OSWorld-Verified, 66.2% WindowsAgentArena)",
+            "Year": "08/16/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "ComBodied Agents: A New Paradigm of Human-Centric Agentic AI",
+          "url": "https://arxiv.org/abs/2608.10915",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-14T00:00:00+00:00",
+          "columns": {
+            "Title": "ComBodied Agents: A New Paradigm of Human-Centric Agentic AI",
+            "Year": "08/14/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "Intern-S2-Preview: Scientific Agentic Foundation Model — 397B backbone + 4B memory decoder (Intern-MemDec-4B); Biology-Instructions 56.92 → 60.32 without touching the backbone",
+          "url": "https://arxiv.org/abs/2608.13505",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-13T00:00:00+00:00",
+          "columns": {
+            "Title": "Intern-S2-Preview: Scientific Agentic Foundation Model — 397B backbone + 4B memory decoder (Intern-MemDec-4B); Biology-Instructions 56.92 → 60.32 without touching the backbone",
+            "Year": "08/13/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation — WorldArena 2.0 Track 1 winner",
+          "url": "https://arxiv.org/abs/2608.13489",
+          "categories": [
+            "embodied_vla",
+            "world_model"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-08-13T00:00:00+00:00",
+          "columns": {
+            "Title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation — WorldArena 2.0 Track 1 winner",
+            "Year": "08/13/2026"
+          },
+          "artifact_urls": [
+            "https://github.com/AMAP-ML/DreamX-Phi"
+          ],
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action",
+          "url": "https://arxiv.org/abs/2608.11739",
+          "categories": [
+            "embodied_vla",
+            "benchmark",
+            "vlm_model"
+          ],
+          "section": "4. Applications > 4.1 Embodied VLM Agents",
+          "published_at": "2026-08-12T00:00:00+00:00",
+          "columns": {
+            "Title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action",
+            "Year": "08/12/2026"
+          },
+          "subsection": "4.1 Embodied VLM Agents"
+        },
+        {
+          "title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action — 76.7% R1lite/R1pro, 82.5% zero-shot DROID, 98.9% LIBERO",
+          "url": "https://arxiv.org/abs/2608.11739",
+          "categories": [
+            "embodied_vla"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.1. Manipulation",
+          "published_at": "2026-08-12T00:00:00+00:00",
+          "watchlist": [
+            "EmbodiedBench / CALVIN"
+          ],
+          "columns": {
+            "Title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action — 76.7% R1lite/R1pro, 82.5% zero-shot DROID, 98.9% LIBERO",
+            "Year": "08/12/2026"
+          },
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.1. Manipulation"
+        },
+        {
+          "title": "SimWAM: Simple World-Action Model for End-to-End Autonomous Driving — 91.5 PDMS NAVSIM, zero-shot to nuScenes",
+          "url": "https://arxiv.org/abs/2608.07468",
+          "categories": [
+            "embodied_vla",
+            "world_model"
+          ],
+          "section": "4. Applications > 4.3. Robotics and Embodied AI > 4.3.4. Autonomous Driving",
+          "published_at": "2026-08-07T00:00:00+00:00",
+          "columns": {
+            "Title": "SimWAM: Simple World-Action Model for End-to-End Autonomous Driving — 91.5 PDMS NAVSIM, zero-shot to nuScenes",
+            "Year": "08/07/2026"
+          },
+          "artifact_urls": [
+            "https://github.com/H-EmbodVis/SimWAM/"
+          ],
+          "subsection": "4.3. Robotics and Embodied AI > 4.3.4. Autonomous Driving"
+        },
         {
           "title": "RESPClinBench: Multimodal Clinical Decision-Making and Longitudinal Disease Tracking",
           "url": "https://arxiv.org/abs/2608.04514",
@@ -2409,7 +2717,7 @@
           "subsection": "4.4. Human-Centered AI > 4.4.3. Healthcare"
         }
       ],
-      "count": 149
+      "count": 167
     },
     {
       "key": "2-benchmarks-and-evaluation",
@@ -2743,6 +3051,77 @@
             "https://vchitect.github.io/Uni-MMMU-Project"
           ],
           "subsection": "Benchmark for Unified Models"
+        },
+        {
+          "title": "VideoGAIA",
+          "url": "https://arxiv.org/abs/2608.14718",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Agentic Video Understanding (tool-augmented multi-turn). Eval Protocol: Human/model co-designed, triple-expert-verified. Annotators: Expert. Size (K): 0.27 (271 tasks)",
+          "columns": {
+            "Dataset": "VideoGAIA",
+            "Task": "Agentic Video Understanding (tool-augmented multi-turn)",
+            "Eval Protocol": "Human/model co-designed, triple-expert-verified",
+            "Annotators": "Expert",
+            "Size (K)": "0.27 (271 tasks)"
+          },
+          "subsection": "Video Understanding"
+        },
+        {
+          "title": "OmniAssistBench",
+          "url": "https://arxiv.org/abs/2608.21360",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Real-Time Omni-LLM Assistants. Eval Protocol: Multi-turn guided interaction with predefined route priors. Annotators: Expert (>1000 h)",
+          "columns": {
+            "Dataset": "OmniAssistBench",
+            "Task": "Real-Time Omni-LLM Assistants",
+            "Eval Protocol": "Multi-turn guided interaction with predefined route priors",
+            "Annotators": "Expert (>1000 h)"
+          },
+          "artifact_urls": [
+            "https://xianyunsun.github.io/OmniAssistBench/"
+          ],
+          "subsection": "Video Understanding"
+        },
+        {
+          "title": "EgoMonth",
+          "url": "https://arxiv.org/abs/2608.13113",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Month-Level Egocentric Video / Long-Term Spatiotemporal Memory. Eval Protocol: 14-task Schema Consolidation / Episodic Indexing / Cascading Reasoning framework. Annotators: Human. Size (K): 1.44 (300+ h from 20 participants)",
+          "columns": {
+            "Dataset": "EgoMonth",
+            "Task": "Month-Level Egocentric Video / Long-Term Spatiotemporal Memory",
+            "Eval Protocol": "14-task Schema Consolidation / Episodic Indexing / Cascading Reasoning framework",
+            "Annotators": "Human",
+            "Size (K)": "1.44 (300+ h from 20 participants)"
+          },
+          "subsection": "Video Understanding"
+        },
+        {
+          "title": "Video-IFBench",
+          "url": "https://arxiv.org/abs/2608.25529",
+          "categories": [
+            "benchmark",
+            "video"
+          ],
+          "section": "2. Benchmarks and Evaluation > Video Understanding",
+          "summary": "Task: Instruction Following in Video Understanding",
+          "columns": {
+            "Dataset": "Video-IFBench",
+            "Task": "Instruction Following in Video Understanding"
+          },
+          "subsection": "Video Understanding"
         },
         {
           "title": "GST-Bench",
@@ -3089,6 +3468,57 @@
             "https://huggingface.co/lmarena-ai"
           ],
           "subsection": "Multimodal Conversation"
+        },
+        {
+          "title": "StateSight",
+          "url": "https://arxiv.org/abs/2608.20414",
+          "categories": [
+            "benchmark"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Latent Spatial-State Reconstruction. Eval Protocol: Procedural single-image tasks (cube-nets, occluded towers, connected components); companion StateSight-Steps for intermediate visual states. Annotators: Synth + oracle. Size (K): 0.9 (300 items × 3 families) + 0.9 with interleaved steps",
+          "columns": {
+            "Dataset": "StateSight",
+            "Task": "Latent Spatial-State Reconstruction",
+            "Eval Protocol": "Procedural single-image tasks (cube-nets, occluded towers, connected components); companion StateSight-Steps for intermediate visual states",
+            "Annotators": "Synth + oracle",
+            "Size (K)": "0.9 (300 items × 3 families) + 0.9 with interleaved steps"
+          },
+          "subsection": "Multimodal General Intelligence"
+        },
+        {
+          "title": "GUI-Primitives",
+          "url": "https://arxiv.org/abs/2608.21832",
+          "categories": [
+            "benchmark",
+            "reasoning",
+            "gui_agent"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Spatial Reasoning in GUI Grounding. Eval Protocol: 7 spatial relations; contrastive pairs; strict point-in-box. Annotators: Human validated. Size (K): 0.99 (994 pairs)",
+          "columns": {
+            "Dataset": "GUI-Primitives",
+            "Task": "Spatial Reasoning in GUI Grounding",
+            "Eval Protocol": "7 spatial relations; contrastive pairs; strict point-in-box",
+            "Annotators": "Human validated",
+            "Size (K)": "0.99 (994 pairs)"
+          },
+          "subsection": "Multimodal General Intelligence"
+        },
+        {
+          "title": "MBA",
+          "url": "https://arxiv.org/abs/2608.11616",
+          "categories": [
+            "benchmark"
+          ],
+          "section": "2. Benchmarks and Evaluation > Multimodal General Intelligence",
+          "summary": "Task: Real-World Business Ideation Agents. Eval Protocol: Multimodal agentic task quality",
+          "columns": {
+            "Dataset": "MBA",
+            "Task": "Real-World Business Ideation Agents",
+            "Eval Protocol": "Multimodal agentic task quality"
+          },
+          "subsection": "Multimodal General Intelligence"
         },
         {
           "title": "HumanCLAW",
@@ -3665,6 +4095,44 @@
             "https://github.com/vis-nlp/ChartQA"
           ],
           "subsection": "Visual Text / Document Understanding (+ Charts)"
+        },
+        {
+          "title": "Sci-VBench",
+          "url": "https://arxiv.org/abs/2608.09873",
+          "categories": [
+            "benchmark",
+            "vlm_model",
+            "generation"
+          ],
+          "section": "2. Benchmarks and Evaluation > Text‑to‑Image Generation",
+          "summary": "Task: Knowledge- & Reasoning-Intensive Video Generation (Science). Eval Protocol: Rubric-based (Prompt Grounding, Scientific/Causal Correctness); MLLM-as-Judge validated. Annotators: Expert. Size (K): 1.25 (1,253 prompts × 60 subjects)",
+          "watchlist": [
+            "PhysBench / WorldModelBench"
+          ],
+          "columns": {
+            "Dataset": "Sci-VBench",
+            "Task": "Knowledge- & Reasoning-Intensive Video Generation (Science)",
+            "Eval Protocol": "Rubric-based (Prompt Grounding, Scientific/Causal Correctness); MLLM-as-Judge validated",
+            "Annotators": "Expert",
+            "Size (K)": "1.25 (1,253 prompts × 60 subjects)"
+          },
+          "subsection": "Text‑to‑Image Generation"
+        },
+        {
+          "title": "VGI-Bench",
+          "url": "https://arxiv.org/abs/2608.19583",
+          "categories": [
+            "benchmark",
+            "generation"
+          ],
+          "section": "2. Benchmarks and Evaluation > Text‑to‑Image Generation",
+          "summary": "Task: Visual Intelligence in Video Generation Models. Eval Protocol: Probes scene understanding inside the generator",
+          "columns": {
+            "Dataset": "VGI-Bench",
+            "Task": "Visual Intelligence in Video Generation Models",
+            "Eval Protocol": "Probes scene understanding inside the generator"
+          },
+          "subsection": "Text‑to‑Image Generation"
         },
         {
           "title": "FilmBench",
@@ -4519,12 +4987,256 @@
           "subsection": "2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM"
         }
       ],
-      "count": 102
+      "count": 111
     },
     {
       "key": "1-sota-vlms",
       "title": "1. SoTA VLMs",
       "entries": [
+        {
+          "title": "SenseNova-U1.5",
+          "url": "https://arxiv.org/abs/2609.11929",
+          "categories": [
+            "vlm_model"
+          ],
+          "section": "1. SoTA VLMs",
+          "published_at": "2026-09-10T00:00:00+00:00",
+          "summary": "Architecture: Encoder-free and VAE-free native unified visual intelligence; mixture-of-transformers; understanding + reasoning + generation in one trunk; native resolutions up to 4K. Training Data: Undisclosed. Parameters: 8B MoT. Vision Encoder/Tokenizer: None (encoder-free). Pretrained Backbone Model: Trained from scratch — HF · Code",
+          "columns": {
+            "Model": "SenseNova-U1.5",
+            "Year": "09/10/2026",
+            "Architecture": "Encoder-free and VAE-free native unified visual intelligence; mixture-of-transformers; understanding + reasoning + generation in one trunk; native resolutions up to 4K",
+            "Training Data": "Undisclosed",
+            "Parameters": "8B MoT",
+            "Vision Encoder/Tokenizer": "None (encoder-free)",
+            "Pretrained Backbone Model": "Trained from scratch — HF · Code"
+          },
+          "artifact_urls": [
+            "https://huggingface.co/sensenova/SenseNova-U1.5-8B-MoT",
+            "https://github.com/OpenSenseNova/SenseNova-U1"
+          ],
+          "subsection": ""
+        },
+        {
+          "title": "Puffin-World",
+          "url": "https://arxiv.org/abs/2609.04196",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "omni_unified",
+            "dataset"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-09-03T00:00:00+00:00",
+          "summary": "Type: Unified multimodal model with native 3D world states — jointly models gravity/latitude, depth, and image via Omni-Camera representation. Scale / License: Puffin-16M dataset; open code + weights. Key Result: Ties physical understanding, spatial simulation, and 3D world generation/reconstruction into one architecture. Links: Paper · Project",
+          "columns": {
+            "Model": "Puffin-World",
+            "Date": "09/03/2026",
+            "Type": "Unified multimodal model with native 3D world states — jointly models gravity/latitude, depth, and image via Omni-Camera representation",
+            "Scale / License": "Puffin-16M dataset; open code + weights",
+            "Key Result": "Ties physical understanding, spatial simulation, and 3D world generation/reconstruction into one architecture",
+            "Links": "Paper · Project"
+          },
+          "artifact_urls": [
+            "https://kangliao929.github.io/projects/puffin-world/"
+          ],
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "WorldReward",
+          "url": "https://arxiv.org/abs/2609.03952",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "post_training"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-09-03T00:00:00+00:00",
+          "summary": "What It Shows: First VLM-based pairwise preference reward model for camera-conditioned world models; decomposes paired videos into action-aligned chunks with structured visual evidence; beats GPT-5.5 by 3.42/1.45/3.56 pts on three WorldReward-Bench dimensions and improves HY-WorldPlay 1.5 in RL post-training",
+          "model_families": [
+            "GPT-4V / GPT-5"
+          ],
+          "columns": {
+            "Title": "WorldReward",
+            "Date": "09/03/2026",
+            "What It Shows": "First VLM-based pairwise preference reward model for camera-conditioned world models; decomposes paired videos into action-aligned chunks with structured visual evidence; beats GPT-5.5 by 3.42/1.45/3.56 pts on three WorldReward-Bench dimensions and improves HY-WorldPlay 1.5 in RL post-training"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "SolarWM",
+          "url": "https://arxiv.org/abs/2609.02886",
+          "categories": [
+            "vlm_model",
+            "world_model"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-09-02T00:00:00+00:00",
+          "summary": "Type: Open foundation for interactive video world models; reconfigurable multi-source data engine + backbone-native adaptation on Wan2.2 / LTX-2.5 / MiniMax-H3. Scale / License: 5B, 12B, 20B, 33B; CC BY 4.0. Key Result: Real-time minute-to-hour rollouts after training on only 5 s sequences; data + pipeline + weights + framework released. Links: Paper · Project",
+          "columns": {
+            "Model": "SolarWM",
+            "Date": "09/02/2026",
+            "Type": "Open foundation for interactive video world models; reconfigurable multi-source data engine + backbone-native adaptation on Wan2.2 / LTX-2.5 / MiniMax-H3",
+            "Scale / License": "5B, 12B, 20B, 33B; CC BY 4.0",
+            "Key Result": "Real-time minute-to-hour rollouts after training on only 5 s sequences; data + pipeline + weights + framework released",
+            "Links": "Paper · Project"
+          },
+          "artifact_urls": [
+            "https://junchao-cs.github.io/SolarWM-Web/"
+          ],
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "GUI-CC",
+          "url": "https://arxiv.org/abs/2609.00048",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "benchmark",
+            "gui_agent"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-09-01T00:00:00+00:00",
+          "summary": "What It Shows: Benchmarks contextual consistency of GUI world models as agent environments — extends the world-model-as-environment critique to computer-use",
+          "columns": {
+            "Title": "GUI-CC",
+            "Date": "09/01/2026",
+            "What It Shows": "Benchmarks contextual consistency of GUI world models as agent environments — extends the world-model-as-environment critique to computer-use"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "ZimaBlue",
+          "url": "https://arxiv.org/abs/2609.00188",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "video"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-31T00:00:00+00:00",
+          "summary": "Type: Generalizable world-action model via video pre-training on >120k h human + robot egocentric video; asynchronous Slow-Fast. Scale / License: 120k+ h. Key Result: Zero-shot real-robot success 36.1% → 77.8% as pretraining video scales; 30 Hz on an RTX 4090",
+          "columns": {
+            "Model": "ZimaBlue",
+            "Date": "08/31/2026",
+            "Type": "Generalizable world-action model via video pre-training on >120k h human + robot egocentric video; asynchronous Slow-Fast",
+            "Scale / License": "120k+ h",
+            "Key Result": "Zero-shot real-robot success 36.1% → 77.8% as pretraining video scales; 30 Hz on an RTX 4090"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "Matrix-Game 3.5",
+          "url": "https://arxiv.org/abs/2608.29910",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "efficiency"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-30T00:00:00+00:00",
+          "summary": "Type: Real-time streaming interactive world model with parameter-free patch memory + tiled-PRoPE geometry-aware memory + two-stage distillation. Key Result: Minute-long real-time generation; extends v3.0 to answer the persistent-state critique. Links: Paper · Project",
+          "columns": {
+            "Model": "Matrix-Game 3.5",
+            "Date": "08/30/2026",
+            "Type": "Real-time streaming interactive world model with parameter-free patch memory + tiled-PRoPE geometry-aware memory + two-stage distillation",
+            "Key Result": "Minute-long real-time generation; extends v3.0 to answer the persistent-state critique",
+            "Links": "Paper · Project"
+          },
+          "artifact_urls": [
+            "https://matrix-game-v3-5.github.io/"
+          ],
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "PAWBench",
+          "url": "https://arxiv.org/abs/2608.27345",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "post_training"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-27T00:00:00+00:00",
+          "summary": "What It Shows: Probabilistic alignment: evaluates video generators as stochastic samplers of world dynamics via PAWEval (repeated rollouts → empirical outcome distributions); no model across 50 scenarios / 11 systems consistently matches reference probabilities while covering valid behaviors",
+          "columns": {
+            "Title": "PAWBench",
+            "Date": "08/27/2026",
+            "What It Shows": "Probabilistic alignment: evaluates video generators as stochastic samplers of world dynamics via PAWEval (repeated rollouts → empirical outcome distributions); no model across 50 scenarios / 11 systems consistently matches reference probabilities while covering valid behaviors"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "DreamX-Phi 1.0",
+          "url": "https://arxiv.org/abs/2608.13489",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "embodied_vla",
+            "efficiency"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-13T00:00:00+00:00",
+          "summary": "Type: Action-conditioned video world model for robotic manipulation; per-arm SE(3) via PRoPE + depth branch + SAM3/V-JEPA object consistency + DMD few-step distillation. Scale / License: Open weights + code. Key Result: 1st on Track 1, 2nd on Track 2 of the WorldArena 2.0 Challenge. Links: Paper · Code",
+          "columns": {
+            "Model": "DreamX-Phi 1.0",
+            "Date": "08/13/2026",
+            "Type": "Action-conditioned video world model for robotic manipulation; per-arm SE(3) via PRoPE + depth branch + SAM3/V-JEPA object consistency + DMD few-step distillation",
+            "Scale / License": "Open weights + code",
+            "Key Result": "1st on Track 1, 2nd on Track 2 of the WorldArena 2.0 Challenge",
+            "Links": "Paper · Code"
+          },
+          "artifact_urls": [
+            "https://github.com/AMAP-ML/DreamX-Phi"
+          ],
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "G0.5",
+          "url": "https://arxiv.org/abs/2608.11739",
+          "categories": [
+            "vlm_model",
+            "world_model"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-12T00:00:00+00:00",
+          "summary": "Type: One AR stream for robot reasoning and action — single transformer emits reasoning + action tokens under one objective; cross-embodiment action tokenizer + multi-second visual memory. Key Result: 76.7% R1lite/R1pro (vs π0.5 53.3%, GR00T-N1.7 24.4%), 82.5% zero-shot DROID, 98.9% LIBERO, 87.3% SimplerEnv-Bridge",
+          "watchlist": [
+            "EmbodiedBench / CALVIN"
+          ],
+          "columns": {
+            "Model": "G0.5",
+            "Date": "08/12/2026",
+            "Type": "One AR stream for robot reasoning and action — single transformer emits reasoning + action tokens under one objective; cross-embodiment action tokenizer + multi-second visual memory",
+            "Key Result": "76.7% R1lite/R1pro (vs π0.5 53.3%, GR00T-N1.7 24.4%), 82.5% zero-shot DROID, 98.9% LIBERO, 87.3% SimplerEnv-Bridge"
+          },
+          "subsection": "1.1. World Models"
+        },
+        {
+          "title": "SimWAM",
+          "url": "https://arxiv.org/abs/2608.07468",
+          "categories": [
+            "vlm_model",
+            "world_model",
+            "generation",
+            "embodied_vla"
+          ],
+          "section": "1. SoTA VLMs > 1.1. World Models",
+          "published_at": "2026-08-07T00:00:00+00:00",
+          "summary": "Type: World-Action Model for end-to-end autonomous driving; video expert + lightweight action expert co-trained via flow matching + RL. Scale / License: Open weights + code (CC BY 4.0). Key Result: 91.5 PDMS on NAVSIM with zero-shot nuScenes transfer. Links: Paper · Code",
+          "columns": {
+            "Model": "SimWAM",
+            "Date": "08/07/2026",
+            "Type": "World-Action Model for end-to-end autonomous driving; video expert + lightweight action expert co-trained via flow matching + RL",
+            "Scale / License": "Open weights + code (CC BY 4.0)",
+            "Key Result": "91.5 PDMS on NAVSIM with zero-shot nuScenes transfer",
+            "Links": "Paper · Code"
+          },
+          "artifact_urls": [
+            "https://github.com/H-EmbodVis/SimWAM/"
+          ],
+          "subsection": "1.1. World Models"
+        },
         {
           "title": "HelloWorld",
           "url": "https://arxiv.org/abs/2608.05070",
@@ -6703,7 +7415,7 @@
           "subsection": ""
         }
       ],
-      "count": 89
+      "count": 100
     },
     {
       "key": "5-challenges",
@@ -8139,6 +8851,136 @@
       "title": "3. Post-Training",
       "entries": [
         {
+          "title": "Miles v0.1: Production-Level Post-Training",
+          "url": "https://arxiv.org/abs/2609.08368",
+          "categories": [
+            "post_training",
+            "vlm_model"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-09-08T00:00:00+00:00",
+          "summary": "RL: Full-stack open async agentic RL; demonstrated on GLM-5.2 744B-A40B MoE across 64 NVIDIA GB300 GPUs (263 s median step)",
+          "columns": {
+            "Title": "Miles v0.1: Production-Level Post-Training",
+            "Year": "09/08/2026",
+            "RL": "Full-stack open async agentic RL; demonstrated on GLM-5.2 744B-A40B MoE across 64 NVIDIA GB300 GPUs (263 s median step)"
+          },
+          "artifact_urls": [
+            "https://github.com/radixark/miles"
+          ],
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
+          "title": "Reason Through the Latent!",
+          "url": "https://arxiv.org/abs/2609.06746",
+          "categories": [
+            "post_training",
+            "vlm_model",
+            "efficiency"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-09-06T00:00:00+00:00",
+          "summary": "RL: Causal Visual Recurrent Reasoning — strips visual KV cache before decoding to force latent reasoning; strong retention on V, MMVP, BLINK, MME-RealWorld-Lite",
+          "organizations": [
+            "CVRR"
+          ],
+          "watchlist": [
+            "MME",
+            "BLINK"
+          ],
+          "columns": {
+            "Title": "Reason Through the Latent! (CVRR)",
+            "Year": "09/06/2026",
+            "RL": "Causal Visual Recurrent Reasoning — strips visual KV cache before decoding to force latent reasoning; strong retention on V, MMVP, BLINK, MME-RealWorld-Lite"
+          },
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
+          "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for VLAs",
+          "url": "https://arxiv.org/abs/2608.27550",
+          "categories": [
+            "post_training",
+            "vlm_model",
+            "embodied_vla"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-08-27T00:00:00+00:00",
+          "summary": "RL: VLM-prior preservation + multi-head continuous action co-supervision + partial cross-embodiment unification; 82.6% LIBERO-Plus, 92.5% RoboTwin 2.0 with 20% of trajectories",
+          "organizations": [
+            "VLAct"
+          ],
+          "watchlist": [
+            "EmbodiedBench / CALVIN"
+          ],
+          "columns": {
+            "Title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for VLAs (VLAct)",
+            "Year": "08/27/2026",
+            "RL": "VLM-prior preservation + multi-head continuous action co-supervision + partial cross-embodiment unification; 82.6% LIBERO-Plus, 92.5% RoboTwin 2.0 with 20% of trajectories"
+          },
+          "artifact_urls": [
+            "https://starvla.github.io/VLAct"
+          ],
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
+          "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-Agent RL",
+          "url": "https://arxiv.org/abs/2608.17253",
+          "categories": [
+            "post_training",
+            "vlm_model",
+            "benchmark"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-08-18T00:00:00+00:00",
+          "summary": "RL: Multi-agent cooperative RL with peer-derived rewards — no ground-truth labels; 3.0–8.6% avg gain on 7 LLM benchmarks, 2.3–7.2% on 4 VLM benchmarks",
+          "columns": {
+            "Title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-Agent RL",
+            "Year": "08/18/2026",
+            "RL": "Multi-agent cooperative RL with peer-derived rewards — no ground-truth labels; 3.0–8.6% avg gain on 7 LLM benchmarks, 2.3–7.2% on 4 VLM benchmarks"
+          },
+          "artifact_urls": [
+            "https://github.com/DrStranded/Co-RL"
+          ],
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
+          "title": "Spatial Memory Agent",
+          "url": "https://arxiv.org/abs/2608.12743",
+          "categories": [
+            "post_training",
+            "vlm_model",
+            "reasoning"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-08-13T00:00:00+00:00",
+          "summary": "RL: Experience-grounded runtime — self-evolves a frozen VLM's spatial reasoning via verifier-guided reflection distilled into lessons scored by a Transfer Reliability Score",
+          "columns": {
+            "Title": "Spatial Memory Agent",
+            "Year": "08/13/2026",
+            "RL": "Experience-grounded runtime — self-evolves a frozen VLM's spatial reasoning via verifier-guided reflection distilled into lessons scored by a Transfer Reliability Score"
+          },
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
+          "title": "Evidence-RL: Towards Evidence-intensive Visual Reasoning",
+          "url": "https://arxiv.org/abs/2608.08021",
+          "categories": [
+            "post_training",
+            "vlm_model",
+            "benchmark",
+            "reasoning"
+          ],
+          "section": "3. Post-Training > 3.1. RL Alignment for VLM",
+          "published_at": "2026-08-08T00:00:00+00:00",
+          "summary": "RL: Counterfactual Evidence Disentanglement inside GRPO — rewards evidence-grounded answers without evidence annotations; gains on 9 benchmarks × 4 backbones",
+          "columns": {
+            "Title": "Evidence-RL: Towards Evidence-intensive Visual Reasoning",
+            "Year": "08/08/2026",
+            "RL": "Counterfactual Evidence Disentanglement inside GRPO — rewards evidence-grounded answers without evidence annotations; gains on 9 benchmarks × 4 backbones"
+          },
+          "subsection": "3.1. RL Alignment for VLM"
+        },
+        {
           "title": "Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes",
           "url": "https://arxiv.org/abs/2608.05000",
           "categories": [
@@ -9238,35 +10080,35 @@
           "subsection": "3.4. Prompt Optimization"
         }
       ],
-      "count": 65
+      "count": 71
     }
   ],
   "counts": {
-    "entries": 486,
+    "entries": 530,
     "sections": 5,
-    "report_entries": 225,
-    "reports": 9
+    "report_entries": 278,
+    "reports": 10
   },
   "category_counts": [
     {
       "category": "vlm_model",
       "label": "VLM releases",
-      "count": 262
+      "count": 292
     },
     {
       "category": "benchmark",
       "label": "Benchmarks",
-      "count": 130
+      "count": 151
     },
     {
       "category": "embodied_vla",
       "label": "Embodied & VLA",
-      "count": 126
+      "count": 146
     },
     {
       "category": "post_training",
       "label": "Post-training",
-      "count": 98
+      "count": 106
     },
     {
       "category": "safety",
@@ -9281,7 +10123,12 @@
     {
       "category": "dataset",
       "label": "Datasets",
-      "count": 45
+      "count": 46
+    },
+    {
+      "category": "world_model",
+      "label": "World models",
+      "count": 42
     },
     {
       "category": "hallucination",
@@ -9291,22 +10138,27 @@
     {
       "category": "reasoning",
       "label": "Visual reasoning",
-      "count": 29
-    },
-    {
-      "category": "world_model",
-      "label": "World models",
-      "count": 28
+      "count": 32
     },
     {
       "category": "efficiency",
       "label": "Efficiency",
-      "count": 23
+      "count": 26
     },
     {
       "category": "video",
       "label": "Video understanding",
-      "count": 21
+      "count": 26
+    },
+    {
+      "category": "generation",
+      "label": "Visual generation",
+      "count": 23
+    },
+    {
+      "category": "gui_agent",
+      "label": "GUI & web agents",
+      "count": 23
     },
     {
       "category": "document_ocr",
@@ -9314,29 +10166,19 @@
       "count": 21
     },
     {
-      "category": "generation",
-      "label": "Visual generation",
-      "count": 19
-    },
-    {
-      "category": "gui_agent",
-      "label": "GUI & web agents",
-      "count": 18
-    },
-    {
       "category": "omni_unified",
       "label": "Omni & unified",
-      "count": 8
-    },
-    {
-      "category": "grounding",
-      "label": "Grounding & perception",
-      "count": 2
+      "count": 9
     },
     {
       "category": "spatial_3d",
       "label": "3D & spatial",
-      "count": 1
+      "count": 3
+    },
+    {
+      "category": "grounding",
+      "label": "Grounding & perception",
+      "count": 3
     }
   ],
   "model_families": [
@@ -9345,11 +10187,11 @@
       "count": 15
     },
     {
-      "name": "Gemini / Gemma",
-      "count": 7
+      "name": "GPT-4V / GPT-5",
+      "count": 8
     },
     {
-      "name": "GPT-4V / GPT-5",
+      "name": "Gemini / Gemma",
       "count": 7
     },
     {
