@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Zongxia Li"
 title_separator          : "-"
 name                     : &name "Zongxia Li"
-description              : &description "Zongxia Li - PhD Candidate at the University of Maryland, College Park. Research in self-evolving AI, vision-language models, and human-AI collaboration."
+description              : &description "Zongxia Li - Final-year PhD Candidate at the University of Maryland, College Park. Research in self-evolving AI, vision-language models, and human-AI collaboration."
 url                      : https://zli12321.github.io
 baseurl                  : ""
 repository               : "zli12321/zli12321.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Zongxia Li"
   pronouns         : # example: "she/her"  
-  bio              : 'PhD Candidate, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page">CLIP Lab</a>'
+  bio              : 'Final-year PhD Candidate, <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page">CLIP Lab</a>'
   location         : "College Park, MD"
   employer         : "University of Maryland"
   uri              : # URL

@@ -7,11 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a fourth-year PhD candidate in Computer Science at the University of Maryland, College Park, in the [CLIP Lab](https://wiki.umiacs.umd.edu/clip/index.php/Main_Page), advised by [Jordan Boyd-Graber](http://users.umiacs.umd.edu/~ying/) and co-advised by [Lichao Sun](https://lichao-sun.github.io). My research develops methods that make vision-language models and agents more capable through post-training, more autonomous through self-evolution, and more useful through tighter collaboration with humans.
+I am a final-year PhD candidate in Computer Science at the University of Maryland, College Park, in the [CLIP Lab](https://wiki.umiacs.umd.edu/clip/index.php/Main_Page), advised by [Jordan Boyd-Graber](http://users.umiacs.umd.edu/~ying/) and co-advised by [Lichao Sun](https://lichao-sun.github.io). My research develops methods that make vision-language models and agents more capable through post-training, more autonomous through self-evolution, and more useful through tighter collaboration with humans. I am open to collaboration and work &mdash; if interested, please [reach out to me](mailto:zli12321@umd.edu).
 
 Research Focus
 ======
-1. **Self-Evolving Agents** — Autonomous agents that bootstrap their own capabilities from minimal or zero human-curated data, spanning self-evolving multimodal reasoning, co-evolving decision-and-skill agents for long-horizon tasks, and exploration-guided visual reasoning.
+1. **Self-Evolving Agents** — Autonomous agents that bootstrap their own capabilities from minimal or zero human-curated data, spanning recursive self-improvement, self-evolving multimodal reasoning, co-evolving decision-and-skill agents for long-horizon tasks, and exploration-guided visual reasoning.
 
 2. **Model Post-Training** — Reinforcement learning and reward design for vision-language models, including self-rewarding via reasoning decomposition, semantically-aware open-ended rewards, and hallucination-targeted alignment for image and video understanding.
 
@@ -28,6 +28,8 @@ News
 </style>
 <div class="news-scroll" markdown="0">
 <table class="news-table">
+<tr><td class="news-date">Sep 10, 2026</td><td><a href="https://arxiv.org/abs/2609.11042" target="_blank">T1</a> is released! A 122B MoE terminal agent trained with reinforcement learning for long-horizon tasks.</td></tr>
+<tr><td class="news-date">Aug 5, 2026</td><td><a href="https://arxiv.org/abs/2608.05466" target="_blank">Recursive Synthesis for Long-Horizon Terminal Tasks (RST)</a> is released! Recursively synthesizing verified terminal-agent tasks at scale.</td></tr>
 <tr><td class="news-date">Jul 14, 2026</td><td><a href="https://arxiv.org/abs/2607.13285" target="_blank">Harness Handbook</a> is released! Making evolving agent harnesses readable, navigable, and editable.</td></tr>
 <tr><td class="news-date">Jul 9, 2026</td><td><a href="https://arxiv.org/abs/2607.08964" target="_blank">Long-Horizon-Terminal-Bench (LHTB)</a> is released! Testing the limits of agents on long-horizon terminal tasks with dense reward-based grading.</td></tr>
 <tr><td class="news-date">May 1, 2026</td><td><a href="https://github.com/Moms-Organic-Agent-Lab/comfyclaw" target="_blank">ComfyClaw</a> is released! An agentic harness for skill-evolving image generation workflows.</td></tr>
@@ -48,7 +50,7 @@ News
 Selected Publications
 ======
 <div class="pub-preview" markdown="0">
-{% assign sel_links = "/publication/2026-07-09-lhtb,/publication/2026-07-14-harness-handbook,/publication/2026-05-01-comfyclaw,/publication/2026-04-24-vision-sr1,/publication/2026-03-10-mm-zero,/publication/2025-12-01-videohallu,/publication/2026-06-01-ffgo,/publication/2026-04-07-graph-of-skills,/publication/2026-04-29-cosplay" | split: "," %}
+{% assign sel_links = "/publication/2026-09-10-t1,/publication/2026-08-05-rst,/publication/2026-07-09-lhtb,/publication/2026-07-14-harness-handbook,/publication/2026-05-01-comfyclaw,/publication/2026-04-24-vision-sr1,/publication/2026-03-10-mm-zero,/publication/2025-12-01-videohallu,/publication/2026-06-01-ffgo,/publication/2026-04-07-graph-of-skills,/publication/2026-04-29-cosplay" | split: "," %}
 {% for link in sel_links %}
 {% assign post = site.publications | where: "permalink", link | first %}
 {% if post %}
