@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-13T14:23:10.976273+00:00",
+  "generated_at": "2026-10-14T12:06:24.319836+00:00",
   "available": true,
   "origin": {
     "repository": ".survey-source",
@@ -7172,6 +7172,29 @@
           "subsection": "Hallucination Detection / Control"
         },
         {
+          "title": "RoboQuest",
+          "url": "https://arxiv.org/abs/2610.10388",
+          "categories": [
+            "benchmark",
+            "embodied_vla",
+            "vlm_model",
+            "dataset"
+          ],
+          "section": "2. Benchmarks and Evaluation > 2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM",
+          "summary": "Domain: Robotics (Mobile Manipulation). Type: Benchmark + Dataset. Project: Website, Github Repo",
+          "columns": {
+            "Benchmark": "RoboQuest",
+            "Domain": "Robotics (Mobile Manipulation)",
+            "Type": "Benchmark + Dataset",
+            "Project": "Website, Github Repo"
+          },
+          "artifact_urls": [
+            "https://declare-lab.github.io/RoboQuest/",
+            "https://github.com/declare-lab/RoboQuest"
+          ],
+          "subsection": "2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM"
+        },
+        {
           "title": "OSReward",
           "url": "https://arxiv.org/abs/2607.28609",
           "categories": [
@@ -7695,7 +7718,7 @@
           "subsection": "2.3. Benchmark Datasets, Simulators, and Generative Models for Embodied VLM"
         }
       ],
-      "count": 111
+      "count": 112
     },
     {
       "key": "5-challenges",
@@ -10364,7 +10387,7 @@
     }
   ],
   "counts": {
-    "entries": 543,
+    "entries": 544,
     "sections": 5,
     "report_entries": 290,
     "reports": 11
@@ -10373,17 +10396,17 @@
     {
       "category": "vlm_model",
       "label": "VLM releases",
-      "count": 305
+      "count": 306
     },
     {
       "category": "benchmark",
       "label": "Benchmarks",
-      "count": 151
+      "count": 152
     },
     {
       "category": "embodied_vla",
       "label": "Embodied & VLA",
-      "count": 146
+      "count": 147
     },
     {
       "category": "post_training",
@@ -10403,7 +10426,7 @@
     {
       "category": "dataset",
       "label": "Datasets",
-      "count": 46
+      "count": 47
     },
     {
       "category": "world_model",
